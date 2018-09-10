@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.model.Villager
 import kotlinx.android.extensions.LayoutContainer
@@ -12,7 +14,10 @@ import kotlinx.android.synthetic.main.list_item_villager.*
 
 class VillagersAdapter(
         private val villagers: List<Villager>
-) : RecyclerView.Adapter<VillagersAdapter.VillagerViewHolder>() {
+) : RecyclerView.Adapter<VillagersAdapter.VillagerViewHolder>(), Filterable {
+
+    private var filteredVillagers: MutableList<Villager> = villagers.toMutableList()
+    var sortBy: Int? = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VillagerViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_villager, parent, false)
@@ -20,11 +25,41 @@ class VillagersAdapter(
     }
 
     override fun getItemCount(): Int {
-        return villagers.size
+        return filteredVillagers.size
     }
 
     override fun onBindViewHolder(holder: VillagerViewHolder, position: Int) {
-        holder.bindVillager(villagers[position])
+        holder.bindVillager(filteredVillagers[position])
+    }
+
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val filterResults = FilterResults()
+                val filteredVillagers = villagers.filter { it.name.toLowerCase().contains(constraint.toString().toLowerCase()) }
+                filterResults.values = filteredVillagers
+                filterResults.count = filteredVillagers.size
+                return filterResults
+            }
+
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                @Suppress("UNCHECKED_CAST")
+                filteredVillagers = results?.values as MutableList<Villager>
+                notifyDataSetChanged()
+            }
+        }
+    }
+
+    fun sort() {
+        val comparator = when (sortBy) {
+            0 -> Comparator { v1, v2 -> v1.name.compareTo(v2.name) }
+            1 -> Comparator { v1, v2 -> v2.name.compareTo(v1.name) }
+            2 -> Comparator { v1, v2 -> v2.canMarry.compareTo(v1.canMarry) }
+            else -> Comparator<Villager> { v1, v2 -> v1.name.compareTo(v2.name) }
+        }
+
+        filteredVillagers.sortWith(comparator)
+        notifyDataSetChanged()
     }
 
     class VillagerViewHolder(
