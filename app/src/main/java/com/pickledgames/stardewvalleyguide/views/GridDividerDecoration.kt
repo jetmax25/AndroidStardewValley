@@ -1,4 +1,4 @@
-package com.pickledgames.stardewvalleyguide.view
+package com.pickledgames.stardewvalleyguide.views
 
 import android.graphics.Rect
 import android.support.v7.widget.GridLayoutManager

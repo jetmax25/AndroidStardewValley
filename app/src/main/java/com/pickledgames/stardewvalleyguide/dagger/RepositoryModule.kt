@@ -1,7 +1,7 @@
 package com.pickledgames.stardewvalleyguide.dagger
 
 import com.pickledgames.stardewvalleyguide.StardewApp
-import com.pickledgames.stardewvalleyguide.repository.VillagerRepository
+import com.pickledgames.stardewvalleyguide.repositories.VillagerRepository
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides

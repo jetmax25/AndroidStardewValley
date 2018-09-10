@@ -1,4 +1,4 @@
-package com.pickledgames.stardewvalleyguide.adapter
+package com.pickledgames.stardewvalleyguide.adapters
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -8,15 +8,16 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import com.pickledgames.stardewvalleyguide.R
-import com.pickledgames.stardewvalleyguide.model.Villager
+import com.pickledgames.stardewvalleyguide.interfaces.Sortable
+import com.pickledgames.stardewvalleyguide.models.Villager
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_villager.*
 
 class VillagersAdapter(
         private val villagers: List<Villager>
-) : RecyclerView.Adapter<VillagersAdapter.VillagerViewHolder>(), Filterable {
+) : RecyclerView.Adapter<VillagersAdapter.VillagerViewHolder>(), Filterable, Sortable {
 
-    private var filteredVillagers: MutableList<Villager> = villagers.toMutableList()
+    var filteredVillagers: MutableList<Villager> = villagers.toMutableList()
     var sortBy: Int? = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VillagerViewHolder {
@@ -50,7 +51,7 @@ class VillagersAdapter(
         }
     }
 
-    fun sort() {
+    override fun sort() {
         val comparator = when (sortBy) {
             0 -> Comparator { v1, v2 -> v1.name.compareTo(v2.name) }
             1 -> Comparator { v1, v2 -> v2.name.compareTo(v1.name) }

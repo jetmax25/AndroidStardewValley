@@ -1,6 +1,6 @@
 package com.pickledgames.stardewvalleyguide.dagger
 
-import com.pickledgames.stardewvalleyguide.fragment.VillagersFragment
+import com.pickledgames.stardewvalleyguide.fragments.VillagersFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

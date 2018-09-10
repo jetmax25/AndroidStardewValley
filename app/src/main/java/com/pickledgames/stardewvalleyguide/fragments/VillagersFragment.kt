@@ -1,4 +1,4 @@
-package com.pickledgames.stardewvalleyguide.fragment
+package com.pickledgames.stardewvalleyguide.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -8,10 +8,10 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.SearchView
 import android.view.*
 import com.pickledgames.stardewvalleyguide.R
-import com.pickledgames.stardewvalleyguide.adapter.VillagersAdapter
-import com.pickledgames.stardewvalleyguide.model.Villager
-import com.pickledgames.stardewvalleyguide.repository.VillagerRepository
-import com.pickledgames.stardewvalleyguide.view.GridDividerDecoration
+import com.pickledgames.stardewvalleyguide.adapters.VillagersAdapter
+import com.pickledgames.stardewvalleyguide.models.Villager
+import com.pickledgames.stardewvalleyguide.repositories.VillagerRepository
+import com.pickledgames.stardewvalleyguide.views.GridDividerDecoration
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

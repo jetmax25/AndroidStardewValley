@@ -1,4 +1,4 @@
-package com.pickledgames.stardewvalleyguide.util
+package com.pickledgames.stardewvalleyguide.utils
 
 import java.io.IOException
 import java.io.InputStream

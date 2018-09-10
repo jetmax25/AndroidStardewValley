@@ -1,9 +1,9 @@
-package com.pickledgames.stardewvalleyguide.repository
+package com.pickledgames.stardewvalleyguide.repositories
 
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.R
-import com.pickledgames.stardewvalleyguide.model.Villager
-import com.pickledgames.stardewvalleyguide.util.RepositoryUtil
+import com.pickledgames.stardewvalleyguide.models.Villager
+import com.pickledgames.stardewvalleyguide.utils.RepositoryUtil
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types

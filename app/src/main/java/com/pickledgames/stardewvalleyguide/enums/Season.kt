@@ -1,4 +1,4 @@
-package com.pickledgames.stardewvalleyguide.enum
+package com.pickledgames.stardewvalleyguide.enums
 
 enum class Season(val type: String) {
     Fall("Fall"),

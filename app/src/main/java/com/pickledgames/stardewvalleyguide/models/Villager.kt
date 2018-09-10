@@ -1,4 +1,4 @@
-package com.pickledgames.stardewvalleyguide.model
+package com.pickledgames.stardewvalleyguide.models
 
 data class Villager(
         val name: String,

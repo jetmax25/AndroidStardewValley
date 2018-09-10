@@ -1,9 +1,9 @@
-package com.pickledgames.stardewvalleyguide.adapter
+package com.pickledgames.stardewvalleyguide.adapters
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.pickledgames.stardewvalleyguide.fragment.VillagersFragment
+import com.pickledgames.stardewvalleyguide.fragments.VillagersFragment
 
 class FriendshipsAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
 
