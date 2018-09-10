@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/cardBackground">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             android:drawableEnd="@drawable/ic_heart_red"
             android:drawablePadding="5dp"
             android:drawableRight="@drawable/ic_heart_red"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
