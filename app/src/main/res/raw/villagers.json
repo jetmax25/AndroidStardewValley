@@ -1,0 +1,299 @@
+[
+  {
+    "name": "Alex",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 13,
+      "season": "Summer"
+    }
+  },
+  {
+    "name": "Elliot",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 5,
+      "season": "Fall"
+    }
+  },
+  {
+    "name": "Harvey",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 14,
+      "season": "Winter"
+    }
+  },
+  {
+    "name": "Sam",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 17,
+      "season": "Summer"
+    }
+  },
+  {
+    "name": "Abigail",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 13,
+      "season": "Fall"
+    }
+  },
+  {
+    "name": "Emily",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 27,
+      "season": "Spring"
+    }
+  },
+  {
+    "name": "Haley",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 14,
+      "season": "Spring"
+    }
+  },
+  {
+    "name": "Leah",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 23,
+      "season": "Winter"
+    }
+  },
+  {
+    "name": "Maru",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 10,
+      "season": "Summer"
+    }
+  },
+  {
+    "name": "Penny",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 2,
+      "season": "Fall"
+    }
+  },
+  {
+    "name": "Caroline",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 7,
+      "season": "Winter"
+    }
+  },
+  {
+    "name": "Clint",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 26,
+      "season": "Winter"
+    }
+  },
+  {
+    "name": "Demetrius",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 19,
+      "season": "Summer"
+    }
+  },
+  {
+    "name": "Dwarf",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 22,
+      "season": "Summer"
+    }
+  },
+  {
+    "name": "Evelyn",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 20,
+      "season": "Winter"
+    }
+  },
+  {
+    "name": "George",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 24,
+      "season": "Fall"
+    }
+  },
+  {
+    "name": "Gus",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 8,
+      "season": "Summer"
+    }
+  },
+  {
+    "name": "Jas",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 4,
+      "season": "Summer"
+    }
+  },
+  {
+    "name": "Jodi",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 11,
+      "season": "Fall"
+    }
+  },
+  {
+    "name": "Kent",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 14,
+      "season": "Spring"
+    }
+  },
+  {
+    "name": "Krobus",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 1,
+      "season": "Winter"
+    }
+  },
+  {
+    "name": "Lewis",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 7,
+      "season": "Spring"
+    }
+  },
+  {
+    "name": "Linus",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 3,
+      "season": "Winter"
+    }
+  },
+  {
+    "name": "Marnie",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 18,
+      "season": "Fall"
+    }
+  },
+  {
+    "name": "Pam",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 18,
+      "season": "Spring"
+    }
+  },
+  {
+    "name": "Pierre",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 26,
+      "season": "Spring"
+    }
+  },
+  {
+    "name": "Robin",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 21,
+      "season": "Fall"
+    }
+  },
+  {
+    "name": "Sandy",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 15,
+      "season": "Fall"
+    }
+  },
+  {
+    "name": "Sebastian",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 10,
+      "season": "Winter"
+    }
+  },
+  {
+    "name": "Shane",
+    "canMarry": true,
+    "canGift": true,
+    "birthday": {
+      "day": 20,
+      "season": "Spring"
+    }
+  },
+  {
+    "name": "Vincent",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 10,
+      "season": "Spring"
+    }
+  },
+  {
+    "name": "Willy",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 24,
+      "season": "Summer"
+    }
+  },
+  {
+    "name": "Wizard",
+    "canMarry": false,
+    "canGift": true,
+    "birthday": {
+      "day": 17,
+      "season": "Winter"
+    }
+  }
+]
