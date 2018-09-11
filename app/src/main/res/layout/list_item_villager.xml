@@ -18,6 +18,7 @@
             android:drawableEnd="@drawable/ic_heart_red"
             android:drawablePadding="5dp"
             android:drawableRight="@drawable/ic_heart_red"
+            android:gravity="center"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"

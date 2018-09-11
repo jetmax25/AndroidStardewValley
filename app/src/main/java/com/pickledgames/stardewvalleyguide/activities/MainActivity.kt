@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import com.ncapdevi.fragnav.FragNavController
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.fragments.FriendshipsFragment
@@ -12,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     var fragments: List<Fragment> = listOf(FriendshipsFragment.newInstance())
-    lateinit var fragNavController: FragNavController
+    private lateinit var fragNavController: FragNavController
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_friendships -> {
@@ -34,5 +35,27 @@ class MainActivity : AppCompatActivity() {
         builder.rootFragments(fragments)
         fragNavController = builder.build()
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+    }
+
+    fun pushFragment(fragment: Fragment) {
+        fragNavController.pushFragment(fragment)
+    }
+
+    private fun popFragment(): Boolean {
+        return if (fragNavController.isRootFragment) false else fragNavController.popFragment()
+    }
+
+    override fun onBackPressed() {
+        if (!popFragment()) super.onBackPressed()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

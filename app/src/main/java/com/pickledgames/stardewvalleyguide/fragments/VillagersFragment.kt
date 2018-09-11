@@ -8,6 +8,7 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.SearchView
 import android.view.*
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.VillagersAdapter
 import com.pickledgames.stardewvalleyguide.models.Villager
 import com.pickledgames.stardewvalleyguide.repositories.VillagerRepository
@@ -31,6 +32,7 @@ class VillagersFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
         setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_villagers, container, false)
     }
@@ -62,18 +64,18 @@ class VillagersFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
     private fun setup() {
-        villagerRepository.getVillagers()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { v ->
-                    villagers.addAll(v)
-                    villagersAdapter = VillagersAdapter(villagers)
-                    villagers_recycler_view.adapter = villagersAdapter
-                    villagers_recycler_view.layoutManager = GridLayoutManager(activity, 3)
-                    val offset = activity?.resources?.getDimensionPixelOffset(R.dimen.villagers_grid_layout_offset)
-                    if (offset != null) villagers_recycler_view.addItemDecoration(GridDividerDecoration(offset, 3))
-                    villagersAdapter.sort()
-                }
+        if (villagers.isNotEmpty()) {
+            setupAdapter()
+        } else {
+            villagerRepository.getVillagers()
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe { v ->
+                        villagers.clear()
+                        villagers.addAll(v)
+                        setupAdapter()
+                    }
+        }
 
         filter_villagers_tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
@@ -85,6 +87,15 @@ class VillagersFragment : Fragment(), SearchView.OnQueryTextListener {
                 villagersAdapter.sort()
             }
         })
+    }
+
+    private fun setupAdapter() {
+        villagersAdapter = VillagersAdapter(villagers, activity as MainActivity)
+        villagers_recycler_view.adapter = villagersAdapter
+        villagers_recycler_view.layoutManager = GridLayoutManager(activity, 3)
+        val offset = activity?.resources?.getDimensionPixelOffset(R.dimen.villagers_grid_layout_offset)
+        if (offset != null) villagers_recycler_view.addItemDecoration(GridDividerDecoration(offset, 3))
+        villagersAdapter.sort()
     }
 
     companion object {

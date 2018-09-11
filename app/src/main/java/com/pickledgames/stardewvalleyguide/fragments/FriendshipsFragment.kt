@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.fragment_friendships.*
 class FriendshipsFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.fragment_friendships, container, false)
     }
 
@@ -21,7 +22,7 @@ class FriendshipsFragment : Fragment() {
     }
 
     private fun setup() {
-        friendships_view_pager.adapter = FriendshipsAdapter(fragmentManager)
+        friendships_view_pager.adapter = FriendshipsAdapter(childFragmentManager)
         friendships_tab_layout.setupWithViewPager(friendships_view_pager)
     }
 

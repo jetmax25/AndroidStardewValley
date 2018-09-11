@@ -1,6 +1,5 @@
 package com.pickledgames.stardewvalleyguide.adapters
 
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -8,13 +7,16 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.fragments.VillagerFragment
 import com.pickledgames.stardewvalleyguide.interfaces.Sortable
 import com.pickledgames.stardewvalleyguide.models.Villager
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_villager.*
 
 class VillagersAdapter(
-        private val villagers: List<Villager>
+        private val villagers: List<Villager>,
+        private val mainActivity: MainActivity
 ) : RecyclerView.Adapter<VillagersAdapter.VillagerViewHolder>(), Filterable, Sortable {
 
     var filteredVillagers: MutableList<Villager> = villagers.toMutableList()
@@ -22,7 +24,7 @@ class VillagersAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VillagerViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_villager, parent, false)
-        return VillagerViewHolder(v, parent.context)
+        return VillagerViewHolder(v, mainActivity)
     }
 
     override fun getItemCount(): Int {
@@ -65,7 +67,7 @@ class VillagersAdapter(
 
     class VillagerViewHolder(
             override val containerView: View,
-            private val context: Context
+            private val mainActivity: MainActivity
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindVillager(villager: Villager) {
@@ -73,9 +75,11 @@ class VillagersAdapter(
             if (villager.canMarry) villager_name_text_view.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_heart_red, 0)
             else villager_name_text_view.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
 
-            val id = context.resources.getIdentifier("villager_${villager.name.toLowerCase()}", "drawable", context.packageName)
-            villager_image_view.setImageResource(id)
+            villager_image_view.setImageResource(villager.getImageId(mainActivity))
             villager_image_view.contentDescription = villager.name
+            containerView.setOnClickListener {
+                mainActivity.pushFragment(VillagerFragment.newInstance(villager))
+            }
         }
     }
 }
