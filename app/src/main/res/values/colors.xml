@@ -3,5 +3,6 @@
     <color name="colorPrimary">#4CAF50</color>
     <color name="colorPrimaryDark">#388E3C</color>
     <color name="colorAccent">#ff5252</color>
-    <color name="cardBackground">#4D000000</color>
+    <color name="alphaBackground">#4D000000</color>
+    <color name="reactionHeader">#795548</color>
 </resources>

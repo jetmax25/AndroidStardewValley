@@ -1,5 +1,6 @@
 package com.pickledgames.stardewvalleyguide.dagger
 
+import com.pickledgames.stardewvalleyguide.fragments.VillagerFragment
 import com.pickledgames.stardewvalleyguide.fragments.VillagersFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -10,5 +11,9 @@ abstract class FragmentModule {
 
     @FragmentScope
     @ContributesAndroidInjector
-    abstract fun bindVillagersFragment(): VillagersFragment
+    abstract fun villagersFragment(): VillagersFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector
+    abstract fun VillagerFragment(): VillagerFragment
 }

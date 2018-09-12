@@ -5,4 +5,10 @@
     <string name="a_z">A-Z</string>
     <string name="z_a">Z-A</string>
     <string name="romanceable">Romanceable</string>
+    <string name="all">All</string>
+    <string name="loves">Loves</string>
+    <string name="likes">Likes</string>
+    <string name="neutral">Neutral</string>
+    <string name="dislikes">Dislikes</string>
+    <string name="hates">Hates</string>
 </resources>
