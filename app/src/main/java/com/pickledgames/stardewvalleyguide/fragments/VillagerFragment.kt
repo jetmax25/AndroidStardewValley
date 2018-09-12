@@ -74,7 +74,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
 
     override fun onQueryTextChange(query: String?): Boolean {
         searchTerm = query ?: ""
-        filter.filter(SEARCH)
+        filter.filter("")
         return false
     }
 
@@ -106,7 +106,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 filterBy = tab?.text.toString()
-                filter.filter(FILTER)
+                filter.filter("")
             }
         })
     }
@@ -135,22 +135,9 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
-                val searchedList: List<Any> = if (constraint.toString() == SEARCH) {
-                    list.filter {
-                        if (it is Reaction) return@filter true
-                        else return@filter it is GiftReaction && it.itemName.contains(searchTerm, true)
-                    }
-                } else {
-                    list
-                }
-
-                val filteredList: List<Any> = if (filterBy == "All") {
-                    searchedList
-                } else {
-                    searchedList.filter {
-                        if (it is Reaction && it.type == filterBy) return@filter true
-                        else return@filter it is GiftReaction && it.reaction.type == filterBy
-                    }
+                val filteredList: List<Any> = list.filter {
+                    if (it is Reaction && (it.type == filterBy || filterBy == "All")) return@filter true
+                    else return@filter it is GiftReaction && (it.reaction.type == filterBy || filterBy == "All") && it.itemName.contains(searchTerm, true)
                 }
 
                 val filterResults = FilterResults()
@@ -175,8 +162,6 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
 
     companion object {
         private const val VILLAGER = "VILLAGER"
-        private const val SEARCH = "SEARCH"
-        private const val FILTER = "FILTER"
 
         fun newInstance(villager: Villager): VillagerFragment {
             val villagerFragment = VillagerFragment()
