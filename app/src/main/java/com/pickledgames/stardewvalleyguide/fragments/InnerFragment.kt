@@ -13,12 +13,11 @@ open class InnerFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = super.onCreateView(inflater, container, savedInstanceState)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         return v
     }
 
-    override fun onStop() {
-        super.onStop()
+    override fun onDestroy() {
+        super.onDestroy()
         reset()
     }
 
