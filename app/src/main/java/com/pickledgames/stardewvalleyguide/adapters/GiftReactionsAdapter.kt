@@ -9,12 +9,14 @@ import android.widget.ImageView
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
+import io.github.douglasjunior.androidSimpleTooltip.SimpleTooltip
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_gift_reaction.*
 import kotlinx.android.synthetic.main.list_item_reaction_header.*
 
+
 class GiftReactionsAdapter(
-        private val list: MutableList<Any> = mutableListOf()
+        private var list: List<Any>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -43,6 +45,11 @@ class GiftReactionsAdapter(
 
     override fun getItemViewType(position: Int): Int {
         return if (list[position] is Reaction) HEADER_TYPE else ITEM_TYPE
+    }
+
+    fun updateList(l: List<Any>) {
+        list = l
+        notifyDataSetChanged()
     }
 
     companion object {
@@ -115,6 +122,15 @@ class GiftReactionsAdapter(
 
         fun bindGiftReaction(giftReaction: GiftReaction) {
             gift_reaction_image_view.setImageResource(giftReaction.getImageId(context))
+            containerView.setOnClickListener {
+                SimpleTooltip.Builder(context)
+                        .anchorView(containerView)
+                        .text(giftReaction.itemName)
+                        .animated(true)
+                        .transparentOverlay(false)
+                        .build()
+                        .show()
+            }
         }
     }
 }

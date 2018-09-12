@@ -21,16 +21,16 @@
                 android:text="@string/all" />
 
             <android.support.design.widget.TabItem
-                android:id="@+id/filter_villager_loves"
+                android:id="@+id/filter_villager_love"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/loves" />
+                android:text="@string/love" />
 
             <android.support.design.widget.TabItem
-                android:id="@+id/filter_villager_likes"
+                android:id="@+id/filter_villager_like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/likes" />
+                android:text="@string/like" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/filter_villager_neutral"
@@ -39,16 +39,16 @@
                 android:text="@string/neutral" />
 
             <android.support.design.widget.TabItem
-                android:id="@+id/filter_villager_dislikes"
+                android:id="@+id/filter_villager_dislike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/dislikes" />
+                android:text="@string/dislike" />
 
             <android.support.design.widget.TabItem
-                android:id="@+id/filter_villager_hates"
+                android:id="@+id/filter_villager_hate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hates" />
+                android:text="@string/hate" />
 
         </android.support.design.widget.TabLayout>
 
