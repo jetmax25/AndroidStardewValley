@@ -135,9 +135,18 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val reactionCountMap: MutableMap<Reaction, Int> = HashMap()
                 val filteredList: List<Any> = list.filter {
-                    if (it is Reaction && (it.type == filterBy || filterBy == "All")) return@filter true
-                    else return@filter it is GiftReaction && (it.reaction.type == filterBy || filterBy == "All") && it.itemName.contains(searchTerm, true)
+                    if (it is Reaction && (it.type == filterBy || filterBy == "All")) {
+                        return@filter true
+                    } else if (it is GiftReaction && (it.reaction.type == filterBy || filterBy == "All") && it.itemName.contains(searchTerm, true)) {
+                        reactionCountMap[it.reaction] = reactionCountMap[it.reaction]?.inc() ?: 1
+                        return@filter true
+                    }
+                    return@filter false
+                }.filter {
+                    if (it is Reaction && reactionCountMap[it] == null) return@filter false
+                    return@filter true
                 }
 
                 val filterResults = FilterResults()
