@@ -1,6 +1,7 @@
 package com.pickledgames.stardewvalleyguide.dagger
 
 import com.pickledgames.stardewvalleyguide.StardewApp
+import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
 import com.pickledgames.stardewvalleyguide.repositories.VillagerRepository
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -14,5 +15,11 @@ class RepositoryModule {
     @Singleton
     fun providesVillagerModule(stardewApp: StardewApp, moshi: Moshi): VillagerRepository {
         return VillagerRepository(stardewApp, moshi)
+    }
+
+    @Provides
+    @Singleton
+    fun providesGiftReactionRepository(stardewApp: StardewApp): GiftReactionRepository {
+        return GiftReactionRepository(stardewApp)
     }
 }
