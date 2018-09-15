@@ -3,6 +3,7 @@ package com.pickledgames.stardewvalleyguide.repositories
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.enums.Reaction
+import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.utils.RepositoryUtil
 import io.reactivex.Single
@@ -14,6 +15,22 @@ class GiftReactionRepository(
 
     private val giftReactions: MutableList<GiftReaction> = mutableListOf()
     private val villagerNameGiftReactionsMap: MutableMap<String, List<GiftReaction>> = mutableMapOf()
+    private val gifts: MutableList<Gift> = mutableListOf()
+
+    fun getGifts(): Single<List<Gift>> {
+        if (gifts.isNotEmpty()) return Single.just(gifts)
+        return getGiftReactionsFromAssets()
+                .map { giftReactions ->
+                    val set: MutableSet<Gift> = mutableSetOf()
+                    giftReactions.forEach { giftReaction ->
+                        set.add(Gift(giftReaction.itemName, giftReaction.category))
+                    }
+                    return@map set.toList()
+                }
+                .doOnSuccess {
+                    gifts.addAll(it)
+                }
+    }
 
     fun getGiftReactionsByVillagerName(villagerName: String): Single<List<GiftReaction>> {
         if (villagerNameGiftReactionsMap[villagerName] != null) return Single.just(villagerNameGiftReactionsMap[villagerName])

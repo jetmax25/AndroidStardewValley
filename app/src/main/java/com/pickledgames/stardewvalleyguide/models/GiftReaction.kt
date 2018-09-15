@@ -17,8 +17,4 @@ data class GiftReaction(
         if (identifier == 0) throw Exception("Resource items_$item not found")
         return identifier
     }
-
-    override fun toString(): String {
-        return itemName
-    }
 }

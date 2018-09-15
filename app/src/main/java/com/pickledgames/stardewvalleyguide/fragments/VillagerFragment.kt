@@ -114,18 +114,18 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
     private fun setupAdapter(giftReactions: List<GiftReaction>) {
         for (reaction: Reaction in Reaction.values().asList()) {
             list.add(reaction)
-            val filteredGiftReactions = giftReactions.filter { it.reaction == reaction }.sortedBy { it.itemName }
+            val filteredGiftReactions = giftReactions.asSequence().filter { it.reaction == reaction }.sortedBy { it.itemName }.toList()
             list.addAll(filteredGiftReactions)
         }
 
         adapter = GiftReactionsAdapter(list)
         villager_recycler_view.adapter = adapter
 
-        layoutManager = GridLayoutManager(activity, 8)
+        layoutManager = GridLayoutManager(activity, SPAN_COUNT)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 // getSpanSize should return number of spans item should take up
-                return if (list[position] is Reaction) 8 else 1
+                return if (list[position] is Reaction) SPAN_COUNT else 1
             }
         }
 
@@ -136,7 +136,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val reactionCountMap: MutableMap<Reaction, Int> = HashMap()
-                val filteredList: List<Any> = list.filter {
+                val filteredList: List<Any> = list.asSequence().filter {
                     if (it is Reaction && (it.type == filterBy || filterBy == "All")) {
                         return@filter true
                     } else if (it is GiftReaction && (it.reaction.type == filterBy || filterBy == "All") && it.itemName.contains(searchTerm, true)) {
@@ -147,7 +147,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
                 }.filter {
                     if (it is Reaction && reactionCountMap[it] == null) return@filter false
                     return@filter true
-                }
+                }.toList()
 
                 val filterResults = FilterResults()
                 filterResults.values = filteredList
@@ -162,7 +162,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
                 layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                     override fun getSpanSize(position: Int): Int {
                         // getSpanSize should return number of spans item should take up
-                        return if (filteredList[position] is Reaction) 8 else 1
+                        return if (filteredList[position] is Reaction) SPAN_COUNT else 1
                     }
                 }
             }
@@ -171,6 +171,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
 
     companion object {
         private const val VILLAGER = "VILLAGER"
+        private const val SPAN_COUNT = 8
 
         fun newInstance(villager: Villager): VillagerFragment {
             val villagerFragment = VillagerFragment()
