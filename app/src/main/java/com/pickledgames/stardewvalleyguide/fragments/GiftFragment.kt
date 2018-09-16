@@ -2,7 +2,6 @@ package com.pickledgames.stardewvalleyguide.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.support.design.widget.TabLayout
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.SearchView
 import android.view.*
@@ -10,29 +9,26 @@ import android.widget.Filter
 import android.widget.Filterable
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
-import com.pickledgames.stardewvalleyguide.adapters.GiftReactionsAdapter
+import com.pickledgames.stardewvalleyguide.adapters.VillagerReactionsAdapter
 import com.pickledgames.stardewvalleyguide.enums.Reaction
+import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
-import com.pickledgames.stardewvalleyguide.models.Villager
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.filter_villager.*
-import kotlinx.android.synthetic.main.fragment_villager.*
+import kotlinx.android.synthetic.main.fragment_gift.*
 import kotlinx.android.synthetic.main.loading.*
-import kotlinx.android.synthetic.main.profile_villager.*
+import kotlinx.android.synthetic.main.profile_gift.*
 import javax.inject.Inject
 
-class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable {
+class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable {
 
     @Inject lateinit var giftReactionRepository: GiftReactionRepository
-    lateinit var villager: Villager
+    private lateinit var gift: Gift
     private var list: MutableList<Any> = mutableListOf()
-    private lateinit var adapter: GiftReactionsAdapter
+    private lateinit var adapter: VillagerReactionsAdapter
     private lateinit var layoutManager: GridLayoutManager
-    private var filterBy: String = "All"
-    private var searchTerm: String = ""
 
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)
@@ -42,15 +38,15 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_villager, container, false)
+        return inflater.inflate(R.layout.fragment_gift, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (arguments != null) {
-            val selectedVillager: Villager? = arguments?.getParcelable(VILLAGER)
-            if (selectedVillager != null) {
-                villager = selectedVillager
+            val selectedGift: Gift? = arguments?.getParcelable(GIFT)
+            if (selectedGift != null) {
+                gift = selectedGift
                 setup()
             }
         }
@@ -59,12 +55,15 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         super.onCreateOptionsMenu(menu, inflater)
         menu?.clear()
-        inflater?.inflate(R.menu.villager, menu)
+        inflater?.inflate(R.menu.gift, menu)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
-        val searchMenuItem = menu.findItem(R.id.villager_search)
+        val searchMenuItem = menu.findItem(R.id.gift_search)
         val searchView = searchMenuItem.actionView as SearchView
+        searchView.setQuery("", false)
+        searchView.clearFocus()
+        searchView.onActionViewCollapsed()
         searchView.setOnQueryTextListener(this)
     }
 
@@ -73,50 +72,33 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
     }
 
     override fun onQueryTextChange(query: String?): Boolean {
-        searchTerm = query ?: ""
-        filter.filter("")
+        filter.filter(query)
         return false
     }
 
     private fun setup() {
-        setTitle(villager.name)
-        profile_villager_image_view.setImageResource(villager.getImageId(activity as MainActivity))
-        profile_villager_image_view.contentDescription = villager.name
-        profile_villager_name_text_view.text = villager.name
-        profile_villager_birthday_text_view.text = villager.birthday.toString()
-        profile_villager_birthday_text_view.setCompoundDrawablesWithIntrinsicBounds(
-                villager.birthday.season.getImageId(activity as MainActivity),
-                0, 0, 0
-        )
+        setTitle(gift.name)
+        profile_gift_image_view.setImageResource(gift.getImageId(activity as MainActivity))
+        profile_gift_image_view.contentDescription = gift.name
+        profile_gift_name_text_view.text = gift.name
 
         loading_container.visibility = View.VISIBLE
-        villager_recycler_view.visibility = View.GONE
-        giftReactionRepository.getGiftReactionsByVillagerName(villager.name)
+        gift_recycler_view.visibility = View.GONE
+        giftReactionRepository.getGiftReactionsByItemName(gift.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { giftReactions ->
                     loading_container.visibility = View.GONE
-                    villager_recycler_view.visibility = View.VISIBLE
+                    gift_recycler_view.visibility = View.VISIBLE
                     setupAdapter(giftReactions)
                 }
-
-        filter_villager_tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {}
-
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                filterBy = tab?.text.toString()
-                filter.filter("")
-            }
-        })
     }
 
     private fun setupAdapter(giftReactions: List<GiftReaction>) {
         val reactionCountMap: MutableMap<Reaction, Int> = HashMap()
         for (reaction: Reaction in Reaction.values().asList()) {
             list.add(reaction)
-            val filteredGiftReactions = giftReactions.filter { it.reaction == reaction }.sortedBy { it.itemName }.toList()
+            val filteredGiftReactions = giftReactions.filter { it.reaction == reaction }.sortedBy { it.villagerName }.toList()
             reactionCountMap[reaction] = filteredGiftReactions.size
             list.addAll(filteredGiftReactions)
         }
@@ -126,8 +108,8 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
             return@filter true
         }.toMutableList()
 
-        adapter = GiftReactionsAdapter(list)
-        villager_recycler_view.adapter = adapter
+        adapter = VillagerReactionsAdapter(list)
+        gift_recycler_view.adapter = adapter
 
         layoutManager = GridLayoutManager(activity, SPAN_COUNT)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -137,7 +119,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
             }
         }
 
-        villager_recycler_view.layoutManager = layoutManager
+        gift_recycler_view.layoutManager = layoutManager
     }
 
     override fun getFilter(): Filter {
@@ -145,9 +127,9 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val reactionCountMap: MutableMap<Reaction, Int> = HashMap()
                 val filteredList: List<Any> = list.filter {
-                    if (it is Reaction && (it.type == filterBy || filterBy == "All")) {
+                    if (it is Reaction) {
                         return@filter true
-                    } else if (it is GiftReaction && (it.reaction.type == filterBy || filterBy == "All") && it.itemName.contains(searchTerm, true)) {
+                    } else if (it is GiftReaction && it.itemName.contains(constraint.toString(), true)) {
                         reactionCountMap[it.reaction] = reactionCountMap[it.reaction]?.inc() ?: 1
                         return@filter true
                     }
@@ -178,15 +160,15 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
     }
 
     companion object {
-        private const val VILLAGER = "VILLAGER"
-        private const val SPAN_COUNT = 8
+        private const val GIFT = "GIFT"
+        private const val SPAN_COUNT = 7
 
-        fun newInstance(villager: Villager): VillagerFragment {
-            val villagerFragment = VillagerFragment()
+        fun newInstance(gift: Gift): GiftFragment {
+            val giftFragment = GiftFragment()
             val arguments = Bundle()
-            arguments.putParcelable(VILLAGER, villager)
-            villagerFragment.arguments = arguments
-            return villagerFragment
+            arguments.putParcelable(GIFT, gift)
+            giftFragment.arguments = arguments
+            return giftFragment
         }
     }
 }

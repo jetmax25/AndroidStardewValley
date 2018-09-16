@@ -16,6 +16,17 @@ class GiftReactionRepository(
     private val giftReactions: MutableList<GiftReaction> = mutableListOf()
     private val villagerNameGiftReactionsMap: MutableMap<String, List<GiftReaction>> = mutableMapOf()
     private val gifts: MutableList<Gift> = mutableListOf()
+    private val giftNameGiftReactionsMap: MutableMap<String, List<GiftReaction>> = mutableMapOf()
+
+    fun getGiftReactionsByItemName(itemName: String): Single<List<GiftReaction>> {
+        if (giftNameGiftReactionsMap[itemName] != null) return Single.just(giftNameGiftReactionsMap[itemName])
+        return getGiftReactions()
+                .map { g ->
+                    val filteredGiftReactions = g.filter { it.itemName.equals(itemName, true) }
+                    giftNameGiftReactionsMap[itemName] = filteredGiftReactions
+                    return@map filteredGiftReactions
+                }
+    }
 
     fun getGifts(): Single<List<Gift>> {
         if (gifts.isNotEmpty()) return Single.just(gifts)

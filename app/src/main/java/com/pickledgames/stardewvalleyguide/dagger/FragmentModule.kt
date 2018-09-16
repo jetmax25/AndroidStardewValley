@@ -1,5 +1,6 @@
 package com.pickledgames.stardewvalleyguide.dagger
 
+import com.pickledgames.stardewvalleyguide.fragments.GiftFragment
 import com.pickledgames.stardewvalleyguide.fragments.GiftsFragment
 import com.pickledgames.stardewvalleyguide.fragments.VillagerFragment
 import com.pickledgames.stardewvalleyguide.fragments.VillagersFragment
@@ -20,4 +21,8 @@ abstract class FragmentModule {
     @FragmentScope
     @ContributesAndroidInjector
     abstract fun giftsFragment(): GiftsFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector
+    abstract fun giftFragment(): GiftFragment
 }

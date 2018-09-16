@@ -19,6 +19,13 @@ class VillagerRepository(
     var type: ParameterizedType = Types.newParameterizedType(List::class.java, Villager::class.java)
     var adapter: JsonAdapter<List<Villager>> = moshi.adapter<List<Villager>>(type)
 
+    fun getVillagerByName(name: String): Single<Villager> {
+        return getVillagers()
+                .map { villagers ->
+                    return@map villagers.find { it.name.equals(name, false) }
+                }
+    }
+
     fun getVillagers(): Single<List<Villager>> {
         if (villagers.isNotEmpty()) return Single.just(villagers)
         return getVillagersFromAssets()

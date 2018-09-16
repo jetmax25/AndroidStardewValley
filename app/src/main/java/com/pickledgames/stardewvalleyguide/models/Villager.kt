@@ -8,8 +8,8 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Villager(
         val name: String,
-        val birthday: Birthday,
-        val canMarry: Boolean
+        val birthday: Birthday = Birthday(),
+        val canMarry: Boolean = false
 ) : Parcelable, StardewObject {
 
     override fun getImageId(context: Context): Int {
