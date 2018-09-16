@@ -65,6 +65,9 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
     override fun onPrepareOptionsMenu(menu: Menu) {
         val searchMenuItem = menu.findItem(R.id.villager_search)
         val searchView = searchMenuItem.actionView as SearchView
+        searchView.setQuery("", false);
+        searchView.clearFocus();
+        searchView.onActionViewCollapsed();
         searchView.setOnQueryTextListener(this)
     }
 
