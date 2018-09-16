@@ -125,7 +125,7 @@ class GiftReactionsAdapter(
             containerView.setOnClickListener {
                 SimpleTooltip.Builder(context)
                         .anchorView(containerView)
-                        .text(giftReaction.itemName)
+                        .text("${giftReaction.itemName} - ${giftReaction.reaction}")
                         .animated(true)
                         .transparentOverlay(false)
                         .build()
