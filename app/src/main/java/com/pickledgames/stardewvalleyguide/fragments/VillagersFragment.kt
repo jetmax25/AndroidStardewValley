@@ -74,7 +74,6 @@ class VillagersFragment : Fragment(), SearchView.OnQueryTextListener {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe { v ->
-                        villagers.clear()
                         villagers.addAll(v)
                         setupAdapter()
                     }
