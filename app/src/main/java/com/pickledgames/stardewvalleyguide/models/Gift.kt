@@ -1,12 +1,15 @@
 package com.pickledgames.stardewvalleyguide.models
 
 import android.content.Context
+import android.os.Parcelable
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Gift(
         val name: String,
         val category: String
-) : StardewObject {
+) : Parcelable, StardewObject {
 
     override fun getImageId(context: Context): Int {
         val item = name.toLowerCase().replace("\\W".toRegex(), "_")

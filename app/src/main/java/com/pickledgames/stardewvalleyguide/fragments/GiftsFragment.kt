@@ -9,6 +9,7 @@ import android.view.*
 import android.widget.Filter
 import android.widget.Filterable
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.GiftsAdapter
 import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
@@ -51,6 +52,9 @@ class GiftsFragment : Fragment(), SearchView.OnQueryTextListener, Filterable {
     override fun onPrepareOptionsMenu(menu: Menu) {
         val searchMenuItem = menu.findItem(R.id.gifts_search)
         val searchView = searchMenuItem.actionView as SearchView
+        searchView.setQuery("", false)
+        searchView.clearFocus()
+        searchView.onActionViewCollapsed()
         searchView.setOnQueryTextListener(this)
     }
 
@@ -114,7 +118,7 @@ class GiftsFragment : Fragment(), SearchView.OnQueryTextListener, Filterable {
         val list: MutableList<Any> = mutableListOf()
         for (category: String in categories.sorted()) {
             list.add(category)
-            val filteredGifts = gifts.asSequence().filter { it.category == category }.sortedBy { it.name }.toList()
+            val filteredGifts = gifts.filter { it.category == category }.sortedBy { it.name }.toList()
             list.addAll(filteredGifts)
         }
 
@@ -122,7 +126,7 @@ class GiftsFragment : Fragment(), SearchView.OnQueryTextListener, Filterable {
     }
 
     private fun setupAdapter() {
-        adapter = GiftsAdapter(list)
+        adapter = GiftsAdapter(list, activity as MainActivity)
         gifts_recycler_view.adapter = adapter
 
         layoutManager = GridLayoutManager(activity, SPAN_COUNT)

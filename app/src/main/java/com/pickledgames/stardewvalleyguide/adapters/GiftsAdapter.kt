@@ -1,18 +1,20 @@
 package com.pickledgames.stardewvalleyguide.adapters
 
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.fragments.GiftFragment
 import com.pickledgames.stardewvalleyguide.models.Gift
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_category_header.*
 import kotlinx.android.synthetic.main.list_item_gift.*
 
 class GiftsAdapter(
-        private var list: List<Any>
+        private var list: List<Any>,
+        private val mainActivity: MainActivity
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -22,7 +24,7 @@ class GiftsAdapter(
             CategoryViewHolder(v)
         } else {
             v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_gift, parent, false)
-            GiftViewHolder(v, parent.context)
+            GiftViewHolder(v, mainActivity)
         }
     }
 
@@ -62,12 +64,15 @@ class GiftsAdapter(
 
     class GiftViewHolder(
             override val containerView: View,
-            val context: Context
+            private val mainActivity: MainActivity
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindGift(gift: Gift) {
-            gift_image_view.setImageResource(gift.getImageId(context))
+            gift_image_view.setImageResource(gift.getImageId(mainActivity))
             gift_image_view.contentDescription = gift.name
+            containerView.setOnClickListener {
+                mainActivity.pushFragment(GiftFragment.newInstance(gift))
+            }
         }
     }
 }

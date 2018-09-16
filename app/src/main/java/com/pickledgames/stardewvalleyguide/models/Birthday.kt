@@ -6,8 +6,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Birthday(
-        val season: Season,
-        val day: Int
+        val season: Season = Season.Fall,
+        val day: Int = 1
 ) : Parcelable {
 
     override fun toString(): String {
