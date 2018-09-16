@@ -9,13 +9,13 @@
     <ImageView
         android:id="@+id/reaction_header_1_image_view"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/reaction_type_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/reaction_type_text_view"
+        app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_heart_red" />
 
     <ImageView
@@ -27,10 +27,10 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/reaction_type_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reaction_header_3_image_view"
         app:layout_constraintStart_toEndOf="@+id/reaction_header_1_image_view"
-        app:layout_constraintTop_toTopOf="@+id/reaction_type_text_view"
+        app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_heart_red" />
 
     <ImageView
@@ -40,19 +40,26 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/reaction_type_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reaction_type_text_view"
-        app:layout_constraintTop_toTopOf="@+id/reaction_type_text_view"
+        app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_heart_red" />
 
     <TextView
         android:id="@+id/reaction_type_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawablePadding="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:fontFamily="@font/pixellari"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,13 +69,13 @@
     <ImageView
         android:id="@+id/reaction_header_4_image_view"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/reaction_type_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/reaction_type_text_view"
-        app:layout_constraintTop_toTopOf="@+id/reaction_type_text_view"
+        app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_heart_red" />
 
     <ImageView
@@ -80,10 +87,10 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/reaction_type_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reaction_header_6_image_view"
         app:layout_constraintStart_toEndOf="@+id/reaction_header_4_image_view"
-        app:layout_constraintTop_toTopOf="@+id/reaction_type_text_view"
+        app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_heart_red" />
 
     <ImageView
@@ -93,9 +100,9 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/reaction_type_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/reaction_type_text_view"
+        app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_heart_red" />
 
 </android.support.constraint.ConstraintLayout>
