@@ -129,7 +129,7 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
                 val filteredList: List<Any> = list.filter {
                     if (it is Reaction) {
                         return@filter true
-                    } else if (it is GiftReaction && it.itemName.contains(constraint.toString(), true)) {
+                    } else if (it is GiftReaction && it.villagerName.contains(constraint.toString(), true)) {
                         reactionCountMap[it.reaction] = reactionCountMap[it.reaction]?.inc() ?: 1
                         return@filter true
                     }
