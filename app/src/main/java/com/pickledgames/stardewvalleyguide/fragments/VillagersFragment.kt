@@ -59,7 +59,7 @@ class VillagersFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
     override fun onQueryTextChange(query: String?): Boolean {
-        (villagers_recycler_view.adapter as VillagersAdapter).filter.filter(query)
+        villagersAdapter.filter.filter(query)
         return false
     }
 
