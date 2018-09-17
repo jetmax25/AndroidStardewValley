@@ -16,6 +16,7 @@ import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_gift.*
 import kotlinx.android.synthetic.main.loading.*
@@ -29,6 +30,7 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
     private var list: MutableList<Any> = mutableListOf()
     private lateinit var adapter: VillagerReactionsAdapter
     private lateinit var layoutManager: GridLayoutManager
+    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)
@@ -59,6 +61,7 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.gift_search)
         val searchView = searchMenuItem.actionView as SearchView
         searchView.setQuery("", false)
@@ -76,6 +79,11 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
         return false
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
+    }
+
     private fun setup() {
         setTitle(gift.name)
         profile_gift_image_view.setImageResource(gift.getImageId(activity as MainActivity))
@@ -84,7 +92,7 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
 
         loading_container.visibility = View.VISIBLE
         gift_recycler_view.visibility = View.GONE
-        giftReactionRepository.getGiftReactionsByItemName(gift.name)
+        val disposable = giftReactionRepository.getGiftReactionsByItemName(gift.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { giftReactions ->
@@ -92,6 +100,8 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
                     gift_recycler_view.visibility = View.VISIBLE
                     setupAdapter(giftReactions)
                 }
+
+        compositeDisposable.addAll(disposable)
     }
 
     private fun setupAdapter(giftReactions: List<GiftReaction>) {

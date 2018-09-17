@@ -15,6 +15,7 @@ import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_gifts.*
 import javax.inject.Inject
@@ -26,6 +27,7 @@ class GiftsFragment : Fragment(), SearchView.OnQueryTextListener, Filterable {
     var list: MutableList<Any> = mutableListOf()
     lateinit var adapter: GiftsAdapter
     lateinit var layoutManager: GridLayoutManager
+    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)
@@ -50,11 +52,9 @@ class GiftsFragment : Fragment(), SearchView.OnQueryTextListener, Filterable {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.gifts_search)
         val searchView = searchMenuItem.actionView as SearchView
-        searchView.setQuery("", false)
-        searchView.clearFocus()
-        searchView.onActionViewCollapsed()
         searchView.setOnQueryTextListener(this)
     }
 
@@ -93,11 +93,16 @@ class GiftsFragment : Fragment(), SearchView.OnQueryTextListener, Filterable {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
+    }
+
     private fun setup() {
         if (list.isNotEmpty()) {
             setupAdapter()
         } else {
-            giftReactionRepository.getGifts()
+            val disposable = giftReactionRepository.getGifts()
                     .doOnSuccess { g -> gifts.addAll(g) }
                     .map(this::filterAndSortGifts)
                     .subscribeOn(Schedulers.io())
@@ -106,6 +111,8 @@ class GiftsFragment : Fragment(), SearchView.OnQueryTextListener, Filterable {
                         list.addAll(l)
                         setupAdapter()
                     }
+
+            compositeDisposable.addAll(disposable)
         }
     }
 
