@@ -17,6 +17,7 @@ import com.pickledgames.stardewvalleyguide.models.Villager
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.filter_villager.*
 import kotlinx.android.synthetic.main.fragment_villager.*
@@ -33,6 +34,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
     private lateinit var layoutManager: GridLayoutManager
     private var filterBy: String = "All"
     private var searchTerm: String = ""
+    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)
@@ -63,6 +65,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.villager_search)
         val searchView = searchMenuItem.actionView as SearchView
         searchView.setQuery("", false);
@@ -81,6 +84,11 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
         return false
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
+    }
+
     private fun setup() {
         setTitle(villager.name)
         profile_villager_image_view.setImageResource(villager.getImageId(activity as MainActivity))
@@ -94,7 +102,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
 
         loading_container.visibility = View.VISIBLE
         villager_recycler_view.visibility = View.GONE
-        giftReactionRepository.getGiftReactionsByVillagerName(villager.name)
+        val disposable = giftReactionRepository.getGiftReactionsByVillagerName(villager.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { giftReactions ->
@@ -102,6 +110,8 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
                     villager_recycler_view.visibility = View.VISIBLE
                     setupAdapter(giftReactions)
                 }
+
+        compositeDisposable.addAll(disposable)
 
         filter_villager_tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}

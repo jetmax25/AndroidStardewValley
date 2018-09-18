@@ -15,6 +15,7 @@ import com.pickledgames.stardewvalleyguide.repositories.VillagerRepository
 import com.pickledgames.stardewvalleyguide.views.GridDividerDecoration
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.filter_villagers.*
 import kotlinx.android.synthetic.main.fragment_villagers.*
@@ -25,6 +26,7 @@ class VillagersFragment : Fragment(), SearchView.OnQueryTextListener {
     @Inject lateinit var villagerRepository: VillagerRepository
     var villagers: MutableList<Villager> = mutableListOf()
     lateinit var villagersAdapter: VillagersAdapter
+    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)
@@ -49,11 +51,9 @@ class VillagersFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.villagers_search)
         val searchView = searchMenuItem.actionView as SearchView
-        searchView.setQuery("", false);
-        searchView.clearFocus();
-        searchView.onActionViewCollapsed();
         searchView.setOnQueryTextListener(this)
     }
 
@@ -70,13 +70,15 @@ class VillagersFragment : Fragment(), SearchView.OnQueryTextListener {
         if (villagers.isNotEmpty()) {
             setupAdapter()
         } else {
-            villagerRepository.getVillagers()
+            val disposable = villagerRepository.getVillagers()
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe { v ->
                         villagers.addAll(v)
                         setupAdapter()
                     }
+
+            compositeDisposable.addAll(disposable)
         }
 
         filter_villagers_tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
