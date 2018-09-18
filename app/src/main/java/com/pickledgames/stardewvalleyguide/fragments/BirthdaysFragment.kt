@@ -20,6 +20,7 @@ import com.pickledgames.stardewvalleyguide.repositories.VillagerRepository
 import com.pickledgames.stardewvalleyguide.views.GridDividerDecoration
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_birthdays.*
 import kotlinx.android.synthetic.main.header_calendar.*
@@ -35,6 +36,7 @@ class BirthdaysFragment : Fragment(), View.OnClickListener {
     private var seasonIndex: Int = 0
     private lateinit var calendarDaysAdapter: CalendarDaysAdapter
     private lateinit var villagerBirthdaysAdapter: VillagerBirthdaysAdapter
+    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     init {
         for (i in 1..28) {
@@ -55,6 +57,11 @@ class BirthdaysFragment : Fragment(), View.OnClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         setup()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
     }
 
     override fun onClick(v: View?) {
@@ -100,7 +107,7 @@ class BirthdaysFragment : Fragment(), View.OnClickListener {
             setupCalendarDaysAdapter()
             setupVillagerBirthdaysAdapter()
         } else {
-            villagerRepository.getVillagers()
+            val disposable = villagerRepository.getVillagers()
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe { v ->
@@ -116,6 +123,8 @@ class BirthdaysFragment : Fragment(), View.OnClickListener {
                         setupCalendarDaysAdapter()
                         setupVillagerBirthdaysAdapter()
                     }
+
+            compositeDisposable.add(disposable)
         }
     }
 
