@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/reactionHeader">
+    android:background="@color/headerBackground">
 
     <ImageView
         android:id="@+id/reaction_header_1_image_view"

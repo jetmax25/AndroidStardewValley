@@ -4,26 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/headerBackground">
+    android:background="@color/alphaBackground">
 
     <TextView
-        android:id="@+id/category_text_view"
+        android:id="@+id/calendar_day_header_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
         android:shadowColor="@android:color/black"
         android:shadowDx="5"
         android:shadowDy="5"
         android:shadowRadius="5"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
         android:textStyle="bold"
         app:fontFamily="@font/pixellari"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Animal Product" />
+        tools:text="Mon" />
 
 </android.support.constraint.ConstraintLayout>
