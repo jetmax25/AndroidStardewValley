@@ -1,6 +1,5 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.widget.GridLayoutManager
@@ -15,9 +14,7 @@ import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.models.Villager
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
-import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.filter_villager.*
 import kotlinx.android.synthetic.main.fragment_villager.*
@@ -34,12 +31,6 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
     private lateinit var layoutManager: GridLayoutManager
     private var filterBy: String = "All"
     private var searchTerm: String = ""
-    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
-
-    override fun onAttach(context: Context?) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -68,9 +59,9 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.villager_search)
         val searchView = searchMenuItem.actionView as SearchView
-        searchView.setQuery("", false);
-        searchView.clearFocus();
-        searchView.onActionViewCollapsed();
+        searchView.setQuery("", false)
+        searchView.clearFocus()
+        searchView.onActionViewCollapsed()
         searchView.setOnQueryTextListener(this)
         searchView.setOnQueryTextFocusChangeListener { _, b ->
             profile_villager_layout.visibility = if (b) View.GONE else View.VISIBLE
@@ -85,11 +76,6 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
         searchTerm = query ?: ""
         filter.filter("")
         return false
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        compositeDisposable.clear()
     }
 
     private fun setup() {

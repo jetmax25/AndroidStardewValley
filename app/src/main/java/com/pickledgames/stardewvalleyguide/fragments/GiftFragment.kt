@@ -1,6 +1,5 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.SearchView
@@ -14,9 +13,7 @@ import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
-import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_gift.*
 import kotlinx.android.synthetic.main.loading.*
@@ -30,12 +27,6 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
     private var list: MutableList<Any> = mutableListOf()
     private lateinit var adapter: VillagerReactionsAdapter
     private lateinit var layoutManager: GridLayoutManager
-    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
-
-    override fun onAttach(context: Context?) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -80,11 +71,6 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
     override fun onQueryTextChange(query: String?): Boolean {
         filter.filter(query)
         return false
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        compositeDisposable.clear()
     }
 
     private fun setup() {

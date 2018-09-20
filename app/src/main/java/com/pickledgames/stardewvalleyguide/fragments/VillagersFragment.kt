@@ -1,9 +1,7 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.TabLayout
-import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.SearchView
 import android.view.*
@@ -13,25 +11,17 @@ import com.pickledgames.stardewvalleyguide.adapters.VillagersAdapter
 import com.pickledgames.stardewvalleyguide.models.Villager
 import com.pickledgames.stardewvalleyguide.repositories.VillagerRepository
 import com.pickledgames.stardewvalleyguide.views.GridDividerDecoration
-import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.filter_villagers.*
 import kotlinx.android.synthetic.main.fragment_villagers.*
 import javax.inject.Inject
 
-class VillagersFragment : Fragment(), SearchView.OnQueryTextListener {
+class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
 
     @Inject lateinit var villagerRepository: VillagerRepository
     var villagers: MutableList<Villager> = mutableListOf()
     lateinit var villagersAdapter: VillagersAdapter
-    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
-
-    override fun onAttach(context: Context?) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)

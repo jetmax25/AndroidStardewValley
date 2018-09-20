@@ -1,8 +1,6 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
-import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.SearchView
 import android.view.*
@@ -13,33 +11,25 @@ import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.GiftsAdapter
 import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
-import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_gifts.*
 import javax.inject.Inject
 
-class GiftsFragment : Fragment(), SearchView.OnQueryTextListener, Filterable {
+class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable {
 
     @Inject lateinit var giftReactionRepository: GiftReactionRepository
     var gifts: MutableList<Gift> = mutableListOf()
     var list: MutableList<Any> = mutableListOf()
     lateinit var adapter: GiftsAdapter
     lateinit var layoutManager: GridLayoutManager
-    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
-
-    override fun onAttach(context: Context?) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_gifts, container, false)
     }
-
+    
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         setup()
@@ -91,11 +81,6 @@ class GiftsFragment : Fragment(), SearchView.OnQueryTextListener, Filterable {
                 }
             }
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        compositeDisposable.clear()
     }
 
     private fun setup() {
