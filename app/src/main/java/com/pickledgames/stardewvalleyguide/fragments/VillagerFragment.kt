@@ -72,6 +72,9 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
         searchView.clearFocus();
         searchView.onActionViewCollapsed();
         searchView.setOnQueryTextListener(this)
+        searchView.setOnQueryTextFocusChangeListener { _, b ->
+            profile_villager_layout.visibility = if (b) View.GONE else View.VISIBLE
+        }
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
