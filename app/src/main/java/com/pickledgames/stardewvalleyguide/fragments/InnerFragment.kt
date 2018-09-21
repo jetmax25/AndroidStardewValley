@@ -1,6 +1,7 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
 import android.os.Bundle
+import android.support.annotation.StringRes
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,5 +28,9 @@ open class InnerFragment : BaseFragment() {
 
     protected fun setTitle(title: String) {
         (activity as MainActivity).supportActionBar?.title = title
+    }
+
+    protected fun setTitle(@StringRes titleId: Int) {
+        (activity as MainActivity).supportActionBar?.setTitle(titleId)
     }
 }

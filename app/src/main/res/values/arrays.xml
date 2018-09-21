@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="farm_types_array">
+        <item>Standard</item>
+        <item>Riverland</item>
+        <item>Forest</item>
+        <item>Hilltop</item>
+        <item>Wilderness</item>
+    </string-array>
+</resources>

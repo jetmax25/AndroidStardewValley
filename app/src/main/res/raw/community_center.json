@@ -1,0 +1,2495 @@
+{
+  "Craft Room": {
+    "Reward": "Bridge Repair",
+    "Bundles": {
+      "Spring Foraging Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 30,
+          "Item": "Spring Seeds"
+        },
+        "Items": {
+          "Wild Horseradish": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Spring.",
+              "You have a 1/4 chance to grow it from Spring Wild Seeds.",
+              "Spring seeds are created when placing a Wild Horseradish in a Seed Maker.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Daffodil": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Spring.",
+              "You also have a 1/4 chance to grow it from Spring Wild Seeds.",
+              "Spring seeds are created when placing a Wild Horseradish in a Seed Maker.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Leek": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Spring.",
+              "You also have a 1/4 chance to grow it from Spring Wild Seeds.",
+              "Spring seeds are created when placing a Wild Horseradish in a Seed Maker.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Dandelion": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Spring.",
+              "You also have a 1/4 chance to grow it from Spring Wild Seeds.",
+              "Spring seeds are created when placing a Wild Horseradish in a Seed Maker.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Summer Foraging Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 30,
+          "Item": "Summer Seeds"
+        },
+        "Items": {
+          "Grape": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Summer.",
+              "You have a 1/3 chance to grow it from Summer wild Seeds.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Spice Berry": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Summer.",
+              "You have a 1/3 chance to grow it from Summer wild Seeds.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Sweet Pea": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Summer.",
+              "You have a 1/3 chance to grow it from Summer wild Seeds.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Fall Foraging Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 30,
+          "Item": "Fall Seeds"
+        },
+        "Items": {
+          "Common Mushroom": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Fall.",
+              "You have a 1/4 chance to grow it from Fall Wild Seeds.",
+              "Can also be found in the Secret Woods during Spring and Fall",
+              "If you have chosen to have mushrooms grow in your cave when Demetrius offers you the option (event triggered once you reach 25,000 g in total earnings), then common mushrooms can commonly be found growing inside cave.",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Wild Plum": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Fall.",
+              "You have a 1/4 chance to grow it from Fall Wild Seeds.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Hazelnut": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Fall.",
+              "You have a 1/4 chance to grow it from Fall Wild Seeds.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Blackberry": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Fall.",
+              "You have a 1/4 chance to grow it from Fall Wild Seeds.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Winter Foraging Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 30,
+          "Item": "Winter Seeds"
+        },
+        "Items": {
+          "Winter Root": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging during Winter, but unlike most foraging items, it must be found by digging with a hoe at an artifact spot (tile with three wriggling worms).",
+              "You have a 1/3 chance of growing through Winter Wild Seeds.",
+              "Can be found in garbage cans during Winter",
+              "Dropped by Blue Slimes (8% chance, floors 40 to 80).",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Crystal Fruit": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging during Winter, but unlike most foraging items, it must be found by digging with a hoe at an artifact spot (tile with three wriggling worms).",
+              "You have a 1/3 chance of growing through Winter Wild Seeds.",
+              "Dropped by Dust Sprites in the mine (floors 40 to 80).",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Snow Yam": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging during Winter, but unlike most foraging items, it must be found by digging with a hoe at an artifact spot (tile with three wriggling worms).",
+              "You have a 1/3 chance of growing through Winter Wild Seeds.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Crocus": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging during Winter, but unlike most foraging items, it must be found by digging with a hoe at an artifact spot (tile with three wriggling worms).",
+              "You have a 1/3 chance of growing through Winter Wild Seeds.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Construction Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Charcoal Kin"
+        },
+        "Items": {
+          "Wood": {
+            "Quantity": 99,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Obtained by cutting down trees with an axe.",
+              "Can be bought from Robin at the Carpenter's Shop for 10g.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "More Wood": {
+            "Quantity": 99,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Obtained by cutting down trees with an axe.",
+              "Can be bought from Robin at the Carpenter's Shop for 10g.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Stone": {
+            "Quantity": 99,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Obtained by mining rocks with a pickaxe.",
+              "Can be bought from Robin at the Carpenter's Shop for 20g.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Hardwood": {
+            "Quantity": 10,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Obtained by chopping down a Large Stump or Large Log with a copper axe or better. Large Stumps respawn daily in the Secret Woods, making it possible to obtain 12 hardwood a day.",
+              "Hardwood can also be received as loot for breaking barrels and boxes in the Mines.",
+              "If you have the Lumberjack Profession, normal trees have a chance of dropping hardwood.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Exotic Foraging Bundle": {
+        "Needed": 5,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Autumn's Bounty (5)"
+        },
+        "Items": {
+          "Coconut": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Calico Desert.",
+              "Can be bought at the Oasis on Mondays for 200g.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Cactus Fruit": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging in the Calico Desert.",
+              "Can also be bought at the Oasis on Tuesdays for 150g.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Cave Carrot": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Large quantities can be easily be obtained by digging underground patches of dirt in the Mines on levels 10-20 with a hoe.",
+              "Occasionally found in barrels in The Mines.",
+              "Can be found in your fellow villager's garbage cans.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Red Mushroom": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be found in the mines starting from level 27.",
+              "It can also be obtained by foraging in the Secret Woods in the Summer or, more rarely in the Fall.",
+              "If you have chosen to have mushrooms grow in your cave when Demetrius offers you the option (event triggered once you reach 25,000 g in total earnings), then common mushrooms can commonly be found growing inside cave.",
+              "Obtained by attaching a tap to a mushroom tree.",
+              "Can be found in your fellow villager's garbage cans."
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Purple Mushroom": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be found by foraging at The Mines starting from floor 81 and over.",
+              "If you have chosen to have mushrooms grow in your cave when Demetrius offers you the option (event triggered once you reach 25,000 g in total earnings), then common mushrooms can commonly be found growing inside cave.",
+              "Additionally, it can be gathered (rarely) if you attach a tap a mushroom tree.",
+              "If you have chosen the Forest Farm, you have the chance to find these mushrooms on your farm during the Fall.",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Maple Syrup": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be obtained by placing a tapper on a Maple Tree and waiting 7 to 8 days.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Oak Resin": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be obtained by placing a tapper on a Oak Tree and waiting 6 to 7 days.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Pine Tar": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be obtained by placing a tapper on a Pine Tree and waiting 4 to 5 days.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Morel": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be foraged in the Spring in the Secret Woods or the Forest Farm.",
+              "If you have chosen to have mushrooms grow in your cave instead of bats when Demetrius offers you the option (event triggered once you reach 25,000g in total earnings), then they can be found growing inside your farm's cave.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "Pantry": {
+    "Reward": "Greenhouse",
+    "Bundles": {
+      "Spring Crops Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 20,
+          "Item": "Speed-Gro"
+        },
+        "Items": {
+          "Parsnip": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown from Parsnip Seeds in the Spring after 10 days.",
+              "Seeds can be Purchased from Pierre during Spring.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Green Bean": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown from Bean Starter in the Spring after 10 days.",
+              "Seeds can be Purchased from Pierre during Spring.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Cauliflower": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown from Cauliflower Seeds in the Spring after 10 days.",
+              "Seeds can be Purchased from Pierre during Spring.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Potato": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown from Potato Seeds in the Spring after 6 days.",
+              "Seeds can be Purchased from Pierre during Spring.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Summer Crops Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Quality Sprinkler"
+        },
+        "Items": {
+          "Tomato": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown in the Summer from Pepper Seeds after 5 days.",
+              "Seeds can be purchased at Pierre's in the Summer.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Hot Pepper": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown in the Summer from Blueberry Seeds after 13 days.",
+              "Seeds can be purchased at Pierre's in the Summer.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Blueberry": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown in the Summer from Melon Seeds after 12 days.",
+              "Seeds can be purchased at Pierre's in the Summer.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Melon": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown in the Summer from Tomato Seeds after 11 days.",
+              "Seeds can be purchased at Pierre's in the Summer.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Fall Crops Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Bee House"
+        },
+        "Items": {
+          "Corn": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown in the Fall from Corn Seeds after 14 days.",
+              "Seeds can be purchased at Pierre's in the Fall or Winter.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Eggplant": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown in the Fall from Eggplant Seeds after 5 days.",
+              "Seeds can be purchased at Pierre's in the Fall.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Pumpkin": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown in the Fall from Pumpkin Seeds after 13 days.",
+              "Seeds can be purchased at Pierre's in the Fall.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Yam": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown in the Fall from Yam Seeds after 10 days.",
+              "Seeds can be purchased at Pierre's in the Fall.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Quality Crops Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Preserves Jar"
+        },
+        "Items": {
+          "Parsnip High Quality": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": [
+              "Can be grown from Parsnip Seeds in the Spring after 10 days.",
+              "Seeds can be purchased at Pierre's in the Spring.",
+              "To increase chances of growing a high-quality crop, use basic or quality fertilizer on the tilled ground before planting seeds and plant a large quantity of this crop.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Melon High Quality": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": [
+              "Can be grown in the Summer from Melon Seeds after 11 days.",
+              "Seeds can be purchased at Pierre's in the Summer.",
+              "To increase chances of growing a high-quality crop, use basic or quality fertilizer on the tilled ground before planting seeds and plant a large quantity of this crop.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Pumpkin High Quality": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": [
+              "Can be grown in the Fall from Pumpkin Seeds after 13 days.",
+              "Seeds can be purchased at Pierre's in the Fall.",
+              "To increase chances of growing a high-quality crop, use basic or quality fertilizer on the tilled ground before planting seeds and plant a large quantity of this crop.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Corn High Quality": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": [
+              "Can be grown in the Fall from Corn Seeds after 14 days.",
+              "Seeds can be purchased at Pierre's in the Fall or Winter.",
+              "To increase chances of growing a high-quality crop, use basic or quality fertilizer on the tilled ground before planting seeds and plant a large quantity of this crop.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Animal Bundle": {
+        "Needed": 5,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Cheese Press"
+        },
+        "Items": {
+          "Large Milk": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Obtained by milking a cow while equipped with a pail.",
+              "Cows and pails can be purchased from Marnie's Ranch once you have purchased a Barn.",
+              "Adult cows can be milked once a day.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Large Egg Brown": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Laid by adult chickens once friendship has increased a sufficient amount.",
+              "Chickens can be purchased from Marnie's Ranch only once you own a Deluxe Coop.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Large Egg White": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Laid by adult chickens once friendship has increased a sufficient amount.",
+              "Chickens can be purchased from Marnie's Ranch only once you own a Deluxe Coop.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Large Goat Milk": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Obtained from milking a goat when friendship and mood is sufficient.",
+              "Goats can be purchased from Marnie's Ranch once you own a Big Barn.",
+              "To milk, you need to interact with a goat while holdng a milk pail (purchasable from Marnie's Ranch).",
+              "Goats can be milked every other day.",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Wool": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Obtained from using shears on sheep or rabbits.",
+              "Sheeps can be purchased from Marnie's Ranch once you own a deluxe barn.",
+              "A sheep's coat will grow every 3rd day if it's well kept and has 70 happiness.",
+              "Rabbits can be purchased from Marnie's farm once you have Deluxe Coop.",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Duck Egg": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Laid by a duck.",
+              "Ducks can be purchased from Marnie's Ranch only once you own a Big Coop.",
+              "Ducks produce eggs every two days.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Artisan Bundle": {
+        "Needed": 6,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Keg"
+        },
+        "Items": {
+          "Truffle Oil": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Created when you place a truffle in the Oil Maker.",
+              "Oil Makers can be crafted our of slime, hardwood, and gold bar once you reach Farming level 8.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Cloth": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Created when you place wool into a loom. Wool can be sheared from Sheep and Looms can be crafted.",
+              "Mummie's have a 5% chance of dropping it when slained. Mummies can be found at Skull Cavern in the Calico Desert.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Cheese": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Created when you place milk in a Cheese Press.",
+              "Goat milk and be obtained by interacting with a goat while holding a milk pail.",
+              "A cheese press can be crafted once you reach Farming level 6.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Goat Cheese": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Created when you place goat milk in a Cheese Press.",
+              "Goat milk and be obtained by interacting with a goat while holding a milk pail.",
+              "A cheese press can be crafted once you reach Farming level 6.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Honey": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Produced by placing a bee house on your farm",
+              "Ever four days (in every season but Winter) bees will produce a single honey. ",
+              "Honey can be purchased from The Oasis every Friday.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Jelly": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Produced by inserting a fruit into a preserves jar and waiting 2-3 days.",
+              "A preserves jar can be crafted at Farming lvl 4 with wood, stone, and coal.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Apple": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Gathered by planting an apple sapling (purchased at Pierre's) and waiting 28 days for it to grow into an apple tree. You can then harvest apples during Fall.",
+              "If you have chosen to use your Farm Cave for fruit bat research instead of mushrooms, then this can occasionally be found in your cave.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Apricot": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Gathered by planting an apricot sapling (purchased at Pierre's) and waiting 28 days for it to grow into an apricot tree. You can then harvest apricots during Spring.",
+              "If you have chosen to use your Farm Cave for fruit bat research instead of mushrooms, then this can occasionally be found in your cave.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Orange": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Gathered by planting an orange sapling (purchased at Pierre's) and waiting 28 days for it to grow into an orange tree.",
+              "If you have chosen to use your Farm Cave for fruit bat research instead of mushrooms, then this can occasionally be found in your cave.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Peach": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Gathered by planting an peach sapling (purchased at Pierre's) and waiting 28 days for it to grow into an peach tree.",
+              "If you have chosen to use your Farm Cave for fruit bat research instead of mushrooms, then this can occasionally be found in your cave.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Pomegranate": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Gathered by planting an pomegranate sapling (purchased at Pierre's) and waiting 28 days for it to grow into an pomegranate tree.",
+              "If you have chosen to use your Farm Cave for fruit bat research instead of mushrooms, then this can occasionally be found in your cave.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Cherry": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Gathered by planting an cherry sapling (purchased at Pierre's) and waiting 28 days for it to grow into an cherry tree.You can then harvest cherries during Spring.",
+              "If you have chosen to use your Farm Cave for fruit bat research instead of mushrooms, then this can occasionally be found in your cave.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "Fish Tank": {
+    "Reward": "Glittering Boulder",
+    "Bundles": {
+      "River Fish Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 30,
+          "Item": "Bait"
+        },
+        "Items": {
+          "Sunfish": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be found in the river during Spring and Summer between 6:00 AM to 7:00 PM. ",
+              "If you own a Riverlands Farm or Wilderness Farm, they can be fished in the pond during rainy weather.",
+              "This fish can also be found in garbage cans during Spring and Summer.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Catfish": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be found in the river, forest pond, or Riverlands Farm during Spring and Fall only during rainy weather",
+              "In the Summer, you can fish it in the Secret Woods or Witch's Swamp.",
+              "There's also a chance of finding this fish when rummaging through garbage cans in Spring, Fall, or Winter.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Shad": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be found in the river during Spring, Summer, and Fall only during rainy weather.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Tiger Trout": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be found in the river during Fall and Winter during 6:00 AM to 7:00 PM",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Lake Fish Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Dressed Spinner"
+        },
+        "Items": {
+          "Largemouth Bass": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be fished in the mountain lake (just south of the entrance to The Mines) during all seasons between 6:00 AM to 7:00 PM.",
+              "If you own a Wildrness Farm, this can also fished in your lakes.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Carp": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be fished during any season, most commonly from the West side of the mountain lake (just south of the entrance to the mines).",
+              "Can also be fished in the pond in the Cindersap Forest during the Spring, Summer, or Fall.",
+              "You may fish it any season in the Secret Woods or The Sewers.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Bullhead": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be fished in the mountain lake (lake south of The Mines) during any season.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Sturgeon": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be fished in the mountain lake during Summer and Winter.",
+              "It tends to spawn more frequently in the corner of the mountain lake, right in front of the Adventurer's Guild.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Ocean Fish Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Warp Totem: Beach"
+        },
+        "Items": {
+          "Sardine": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be fished in the ocean during Spring, Fall, and Winter between 6:00 AM to 7:00 PM.",
+              "Tend to dart when hooked.",
+              "Sardine can sometimes be found by rummaging through garbage cans in any season.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Tuna": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be fished in the ocean during Summer and Winter between 6:00 AM to 7:00 PM.",
+              "It can sometimes be found by rummaging through garbage cans in any season, although uncommon.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Red Snapper": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be fished in the ocean during Summer and Fall during rainy weather between 6:00 AM to 7:00 PM.",
+              "During Winter, you can use a rain totem in order to create rainy conditions.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Tilapia": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be fished in the ocean during Summer and Fall between 6:00 AM to 2:00 PM.",
+              "It can also be purchased from the Traveling Cart and Krobus.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Night Fishing Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Small Glow Ring"
+        },
+        "Items": {
+          "Walleye": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be fished in a river, lake, or forest pond during Fall between 12:00 PM to 2:00 AM only when it's raining.",
+              "During Winter, you can use a rain totem in order to create rainy conditions.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Bream": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the river during all seasons between 6 PM to 2:00 PM.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Eel": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the ocean during Spring and Fall, only when it's raining, and between 4:00 PM to 2:00 AM.",
+              "It is rarely found in garbage cans during Spring or Fall.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Crab Pot Bundle": {
+        "Needed": 5,
+        "Reward": {
+          "Quantity": 3,
+          "Item": "Crab Pot"
+        },
+        "Items": {
+          "Lobster": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the ocean with a crab pot during any season.",
+              "Crab pots can be purchased at Willy's Fish Shop once you reach fishing level 3.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Crayfish": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in freshwater with a crab pot during any season.",
+              "Crab pots can be purchased at Willy's Fish Shop once you reach fishing level 3.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Crab": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the ocean with a crab pot during any season.",
+              "Crab pots can be purchased at Willy's Fish Shop once you reach fishing level 3.",
+              "Crabs can be dropped by a rock crab (15% chance, mine level 1-29) or lava crab when killed (25% chance, mine level 80-119).",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Cockle": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the ocean with a crab pot during any season.",
+              "Crab pots can be purchased at Willy's Fish Shop once you reach fishing level 3.",
+              "Cockles can also be foraged on the beach.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Mussel": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the ocean with a crab pot during any season.",
+              "Crab pots can be purchased at Willy's Fish Shop once you reach fishing level 3.",
+              "Mussels can also be foraged on the beach.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Shrimp": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the ocean with a crab pot during any season.",
+              "Crab pots can be purchased at Willy's Fish Shop once you reach fishing level 3.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Snail": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in freshwater with a crab pot during any season",
+              "Crab pots can be purchased at Willy's Fish Shop once you reach fishing level 3.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Periwinkle": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in freshwater with a crab pot during any season",
+              "Crab pots can be purchased at Willy's Fish Shop once you reach fishing level 3.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Oyster": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the ocean with a crab pot during any season.",
+              "Crab pots can be purchased at Willy's Fish Shop once you reach fishing level 3.",
+              "Oysters can be foraged from the beach.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Clam": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the ocean with a crab pot during any season.",
+              "Crab pots can be purchased at Willy's Fish Shop once you reach fishing level 3.",
+              "Clams can be foraged from the beach.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Specialty Fish Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Dish o' The Sea "
+        },
+        "Items": {
+          "Pufferfish": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught at the beach on a sunny Summer day between 12:00 PM and 4:00 PM.",
+              "Behavior when hooked is to 'float' during the fishing mini game.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Ghostfish": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the mines on levels 20, 60, and 100 during all seasons.",
+              "A ghost may also drop a ghostfish when slain (8% chance, floors 51-90).",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Sandfish": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the desert during all seasons.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Woodskip": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught in the Secret Woods during any season",
+              "If you own a Forest Farm, you an also fish these on your farm's ponds.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "Boiler Room": {
+    "Reward": "Minecarts",
+    "Bundles": {
+      "Blacksmith's Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Furnance "
+        },
+        "Items": {
+          "Copper Bar": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Created by smelting 5 copper ores in the furnace with 1 piece of coal.",
+              "Copper ore can be obtained by mining copper nodes with pickaxe, most commonly found between levels 31-39 or purchasing them from the Blacksmith for 75g each.",
+              "Furnances can be crafted out of copper ore and stone.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Iron Bar": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Crafted by smelting 5 pieces of iron ore with 1 piece of coal in a furnance.",
+              "Iron ore is obtained by mining iron nodes with a pickaxe, most commonly found in levels 40-50 in the mines. ",
+              "Can also be obtained by using the Transmute recipe (unlocked when your mining level reaches 7) which will allow you to transmute 3 copper bars into 1 iron bar",
+              "Iron bars can also be occasionally found in garbage cans.",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold Bar": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Crafted by smelting 5 pieces of gold ore in the furnace with 1 piece of coal.",
+              "Gold ores can be obtained from gold nodes in the mines, commonly levels 80 and above.",
+              "Another method to obtain gold bars is to use the Transmute recipe (unlocked when your mining level reaches 7) in order to transmute 2 iron bars into 1 gold bar.",
+              "You also very rare can find a gold bar through rummaging through the garbage can next to the Blacksmith's shop.",
+              "If you complete the Enchanter's Bundle you are rewarded 5 gold bars."
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Geologist's Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Omni Geode"
+        },
+        "Items": {
+          "Quartz": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": [
+              "A mineral found by foraging in the mines. ",
+              "It can also be found in garbage cans (rarely)",
+              "When you slay a stone golem (levels 30-39), they have a 10% chance dropping a quartz.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Earth Crystal": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": [
+              "A mineral found by foraging in the mines. It can also be obtained through geodes, typically in levels 1-39. ",
+              "When you take a geode to the Blacksmith and pay to have it processed, you have a chance of obtaining an earth crystal.",
+              "Earth crystals are also dropped by slaying duggies in the mines (floors 1-29) or through fishing treasure chests.",
+              "If you've had the glittering boulder removed, you may use the copper pan to gather ore from the rivers, lakes, and ponds.",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Frozen Tear": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": [
+              "A mineral foraged in the mines on floors 40-79.",
+              "It can also be found by slaying Dust sprites (2% chance, floors 40-79).",
+              "If you process a frozen geode (obtained floors 40-79) at the Blacksmith's, you have a chance of obtaining a frozen tear.",
+              "Can also occasionally be found in a garbage can after the player reach level 40 in the mines.",
+              "If you've had the glittering boulder removed, you may use the copper pan to gather ore from the rivers, lakes, and ponds."
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Fire Quartz": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": [
+              "A mineral found by foraging in the mines on floors 80 and above.",
+              "Can be found inside a magma geode (floors 81-119) and omni geode.",
+              "Can be found inside fishing tresure chests or occasionally a garbage can if the player has reached level 81 in the mines.",
+              "If you've had the glittering boulder removed, you may use the copper pan to gather ore from the rivers, lakes, and ponds.",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Adventurer's Bundle": {
+        "Needed": 2,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Small Magnet Ring"
+        },
+        "Items": {
+          "Slime": {
+            "Quantity": 99,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Dropped after killing a slime. Slimes can spawn on any level of the mines and killing one will give you one or two slimes to collect.",
+              "Can be obtained from Slime Balls or purchasing from Krobus for 10g on Mondays.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Bat Wing": {
+            "Quantity": 10,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Dropped after killing a bat in the mines, typically found in floors 31-120.",
+              "Can be purchased by Krobus on Sundays.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Solar Essence": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Dropped after killing a ghost (levels 51-90), metal head (levels 80-119), squid kid (levels 80-120), and mummy (Skull Cavern located in the Desert).",
+              "Krobus also sells this for 80g each.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Void Essence": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Dropped after killing a shadow brute (mines level 81-119), Shadow Shaman (levels 81-119), or serpent (Skull Cavern, located in the Desert).",
+              "Krobus also sells this for 100g each.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "Bulletin Board": {
+    "Reward": "Friendship",
+    "Bundles": {
+      "Chef's Bundle": {
+        "Needed": 6,
+        "Reward": {
+          "Quantity": 3,
+          "Item": "Pink Cake"
+        },
+        "Items": {
+          "Maple Syrup": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be obtained by placing a tapper on a Maple Tree and waiting 7 to 8 days.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Fiddlehead Fern": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Foraged in the Secret Woods during Summer.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Truffle": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can only be spawned by a pig when it is outside of the barn. Pigs can be purchased from Marnie's Ranch only once you own a deluxe barn.",
+              "Truffles will not spawn in the Winter.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Poppy": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown by purchasing poppy seeds from Pierre in the Summer, planting, and watering for 7 days.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Maki Roll": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be cooked once you have upgraded your farm house to have a kitchen. Kitchens can be bought through the Carpentry shop.",
+              "maki roll is made by combing any fish (1), seaweed (1), and rice (1).",
+              "",
+              "Rice can be purchased at Pierre's General Store or JojaMart, and fish and seaweed can be gathered by fishing in the ocean or freshwater.",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Fried Egg": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be cooked once you have upgraded your farm house to have a kitchen. Kitchens can be bought through the Carpentry shop.",
+              "A fried egg can be cooked in the kitchen as long as you have an egg in your fridge or inventory.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Dye Bundle": {
+        "Needed": 6,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Seed Maker"
+        },
+        "Items": {
+          "Red Mushroom": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be found in the mines starting from level 27.",
+              "It can also be obtained by foraging in the Secret Woods in the Summer or, more rarely in the Fall.",
+              "If you have chosen to have mushrooms grow in your cave when Demetrius offers you the option (event triggered once you reach 25,000 g in total earnings), then common mushrooms can commonly be found growing inside cave.",
+              "Can be gathered if you attach a tap to a mushroom tree, rummage through garbage cans, or purchased at the Traveling Cart.",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Sea Urchin": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Found by foraging at the beach in all easons.",
+              "Also spawns regularly across the broken bridge (requires 300 wood in order to repair the bridge and cross over).",
+              "Emily may occasionally send you a sea urchin in the mail as a gift if your friendship is good enough.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Sunflower": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Grown by purchasing sunflower seeds from Pierre's General store in the Summer or Fall, planting, and watering for 8 days.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Duck Feather": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Produced by a duck once your friendship is sufficient.",
+              "duck can be purchased from Marnie's Ranch only once you own a Big Coop. Big Coops can be purchased from the Carpentry Shop.",
+              "If the player is married to Emily, she will occasionally gift a duck feather to the player.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Aquamarine": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Mined from aquamarine nodes and gem nodes in the mines on floors 40 and above.",
+              "Aquamarine can also be found in fishing treasure chests and occasionally in garbage cans once you've reached level 41 in the mines.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Red Cabbage": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown from red cabbage seeds in the Summer. Once planted, the player must water for 9 days before they are ready for harvest.",
+              "Seeds are only available starting Year 2, which is when Pierre announces he will be adding more seed varieties to his shop.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Field Research Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Recycling Machine"
+        },
+        "Items": {
+          "Purple Mushroom": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be found by foraging at The Mines starting from floor 81 and over.",
+              "If you have chosen to have mushrooms grow in your cave when Demetrius offers you the option (event triggered once you reach 25,000 g in total earnings), then common mushrooms can commonly be found growing inside cave.",
+              "Additionally, it can be gathered (rarely) if you attach a tap a mushroom tree.",
+              "If you have chosen the Forest Farm, you have the chance to find these mushrooms on your farm during the Fall.",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Nautilus Shell": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can commonly be found by foraging at the beach in Winter.",
+              "You may also receive one randomly in the mail from Demetrius once your friendship is sufficient.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Chub": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be caught any season when fishing at the mountain lake, which is a lake just south of the entrance into the Mines.",
+              "Can be be fished at the Cindersap Forest river, which is the river that appears just South of the player's farm.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Frozen Geode": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": [
+              "Can be obtained with a pickaxe in the mines, levels 41-79.",
+              "It may also spawn on the farm during Wiinter, or be found in a fishing tresure chest.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Fodder Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Heater"
+        },
+        "Items": {
+          "Wheat": {
+            "Quantity": 10,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be grown from Wheat Seeds in the Spring and Fall after 4 days.",
+              "Seeds can be purchased from Pierre's General store.",
+              "Use scythe to harvest.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Hay": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": [
+              "Wild grass that is harvested with a sythe becomes hay.",
+              "Hay can also be purchased from Marnie's Ranch for 50g a piece.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Apple": {
+            "Quantity": 3,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Gathered by planting an apple sapling (purchased at Pierre's) and waiting 28 days for it to grow into an apple tree. You can then harvest apples during Fall.",
+              "If you have chosen to use your Farm Cave for fruit bat research instead of mushrooms, then this can occasionally be found in your cave.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Enchanter's Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Gold Bar "
+        },
+        "Items": {
+          "Oak Resin": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be obtained by placing a tapper on a Oak Tree and waiting 6 to 7 days.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Wine": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Can be made by placing fruit in a keg and waiting 7 days.",
+              "Kegs can be crafted once you're level 8 in farming. ",
+              "Kegs can als be rewarded for completing the Artisan Bundle in the Pantry room.",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Rabbit's Foot": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "This animal product can be dropped by a rabbit once you have achieved sufficient friendship.",
+              "A rabbit can be purchased from Marnie's Ranch once you own a deluxe coop.",
+              "This item can also be dropped by serpents in the Skull Cavern in the Desert, although the drop rate is very low (0.8%).",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Pomegranate": {
+            "Quantity": 1,
+            "Traveling Merchant": true,
+            "Guide": [
+              "Gathered by planting an pomegranate sapling (purchased at Pierre's) and waiting 28 days for it to grow into an pomegranate tree. You can then harvest pomegranates during Fall.",
+              "If you have chosen to use your Farm Cave for fruit bat research instead of mushrooms, then this can occasionally be found in your cave.",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "Vault": {
+    "Reward": "Bus Stop",
+    "Bundles": {
+      "2,500 Bundle": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 3,
+          "Item": "Chocolate Cake"
+        },
+        "Items": {
+          "2,500g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": [
+              "Pay 2,500g to complete the bundle.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "5,000 Bundle": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 30,
+          "Item": "Quality Fertilizer"
+        },
+        "Items": {
+          "5,000g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": [
+              "Pay 5,000g to complete the bundle.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "10,000 Bundle": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Lightning Rod"
+        },
+        "Items": {
+          "10,000g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": [
+              "Pay 10,000g to complete the bundle.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "25,000 Bundle": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Crystalarium"
+        },
+        "Items": {
+          "25,000g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": [
+              "Pay 25,000g to complete the bundle.",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

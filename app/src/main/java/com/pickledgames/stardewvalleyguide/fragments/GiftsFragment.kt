@@ -19,10 +19,10 @@ import javax.inject.Inject
 class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable {
 
     @Inject lateinit var giftReactionRepository: GiftReactionRepository
-    var gifts: MutableList<Gift> = mutableListOf()
-    var list: MutableList<Any> = mutableListOf()
-    lateinit var adapter: GiftsAdapter
-    lateinit var layoutManager: GridLayoutManager
+    private var gifts: MutableList<Gift> = mutableListOf()
+    private var list: MutableList<Any> = mutableListOf()
+    private lateinit var adapter: GiftsAdapter
+    private lateinit var layoutManager: GridLayoutManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)

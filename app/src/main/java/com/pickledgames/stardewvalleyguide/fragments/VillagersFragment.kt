@@ -20,8 +20,8 @@ import javax.inject.Inject
 class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
 
     @Inject lateinit var villagerRepository: VillagerRepository
-    var villagers: MutableList<Villager> = mutableListOf()
-    lateinit var villagersAdapter: VillagersAdapter
+    private var villagers: MutableList<Villager> = mutableListOf()
+    private lateinit var villagersAdapter: VillagersAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -77,7 +77,7 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                villagersAdapter.sortBy = tab?.position
+                villagersAdapter.setSortBy(tab?.position)
                 villagersAdapter.sort()
             }
         })

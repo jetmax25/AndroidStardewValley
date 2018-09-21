@@ -25,8 +25,8 @@ import javax.inject.Inject
 class BirthdaysFragment : BaseFragment(), View.OnClickListener {
 
     @Inject lateinit var villagerRepository: VillagerRepository
-    var villagers: MutableList<Villager> = mutableListOf()
-    val list: MutableList<Any> = mutableListOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+    private var villagers: MutableList<Villager> = mutableListOf()
+    private val list: MutableList<Any> = mutableListOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
     private var initializedList: Boolean = false
     private var seasons: Array<Season> = Season.values()
     private var seasonIndex: Int = 0
@@ -50,10 +50,10 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        if (v == header_calendar_left_arrow_image_view) {
-            seasonIndex = if (seasonIndex == 0) seasons.size - 1 else seasonIndex - 1
+        seasonIndex = if (v == header_calendar_left_arrow_image_view) {
+            if (seasonIndex == 0) seasons.size - 1 else seasonIndex - 1
         } else {
-            seasonIndex = if (seasonIndex == seasons.size - 1) 0 else seasonIndex + 1
+            if (seasonIndex == seasons.size - 1) 0 else seasonIndex + 1
         }
 
         val season = seasons[seasonIndex]

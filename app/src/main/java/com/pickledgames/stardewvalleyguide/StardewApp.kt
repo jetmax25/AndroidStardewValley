@@ -3,10 +3,7 @@ package com.pickledgames.stardewvalleyguide
 import android.app.Activity
 import android.app.Application
 import android.support.v4.app.Fragment
-import com.pickledgames.stardewvalleyguide.dagger.AppComponent
-import com.pickledgames.stardewvalleyguide.dagger.AppModule
-import com.pickledgames.stardewvalleyguide.dagger.DaggerAppComponent
-import com.pickledgames.stardewvalleyguide.dagger.RepositoryModule
+import com.pickledgames.stardewvalleyguide.dagger.*
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -21,6 +18,7 @@ class StardewApp : Application(), HasActivityInjector, HasSupportFragmentInjecto
         DaggerAppComponent
                 .builder()
                 .appModule(AppModule(this))
+                .databaseModule(DatabaseModule())
                 .repositoryModule(RepositoryModule())
                 .build()
     }

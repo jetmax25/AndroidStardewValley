@@ -14,7 +14,7 @@ data class GiftReaction(
     override fun getImageId(context: Context): Int {
         val item = itemName.toLowerCase().replace("\\W".toRegex(), "_")
         val identifier = context.resources.getIdentifier("item_$item", "drawable", context.packageName)
-        if (identifier == 0) throw Exception("Resource items_$item not found")
+        if (identifier == 0) throw Exception("Resource item_$item not found")
         return identifier
     }
 }

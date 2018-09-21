@@ -9,6 +9,10 @@ abstract class FragmentModule {
 
     @FragmentScope
     @ContributesAndroidInjector
+    abstract fun baseFragment(): BaseFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector
     abstract fun villagersFragment(): VillagersFragment
 
     @FragmentScope
@@ -26,4 +30,12 @@ abstract class FragmentModule {
     @FragmentScope
     @ContributesAndroidInjector
     abstract fun birthdaysFragment(): BirthdaysFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector
+    abstract fun communityCenterFragment(): CommunityCenterFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector
+    abstract fun editFarmsFragment(): EditFarmsFragment
 }

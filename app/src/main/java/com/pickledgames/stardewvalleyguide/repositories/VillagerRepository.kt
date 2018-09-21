@@ -15,16 +15,9 @@ class VillagerRepository(
         moshi: Moshi
 ) {
 
-    var villagers: MutableList<Villager> = mutableListOf()
-    var type: ParameterizedType = Types.newParameterizedType(List::class.java, Villager::class.java)
-    var adapter: JsonAdapter<List<Villager>> = moshi.adapter<List<Villager>>(type)
-
-    fun getVillagerByName(name: String): Single<Villager> {
-        return getVillagers()
-                .map { villagers ->
-                    return@map villagers.find { it.name.equals(name, false) }
-                }
-    }
+    private var villagers: MutableList<Villager> = mutableListOf()
+    private var type: ParameterizedType = Types.newParameterizedType(List::class.java, Villager::class.java)
+    private var adapter: JsonAdapter<List<Villager>> = moshi.adapter<List<Villager>>(type)
 
     fun getVillagers(): Single<List<Villager>> {
         if (villagers.isNotEmpty()) return Single.just(villagers)

@@ -8,12 +8,18 @@ import android.view.MenuItem
 import com.ncapdevi.fragnav.FragNavController
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.fragments.ChecklistsFragment
+import com.pickledgames.stardewvalleyguide.fragments.CommunityCenterFragment
+import com.pickledgames.stardewvalleyguide.fragments.EditFarmsFragment
 import com.pickledgames.stardewvalleyguide.fragments.FriendshipsFragment
+import com.pickledgames.stardewvalleyguide.interfaces.OnFarmUpdatedListener
+import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
+import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
+import com.pickledgames.stardewvalleyguide.models.Farm
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnFarmUpdatedListener, OnItemCheckedListener {
 
-    var fragments: List<Fragment> = listOf(
+    private var fragments: List<Fragment> = listOf(
             FriendshipsFragment.newInstance(),
             ChecklistsFragment.newInstance()
     )
@@ -65,5 +71,19 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onFarmUpdated(farm: Farm?, position: Int) {
+        val fragment = fragNavController.currentFrag
+        if (fragment != null && fragment is EditFarmsFragment) {
+            fragment.updateFarm(farm, position)
+        }
+    }
+
+    override fun onItemChecked(communityCenterItem: CommunityCenterItem, isChecked: Boolean) {
+        val fragment = fragNavController.currentFrag
+        if (fragment != null && fragment is CommunityCenterFragment) {
+            fragment.updateCheckedItem(communityCenterItem, isChecked)
+        }
     }
 }

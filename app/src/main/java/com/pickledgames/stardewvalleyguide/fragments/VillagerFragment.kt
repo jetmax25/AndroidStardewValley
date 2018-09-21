@@ -25,7 +25,7 @@ import javax.inject.Inject
 class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable {
 
     @Inject lateinit var giftReactionRepository: GiftReactionRepository
-    lateinit var villager: Villager
+    private lateinit var villager: Villager
     private var list: MutableList<Any> = mutableListOf()
     private lateinit var adapter: GiftReactionsAdapter
     private lateinit var layoutManager: GridLayoutManager
