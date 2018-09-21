@@ -13,4 +13,13 @@ data class Farm(
         val farmType: FarmType,
         val communityCenterItems: MutableSet<String> = mutableSetOf(),
         @PrimaryKey(autoGenerate = true) val id: Long = 0
-) : Parcelable
+) : Parcelable {
+
+    fun getCompletedItemsCount(communityCenterBundle: CommunityCenterBundle): Int {
+        var completed = 0
+        for (item: CommunityCenterItem in communityCenterBundle.items) {
+            if (communityCenterItems.contains(item.name)) completed++
+        }
+        return completed
+    }
+}

@@ -2,31 +2,38 @@ package com.pickledgames.stardewvalleyguide.fragments
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.support.v7.widget.SearchView
+import android.view.*
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.CommunityCenterItemsAdapter
+import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterBundle
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
+import com.pickledgames.stardewvalleyguide.models.Farm
 import com.pickledgames.stardewvalleyguide.repositories.CommunityCenterRepository
 import com.pickledgames.stardewvalleyguide.repositories.FarmRepository
+import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.functions.BiFunction
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_community_center.*
 import kotlinx.android.synthetic.main.header_farm.*
+import kotlinx.android.synthetic.main.loading.*
 import javax.inject.Inject
 
-class CommunityCenterFragment : BaseFragment(), View.OnClickListener {
+class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListener, SearchView.OnQueryTextListener {
 
     @Inject lateinit var farmRepository: FarmRepository
     @Inject lateinit var communityCenterRepository: CommunityCenterRepository
+    private lateinit var farm: Farm
     private var bundles: MutableList<CommunityCenterBundle> = mutableListOf()
     private var list: MutableList<Any> = mutableListOf()
+    private lateinit var adapter: CommunityCenterItemsAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
+        setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_community_center, container, false)
     }
 
@@ -36,7 +43,49 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
+        val direction = if (view?.id == R.id.header_farm_left_arrow_image_view) FarmRepository.LEFT else FarmRepository.RIGHT
+        farmRepository.toggleSelectedFarm(direction)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe { f ->
+                    farm = f
+                    header_farm_name_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    adapter.updateFarm(farm)
+                }
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        super.onCreateOptionsMenu(menu, inflater)
+        menu?.clear()
+        inflater?.inflate(R.menu.community_center, menu)
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?) {
+        super.onPrepareOptionsMenu(menu)
+        val searchMenuItem = menu?.findItem(R.id.community_center_search)
+        val searchView = searchMenuItem?.actionView as SearchView
+        searchView.setQuery("", false)
+        searchView.clearFocus()
+        searchView.onActionViewCollapsed()
+        searchView.setOnQueryTextListener(this)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.community_center_edit_farms -> {
+                (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        return false
+    }
+
+    override fun onQueryTextChange(query: String?): Boolean {
+        return false
     }
 
     private fun setup() {
@@ -44,20 +93,33 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener {
             (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
         }
 
-        farmRepository.getSelectedFarm()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { f ->
-                    header_farm_name_text_view.text = String.format(getString(R.string.farm_name_template, f.name))
-                }
+        header_farm_left_arrow_image_view.setOnClickListener(this)
+        header_farm_right_arrow_image_view.setOnClickListener(this)
 
-        communityCenterRepository.getBundles()
+        data class Results(
+                val farm: Farm,
+                val bundles: List<CommunityCenterBundle>
+        )
+
+        loading_container.visibility = View.VISIBLE
+        community_center_group.visibility = View.INVISIBLE
+        val disposable = Single.zip(
+                farmRepository.getSelectedFarm(),
+                communityCenterRepository.getBundles(),
+                BiFunction { f: Farm, b: List<CommunityCenterBundle> -> Results(f, b) }
+        )
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { b ->
-                    bundles.addAll(b)
+                .subscribe { results ->
+                    loading_container.visibility = View.INVISIBLE
+                    community_center_group.visibility = View.VISIBLE
+                    farm = results.farm
+                    header_farm_name_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    bundles.addAll(results.bundles)
                     setupCommunityCenterItemsAdapter()
                 }
+
+        compositeDisposable.add(disposable)
     }
 
     private fun setupCommunityCenterItemsAdapter() {
@@ -66,12 +128,25 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener {
             list.addAll(it.items)
         }
 
-        community_center_recycler_view.adapter = CommunityCenterItemsAdapter(list, activity as MainActivity)
+        adapter = CommunityCenterItemsAdapter(
+                list,
+                farm,
+                activity as MainActivity,
+                this
+        )
+
+        community_center_recycler_view.adapter = adapter
         community_center_recycler_view.layoutManager = LinearLayoutManager(activity)
     }
 
-    fun updateCheckedItem(communityCenterItem: CommunityCenterItem, isChecked: Boolean) {
-
+    override fun onItemChecked(communityCenterItem: CommunityCenterItem, isChecked: Boolean) {
+        if (isChecked) farm.communityCenterItems.add(communityCenterItem.name)
+        else farm.communityCenterItems.remove(communityCenterItem.name)
+        adapter.notifyDataSetChanged()
+        farmRepository.updateSelectedFarm(farm)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe()
     }
 
     companion object {

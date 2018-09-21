@@ -25,4 +25,5 @@
     <string name="edit_farms">Edit Farms</string>
     <string name="farm_type">Farm Type</string>
     <string name="bundle_quantity_completed_template">%d/%d</string>
+    <string name="delete_error_message">Delete aborted, must have at least 1 farm.</string>
 </resources>

@@ -6,8 +6,7 @@ import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
 data class CommunityCenterBundle(
         val name: String,
         val reward: CommunityCenterReward,
-        val items: List<CommunityCenterItem>,
-        var completed: Int = 0
+        val items: List<CommunityCenterItem>
 ) : StardewObject {
 
     override fun getImageId(context: Context): Int {

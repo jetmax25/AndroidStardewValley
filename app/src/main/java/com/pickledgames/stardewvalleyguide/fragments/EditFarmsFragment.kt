@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.*
+import android.widget.Toast
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.FarmsAdapter
@@ -75,7 +76,9 @@ class EditFarmsFragment : InnerFragment() {
     }
 
     fun updateFarm(farm: Farm?, position: Int) {
-        if (farm == null) {
+        if (farm == null && farms.size == 1) {
+            Toast.makeText(activity, R.string.delete_error_message, Toast.LENGTH_SHORT).show()
+        } else if (farm == null) {
             val deletedFarm = farms.removeAt(position)
             edit_farms_recycler_view.adapter?.notifyItemRemoved(position)
             farmRepository.deleteFarm(deletedFarm, position)

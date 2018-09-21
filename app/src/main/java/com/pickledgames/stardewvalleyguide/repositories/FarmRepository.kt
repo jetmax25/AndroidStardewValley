@@ -13,6 +13,26 @@ class FarmRepository(
     private var farms: MutableList<Farm> = mutableListOf()
     private var selectedFarmIndex: Int = 0
 
+    fun toggleSelectedFarm(direction: Int): Single<Farm> {
+        return getFarms()
+                .map { f ->
+                    if (direction == LEFT) {
+                        selectedFarmIndex = if (selectedFarmIndex - 1 < 0) f.size - 1 else selectedFarmIndex - 1
+                    } else if (direction == RIGHT) {
+                        selectedFarmIndex = if (selectedFarmIndex + 1 == f.size) 0 else selectedFarmIndex + 1
+                    }
+                    f[selectedFarmIndex]
+                }
+    }
+
+    fun updateSelectedFarm(farm: Farm): Single<Int> {
+        return Single.create<Int> { emitter ->
+            val updated = farmDao.updateFarm(farm)
+            farms[selectedFarmIndex] = farm
+            emitter.onSuccess(updated)
+        }
+    }
+
     fun getSelectedFarm(): Single<Farm> {
         return getFarms()
                 .map { f -> f[selectedFarmIndex] }
@@ -58,5 +78,10 @@ class FarmRepository(
 
                     return@flatMap Single.just(farms)
                 }
+    }
+
+    companion object {
+        const val LEFT = 0
+        const val RIGHT = 1
     }
 }
