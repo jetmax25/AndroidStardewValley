@@ -14,7 +14,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
-        android:id="@+id/profile_gift_image_view"
+        android:id="@+id/header_item_image_view"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginBottom="8dp"
@@ -27,25 +27,18 @@
         tools:src="@drawable/item_aerinite" />
 
     <TextView
-        android:id="@+id/profile_gift_name_text_view"
+        android:id="@+id/header_item_name_text_view"
+        style="@style/StardewTextViewStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:gravity="center"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:textColor="@android:color/white"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:fontFamily="@font/pixellari"
-        app:layout_constraintBottom_toBottomOf="@+id/profile_gift_image_view"
+        app:layout_constraintBottom_toBottomOf="@+id/header_item_image_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/profile_gift_image_view"
+        app:layout_constraintTop_toTopOf="@+id/header_item_image_view"
         tools:text="Aerinite" />
 
 </android.support.constraint.ConstraintLayout>

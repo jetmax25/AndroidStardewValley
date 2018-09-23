@@ -1,8 +1,6 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
-import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
@@ -18,35 +16,27 @@ import com.pickledgames.stardewvalleyguide.models.CalendarDay
 import com.pickledgames.stardewvalleyguide.models.Villager
 import com.pickledgames.stardewvalleyguide.repositories.VillagerRepository
 import com.pickledgames.stardewvalleyguide.views.GridDividerDecoration
-import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_birthdays.*
 import kotlinx.android.synthetic.main.header_calendar.*
 import javax.inject.Inject
 
-class BirthdaysFragment : Fragment(), View.OnClickListener {
+class BirthdaysFragment : BaseFragment(), View.OnClickListener {
 
     @Inject lateinit var villagerRepository: VillagerRepository
-    var villagers: MutableList<Villager> = mutableListOf()
-    val list: MutableList<Any> = mutableListOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+    private var villagers: MutableList<Villager> = mutableListOf()
+    private val list: MutableList<Any> = mutableListOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
     private var initializedList: Boolean = false
     private var seasons: Array<Season> = Season.values()
     private var seasonIndex: Int = 0
     private lateinit var calendarDaysAdapter: CalendarDaysAdapter
     private lateinit var villagerBirthdaysAdapter: VillagerBirthdaysAdapter
-    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     init {
         for (i in 1..28) {
             list.add(CalendarDay(i))
         }
-    }
-
-    override fun onAttach(context: Context?) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -59,16 +49,11 @@ class BirthdaysFragment : Fragment(), View.OnClickListener {
         setup()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        compositeDisposable.clear()
-    }
-
     override fun onClick(v: View?) {
-        if (v == header_calendar_left_arrow_image_view) {
-            seasonIndex = if (seasonIndex == 0) seasons.size - 1 else seasonIndex - 1
+        seasonIndex = if (v == header_calendar_left_arrow_image_view) {
+            if (seasonIndex == 0) seasons.size - 1 else seasonIndex - 1
         } else {
-            seasonIndex = if (seasonIndex == seasons.size - 1) 0 else seasonIndex + 1
+            if (seasonIndex == seasons.size - 1) 0 else seasonIndex + 1
         }
 
         val season = seasons[seasonIndex]

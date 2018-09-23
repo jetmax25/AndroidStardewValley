@@ -19,8 +19,8 @@ class VillagersAdapter(
         private val mainActivity: MainActivity
 ) : RecyclerView.Adapter<VillagersAdapter.VillagerViewHolder>(), Filterable, Sortable {
 
-    var filteredVillagers: MutableList<Villager> = villagers.toMutableList()
-    var sortBy: Int? = 0
+    private var filteredVillagers: MutableList<Villager> = villagers.toMutableList()
+    private var sortBy: Int? = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VillagerViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_villager, parent, false)
@@ -51,6 +51,10 @@ class VillagersAdapter(
                 notifyDataSetChanged()
             }
         }
+    }
+
+    fun setSortBy(i: Int?) {
+        sortBy = i
     }
 
     override fun sort() {

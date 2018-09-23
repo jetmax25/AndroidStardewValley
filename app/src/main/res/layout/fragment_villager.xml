@@ -6,8 +6,8 @@
     android:background="@drawable/splash_bg">
 
     <include
-        android:id="@+id/profile_villager_layout"
-        layout="@layout/profile_villager"
+        android:id="@+id/header_villager_layout"
+        layout="@layout/header_villager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -31,7 +31,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_villager_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/header_villager_layout" />
 
     <include
         layout="@layout/loading"

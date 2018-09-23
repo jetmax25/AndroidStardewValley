@@ -1,6 +1,5 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.SearchView
@@ -14,28 +13,20 @@ import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
-import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_gift.*
+import kotlinx.android.synthetic.main.header_item.*
 import kotlinx.android.synthetic.main.loading.*
-import kotlinx.android.synthetic.main.profile_gift.*
 import javax.inject.Inject
 
-class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable {
+class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filterable {
 
     @Inject lateinit var giftReactionRepository: GiftReactionRepository
     private lateinit var gift: Gift
     private var list: MutableList<Any> = mutableListOf()
     private lateinit var adapter: VillagerReactionsAdapter
     private lateinit var layoutManager: GridLayoutManager
-    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
-
-    override fun onAttach(context: Context?) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -69,7 +60,7 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
         searchView.onActionViewCollapsed()
         searchView.setOnQueryTextListener(this)
         searchView.setOnQueryTextFocusChangeListener { _, b ->
-            profile_gift_layout.visibility = if (b) View.GONE else View.VISIBLE
+            header_item_layout?.visibility = if (b) View.GONE else View.VISIBLE
         }
     }
 
@@ -82,25 +73,20 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
         return false
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        compositeDisposable.clear()
-    }
-
     private fun setup() {
         setTitle(gift.name)
-        profile_gift_image_view.setImageResource(gift.getImageId(activity as MainActivity))
-        profile_gift_image_view.contentDescription = gift.name
-        profile_gift_name_text_view.text = gift.name
+        header_item_image_view.setImageResource(gift.getImageId(activity as MainActivity))
+        header_item_image_view.contentDescription = gift.name
+        header_item_name_text_view.text = gift.name
 
         loading_container.visibility = View.VISIBLE
-        gift_recycler_view.visibility = View.GONE
+        gift_reactions_recycler_view.visibility = View.GONE
         val disposable = giftReactionRepository.getGiftReactionsByItemName(gift.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { giftReactions ->
                     loading_container.visibility = View.GONE
-                    gift_recycler_view.visibility = View.VISIBLE
+                    gift_reactions_recycler_view.visibility = View.VISIBLE
                     setupAdapter(giftReactions)
                 }
 
@@ -122,7 +108,7 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
         }.toMutableList()
 
         adapter = VillagerReactionsAdapter(list)
-        gift_recycler_view.adapter = adapter
+        gift_reactions_recycler_view.adapter = adapter
 
         layoutManager = GridLayoutManager(activity, SPAN_COUNT)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -132,7 +118,7 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
             }
         }
 
-        gift_recycler_view.layoutManager = layoutManager
+        gift_reactions_recycler_view.layoutManager = layoutManager
     }
 
     override fun getFilter(): Filter {
@@ -160,7 +146,7 @@ class GiftFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable
 
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 @Suppress("UNCHECKED_CAST")
-                val filteredList = results?.values as MutableList<Any>
+                val filteredList = results?.values as List<Any>
                 adapter.updateList(filteredList)
                 layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                     override fun getSpanSize(position: Int): Int {

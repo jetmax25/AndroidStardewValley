@@ -6,8 +6,8 @@
     android:background="@drawable/splash_bg">
 
     <include
-        android:id="@+id/profile_gift_layout"
-        layout="@layout/profile_gift"
+        android:id="@+id/header_item_layout"
+        layout="@layout/header_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -27,10 +27,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_gift_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/header_item_layout" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/gift_recycler_view"
+        android:id="@+id/gift_reactions_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"
@@ -38,6 +38,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_gift_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/header_item_layout" />
 
 </android.support.constraint.ConstraintLayout>

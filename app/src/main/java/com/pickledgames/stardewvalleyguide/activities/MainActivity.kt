@@ -7,17 +7,28 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.ncapdevi.fragnav.FragNavController
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.fragments.ChecklistsFragment
+import com.pickledgames.stardewvalleyguide.fragments.EditFarmsFragment
 import com.pickledgames.stardewvalleyguide.fragments.FriendshipsFragment
+import com.pickledgames.stardewvalleyguide.interfaces.OnFarmUpdatedListener
+import com.pickledgames.stardewvalleyguide.models.Farm
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
 
-    var fragments: List<Fragment> = listOf(FriendshipsFragment.newInstance())
+    private var fragments: List<Fragment> = listOf(
+            FriendshipsFragment.newInstance(),
+            ChecklistsFragment.newInstance()
+    )
     private lateinit var fragNavController: FragNavController
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_friendships -> {
                 fragNavController.switchTab(0)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_checklists -> {
+                fragNavController.switchTab(1)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -57,5 +68,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onFarmUpdated(farm: Farm?, position: Int) {
+        val fragment = fragNavController.currentFrag
+        if (fragment != null && fragment is EditFarmsFragment) {
+            fragment.updateFarm(farm, position)
+        }
     }
 }

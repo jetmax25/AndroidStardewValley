@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg">
+
+    <include
+        android:id="@+id/header_item_layout"
+        layout="@layout/header_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fall_availability_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.5"
+        android:drawablePadding="5dp"
+        android:drawableTop="@drawable/season_fall"
+        android:text="@string/fall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_item_layout" />
+
+    <TextView
+        android:id="@+id/winter_availability_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:alpha="0.5"
+        android:drawablePadding="5dp"
+        android:drawableTop="@drawable/season_winter"
+        android:text="@string/winter"
+        app:layout_constraintStart_toEndOf="@+id/fall_availability_text_view"
+        app:layout_constraintTop_toTopOf="@+id/fall_availability_text_view" />
+
+    <TextView
+        android:id="@+id/spring_availability_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:alpha="0.5"
+        android:drawablePadding="5dp"
+        android:drawableTop="@drawable/season_spring"
+        android:text="@string/spring"
+        app:layout_constraintStart_toEndOf="@+id/winter_availability_text_view"
+        app:layout_constraintTop_toTopOf="@+id/winter_availability_text_view" />
+
+    <TextView
+        android:id="@+id/summer_availability_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:alpha="0.5"
+        android:drawablePadding="5dp"
+        android:drawableTop="@drawable/season_summer"
+        android:text="@string/summer"
+        app:layout_constraintStart_toEndOf="@+id/spring_availability_text_view"
+        app:layout_constraintTop_toTopOf="@+id/spring_availability_text_view" />
+
+    <ImageView
+        android:id="@+id/traveling_merchant_image_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:alpha="0.5"
+        android:contentDescription="@string/traveling_merchant"
+        android:src="@drawable/misc_traveling_merchant"
+        app:layout_constraintBottom_toBottomOf="@id/summer_availability_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/summer_availability_text_view"
+        app:layout_constraintTop_toTopOf="@+id/summer_availability_text_view" />
+
+    <TextView
+        android:id="@+id/guide_header_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/headerBackground"
+        android:padding="5dp"
+        android:text="@string/guide"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/summer_availability_text_view" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/guides_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guide_header_text_view" />
+
+</android.support.constraint.ConstraintLayout>

@@ -64,10 +64,10 @@ class GiftReactionRepository(
     private fun getGiftReactionsFromAssets(): Single<List<GiftReaction>> {
         val inputStream = context.resources.openRawResource(R.raw.gift_reactions)
         val json = RepositoryUtil.inputStreamToString(inputStream)
+        val list: MutableList<GiftReaction> = mutableListOf()
 
         return Single.create {
             val categories = JSONObject(json)
-            val list: MutableList<GiftReaction> = mutableListOf()
             for (category in categories.keys()) {
                 val items = categories.getJSONObject(category)
                 for (item in items.keys()) {
