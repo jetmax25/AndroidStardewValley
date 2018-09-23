@@ -21,7 +21,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
-        android:id="@+id/profile_villager_image_view"
+        android:id="@+id/header_villager_image_view"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginBottom="8dp"
@@ -38,7 +38,7 @@
         tools:src="@drawable/villager_dwarf" />
 
     <TextView
-        android:id="@+id/profile_villager_name_text_view"
+        android:id="@+id/header_villager_name_text_view"
         style="@style/StardewTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,11 +49,11 @@
         app:layout_constraintBottom_toTopOf="@+id/horizontal_guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
-        app:layout_constraintTop_toTopOf="@+id/profile_villager_image_view"
+        app:layout_constraintTop_toTopOf="@+id/header_villager_image_view"
         tools:text="Dwarf" />
 
     <TextView
-        android:id="@+id/profile_villager_birthday_text_view"
+        android:id="@+id/header_villager_birthday_text_view"
         style="@style/StardewTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
         android:drawablePadding="5dp"
         android:drawableStart="@drawable/season_summer"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/profile_villager_image_view"
+        app:layout_constraintBottom_toBottomOf="@+id/header_villager_image_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
         app:layout_constraintTop_toTopOf="@+id/horizontal_guideline"

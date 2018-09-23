@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.fragments.CommunityCenterItemFragment
 import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterBundle
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
@@ -98,7 +99,7 @@ class CommunityCenterItemsAdapter(
             private val onItemCheckedListener: OnItemCheckedListener
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
-        var isChecked: Boolean = false
+        private var isChecked: Boolean = false
 
         fun bindCommunityCenterItem(communityCenterItem: CommunityCenterItem, isCompleted: Boolean) {
             community_center_item_image_view.setImageResource(communityCenterItem.getImageId(mainActivity))
@@ -110,6 +111,9 @@ class CommunityCenterItemsAdapter(
             community_center_item_check_box.setOnClickListener { _ ->
                 isChecked = !isChecked
                 onItemCheckedListener.onItemChecked(communityCenterItem, isChecked)
+            }
+            containerView.setOnClickListener {
+                mainActivity.pushFragment(CommunityCenterItemFragment.newInstance(communityCenterItem))
             }
         }
     }

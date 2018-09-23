@@ -32,4 +32,6 @@
     <string name="summer">Summer</string>
     <string name="missing">Missing</string>
     <string name="show_missing">Show Missing</string>
+    <string name="traveling_merchant">Traveling Merchant</string>
+    <string name="guide">Guide</string>
 </resources>

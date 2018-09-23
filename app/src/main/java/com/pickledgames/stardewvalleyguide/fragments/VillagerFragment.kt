@@ -18,11 +18,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.filter_villager.*
 import kotlinx.android.synthetic.main.fragment_villager.*
+import kotlinx.android.synthetic.main.header_villager.*
 import kotlinx.android.synthetic.main.loading.*
-import kotlinx.android.synthetic.main.profile_villager.*
 import javax.inject.Inject
 
-class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filterable {
+class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filterable {
 
     @Inject lateinit var giftReactionRepository: GiftReactionRepository
     private lateinit var villager: Villager
@@ -64,7 +64,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
         searchView.onActionViewCollapsed()
         searchView.setOnQueryTextListener(this)
         searchView.setOnQueryTextFocusChangeListener { _, b ->
-            profile_villager_layout.visibility = if (b) View.GONE else View.VISIBLE
+            header_villager_layout?.visibility = if (b) View.GONE else View.VISIBLE
         }
     }
 
@@ -80,11 +80,11 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
 
     private fun setup() {
         setTitle(villager.name)
-        profile_villager_image_view.setImageResource(villager.getImageId(activity as MainActivity))
-        profile_villager_image_view.contentDescription = villager.name
-        profile_villager_name_text_view.text = villager.name
-        profile_villager_birthday_text_view.text = villager.birthday.toString()
-        profile_villager_birthday_text_view.setCompoundDrawablesWithIntrinsicBounds(
+        header_villager_image_view.setImageResource(villager.getImageId(activity as MainActivity))
+        header_villager_image_view.contentDescription = villager.name
+        header_villager_name_text_view.text = villager.name
+        header_villager_birthday_text_view.text = villager.birthday.toString()
+        header_villager_birthday_text_view.setCompoundDrawablesWithIntrinsicBounds(
                 villager.birthday.season.getImageId(activity as MainActivity),
                 0, 0, 0
         )

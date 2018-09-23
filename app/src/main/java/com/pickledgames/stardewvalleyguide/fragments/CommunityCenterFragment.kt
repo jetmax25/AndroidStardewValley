@@ -77,7 +77,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         searchView.onActionViewCollapsed()
         searchView.setOnQueryTextListener(this)
         searchView.setOnQueryTextFocusChangeListener { _, b ->
-            community_center_header_group.visibility = if (b) View.GONE else View.VISIBLE
+            community_center_header_group?.visibility = if (b) View.GONE else View.VISIBLE
         }
     }
 
@@ -130,7 +130,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
 
         loading_container.visibility = View.VISIBLE
         community_center_header_group.visibility = View.INVISIBLE
-        community_center_recycler_view.visibility = View.INVISIBLE
+        community_center_items_recycler_view.visibility = View.INVISIBLE
 
         val disposable = Single.zip(
                 farmRepository.getSelectedFarm(),
@@ -142,7 +142,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 .subscribe { results ->
                     loading_container.visibility = View.INVISIBLE
                     community_center_header_group.visibility = View.VISIBLE
-                    community_center_recycler_view.visibility = View.VISIBLE
+                    community_center_items_recycler_view.visibility = View.VISIBLE
                     farm = results.farm
                     header_farm_name_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
                     bundles.addAll(results.bundles)
@@ -165,8 +165,8 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 this
         )
 
-        community_center_recycler_view.adapter = adapter
-        community_center_recycler_view.layoutManager = LinearLayoutManager(activity)
+        community_center_items_recycler_view.adapter = adapter
+        community_center_items_recycler_view.layoutManager = LinearLayoutManager(activity)
     }
 
     override fun onItemChecked(communityCenterItem: CommunityCenterItem, isChecked: Boolean) {

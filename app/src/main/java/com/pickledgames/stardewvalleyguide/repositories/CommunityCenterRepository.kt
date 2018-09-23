@@ -66,7 +66,8 @@ class CommunityCenterRepository(
                         val guidesJSONArray = itemJSONObject.getJSONArray("Guide")
                         val guides = mutableListOf<String>()
                         for (i in 0 until guidesJSONArray.length()) {
-                            guides.add(guidesJSONArray.getString(i))
+                            val guide = guidesJSONArray.getString(i)
+                            if (guide.isNotEmpty()) guides.add(guide)
                         }
 
                         val seasonsJSONObject = itemJSONObject.getJSONObject("Seasons")

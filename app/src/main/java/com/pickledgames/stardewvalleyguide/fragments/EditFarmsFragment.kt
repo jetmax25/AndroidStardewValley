@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_edit_farms.*
 import kotlinx.android.synthetic.main.loading.*
 import javax.inject.Inject
 
-class EditFarmsFragment : InnerFragment() {
+class EditFarmsFragment : InnerBaseFragment() {
 
     @Inject lateinit var farmRepository: FarmRepository
     private var farms: MutableList<Farm> = mutableListOf()
