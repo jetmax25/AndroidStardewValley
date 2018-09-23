@@ -2,6 +2,7 @@ package com.pickledgames.stardewvalleyguide.repositories
 
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterBundle
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterReward
@@ -40,37 +41,42 @@ class CommunityCenterRepository(
 
         return Single.create {
             val roomsJSONObject = JSONObject(json)
-
             for (room in roomsJSONObject.keys()) {
                 val roomJSONObject = roomsJSONObject.getJSONObject(room)
                 val roomReward = roomJSONObject.getString("Reward")
 
                 val bundlesJSONObject = roomJSONObject.getJSONObject("Bundles")
                 val communityCenterBundles = mutableListOf<CommunityCenterBundle>()
-
                 for (bundle in bundlesJSONObject.keys()) {
                     val bundleJSONObject = bundlesJSONObject.getJSONObject(bundle)
 
                     val bundleRewardJSONObject = bundleJSONObject.getJSONObject("Reward")
                     val bundleRewardQuantity = bundleRewardJSONObject.getInt("Quantity")
                     val bundleRewardItem = bundleRewardJSONObject.getString("Item")
+
                     val communityCenterReward = CommunityCenterReward(bundleRewardQuantity, bundleRewardItem)
 
                     val itemsJSONObject = bundleJSONObject.getJSONObject("Items")
                     val communityCenterItems = mutableListOf<CommunityCenterItem>()
-
                     for (item in itemsJSONObject.keys()) {
                         val itemJSONObject = itemsJSONObject.getJSONObject(item)
                         val itemQuantity = itemJSONObject.getInt("Quantity")
                         val isTravelingMerchant = itemJSONObject.getBoolean("Traveling Merchant")
+
                         val guidesJSONArray = itemJSONObject.getJSONArray("Guide")
                         val guides = mutableListOf<String>()
-
                         for (i in 0 until guidesJSONArray.length()) {
                             guides.add(guidesJSONArray.getString(i))
                         }
 
-                        val communityCenterItem = CommunityCenterItem(item, itemQuantity, isTravelingMerchant, guides)
+                        val seasonsJSONObject = itemJSONObject.getJSONObject("Seasons")
+                        val seasons = mutableSetOf<Season>()
+                        for (season in seasonsJSONObject.keys()) {
+                            val isAvailable = seasonsJSONObject.getBoolean(season)
+                            if (isAvailable) seasons.add(Season.fromString(season))
+                        }
+
+                        val communityCenterItem = CommunityCenterItem(item, itemQuantity, isTravelingMerchant, guides, seasons)
                         communityCenterItems.add(communityCenterItem)
                     }
 

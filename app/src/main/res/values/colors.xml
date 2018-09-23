@@ -7,4 +7,5 @@
     <color name="headerBackground">#795548</color>
     <color name="red">#f44336</color>
     <color name="gray">#BCBCBC</color>
+    <color name="green">#00FF00</color>
 </resources>

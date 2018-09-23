@@ -12,7 +12,7 @@ import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_farm.*
 
 class FarmsAdapter(
-        private val farms: MutableList<Farm>,
+        private val farms: List<Farm>,
         private val mainActivity: MainActivity
 ) : RecyclerView.Adapter<FarmsAdapter.FarmViewHolder>() {
 

@@ -15,16 +15,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.Group
-        android:id="@+id/community_center_group"
+        android:id="@+id/community_center_header_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="header_farm_layout, community_center_recycler_view" />
+        app:constraint_referenced_ids="header_farm_layout, filter_community_center_layout" />
 
     <include
         android:id="@+id/header_farm_layout"
         layout="@layout/header_farm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/filter_community_center_layout"
+        layout="@layout/filter_community_center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_farm_layout" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/community_center_recycler_view"
@@ -39,6 +52,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_farm_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/filter_community_center_layout" />
 
 </android.support.constraint.ConstraintLayout>

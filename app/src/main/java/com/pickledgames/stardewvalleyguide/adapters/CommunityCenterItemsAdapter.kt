@@ -1,5 +1,6 @@
 package com.pickledgames.stardewvalleyguide.adapters
 
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +16,7 @@ import kotlinx.android.synthetic.main.list_item_community_center_bundle_header.*
 import kotlinx.android.synthetic.main.list_item_community_center_item.*
 
 class CommunityCenterItemsAdapter(
-        private val list: MutableList<Any>,
+        private var list: List<Any>,
         private var farm: Farm,
         private val mainActivity: MainActivity,
         private val onItemCheckedListener: OnItemCheckedListener
@@ -56,6 +57,11 @@ class CommunityCenterItemsAdapter(
         notifyDataSetChanged()
     }
 
+    fun updateList(l: List<Any>) {
+        list = l
+        notifyDataSetChanged()
+    }
+
     companion object {
         private const val HEADER_TYPE = 0
         private const val ITEM_TYPE = 1
@@ -76,6 +82,13 @@ class CommunityCenterItemsAdapter(
                     communityCenterBundle.items.size
             )
             community_center_bundle_quantity_completed_text_view.text = quantityCompleted
+            if (completedItemsCount == communityCenterBundle.items.size) {
+                val green = ContextCompat.getColor(mainActivity, R.color.green)
+                community_center_bundle_quantity_completed_text_view.setTextColor(green)
+            } else {
+                val white = ContextCompat.getColor(mainActivity, android.R.color.white)
+                community_center_bundle_quantity_completed_text_view.setTextColor(white)
+            }
         }
     }
 

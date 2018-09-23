@@ -1,13 +1,15 @@
 package com.pickledgames.stardewvalleyguide.models
 
 import android.content.Context
+import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
 
 data class CommunityCenterItem(
         val name: String,
         val quantity: Int,
         val isTravelingMerchant: Boolean,
-        val guides: List<String>
+        val guides: List<String>,
+        val seasons: Set<Season>
 ) : StardewObject {
 
     override fun getImageId(context: Context): Int {

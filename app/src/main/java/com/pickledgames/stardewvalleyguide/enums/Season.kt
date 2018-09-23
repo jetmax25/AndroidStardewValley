@@ -14,4 +14,16 @@ enum class Season(
     override fun getImageId(context: Context): Int {
         return context.resources.getIdentifier("season_${type.toLowerCase()}", "drawable", context.packageName)
     }
+
+    companion object {
+        fun fromString(string: String): Season {
+            return when (string) {
+                "Fall" -> Season.Fall
+                "Winter" -> Season.Winter
+                "Spring" -> Season.Spring
+                "Summer" -> Season.Summer
+                else -> throw Exception("$string is not a valid Season")
+            }
+        }
+    }
 }

@@ -167,7 +167,7 @@ class VillagerFragment : InnerFragment(), SearchView.OnQueryTextListener, Filter
 
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 @Suppress("UNCHECKED_CAST")
-                val filteredList = results?.values as MutableList<Any>
+                val filteredList = results?.values as List<Any>
                 adapter.updateList(filteredList)
                 layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                     override fun getSpanSize(position: Int): Int {
