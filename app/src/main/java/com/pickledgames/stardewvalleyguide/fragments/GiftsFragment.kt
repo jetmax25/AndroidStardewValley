@@ -29,7 +29,7 @@ class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
         setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_gifts, container, false)
     }
-    
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         setup()

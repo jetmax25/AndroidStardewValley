@@ -52,7 +52,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
 
     override fun onClick(view: View?) {
         val direction = if (view?.id == R.id.header_farm_left_arrow_image_view) FarmRepository.LEFT else FarmRepository.RIGHT
-        farmRepository.toggleSelectedFarm(direction)
+        val disposable = farmRepository.toggleSelectedFarm(direction)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { f ->
@@ -60,6 +60,8 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                     header_farm_name_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
                     adapter.updateFarm(farm)
                 }
+
+        compositeDisposable.add(disposable)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
