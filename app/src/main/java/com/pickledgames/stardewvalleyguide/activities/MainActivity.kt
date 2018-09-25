@@ -5,6 +5,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import com.google.android.gms.ads.AdRequest
 import com.ncapdevi.fragnav.FragNavController
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.fragments.ChecklistsFragment
@@ -46,6 +47,8 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         builder.rootFragments(fragments)
         fragNavController = builder.build()
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        val adRequest = AdRequest.Builder().build()
+        banner_ad_view.loadAd(adRequest)
     }
 
     fun pushFragment(fragment: Fragment) {
