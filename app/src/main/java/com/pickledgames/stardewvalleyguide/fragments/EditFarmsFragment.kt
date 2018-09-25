@@ -60,24 +60,32 @@ class EditFarmsFragment : InnerBaseFragment() {
     }
 
     private fun setup() {
-        val disposable = farmRepository.getFarms()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { f ->
-                    farms.addAll(f)
-                    edit_farms_recycler_view.visibility = View.VISIBLE
-                    loading_container.visibility = View.GONE
-                    edit_farms_recycler_view.adapter = FarmsAdapter(farms, activity as MainActivity)
-                    edit_farms_recycler_view.layoutManager = LinearLayoutManager(activity)
-                    edit_farms_recycler_view.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
-                }
+        if (farms.isNotEmpty()) {
+            setupAdapter()
+        } else {
+            val disposable = farmRepository.getFarms()
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe { f ->
+                        farms.addAll(f)
+                        setupAdapter()
+                    }
 
-        compositeDisposable.add(disposable)
+            compositeDisposable.add(disposable)
+        }
+    }
+
+    private fun setupAdapter() {
+        edit_farms_recycler_view.visibility = View.VISIBLE
+        loading_container.visibility = View.GONE
+        edit_farms_recycler_view.adapter = FarmsAdapter(farms, activity as MainActivity)
+        edit_farms_recycler_view.layoutManager = LinearLayoutManager(activity)
+        edit_farms_recycler_view.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
     }
 
     fun updateFarm(farm: Farm?, position: Int) {
         if (farm == null && farms.size == 1) {
-            Toast.makeText(activity, R.string.delete_error_message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, R.string.delete_error_message, Toast.LENGTH_LONG).show()
         } else if (farm == null) {
             val deletedFarm = farms.removeAt(position)
             edit_farms_recycler_view.adapter?.notifyItemRemoved(position)
