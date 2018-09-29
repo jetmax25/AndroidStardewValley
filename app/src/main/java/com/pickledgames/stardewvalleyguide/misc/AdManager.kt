@@ -7,7 +7,10 @@ import com.google.android.gms.ads.InterstitialAd
 import com.pickledgames.stardewvalleyguide.StardewApp
 import java.util.*
 
-class AdManager(stardewApp: StardewApp) {
+class AdManager(
+        stardewApp: StardewApp,
+        purchaseManager: PurchaseManager
+) {
 
     private val random: Random = Random()
     private val ads: HashMap<String, StardewInterstitialAd> = hashMapOf(
@@ -44,9 +47,20 @@ class AdManager(stardewApp: StardewApp) {
                     2
             )
     )
+    private var isPro: Boolean = false
+
+    init {
+        @Suppress("CheckResult")
+        // TODO: May cause memory leak, should investigate further
+        purchaseManager.isProSubject.subscribe {
+            isPro = !it
+        }
+    }
 
     fun showAdFor(name: String) {
-        ads[name]?.showAd()
+        if (!isPro) {
+            ads[name]?.showAd()
+        }
     }
 
     class StardewInterstitialAd(

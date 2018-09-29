@@ -16,8 +16,8 @@ open class InnerBaseFragment : BaseFragment() {
         return v
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onPause() {
+        super.onPause()
         reset()
     }
 

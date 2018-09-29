@@ -9,6 +9,7 @@ import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.FarmsAdapter
 import com.pickledgames.stardewvalleyguide.enums.FarmType
+import com.pickledgames.stardewvalleyguide.misc.PurchaseManager
 import com.pickledgames.stardewvalleyguide.models.Farm
 import com.pickledgames.stardewvalleyguide.repositories.FarmRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -21,6 +22,8 @@ class EditFarmsFragment : InnerBaseFragment() {
 
     @Inject lateinit var farmRepository: FarmRepository
     private var farms: MutableList<Farm> = mutableListOf()
+    @Inject lateinit var purchaseManager: PurchaseManager
+    private var isPro: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -38,6 +41,12 @@ class EditFarmsFragment : InnerBaseFragment() {
         super.onCreateOptionsMenu(menu, inflater)
         menu?.clear()
         inflater?.inflate(R.menu.edit_farms, menu)
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?) {
+        super.onPrepareOptionsMenu(menu)
+        val addFarmMenuItem = menu?.findItem(R.id.add_farm)
+        addFarmMenuItem?.isVisible = isPro
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -63,7 +72,7 @@ class EditFarmsFragment : InnerBaseFragment() {
         if (farms.isNotEmpty()) {
             setupAdapter()
         } else {
-            val disposable = farmRepository.getFarms()
+            val farmDisposable = farmRepository.getFarms()
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe { f ->
@@ -71,8 +80,22 @@ class EditFarmsFragment : InnerBaseFragment() {
                         setupAdapter()
                     }
 
-            compositeDisposable.add(disposable)
+            compositeDisposable.add(farmDisposable)
         }
+
+        go_pro_text_view.setOnClickListener {
+            (activity as MainActivity).changeTab(MainActivity.PURCHASES)
+        }
+
+        // Always subscribe to isProSubject
+        val isProDisposable = purchaseManager.isProSubject
+                .subscribe {
+                    isPro = it
+                    go_pro_text_view.visibility = if (isPro) View.GONE else View.VISIBLE
+                    (activity as MainActivity).invalidateOptionsMenu()
+                }
+
+        compositeDisposable.add(isProDisposable)
     }
 
     private fun setupAdapter() {
