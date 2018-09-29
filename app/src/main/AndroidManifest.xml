@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.pickledgames.stardewvalleyguide">
 
+    <uses-permission android:name="com.android.vending.BILLING" />
+
     <application
         android:name=".StardewApp"
         android:allowBackup="true"
