@@ -20,18 +20,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/header_farm_name_text_view"
-        style="@style/StardewTextViewStyle"
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+        android:id="@+id/header_farm_easy_flip_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:textSize="24sp"
+        app:flipEnabled="true"
+        app:flipFrom="right"
+        app:flipType="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/header_farm_right_arrow_image_view"
         app:layout_constraintStart_toEndOf="@+id/header_farm_left_arrow_image_view"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Das Farm" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/header_farm_name_front_text_view"
+            style="@style/StardewTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:textSize="24sp"
+            tools:text="Das Farm" />
+
+        <TextView
+            android:id="@+id/header_farm_name_back_text_view"
+            style="@style/StardewTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:textSize="24sp"
+            tools:text="Das Farm" />
+
+    </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+    <!--<TextView-->
+    <!--android:id="@+id/header_farm_name_text_view"-->
+    <!--style="@style/StardewTextViewStyle"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="8dp"-->
+    <!--android:textSize="24sp"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintEnd_toStartOf="@+id/header_farm_right_arrow_image_view"-->
+    <!--app:layout_constraintStart_toEndOf="@+id/header_farm_left_arrow_image_view"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--tools:text="Das Farm" />-->
 
     <ImageView
         android:id="@+id/header_farm_right_arrow_image_view"
