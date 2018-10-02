@@ -4,6 +4,7 @@ import android.content.Context
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
+import com.pickledgames.stardewvalleyguide.BuildConfig
 import com.pickledgames.stardewvalleyguide.StardewApp
 import java.util.*
 
@@ -70,7 +71,9 @@ class AdManager(
             private val limit: Int
     ) {
 
-        private val interstitialAd: InterstitialAd = InterstitialAd(context).apply { adUnitId = adId }
+        private val interstitialAd: InterstitialAd = InterstitialAd(context).apply {
+            adUnitId = if (BuildConfig.DEBUG) "ca-app-pub-3940256099942544/1033173712" else adId
+        }
         private var forceShow: Boolean = false
         private var shown: Boolean = false
 
