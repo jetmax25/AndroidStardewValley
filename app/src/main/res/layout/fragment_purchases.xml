@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg">
+
+    <TextView
+        android:id="@+id/thanks_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/headerBackground"
+        android:padding="5dp"
+        android:text="@string/thank_you_pro"
+        android:textSize="22sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Group
+        android:id="@+id/purchases_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="purchase_text_view, purchase_button, restore_purchases_button" />
+
+    <TextView
+        android:id="@+id/purchase_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/headerBackground"
+        android:padding="5dp"
+        android:text="@string/purchase_pro"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thanks_text_view" />
+
+    <Button
+        android:id="@+id/purchase_button"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/go_pro"
+        app:layout_constraintEnd_toEndOf="@+id/restore_purchases_button"
+        app:layout_constraintStart_toStartOf="@+id/restore_purchases_button"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_text_view" />
+
+    <Button
+        android:id="@+id/restore_purchases_button"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/restore_purchases"
+        app:layout_constraintEnd_toEndOf="@+id/about_heifer_button"
+        app:layout_constraintStart_toStartOf="@+id/about_heifer_button"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_button" />
+
+    <TextView
+        android:id="@+id/impoverished_farmers_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/headerBackground"
+        android:padding="5dp"
+        android:text="@string/impoverished_farmers"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/restore_purchases_button" />
+
+    <Button
+        android:id="@+id/about_heifer_button"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/about_heifer_international"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/impoverished_farmers_text_view" />
+
+    <Button
+        android:id="@+id/direct_donation_button"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/direct_donation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/about_heifer_button"
+        app:layout_constraintStart_toStartOf="@+id/about_heifer_button"
+        app:layout_constraintTop_toBottomOf="@+id/about_heifer_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+</android.support.constraint.ConstraintLayout>

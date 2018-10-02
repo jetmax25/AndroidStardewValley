@@ -4,10 +4,14 @@ import android.content.Context
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
+import com.pickledgames.stardewvalleyguide.BuildConfig
 import com.pickledgames.stardewvalleyguide.StardewApp
 import java.util.*
 
-class AdManager(stardewApp: StardewApp) {
+class AdManager(
+        stardewApp: StardewApp,
+        purchaseManager: PurchaseManager
+) {
 
     private val random: Random = Random()
     private val ads: HashMap<String, StardewInterstitialAd> = hashMapOf(
@@ -44,9 +48,20 @@ class AdManager(stardewApp: StardewApp) {
                     2
             )
     )
+    private var isPro: Boolean = false
+
+    init {
+        @Suppress("CheckResult")
+        // TODO: May cause memory leak, should investigate further
+        purchaseManager.isProSubject.subscribe {
+            isPro = !it
+        }
+    }
 
     fun showAdFor(name: String) {
-        ads[name]?.showAd()
+        if (!isPro) {
+            ads[name]?.showAd()
+        }
     }
 
     class StardewInterstitialAd(
@@ -56,7 +71,9 @@ class AdManager(stardewApp: StardewApp) {
             private val limit: Int
     ) {
 
-        private val interstitialAd: InterstitialAd = InterstitialAd(context).apply { adUnitId = adId }
+        private val interstitialAd: InterstitialAd = InterstitialAd(context).apply {
+            adUnitId = if (BuildConfig.DEBUG) "ca-app-pub-3940256099942544/1033173712" else adId
+        }
         private var forceShow: Boolean = false
         private var shown: Boolean = false
 

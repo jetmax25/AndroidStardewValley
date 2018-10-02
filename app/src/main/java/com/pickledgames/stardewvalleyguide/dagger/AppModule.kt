@@ -2,6 +2,7 @@ package com.pickledgames.stardewvalleyguide.dagger
 
 import com.pickledgames.stardewvalleyguide.StardewApp
 import com.pickledgames.stardewvalleyguide.misc.AdManager
+import com.pickledgames.stardewvalleyguide.misc.PurchaseManager
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -24,7 +25,13 @@ class AppModule(private val stardewApp: StardewApp) {
 
     @Provides
     @Singleton
-    fun providesAdManager(stardewApp: StardewApp): AdManager {
-        return AdManager(stardewApp)
+    fun providesAdManager(stardewApp: StardewApp, purchaseManager: PurchaseManager): AdManager {
+        return AdManager(stardewApp, purchaseManager)
+    }
+
+    @Provides
+    @Singleton
+    fun providesPurchaseManager(stardewApp: StardewApp): PurchaseManager {
+        return PurchaseManager(stardewApp)
     }
 }

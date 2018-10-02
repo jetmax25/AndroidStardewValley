@@ -57,7 +57,13 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { f ->
                     farm = f
-                    header_farm_name_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    if (header_farm_easy_flip_view.isFrontSide) {
+                        header_farm_name_back_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    } else {
+                        header_farm_name_front_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    }
+                    // Flip after setting text
+                    header_farm_easy_flip_view.flipTheView()
                     adapter.updateFarm(farm)
                 }
 
@@ -104,7 +110,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     }
 
     private fun setup() {
-        header_farm_name_text_view.setOnClickListener {
+        header_farm_easy_flip_view.setOnClickListener {
             (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
         }
 
@@ -146,7 +152,8 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                     community_center_header_group.visibility = View.VISIBLE
                     community_center_items_recycler_view.visibility = View.VISIBLE
                     farm = results.farm
-                    header_farm_name_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    header_farm_name_front_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    header_farm_name_back_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
                     bundles.addAll(results.bundles)
                     setupCommunityCenterItemsAdapter()
                 }

@@ -46,4 +46,8 @@ abstract class FragmentModule {
     @FragmentScope
     @ContributesAndroidInjector
     abstract fun communityCenterItemFragment(): CommunityCenterItemFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector
+    abstract fun purchasesFragment(): PurchasesFragment
 }

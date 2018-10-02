@@ -11,4 +11,9 @@
         android:icon="@drawable/ic_format_list_checks"
         android:title="@string/menu_item_checklists" />
 
+    <item
+        android:id="@+id/navigation_purchases"
+        android:icon="@drawable/ic_cash_usd"
+        android:title="@string/menu_item_purchases" />
+
 </menu>

@@ -34,4 +34,17 @@
     <string name="show_missing">Show Missing</string>
     <string name="traveling_merchant">Traveling Merchant</string>
     <string name="guide">Guide</string>
+    <string name="menu_item_purchases">Purchases</string>
+    <string name="purchase_pro">Purchase the pro version and never see an ad again!</string>
+    <string name="impoverished_farmers">200% of revenue this month will buy livestock for impoverished farmers.</string>
+    <string name="go_pro">Go Pro $3.99</string>
+    <string name="restore_purchases">Restore Purchases</string>
+    <string name="direct_donation">Direct Donation Link</string>
+    <string name="about_heifer_international">About Heifer International</string>
+    <string name="companion_guide">Companion Guide For Stardew Valley</string>
+    <string name="stardew_valley">Stardew Valley</string>
+    <string name="thank_you_pro">Thank you for purchasing the Pro version.</string>
+    <string name="billing_not_enabled">Sorry, billing is not available at this time. Please try again later.</string>
+    <string name="go_pro_farms">Go Pro to track multiple farms. Never see ads again!</string>
+    <string name="banner_ad_id">ca-app-pub-5594325776314197/5332464105</string>
 </resources>
