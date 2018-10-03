@@ -54,7 +54,7 @@ class AdManager(
         @Suppress("CheckResult")
         // TODO: May cause memory leak, should investigate further
         purchaseManager.isProSubject.subscribe {
-            isPro = !it
+            isPro = it
         }
     }
 
