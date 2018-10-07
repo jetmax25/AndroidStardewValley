@@ -69,7 +69,6 @@ class PurchaseManager(private val stardewApp: StardewApp) :
             for (purchase: Purchase in purchases.orEmpty()) {
                 if (purchase.sku == PurchaseManager.PRO_SKU) {
                     isPro = true
-                    billingClient.consumeAsync(purchase.purchaseToken, this)
                     break
                 }
             }
@@ -89,7 +88,13 @@ class PurchaseManager(private val stardewApp: StardewApp) :
     override fun onBillingSetupFinished(@BillingClient.BillingResponse responseCode: Int) {
         isBillingEnabled = responseCode == BillingClient.BillingResponse.OK
         if (responseCode == BillingClient.BillingResponse.OK) {
-            val disposable = queryPurchasesObservable.subscribe { pr -> onQueryPurchases(pr) }
+            val disposable = queryPurchasesObservable.subscribe({ pr ->
+                onQueryPurchases(pr)
+                initializedSubject.onComplete()
+            }, { error ->
+                Log.e(TAG, error.message, error)
+                initializedSubject.onComplete()
+            })
             compositeDisposable.add(disposable)
         } else {
             initializedSubject.onComplete()
@@ -104,12 +109,11 @@ class PurchaseManager(private val stardewApp: StardewApp) :
             }
         }
 
-        initializedSubject.onComplete()
         compositeDisposable.clear()
     }
 
     override fun onConsumeResponse(@BillingClient.BillingResponse responseCode: Int, purchaseToken: String?) {
-        Log.i(TAG, "onConsumeResponse called for with responseCode: $responseCode for purchaseToken: $purchaseToken.")
+        Log.i(TAG, "onConsumeResponse called with responseCode: $responseCode for purchaseToken: $purchaseToken.")
     }
 
     companion object {
