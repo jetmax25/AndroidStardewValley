@@ -7,13 +7,13 @@ import android.support.v4.content.ContextCompat
 import android.view.*
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
-import com.pickledgames.stardewvalleyguide.misc.PurchaseManager
+import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
 import kotlinx.android.synthetic.main.fragment_purchases.*
 import javax.inject.Inject
 
 class PurchasesFragment : BaseFragment() {
 
-    @Inject lateinit var purchaseManager: PurchaseManager
+    @Inject lateinit var purchasesManager: PurchasesManager
     private val builder = CustomTabsIntent.Builder()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -33,7 +33,7 @@ class PurchasesFragment : BaseFragment() {
     }
 
     private fun setup() {
-        val disposable = purchaseManager.isProSubject
+        val disposable = purchasesManager.isProSubject
                 .subscribe {
                     thanks_text_view.visibility = if (it) View.VISIBLE else View.GONE
                     purchases_group.visibility = if (it) View.GONE else View.VISIBLE
@@ -41,10 +41,10 @@ class PurchasesFragment : BaseFragment() {
 
         compositeDisposable.add(disposable)
         purchase_button.setOnClickListener {
-            purchaseManager.purchaseProVersion(activity as MainActivity)
+            purchasesManager.purchaseProVersion(activity as MainActivity)
         }
         restore_purchases_button.setOnClickListener {
-            purchaseManager.restorePurchases()
+            purchasesManager.restorePurchases()
         }
 
         builder.setToolbarColor(ContextCompat.getColor(activity as MainActivity, R.color.colorPrimary))

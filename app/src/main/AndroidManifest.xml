@@ -20,6 +20,10 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5594325776314197~2267317062" />
 
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="258cf248ce2ad403e5064877d6f7bd80fb24f3fb" />
+
         <activity
             android:name=".activities.SplashActivity"
             android:label="@string/app_name"

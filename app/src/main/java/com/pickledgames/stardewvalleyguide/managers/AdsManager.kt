@@ -1,4 +1,4 @@
-package com.pickledgames.stardewvalleyguide.misc
+package com.pickledgames.stardewvalleyguide.managers
 
 import android.content.Context
 import com.google.android.gms.ads.AdListener
@@ -8,9 +8,9 @@ import com.pickledgames.stardewvalleyguide.BuildConfig
 import com.pickledgames.stardewvalleyguide.StardewApp
 import java.util.*
 
-class AdManager(
+class AdsManager(
         stardewApp: StardewApp,
-        purchaseManager: PurchaseManager
+        purchasesManager: PurchasesManager
 ) {
 
     private val random: Random = Random()
@@ -53,7 +53,7 @@ class AdManager(
     init {
         @Suppress("CheckResult")
         // TODO: May cause memory leak, should investigate further
-        purchaseManager.isProSubject.subscribe {
+        purchasesManager.isProSubject.subscribe {
             isPro = it
         }
     }
