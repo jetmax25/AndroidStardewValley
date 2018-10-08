@@ -1,4 +1,4 @@
-package com.pickledgames.stardewvalleyguide.misc
+package com.pickledgames.stardewvalleyguide.managers
 
 import android.app.Activity
 import android.util.Log
@@ -13,7 +13,7 @@ import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
 
-class PurchaseManager(private val stardewApp: StardewApp) :
+class PurchasesManager(private val stardewApp: StardewApp) :
         BillingClientStateListener, PurchasesUpdatedListener, ConsumeResponseListener {
 
     private var billingClient: BillingClient = BillingClient.newBuilder(stardewApp)
@@ -30,7 +30,7 @@ class PurchaseManager(private val stardewApp: StardewApp) :
     var isProSubject: BehaviorSubject<Boolean> = BehaviorSubject.create()
     private var isBillingEnabled: Boolean = false
     private val flowParams: BillingFlowParams = BillingFlowParams.newBuilder()
-            .setSku(PurchaseManager.PRO_SKU)
+            .setSku(PurchasesManager.PRO_SKU)
             .setType(BillingClient.SkuType.INAPP)
             .build()
     private val queryPurchasesObservable: Single<Purchase.PurchasesResult> = Single.create<Purchase.PurchasesResult> {
@@ -67,7 +67,7 @@ class PurchaseManager(private val stardewApp: StardewApp) :
     override fun onPurchasesUpdated(@BillingClient.BillingResponse responseCode: Int, purchases: MutableList<Purchase>?) {
         if (responseCode == BillingClient.BillingResponse.OK) {
             for (purchase: Purchase in purchases.orEmpty()) {
-                if (purchase.sku == PurchaseManager.PRO_SKU) {
+                if (purchase.sku == PurchasesManager.PRO_SKU) {
                     isPro = true
                     break
                 }
@@ -103,7 +103,7 @@ class PurchaseManager(private val stardewApp: StardewApp) :
 
     private fun onQueryPurchases(purchasesResult: Purchase.PurchasesResult) {
         for (purchase: Purchase in purchasesResult.purchasesList) {
-            if (purchase.sku == PurchaseManager.PRO_SKU) {
+            if (purchase.sku == PurchasesManager.PRO_SKU) {
                 isPro = true
                 break
             }
@@ -117,7 +117,7 @@ class PurchaseManager(private val stardewApp: StardewApp) :
     }
 
     companion object {
-        const val TAG = "PurchaseManager"
+        const val TAG = "PurchasesManager"
         val PRO_SKU = if (BuildConfig.DEBUG) "android.test.purchased" else "pro"
     }
 }

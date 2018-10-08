@@ -11,7 +11,7 @@ import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.GiftReactionsAdapter
 import com.pickledgames.stardewvalleyguide.enums.Reaction
-import com.pickledgames.stardewvalleyguide.misc.AdManager
+import com.pickledgames.stardewvalleyguide.managers.AdsManager
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.models.Villager
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
@@ -32,12 +32,12 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
     private lateinit var layoutManager: GridLayoutManager
     private var filterBy: String = "All"
     private var searchTerm: String = ""
-    @Inject lateinit var adManager: AdManager
+    @Inject lateinit var adsManager: AdsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         setHasOptionsMenu(true)
-        adManager.showAdFor(AdManager.VILLAGER_FRAGMENT)
+        adsManager.showAdFor(AdsManager.VILLAGER_FRAGMENT)
         return inflater.inflate(R.layout.fragment_villager, container, false)
     }
 

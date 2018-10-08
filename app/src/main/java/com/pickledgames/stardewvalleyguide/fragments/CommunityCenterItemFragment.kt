@@ -8,7 +8,7 @@ import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.GuidesAdapter
 import com.pickledgames.stardewvalleyguide.enums.Season
-import com.pickledgames.stardewvalleyguide.misc.AdManager
+import com.pickledgames.stardewvalleyguide.managers.AdsManager
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
 import kotlinx.android.synthetic.main.fragment_community_center_item.*
 import kotlinx.android.synthetic.main.header_item.*
@@ -17,12 +17,12 @@ import javax.inject.Inject
 class CommunityCenterItemFragment : InnerBaseFragment() {
 
     private lateinit var communityCenterItem: CommunityCenterItem
-    @Inject lateinit var adManager: AdManager
+    @Inject lateinit var adsManager: AdsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         setHasOptionsMenu(true)
-        adManager.showAdFor(AdManager.COMMUNITY_CENTER_ITEM_FRAGMENT)
+        adsManager.showAdFor(AdsManager.COMMUNITY_CENTER_ITEM_FRAGMENT)
         return inflater.inflate(R.layout.fragment_community_center_item, container, false)
     }
 

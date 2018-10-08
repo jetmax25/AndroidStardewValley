@@ -10,7 +10,7 @@ import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.VillagerReactionsAdapter
 import com.pickledgames.stardewvalleyguide.enums.Reaction
-import com.pickledgames.stardewvalleyguide.misc.AdManager
+import com.pickledgames.stardewvalleyguide.managers.AdsManager
 import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
@@ -28,12 +28,12 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
     private var list: MutableList<Any> = mutableListOf()
     private lateinit var adapter: VillagerReactionsAdapter
     private lateinit var layoutManager: GridLayoutManager
-    @Inject lateinit var adManager: AdManager
+    @Inject lateinit var adsManager: AdsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         setHasOptionsMenu(true)
-        adManager.showAdFor(AdManager.GIFT_FRAGMENT)
+        adsManager.showAdFor(AdsManager.GIFT_FRAGMENT)
         return inflater.inflate(R.layout.fragment_gift, container, false)
     }
 

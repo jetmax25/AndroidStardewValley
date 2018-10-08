@@ -14,7 +14,7 @@ import com.pickledgames.stardewvalleyguide.fragments.EditFarmsFragment
 import com.pickledgames.stardewvalleyguide.fragments.FriendshipsFragment
 import com.pickledgames.stardewvalleyguide.fragments.PurchasesFragment
 import com.pickledgames.stardewvalleyguide.interfaces.OnFarmUpdatedListener
-import com.pickledgames.stardewvalleyguide.misc.PurchaseManager
+import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
 import com.pickledgames.stardewvalleyguide.models.Farm
 import dagger.android.AndroidInjection
 import io.reactivex.disposables.CompositeDisposable
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         }
         false
     }
-    @Inject lateinit var purchaseManager: PurchaseManager
+    @Inject lateinit var purchasesManager: PurchasesManager
     private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         val adRequest = AdRequest.Builder().build()
         banner_ad_view.loadAd(adRequest)
-        val disposable = purchaseManager.isProSubject.subscribe {
+        val disposable = purchasesManager.isProSubject.subscribe {
             banner_ad_view.visibility = if (it) View.GONE else View.VISIBLE
         }
 
@@ -114,8 +114,8 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
     }
 
     companion object {
-        const val FRIENDSHIPS = 0
-        const val CHECKLISTS = 1
-        const val PURCHASES = 2
+        const val FRIENDSHIPS: Int = FragNavController.TAB1
+        const val CHECKLISTS: Int = FragNavController.TAB2
+        const val PURCHASES: Int = FragNavController.TAB3
     }
 }
