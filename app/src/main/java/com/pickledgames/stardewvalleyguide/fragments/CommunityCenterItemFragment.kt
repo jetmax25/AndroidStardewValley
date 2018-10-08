@@ -9,6 +9,7 @@ import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.GuidesAdapter
 import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.managers.AdsManager
+import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
 import kotlinx.android.synthetic.main.fragment_community_center_item.*
 import kotlinx.android.synthetic.main.header_item.*
@@ -18,6 +19,7 @@ class CommunityCenterItemFragment : InnerBaseFragment() {
 
     private lateinit var communityCenterItem: CommunityCenterItem
     @Inject lateinit var adsManager: AdsManager
+    @Inject lateinit var analyticsManager: AnalyticsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -56,6 +58,8 @@ class CommunityCenterItemFragment : InnerBaseFragment() {
         guides_recycler_view.adapter = GuidesAdapter(communityCenterItem.guides)
         guides_recycler_view.layoutManager = LinearLayoutManager(activity)
         guides_recycler_view.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+
+        analyticsManager.logEvent("Community Center Detail", mapOf("Item Name" to communityCenterItem.name))
     }
 
     companion object {

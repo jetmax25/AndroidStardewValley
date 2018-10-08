@@ -47,4 +47,8 @@
     <string name="billing_not_enabled">Sorry, billing is not available at this time. Please try again later.</string>
     <string name="go_pro_farms">Go Pro to track multiple farms. Never see ads again!</string>
     <string name="banner_ad_id">ca-app-pub-5594325776314197/5332464105</string>
+    <string name="play_store_review_message">If you are enjoying the Stardew Valley Companion app and would love to see more features in the future please help us out by giving us a review.</string>
+    <string name="absolutely">Absolutely</string>
+    <string name="nope">Nope</string>
+    <string name="later">Later</string>
 </resources>

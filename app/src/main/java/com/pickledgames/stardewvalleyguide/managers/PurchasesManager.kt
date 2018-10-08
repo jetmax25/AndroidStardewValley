@@ -7,20 +7,23 @@ import com.android.billingclient.api.*
 import com.pickledgames.stardewvalleyguide.BuildConfig
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.StardewApp
+import dagger.Lazy
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
 
-class PurchasesManager(private val stardewApp: StardewApp) :
-        BillingClientStateListener, PurchasesUpdatedListener, ConsumeResponseListener {
+class PurchasesManager(
+        private val stardewApp: StardewApp,
+        private val analyticsManager: Lazy<AnalyticsManager>
+) : BillingClientStateListener, PurchasesUpdatedListener, ConsumeResponseListener {
 
     private var billingClient: BillingClient = BillingClient.newBuilder(stardewApp)
             .setListener(this)
             .build()
     private var billingConnectionAttempts: Int = 0
-    private var isPro: Boolean = false
+    var isPro: Boolean = false
         set(value) {
             field = value
             isProSubject.onNext(value)
@@ -46,6 +49,7 @@ class PurchasesManager(private val stardewApp: StardewApp) :
     fun purchaseProVersion(activity: Activity) {
         if (isBillingEnabled) {
             billingClient.launchBillingFlow(activity, flowParams)
+            analyticsManager.get().logEvent("Purchase Clicked")
         } else {
             billingConnectionAttempts = 0
             billingClient.startConnection(this)
@@ -55,8 +59,9 @@ class PurchasesManager(private val stardewApp: StardewApp) :
 
     fun restorePurchases() {
         if (isBillingEnabled) {
-            val disposable = queryPurchasesObservable.subscribe { pr -> onQueryPurchases(pr) }
+            val disposable = queryPurchasesObservable.subscribe { pr -> onQueryRestoredPurchases(pr) }
             compositeDisposable.add(disposable)
+            analyticsManager.get().logEvent("Restore Clicked")
         } else {
             billingConnectionAttempts = 0
             billingClient.startConnection(this)
@@ -65,13 +70,21 @@ class PurchasesManager(private val stardewApp: StardewApp) :
     }
 
     override fun onPurchasesUpdated(@BillingClient.BillingResponse responseCode: Int, purchases: MutableList<Purchase>?) {
+        var purchased = false
         if (responseCode == BillingClient.BillingResponse.OK) {
             for (purchase: Purchase in purchases.orEmpty()) {
                 if (purchase.sku == PurchasesManager.PRO_SKU) {
                     isPro = true
+                    purchased = true
                     break
                 }
             }
+        }
+
+        if (purchased) {
+            analyticsManager.get().logEvent("Purchase Succeeded")
+        } else {
+            analyticsManager.get().logEvent("Purchase Failed")
         }
     }
 
@@ -110,6 +123,25 @@ class PurchasesManager(private val stardewApp: StardewApp) :
         }
 
         compositeDisposable.clear()
+    }
+
+    private fun onQueryRestoredPurchases(purchasesResult: Purchase.PurchasesResult) {
+        var restored = false
+        for (purchase: Purchase in purchasesResult.purchasesList) {
+            if (purchase.sku == PurchasesManager.PRO_SKU) {
+                isPro = true
+                restored = true
+                break
+            }
+        }
+
+        compositeDisposable.clear()
+
+        if (restored) {
+            analyticsManager.get().logEvent("Restore Succeeded")
+        } else {
+            analyticsManager.get().logEvent("Restore Failed")
+        }
     }
 
     override fun onConsumeResponse(@BillingClient.BillingResponse responseCode: Int, purchaseToken: String?) {

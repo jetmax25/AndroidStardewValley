@@ -11,6 +11,7 @@ import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.VillagerReactionsAdapter
 import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.managers.AdsManager
+import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
@@ -29,6 +30,7 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
     private lateinit var adapter: VillagerReactionsAdapter
     private lateinit var layoutManager: GridLayoutManager
     @Inject lateinit var adsManager: AdsManager
+    @Inject lateinit var analyticsManager: AnalyticsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -94,6 +96,8 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
                 }
 
         compositeDisposable.addAll(disposable)
+
+        analyticsManager.logEvent("Gift Detail", mapOf("Gift" to gift.name))
     }
 
     private fun setupAdapter(giftReactions: List<GiftReaction>) {

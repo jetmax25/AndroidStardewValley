@@ -12,6 +12,7 @@ import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.GiftReactionsAdapter
 import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.managers.AdsManager
+import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.models.Villager
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
@@ -33,6 +34,7 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
     private var filterBy: String = "All"
     private var searchTerm: String = ""
     @Inject lateinit var adsManager: AdsManager
+    @Inject lateinit var analyticsManager: AnalyticsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -115,6 +117,8 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
                 filter.filter("")
             }
         })
+
+        analyticsManager.logEvent("Villager Detail", mapOf("Villager" to villager.name))
     }
 
     private fun setupAdapter(giftReactions: List<GiftReaction>) {

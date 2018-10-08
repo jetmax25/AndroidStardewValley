@@ -9,6 +9,7 @@ import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.FarmsAdapter
 import com.pickledgames.stardewvalleyguide.enums.FarmType
+import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
 import com.pickledgames.stardewvalleyguide.models.Farm
 import com.pickledgames.stardewvalleyguide.repositories.FarmRepository
@@ -24,6 +25,7 @@ class EditFarmsFragment : InnerBaseFragment() {
     private var farms: MutableList<Farm> = mutableListOf()
     @Inject lateinit var purchasesManager: PurchasesManager
     private var isPro: Boolean = false
+    @Inject lateinit var analyticsManager: AnalyticsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -59,6 +61,7 @@ class EditFarmsFragment : InnerBaseFragment() {
                         .subscribe { _ ->
                             farms.add(farm)
                             edit_farms_recycler_view.adapter?.notifyItemInserted(farms.size - 1)
+                            analyticsManager.logEvent("Farm Added", mapOf("Name" to farm.name))
                         }
 
                 compositeDisposable.add(disposable)
@@ -116,6 +119,8 @@ class EditFarmsFragment : InnerBaseFragment() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe()
+
+            analyticsManager.logEvent("Farm Deleted", mapOf("Name" to deletedFarm.name))
         } else {
             farms[position] = farm
             edit_farms_recycler_view.adapter?.notifyItemChanged(position)
@@ -123,6 +128,8 @@ class EditFarmsFragment : InnerBaseFragment() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe()
+
+            analyticsManager.logEvent("Farm Edited", mapOf("Name" to farm.name))
         }
     }
 
