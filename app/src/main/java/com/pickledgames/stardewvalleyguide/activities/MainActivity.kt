@@ -114,6 +114,10 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         loginManager.lastLogin = Instant.now()
         loginManager.numberOfLogins++
         analyticsManager.logEvent("Opened App")
+
+        if (purchasesManager.isPro) {
+            navigation.menu.removeItem(R.id.navigation_purchases)
+        }
     }
 
     private fun openPlayStore() {
