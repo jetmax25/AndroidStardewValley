@@ -80,10 +80,10 @@ class CommunityCenterItemsAdapter(
             val quantityCompleted = String.format(
                     mainActivity.getString(R.string.bundle_quantity_completed_template),
                     completedItemsCount,
-                    communityCenterBundle.items.size
+                    communityCenterBundle.needed
             )
             community_center_bundle_quantity_completed_text_view.text = quantityCompleted
-            if (completedItemsCount == communityCenterBundle.items.size) {
+            if (completedItemsCount == communityCenterBundle.needed) {
                 val green = ContextCompat.getColor(mainActivity, R.color.green)
                 community_center_bundle_quantity_completed_text_view.setTextColor(green)
             } else {

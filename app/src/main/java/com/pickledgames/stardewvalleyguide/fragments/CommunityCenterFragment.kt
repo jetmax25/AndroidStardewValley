@@ -89,16 +89,6 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
-            R.id.community_center_edit_farms -> {
-                (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
     override fun onQueryTextSubmit(query: String?): Boolean {
         return false
     }
@@ -111,7 +101,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
 
     private fun setup() {
         header_farm_easy_flip_view.setOnClickListener {
-            (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
+            (activity as MainActivity).onEditFarmsClicked()
         }
 
         header_farm_left_arrow_image_view.setOnClickListener(this)

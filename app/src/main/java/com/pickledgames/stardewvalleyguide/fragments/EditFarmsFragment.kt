@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_edit_farms.*
 import kotlinx.android.synthetic.main.loading.*
 import javax.inject.Inject
 
-class EditFarmsFragment : InnerBaseFragment() {
+class EditFarmsFragment : BaseFragment() {
 
     @Inject lateinit var farmRepository: FarmRepository
     private var farms: MutableList<Farm> = mutableListOf()
@@ -30,7 +30,6 @@ class EditFarmsFragment : InnerBaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         setHasOptionsMenu(true)
-        setTitle(R.string.edit_farms)
         return inflater.inflate(R.layout.fragment_edit_farms, container, false)
     }
 

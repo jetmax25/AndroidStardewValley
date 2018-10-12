@@ -17,6 +17,7 @@ import com.pickledgames.stardewvalleyguide.fragments.ChecklistsFragment
 import com.pickledgames.stardewvalleyguide.fragments.EditFarmsFragment
 import com.pickledgames.stardewvalleyguide.fragments.FriendshipsFragment
 import com.pickledgames.stardewvalleyguide.fragments.PurchasesFragment
+import com.pickledgames.stardewvalleyguide.interfaces.OnEditFarmsClickedListener
 import com.pickledgames.stardewvalleyguide.interfaces.OnFarmUpdatedListener
 import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.managers.LoginManager
@@ -28,8 +29,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.threeten.bp.Instant
 import javax.inject.Inject
 
-
-class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
+class MainActivity : AppCompatActivity(), OnFarmUpdatedListener, OnEditFarmsClickedListener {
 
     private var fragments: List<Fragment> = listOf(
             FriendshipsFragment.newInstance(),
@@ -167,6 +167,11 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         if (fragment != null && fragment is EditFarmsFragment) {
             fragment.updateFarm(farm, position)
         }
+    }
+
+    override fun onEditFarmsClicked() {
+        val checklistsFragment = fragments[1] as ChecklistsFragment
+        checklistsFragment.switchToEditFarms()
     }
 
     companion object {

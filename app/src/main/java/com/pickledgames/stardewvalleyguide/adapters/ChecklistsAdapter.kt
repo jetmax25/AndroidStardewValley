@@ -4,11 +4,13 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import com.pickledgames.stardewvalleyguide.fragments.CommunityCenterFragment
+import com.pickledgames.stardewvalleyguide.fragments.EditFarmsFragment
 
 class ChecklistsAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
 
     private val fragments: List<Fragment> = listOf(
-            CommunityCenterFragment.newInstance()
+            CommunityCenterFragment.newInstance(),
+            EditFarmsFragment.newInstance()
     )
 
     override fun getItem(position: Int): Fragment {
@@ -21,8 +23,14 @@ class ChecklistsAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position) {
-            0 -> "Community Center"
+            COMMUNITY_CENTER -> "Community Center"
+            EDIT_FARMS -> "Edit Farms"
             else -> ""
         }
+    }
+
+    companion object {
+        const val COMMUNITY_CENTER = 0
+        const val EDIT_FARMS = 1
     }
 }

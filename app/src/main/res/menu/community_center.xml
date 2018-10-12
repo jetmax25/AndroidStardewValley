@@ -9,11 +9,4 @@
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView" />
 
-
-    <item
-        android:id="@+id/community_center_edit_farms"
-        android:icon="@drawable/ic_playlist_edit"
-        android:title="@string/edit_farms"
-        app:showAsAction="ifRoom" />
-
 </menu>

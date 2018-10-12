@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.adapters.ChecklistsAdapter
+import com.pickledgames.stardewvalleyguide.adapters.ChecklistsAdapter.Companion.EDIT_FARMS
 import kotlinx.android.synthetic.main.fragment_checklists.*
 
 class ChecklistsFragment : Fragment() {
@@ -24,6 +25,10 @@ class ChecklistsFragment : Fragment() {
     private fun setup() {
         checklists_view_pager.adapter = ChecklistsAdapter(childFragmentManager)
         checklists_tab_layout.setupWithViewPager(checklists_view_pager)
+    }
+
+    fun switchToEditFarms() {
+        checklists_view_pager.setCurrentItem(EDIT_FARMS, true)
     }
 
     companion object {

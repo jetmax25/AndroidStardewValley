@@ -81,7 +81,9 @@ class CommunityCenterRepository(
                         communityCenterItems.add(communityCenterItem)
                     }
 
-                    val communityCenterBundle = CommunityCenterBundle(bundle, communityCenterReward, communityCenterItems)
+                    val needed = bundleJSONObject.getInt("Needed")
+
+                    val communityCenterBundle = CommunityCenterBundle(bundle, communityCenterReward, communityCenterItems, needed)
                     communityCenterBundles.add(communityCenterBundle)
                 }
 
