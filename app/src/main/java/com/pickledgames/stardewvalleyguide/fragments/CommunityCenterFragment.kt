@@ -190,6 +190,11 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                                 return@filter true
                             }
                             .filter { item -> item.name.contains(searchTerm, true) }
+                            .toMutableSet()
+
+                    if (bundle.name.contains(searchTerm, true)) {
+                        filteredBundleItems.addAll(bundle.items)
+                    }
 
                     if (filteredBundleItems.isNotEmpty()) {
                         filteredList.add(bundle)
