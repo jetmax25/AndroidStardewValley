@@ -37,7 +37,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     private lateinit var adapter: CommunityCenterItemsAdapter
     private var filterBy: String = "All"
     private var searchTerm: String = ""
-    private var showMissing: Boolean = false
+    private var showCompleted: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -116,8 +116,9 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 filter.filter("")
             }
         })
-        show_missing_check_box.setOnCheckedChangeListener { _, b ->
-            showMissing = b
+        show_completed_check_box.setOnCheckedChangeListener { _, b ->
+            showCompleted = b
+            adapter.updateShowCompleted(showCompleted)
             filter.filter("")
         }
 
@@ -160,6 +161,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         adapter = CommunityCenterItemsAdapter(
                 list,
                 farm,
+                showCompleted,
                 activity as MainActivity,
                 this
         )
@@ -188,8 +190,8 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                                 filterBy == "All" || (item.seasons.contains(Season.fromString(filterBy)) && item.seasons.size != Season.values().size)
                             }
                             .filter { item ->
-                                if (showMissing) return@filter !farm.communityCenterItems.contains(item.name)
-                                return@filter true
+                                if (showCompleted) return@filter true
+                                return@filter !farm.communityCenterItems.contains(item.name)
                             }
                             .filter { item -> item.name.contains(searchTerm, true) || bundle.name.contains(searchTerm, true) }
                             .toMutableList()

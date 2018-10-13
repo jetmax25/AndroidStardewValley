@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.list_item_community_center_item.*
 class CommunityCenterItemsAdapter(
         private var list: List<Any>,
         private var farm: Farm,
+        private var showCompleted: Boolean,
         private val mainActivity: MainActivity,
         private val onItemCheckedListener: OnItemCheckedListener
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -45,7 +46,7 @@ class CommunityCenterItemsAdapter(
             holder.bindCommunityCenterBundle(item, completedItemsCount)
         } else if (holder is CommunityCenterItemViewHolder && item is CommunityCenterItem) {
             val isCompleted = farm.communityCenterItems.contains(item.name)
-            holder.bindCommunityCenterItem(item, isCompleted)
+            holder.bindCommunityCenterItem(item, isCompleted, showCompleted)
         }
     }
 
@@ -61,6 +62,10 @@ class CommunityCenterItemsAdapter(
     fun updateList(l: List<Any>) {
         list = l
         notifyDataSetChanged()
+    }
+
+    fun updateShowCompleted(s: Boolean) {
+        showCompleted = s
     }
 
     companion object {
@@ -101,7 +106,16 @@ class CommunityCenterItemsAdapter(
 
         private var isChecked: Boolean = false
 
-        fun bindCommunityCenterItem(communityCenterItem: CommunityCenterItem, isCompleted: Boolean) {
+        fun bindCommunityCenterItem(communityCenterItem: CommunityCenterItem, isCompleted: Boolean, showCompleted: Boolean) {
+            if (isCompleted && !showCompleted) {
+                containerView.visibility = View.GONE
+                containerView.layoutParams = RecyclerView.LayoutParams(0, 0)
+                return
+            } else {
+                containerView.visibility = View.VISIBLE
+                containerView.layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+            }
+
             community_center_item_image_view.setImageResource(communityCenterItem.getImageId(mainActivity))
             community_center_item_image_view.contentDescription = communityCenterItem.name
             community_center_item_text_view.text = communityCenterItem.name

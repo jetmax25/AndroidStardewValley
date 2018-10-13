@@ -49,14 +49,14 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="@string/show_missing"
-        app:layout_constraintBottom_toBottomOf="@+id/show_missing_check_box"
+        android:text="@string/show_completed"
+        app:layout_constraintBottom_toBottomOf="@+id/show_completed_check_box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/show_missing_check_box" />
+        app:layout_constraintTop_toTopOf="@+id/show_completed_check_box" />
 
     <android.support.v7.widget.AppCompatCheckBox
-        android:id="@+id/show_missing_check_box"
+        android:id="@+id/show_completed_check_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:buttonTint="@android:color/white"

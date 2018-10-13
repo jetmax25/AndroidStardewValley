@@ -14,4 +14,8 @@ data class CommunityCenterBundle(
         val cleanedName = name.toLowerCase().replace("bundle", "").trim().replace("\\W".toRegex(), "_")
         return context.resources.getIdentifier("community_center_bundle_$cleanedName", "drawable", context.packageName)
     }
+
+    override fun toString(): String {
+        return name
+    }
 }
