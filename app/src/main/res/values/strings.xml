@@ -30,12 +30,11 @@
     <string name="winter">Winter</string>
     <string name="spring">Spring</string>
     <string name="summer">Summer</string>
-    <string name="missing">Missing</string>
-    <string name="show_missing">Show Missing</string>
+    <string name="show_completed">Show Completed</string>
     <string name="traveling_merchant">Traveling Merchant</string>
     <string name="guide">Guide</string>
     <string name="menu_item_purchases">Purchases</string>
-    <string name="purchase_pro">Purchase the pro version and never see an ad again!</string>
+    <string name="purchase_pro">Purchase the pro version and never see an ad again!\n\nChecklists for multiple farms.\n\nMore exclusive features coming soon.</string>
     <string name="impoverished_farmers">200% of revenue this month will buy livestock for impoverished farmers.</string>
     <string name="go_pro">Go Pro $3.99</string>
     <string name="restore_purchases">Restore Purchases</string>
@@ -51,4 +50,5 @@
     <string name="absolutely">Absolutely</string>
     <string name="nope">Nope</string>
     <string name="later">Later</string>
+    <string name="sign_background">Sign Background</string>
 </resources>

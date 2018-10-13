@@ -21,8 +21,12 @@ class ChecklistsAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position) {
-            0 -> "Community Center"
+            COMMUNITY_CENTER -> "Community Center"
             else -> ""
         }
+    }
+
+    companion object {
+        const val COMMUNITY_CENTER = 0
     }
 }

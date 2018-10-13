@@ -33,11 +33,11 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     @Inject lateinit var communityCenterRepository: CommunityCenterRepository
     private lateinit var farm: Farm
     private var bundles: MutableList<CommunityCenterBundle> = mutableListOf()
-    private var list: MutableList<Any> = mutableListOf()
     private lateinit var adapter: CommunityCenterItemsAdapter
     private var filterBy: String = "All"
     private var searchTerm: String = ""
-    private var showMissing: Boolean = false
+    private var showCompleted: Boolean = false
+    private var hasAdapterBeenSetup: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -109,6 +109,12 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         return false
     }
 
+    override fun onPause() {
+        super.onPause()
+        // Force refresh
+        hasAdapterBeenSetup = false
+    }
+
     private fun setup() {
         header_farm_easy_flip_view.setOnClickListener {
             (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
@@ -126,8 +132,9 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 filter.filter("")
             }
         })
-        show_missing_check_box.setOnCheckedChangeListener { _, b ->
-            showMissing = b
+        show_completed_check_box.setOnCheckedChangeListener { _, b ->
+            showCompleted = b
+            adapter.updateShowCompleted(showCompleted)
             filter.filter("")
         }
 
@@ -155,21 +162,18 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                     header_farm_name_front_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
                     header_farm_name_back_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
                     bundles.addAll(results.bundles)
-                    setupCommunityCenterItemsAdapter()
+                    filter.filter("")
                 }
 
         compositeDisposable.add(disposable)
     }
 
-    private fun setupCommunityCenterItemsAdapter() {
-        bundles.forEach {
-            list.add(it)
-            list.addAll(it.items)
-        }
-
+    private fun setupCommunityCenterItemsAdapter(list: List<Any>) {
+        hasAdapterBeenSetup = true
         adapter = CommunityCenterItemsAdapter(
                 list,
                 farm,
+                showCompleted,
                 activity as MainActivity,
                 this
         )
@@ -194,14 +198,19 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 val filteredList = mutableListOf<Any>()
                 bundles.forEach { bundle ->
                     val filteredBundleItems = bundle.items
-                            .filter { item -> filterBy == "All" || item.seasons.contains(Season.fromString(filterBy)) }
                             .filter { item ->
-                                if (showMissing) return@filter !farm.communityCenterItems.contains(item.name)
-                                return@filter true
+                                filterBy == "All" || (item.seasons.contains(Season.fromString(filterBy)) && item.seasons.size != Season.values().size)
                             }
-                            .filter { item -> item.name.contains(searchTerm, true) }
+                            .filter { item ->
+                                if (showCompleted) return@filter true
+                                return@filter !farm.communityCenterItems.contains(item.name)
+                            }
+                            .filter { item -> item.name.contains(searchTerm, true) || bundle.name.contains(searchTerm, true) }
+                            .toMutableList()
 
-                    if (filteredBundleItems.isNotEmpty()) {
+                    val isComplete = farm.getCompletedItemsCount(bundle) == bundle.needed
+
+                    if ((showCompleted || !isComplete) && filteredBundleItems.isNotEmpty()) {
                         filteredList.add(bundle)
                         filteredList.addAll(filteredBundleItems)
                     }
@@ -216,7 +225,12 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
             override fun publishResults(constraint: CharSequence?, filterResults: FilterResults?) {
                 @Suppress("UNCHECKED_CAST")
                 val filteredList = filterResults?.values as List<Any>
-                adapter.updateList(filteredList)
+
+                if (hasAdapterBeenSetup) {
+                    adapter.updateList(filteredList)
+                } else {
+                    setupCommunityCenterItemsAdapter(filteredList)
+                }
             }
         }
     }

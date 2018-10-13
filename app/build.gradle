@@ -10,9 +10,10 @@ android {
         applicationId "com.pickledgames.stardewvalleyguide"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 6
+        versionCode 7
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -65,4 +66,6 @@ dependencies {
     implementation("com.crashlytics.sdk.android:crashlytics:2.9.5@aar") {
         transitive = true
     }
+    implementation "pl.droidsonroids.gif:android-gif-drawable:1.2.15"
+    implementation "com.android.support:multidex:1.0.3"
 }

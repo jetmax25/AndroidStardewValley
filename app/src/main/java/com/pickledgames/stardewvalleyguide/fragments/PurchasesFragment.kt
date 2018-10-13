@@ -1,9 +1,6 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
-import android.net.Uri
 import android.os.Bundle
-import android.support.customtabs.CustomTabsIntent
-import android.support.v4.content.ContextCompat
 import android.view.*
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
@@ -14,7 +11,6 @@ import javax.inject.Inject
 class PurchasesFragment : BaseFragment() {
 
     @Inject lateinit var purchasesManager: PurchasesManager
-    private val builder = CustomTabsIntent.Builder()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -45,16 +41,6 @@ class PurchasesFragment : BaseFragment() {
         }
         restore_purchases_button.setOnClickListener {
             purchasesManager.restorePurchases()
-        }
-
-        builder.setToolbarColor(ContextCompat.getColor(activity as MainActivity, R.color.colorPrimary))
-        about_heifer_button.setOnClickListener {
-            val url = "https://www.heifer.org/"
-            builder.build().launchUrl(activity, Uri.parse(url))
-        }
-        direct_donation_button.setOnClickListener {
-            val url = "https://www.heifer.org/campaign/end-hunger-poverty-donation.html"
-            builder.build().launchUrl(activity, Uri.parse(url))
         }
     }
 

@@ -28,7 +28,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.threeten.bp.Instant
 import javax.inject.Inject
 
-
 class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
 
     private var fragments: List<Fragment> = listOf(
@@ -114,6 +113,10 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         loginManager.lastLogin = Instant.now()
         loginManager.numberOfLogins++
         analyticsManager.logEvent("Opened App")
+
+        if (purchasesManager.isPro) {
+            navigation.menu.removeItem(R.id.navigation_purchases)
+        }
     }
 
     private fun openPlayStore() {

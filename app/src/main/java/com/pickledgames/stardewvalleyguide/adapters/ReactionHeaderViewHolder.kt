@@ -45,11 +45,11 @@ class ReactionHeaderViewHolder(
                 drawableIdContentDescriptionPairList = mutableListOf(null, null, pair, pair, null, null)
             }
             Reaction.Dislike -> {
-                pair = Pair(R.drawable.ic_heart_grey, Reaction.Dislike.type)
+                pair = Pair(R.drawable.ic_heart_purple, Reaction.Dislike.type)
                 drawableIdContentDescriptionPairList = mutableListOf(null, null, pair, pair, null, null)
             }
             Reaction.Hate -> {
-                pair = Pair(R.drawable.ic_heart_grey, Reaction.Hate.type)
+                pair = Pair(R.drawable.ic_heart_purple, Reaction.Hate.type)
                 drawableIdContentDescriptionPairList = mutableListOf(null, pair, pair, pair, pair, null)
             }
         }

@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         app:flipEnabled="true"
         app:flipFrom="right"
+        app:flipOnTouch="false"
         app:flipType="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/header_farm_right_arrow_image_view"

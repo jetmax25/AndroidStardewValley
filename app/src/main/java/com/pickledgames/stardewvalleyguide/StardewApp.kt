@@ -1,7 +1,7 @@
 package com.pickledgames.stardewvalleyguide
 
 import android.app.Activity
-import android.app.Application
+import android.support.multidex.MultiDexApplication
 import android.support.v4.app.Fragment
 import com.crashlytics.android.Crashlytics
 import com.google.android.gms.ads.MobileAds
@@ -14,7 +14,7 @@ import dagger.android.support.HasSupportFragmentInjector
 import io.fabric.sdk.android.Fabric
 import javax.inject.Inject
 
-class StardewApp : Application(), HasActivityInjector, HasSupportFragmentInjector {
+class StardewApp : MultiDexApplication(), HasActivityInjector, HasSupportFragmentInjector {
 
     @Inject lateinit var dispatchingAndroidInjectorActivity: DispatchingAndroidInjector<Activity>
     @Inject lateinit var dispatchingAndroidInjectorFragment: DispatchingAndroidInjector<Fragment>

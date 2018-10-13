@@ -92,23 +92,17 @@
         app:layout_constraintStart_toEndOf="@+id/summer_availability_text_view"
         app:layout_constraintTop_toTopOf="@+id/summer_availability_text_view" />
 
-    <TextView
+    <com.pickledgames.stardewvalleyguide.views.SignTextView
         android:id="@+id/guide_header_text_view"
-        style="@style/StardewTextViewStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@color/headerBackground"
-        android:padding="5dp"
-        android:text="@string/guide"
-        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/summer_availability_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/summer_availability_text_view"
+        app:margin="8dp"
+        app:padding="5dp"
+        app:text="@string/guide"
+        app:textSize="22sp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/guides_recycler_view"

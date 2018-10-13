@@ -10,9 +10,13 @@ import com.pickledgames.stardewvalleyguide.activities.MainActivity
 
 open class InnerBaseFragment : BaseFragment() {
 
+    private var savedTitle: String? = null
+    private lateinit var appTitle: String
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = super.onCreateView(inflater, container, savedInstanceState)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        appTitle = (activity as MainActivity).resources.getString(R.string.app_name)
         return v
     }
 
@@ -21,16 +25,25 @@ open class InnerBaseFragment : BaseFragment() {
         reset()
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).supportActionBar?.title = savedTitle ?: appTitle
+        (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
     private fun reset() {
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        (activity as MainActivity).supportActionBar?.title = (activity as MainActivity).resources.getString(R.string.app_name)
+        (activity as MainActivity).supportActionBar?.title = appTitle
     }
 
     protected fun setTitle(title: String) {
         (activity as MainActivity).supportActionBar?.title = title
+        savedTitle = title
     }
 
     protected fun setTitle(@StringRes titleId: Int) {
         (activity as MainActivity).supportActionBar?.setTitle(titleId)
+        savedTitle = (activity as MainActivity).getString(titleId)
     }
+
 }
