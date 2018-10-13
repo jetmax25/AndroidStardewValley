@@ -184,17 +184,15 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 val filteredList = mutableListOf<Any>()
                 bundles.forEach { bundle ->
                     val filteredBundleItems = bundle.items
-                            .filter { item -> filterBy == "All" || item.seasons.contains(Season.fromString(filterBy)) }
+                            .filter { item ->
+                                filterBy == "All" || (item.seasons.contains(Season.fromString(filterBy)) && item.seasons.size != Season.values().size)
+                            }
                             .filter { item ->
                                 if (showMissing) return@filter !farm.communityCenterItems.contains(item.name)
                                 return@filter true
                             }
-                            .filter { item -> item.name.contains(searchTerm, true) }
-                            .toMutableSet()
-
-                    if (bundle.name.contains(searchTerm, true)) {
-                        filteredBundleItems.addAll(bundle.items)
-                    }
+                            .filter { item -> item.name.contains(searchTerm, true) || bundle.name.contains(searchTerm, true) }
+                            .toMutableList()
 
                     if (filteredBundleItems.isNotEmpty()) {
                         filteredList.add(bundle)
