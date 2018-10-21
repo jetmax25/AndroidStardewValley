@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Hardwood (10)" />
 
-    <CheckBox
+    <android.support.v7.widget.AppCompatCheckBox
         android:id="@+id/community_center_item_check_box"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -44,6 +44,7 @@
         android:paddingLeft="8dp"
         android:paddingEnd="8dp"
         android:paddingRight="8dp"
+        android:theme="@style/BundleItemCheckBoxStyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
