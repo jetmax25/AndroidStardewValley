@@ -40,24 +40,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_farms_header_text_view" />
 
-    <TextView
+    <com.pickledgames.stardewvalleyguide.views.SignTextView
         android:id="@+id/go_pro_text_view"
-        style="@style/StardewTextViewStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:drawableEnd="@drawable/ic_arrow_right"
-        android:drawableRight="@drawable/ic_arrow_right"
-        android:drawablePadding="5dp"
-        android:padding="5dp"
-        android:text="@string/go_pro_farms"
-        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:margin="8dp"
+        app:padding="5dp"
+        app:text="@string/go_pro_farms"
+        app:textSize="24sp" />
 
 </android.support.constraint.ConstraintLayout>
