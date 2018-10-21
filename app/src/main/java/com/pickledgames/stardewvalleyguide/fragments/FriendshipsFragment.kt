@@ -22,8 +22,8 @@ class FriendshipsFragment : Fragment() {
     }
 
     private fun setup() {
-        friendships_view_pager.adapter = FriendshipsAdapter(childFragmentManager)
-        friendships_tab_layout.setupWithViewPager(friendships_view_pager)
+        friendships_view_pager?.adapter = FriendshipsAdapter(childFragmentManager)
+        friendships_tab_layout?.setupWithViewPager(friendships_view_pager)
     }
 
     companion object {

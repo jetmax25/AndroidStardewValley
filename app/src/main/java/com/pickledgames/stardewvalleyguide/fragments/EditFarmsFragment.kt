@@ -60,7 +60,7 @@ class EditFarmsFragment : InnerBaseFragment() {
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe { _ ->
                             farms.add(farm)
-                            edit_farms_recycler_view.adapter?.notifyItemInserted(farms.size - 1)
+                            edit_farms_recycler_view?.adapter?.notifyItemInserted(farms.size - 1)
                             analyticsManager.logEvent("Farm Added", mapOf("Name" to farm.name))
                         }
 
@@ -86,7 +86,7 @@ class EditFarmsFragment : InnerBaseFragment() {
             compositeDisposable.add(farmDisposable)
         }
 
-        go_pro_text_view.setOnClickListener {
+        go_pro_text_view?.setOnClickListener {
             (activity as MainActivity).changeTab(MainActivity.PURCHASES)
         }
 
@@ -103,11 +103,11 @@ class EditFarmsFragment : InnerBaseFragment() {
     }
 
     private fun setupAdapter() {
-        edit_farms_recycler_view.visibility = View.VISIBLE
-        loading_container.visibility = View.GONE
-        edit_farms_recycler_view.adapter = FarmsAdapter(farms, activity as MainActivity)
-        edit_farms_recycler_view.layoutManager = LinearLayoutManager(activity)
-        edit_farms_recycler_view.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+        edit_farms_recycler_view?.visibility = View.VISIBLE
+        loading_container?.visibility = View.GONE
+        edit_farms_recycler_view?.adapter = FarmsAdapter(farms, activity as MainActivity)
+        edit_farms_recycler_view?.layoutManager = LinearLayoutManager(activity)
+        edit_farms_recycler_view?.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
     }
 
     fun updateFarm(farm: Farm?, position: Int) {
@@ -115,7 +115,7 @@ class EditFarmsFragment : InnerBaseFragment() {
             Toast.makeText(activity, R.string.delete_error_message, Toast.LENGTH_LONG).show()
         } else if (farm == null) {
             val deletedFarm = farms.removeAt(position)
-            edit_farms_recycler_view.adapter?.notifyItemRemoved(position)
+            edit_farms_recycler_view?.adapter?.notifyItemRemoved(position)
             farmRepository.deleteFarm(deletedFarm, position)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
@@ -124,7 +124,7 @@ class EditFarmsFragment : InnerBaseFragment() {
             analyticsManager.logEvent("Farm Deleted", mapOf("Name" to deletedFarm.name))
         } else {
             farms[position] = farm
-            edit_farms_recycler_view.adapter?.notifyItemChanged(position)
+            edit_farms_recycler_view?.adapter?.notifyItemChanged(position)
             farmRepository.updateFarm(farm, position)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())

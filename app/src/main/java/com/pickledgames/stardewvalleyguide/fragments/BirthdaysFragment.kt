@@ -57,8 +57,8 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
         }
 
         val season = seasons[seasonIndex]
-        header_calendar_season_text_view.text = season.type
-        header_calendar_season_text_view.setCompoundDrawablesWithIntrinsicBounds(
+        header_calendar_season_text_view?.text = season.type
+        header_calendar_season_text_view?.setCompoundDrawablesWithIntrinsicBounds(
                 season.getImageId(activity as MainActivity),
                 0, 0, 0
         )
@@ -80,15 +80,15 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
 
     private fun setup() {
         val season = seasons[seasonIndex]
-        header_calendar_season_text_view.text = season.type
-        header_calendar_season_text_view.setCompoundDrawablesWithIntrinsicBounds(
+        header_calendar_season_text_view?.text = season.type
+        header_calendar_season_text_view?.setCompoundDrawablesWithIntrinsicBounds(
                 season.getImageId(activity as MainActivity),
                 0, 0, 0
         )
 
         if (initializedList) {
-            header_calendar_left_arrow_image_view.setOnClickListener(this)
-            header_calendar_right_arrow_image_view.setOnClickListener(this)
+            header_calendar_left_arrow_image_view?.setOnClickListener(this)
+            header_calendar_right_arrow_image_view?.setOnClickListener(this)
             setupCalendarDaysAdapter()
             setupVillagerBirthdaysAdapter()
         } else {
@@ -103,8 +103,8 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
                                     (list[6 + it.birthday.day] as CalendarDay).villager = it
                                 }
 
-                        header_calendar_left_arrow_image_view.setOnClickListener(this)
-                        header_calendar_right_arrow_image_view.setOnClickListener(this)
+                        header_calendar_left_arrow_image_view?.setOnClickListener(this)
+                        header_calendar_right_arrow_image_view?.setOnClickListener(this)
                         setupCalendarDaysAdapter()
                         setupVillagerBirthdaysAdapter()
                     }
@@ -115,18 +115,18 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
 
     private fun setupCalendarDaysAdapter() {
         calendarDaysAdapter = CalendarDaysAdapter(list, activity as MainActivity)
-        calendar_days_recycler_view.adapter = calendarDaysAdapter
-        calendar_days_recycler_view.layoutManager = GridLayoutManager(activity, 7)
-        calendar_days_recycler_view.addItemDecoration(GridDividerDecoration(5, 7))
+        calendar_days_recycler_view?.adapter = calendarDaysAdapter
+        calendar_days_recycler_view?.layoutManager = GridLayoutManager(activity, 7)
+        calendar_days_recycler_view?.addItemDecoration(GridDividerDecoration(5, 7))
     }
 
     private fun setupVillagerBirthdaysAdapter() {
         val season = seasons[seasonIndex]
         val filteredVillagers = villagers.filter { it.birthday.season == season }.sortedBy { it.birthday.day }
         villagerBirthdaysAdapter = VillagerBirthdaysAdapter(filteredVillagers, activity as MainActivity)
-        villager_birthdays_recycler_view.adapter = villagerBirthdaysAdapter
-        villager_birthdays_recycler_view.layoutManager = LinearLayoutManager(activity)
-        villager_birthdays_recycler_view.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+        villager_birthdays_recycler_view?.adapter = villagerBirthdaysAdapter
+        villager_birthdays_recycler_view?.layoutManager = LinearLayoutManager(activity)
+        villager_birthdays_recycler_view?.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
     }
 
     companion object {

@@ -43,8 +43,8 @@ class EditFarmDialogFragment : DialogFragment() {
         return builder
                 .setView(containerView)
                 .setPositiveButton(android.R.string.ok) { _, _ ->
-                    val name = edit_farm_name_text_input_edit_text.text.toString()
-                    val farmType = edit_farm_type_spinner.selectedItem as FarmType
+                    val name = edit_farm_name_text_input_edit_text?.text.toString()
+                    val farmType = edit_farm_type_spinner?.selectedItem as FarmType
                     val newFarm = Farm(name, farmType, farm.communityCenterItems, farm.id)
                     onFarmUpdatedListener.onFarmUpdated(newFarm, position)
                 }
@@ -62,8 +62,8 @@ class EditFarmDialogFragment : DialogFragment() {
     }
 
     private fun setup() {
-        edit_farm_name_text_input_edit_text.setText(farm.name)
-        edit_farm_name_text_input_edit_text.setSelection(farm.name.length)
+        edit_farm_name_text_input_edit_text?.setText(farm.name)
+        edit_farm_name_text_input_edit_text?.setSelection(farm.name.length)
 
         ArrayAdapter<FarmType>(
                 activity as MainActivity,

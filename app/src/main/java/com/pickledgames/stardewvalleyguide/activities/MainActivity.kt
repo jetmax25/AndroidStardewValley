@@ -78,14 +78,14 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         val builder = FragNavController.newBuilder(savedInstanceState, supportFragmentManager, R.id.container)
         builder.rootFragments(fragments)
         fragNavController = builder.build()
-        navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        navigation?.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         val adRequest = AdRequest.Builder().build()
-        banner_ad_view.loadAd(adRequest)
+        banner_ad_view?.loadAd(adRequest)
         val disposable = purchasesManager.isProSubject
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-            banner_ad_view.visibility = if (it) View.GONE else View.VISIBLE
-        }
+                    banner_ad_view?.visibility = if (it) View.GONE else View.VISIBLE
+                }
 
         compositeDisposable.add(disposable)
 
@@ -118,7 +118,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         analyticsManager.logEvent("Opened App")
 
         if (purchasesManager.isPro) {
-            navigation.menu.removeItem(R.id.navigation_purchases)
+            navigation?.menu?.removeItem(R.id.navigation_purchases)
         }
     }
 

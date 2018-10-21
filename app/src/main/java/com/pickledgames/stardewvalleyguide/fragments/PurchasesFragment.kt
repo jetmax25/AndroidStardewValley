@@ -38,10 +38,10 @@ class PurchasesFragment : BaseFragment() {
                 }
 
         compositeDisposable.add(disposable)
-        purchase_button.setOnClickListener {
+        purchase_button?.setOnClickListener {
             purchasesManager.purchaseProVersion(activity as MainActivity)
         }
-        restore_purchases_button.setOnClickListener {
+        restore_purchases_button?.setOnClickListener {
             purchasesManager.restorePurchases()
         }
     }

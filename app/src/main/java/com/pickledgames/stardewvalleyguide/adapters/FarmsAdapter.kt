@@ -35,10 +35,10 @@ class FarmsAdapter(
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindFarm(farm: Farm, position: Int) {
-            farm_name_text_view.text = String.format(mainActivity.resources.getString(R.string.farm_name_template), farm.name)
-            farm_type_text_view.text = String.format(mainActivity.resources.getString(R.string.farm_type_template), farm.farmType)
-            farm_type_image_view.setImageResource(farm.farmType.getImageId(mainActivity))
-            farm_type_image_view.contentDescription = farm.name
+            farm_name_text_view?.text = String.format(mainActivity.resources.getString(R.string.farm_name_template), farm.name)
+            farm_type_text_view?.text = String.format(mainActivity.resources.getString(R.string.farm_type_template), farm.farmType)
+            farm_type_image_view?.setImageResource(farm.farmType.getImageId(mainActivity))
+            farm_type_image_view?.contentDescription = farm.name
             containerView.setOnClickListener {
                 val editFarmDialogFragment = EditFarmDialogFragment.newInstance(farm, position)
                 editFarmDialogFragment.show(mainActivity.supportFragmentManager, EditFarmDialogFragment.TAG)

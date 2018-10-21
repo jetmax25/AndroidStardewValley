@@ -57,13 +57,15 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { f ->
                     farm = f
-                    if (header_farm_easy_flip_view.isFrontSide) {
-                        header_farm_name_back_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
-                    } else {
-                        header_farm_name_front_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    header_farm_easy_flip_view?.isFrontSide?.let {
+                        if (it) {
+                            header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
+                        } else {
+                            header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
+                        }
+                        // Flip after setting text
+                        header_farm_easy_flip_view?.flipTheView()
                     }
-                    // Flip after setting text
-                    header_farm_easy_flip_view.flipTheView()
                     adapter.updateFarm(farm)
                 }
 
@@ -79,13 +81,15 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     override fun onPrepareOptionsMenu(menu: Menu?) {
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu?.findItem(R.id.community_center_search)
-        val searchView = searchMenuItem?.actionView as SearchView
-        searchView.setQuery("", false)
-        searchView.clearFocus()
-        searchView.onActionViewCollapsed()
-        searchView.setOnQueryTextListener(this)
-        searchView.setOnQueryTextFocusChangeListener { _, b ->
-            community_center_header_group?.visibility = if (b) View.GONE else View.VISIBLE
+        searchMenuItem?.actionView?.let {
+            val searchView = it as SearchView
+            searchView.setQuery("", false)
+            searchView.clearFocus()
+            searchView.onActionViewCollapsed()
+            searchView.setOnQueryTextListener(this)
+            searchView.setOnQueryTextFocusChangeListener { _, b ->
+                community_center_header_group?.visibility = if (b) View.GONE else View.VISIBLE
+            }
         }
     }
 
@@ -116,13 +120,13 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     }
 
     private fun setup() {
-        header_farm_easy_flip_view.setOnClickListener {
+        header_farm_easy_flip_view?.setOnClickListener {
             (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
         }
 
-        header_farm_left_arrow_image_view.setOnClickListener(this)
-        header_farm_right_arrow_image_view.setOnClickListener(this)
-        filter_community_center_season_tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        header_farm_left_arrow_image_view?.setOnClickListener(this)
+        header_farm_right_arrow_image_view?.setOnClickListener(this)
+        filter_community_center_season_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
@@ -132,7 +136,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 filter.filter("")
             }
         })
-        show_completed_check_box.setOnCheckedChangeListener { _, b ->
+        show_completed_check_box?.setOnCheckedChangeListener { _, b ->
             showCompleted = b
             adapter.updateShowCompleted(showCompleted)
             filter.filter("")
@@ -143,9 +147,9 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 val bundles: List<CommunityCenterBundle>
         )
 
-        loading_container.visibility = View.VISIBLE
-        community_center_header_group.visibility = View.INVISIBLE
-        community_center_items_recycler_view.visibility = View.INVISIBLE
+        loading_container?.visibility = View.VISIBLE
+        community_center_header_group?.visibility = View.INVISIBLE
+        community_center_items_recycler_view?.visibility = View.INVISIBLE
 
         val disposable = Single.zip(
                 farmRepository.getSelectedFarm(),
@@ -155,12 +159,12 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { results ->
-                    loading_container.visibility = View.INVISIBLE
-                    community_center_header_group.visibility = View.VISIBLE
-                    community_center_items_recycler_view.visibility = View.VISIBLE
+                    loading_container?.visibility = View.INVISIBLE
+                    community_center_header_group?.visibility = View.VISIBLE
+                    community_center_items_recycler_view?.visibility = View.VISIBLE
                     farm = results.farm
-                    header_farm_name_front_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
-                    header_farm_name_back_text_view.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
                     bundles.addAll(results.bundles)
                     filter.filter("")
                 }

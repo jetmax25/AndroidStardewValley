@@ -63,13 +63,15 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.villager_search)
-        val searchView = searchMenuItem.actionView as SearchView
-        searchView.setQuery("", false)
-        searchView.clearFocus()
-        searchView.onActionViewCollapsed()
-        searchView.setOnQueryTextListener(this)
-        searchView.setOnQueryTextFocusChangeListener { _, b ->
-            header_villager_layout?.visibility = if (b) View.GONE else View.VISIBLE
+        searchMenuItem?.actionView?.let {
+            val searchView = it as SearchView
+            searchView.setQuery("", false)
+            searchView.clearFocus()
+            searchView.onActionViewCollapsed()
+            searchView.setOnQueryTextListener(this)
+            searchView.setOnQueryTextFocusChangeListener { _, b ->
+                header_villager_layout?.visibility = if (b) View.GONE else View.VISIBLE
+            }
         }
     }
 
@@ -85,23 +87,23 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
 
     private fun setup() {
         setTitle(villager.name)
-        header_villager_image_view.setImageResource(villager.getImageId(activity as MainActivity))
-        header_villager_image_view.contentDescription = villager.name
-        header_villager_name_text_view.text = villager.name
-        header_villager_birthday_text_view.text = villager.birthday.toString()
-        header_villager_birthday_text_view.setCompoundDrawablesWithIntrinsicBounds(
+        header_villager_image_view?.setImageResource(villager.getImageId(activity as MainActivity))
+        header_villager_image_view?.contentDescription = villager.name
+        header_villager_name_text_view?.text = villager.name
+        header_villager_birthday_text_view?.text = villager.birthday.toString()
+        header_villager_birthday_text_view?.setCompoundDrawablesWithIntrinsicBounds(
                 villager.birthday.season.getImageId(activity as MainActivity),
                 0, 0, 0
         )
 
-        loading_container.visibility = View.VISIBLE
-        villager_recycler_view.visibility = View.GONE
+        loading_container?.visibility = View.VISIBLE
+        villager_recycler_view?.visibility = View.GONE
         val disposable = giftReactionRepository.getGiftReactionsByVillagerName(villager.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { giftReactions ->
-                    loading_container.visibility = View.GONE
-                    villager_recycler_view.visibility = View.VISIBLE
+                    loading_container?.visibility = View.GONE
+                    villager_recycler_view?.visibility = View.VISIBLE
                     setupAdapter(giftReactions)
                 }
 
@@ -136,7 +138,7 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
         }.toMutableList()
 
         adapter = GiftReactionsAdapter(list)
-        villager_recycler_view.adapter = adapter
+        villager_recycler_view?.adapter = adapter
 
         layoutManager = GridLayoutManager(activity, SPAN_COUNT)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -146,7 +148,7 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
             }
         }
 
-        villager_recycler_view.layoutManager = layoutManager
+        villager_recycler_view?.layoutManager = layoutManager
     }
 
     override fun getFilter(): Filter {

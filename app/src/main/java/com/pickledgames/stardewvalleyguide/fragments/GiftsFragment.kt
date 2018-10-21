@@ -44,8 +44,10 @@ class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.gifts_search)
-        val searchView = searchMenuItem.actionView as SearchView
-        searchView.setOnQueryTextListener(this)
+        searchMenuItem?.actionView?.let {
+            val searchView = it as SearchView
+            searchView.setOnQueryTextListener(this)
+        }
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {

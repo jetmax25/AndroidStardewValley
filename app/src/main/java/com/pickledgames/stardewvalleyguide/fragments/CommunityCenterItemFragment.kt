@@ -45,19 +45,19 @@ class CommunityCenterItemFragment : InnerBaseFragment() {
     }
 
     private fun setup() {
-        header_item_name_text_view.text = communityCenterItem.name
-        header_item_image_view.setImageResource(communityCenterItem.getImageId(activity as MainActivity))
-        header_item_image_view.contentDescription = communityCenterItem.name
+        header_item_name_text_view?.text = communityCenterItem.name
+        header_item_image_view?.setImageResource(communityCenterItem.getImageId(activity as MainActivity))
+        header_item_image_view?.contentDescription = communityCenterItem.name
 
-        if (communityCenterItem.seasons.contains(Season.Fall)) fall_availability_text_view.alpha = 1.0f
-        if (communityCenterItem.seasons.contains(Season.Winter)) winter_availability_text_view.alpha = 1.0f
-        if (communityCenterItem.seasons.contains(Season.Spring)) spring_availability_text_view.alpha = 1.0f
-        if (communityCenterItem.seasons.contains(Season.Summer)) summer_availability_text_view.alpha = 1.0f
-        if (communityCenterItem.isTravelingMerchant) traveling_merchant_image_view.alpha = 1.0f
+        if (communityCenterItem.seasons.contains(Season.Fall)) fall_availability_text_view?.alpha = 1.0f
+        if (communityCenterItem.seasons.contains(Season.Winter)) winter_availability_text_view?.alpha = 1.0f
+        if (communityCenterItem.seasons.contains(Season.Spring)) spring_availability_text_view?.alpha = 1.0f
+        if (communityCenterItem.seasons.contains(Season.Summer)) summer_availability_text_view?.alpha = 1.0f
+        if (communityCenterItem.isTravelingMerchant) traveling_merchant_image_view?.alpha = 1.0f
 
-        guides_recycler_view.adapter = GuidesAdapter(communityCenterItem.guides)
-        guides_recycler_view.layoutManager = LinearLayoutManager(activity)
-        guides_recycler_view.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+        guides_recycler_view?.adapter = GuidesAdapter(communityCenterItem.guides)
+        guides_recycler_view?.layoutManager = LinearLayoutManager(activity)
+        guides_recycler_view?.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
 
         analyticsManager.logEvent("Community Center Detail", mapOf("Item Name" to communityCenterItem.name))
     }
