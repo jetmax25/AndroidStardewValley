@@ -45,9 +45,11 @@ class CommunityCenterItemFragment : InnerBaseFragment() {
     }
 
     private fun setup() {
+        header_item_left_image_view?.setImageResource(communityCenterItem.getImageId(activity as MainActivity))
+        header_item_left_image_view?.contentDescription = communityCenterItem.name
         header_item_name_text_view?.text = communityCenterItem.name
-        header_item_image_view?.setImageResource(communityCenterItem.getImageId(activity as MainActivity))
-        header_item_image_view?.contentDescription = communityCenterItem.name
+        header_item_right_image_view?.setImageResource(communityCenterItem.getImageId(activity as MainActivity))
+        header_item_right_image_view?.contentDescription = communityCenterItem.name
 
         if (communityCenterItem.seasons.contains(Season.Fall)) fall_availability_text_view?.alpha = 1.0f
         if (communityCenterItem.seasons.contains(Season.Winter)) winter_availability_text_view?.alpha = 1.0f

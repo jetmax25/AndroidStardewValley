@@ -82,9 +82,11 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
 
     private fun setup() {
         setTitle(gift.name)
-        header_item_image_view?.setImageResource(gift.getImageId(activity as MainActivity))
-        header_item_image_view?.contentDescription = gift.name
+        header_item_left_image_view?.setImageResource(gift.getImageId(activity as MainActivity))
+        header_item_left_image_view?.contentDescription = gift.name
         header_item_name_text_view?.text = gift.name
+        header_item_right_image_view?.setImageResource(gift.getImageId(activity as MainActivity))
+        header_item_right_image_view?.contentDescription = gift.name
 
         loading_container?.visibility = View.VISIBLE
         gift_reactions_recycler_view?.visibility = View.GONE
