@@ -20,6 +20,36 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
+    <TextView
+        android:id="@+id/header_villager_name_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_heart_red"
+        android:drawableRight="@drawable/ic_heart_red"
+        android:drawablePadding="5dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_guideline"
+        app:layout_constraintEnd_toEndOf="@+id/vertical_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Dwarf" />
+
+    <TextView
+        android:id="@+id/header_villager_birthday_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/season_summer"
+        android:drawableLeft="@drawable/season_summer"
+        android:drawablePadding="5dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/vertical_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline"
+        tools:text="Summer 22" />
+
     <ImageView
         android:id="@+id/header_villager_image_view"
         android:layout_width="75dp"
@@ -32,39 +62,9 @@
         android:layout_marginBottom="8dp"
         android:contentDescription="@null"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/villager_dwarf" />
-
-    <TextView
-        android:id="@+id/header_villager_name_text_view"
-        style="@style/StardewTextViewStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableEnd="@drawable/ic_heart_red"
-        android:drawableRight="@drawable/ic_heart_red"
-        android:drawablePadding="5dp"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontal_guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
-        app:layout_constraintTop_toTopOf="@+id/header_villager_image_view"
-        tools:text="Dwarf" />
-
-    <TextView
-        android:id="@+id/header_villager_birthday_text_view"
-        style="@style/StardewTextViewStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/season_summer"
-        android:drawableLeft="@drawable/season_summer"
-        android:drawablePadding="5dp"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/header_villager_image_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
-        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline"
-        tools:text="Summer 22" />
 
 </android.support.constraint.ConstraintLayout>

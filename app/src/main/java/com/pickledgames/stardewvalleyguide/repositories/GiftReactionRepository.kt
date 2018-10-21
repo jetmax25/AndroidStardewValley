@@ -73,7 +73,16 @@ class GiftReactionRepository(
                 for (item in items.keys()) {
                     val villagers = items.getJSONObject(item)
                     for (villager in villagers.keys()) {
-                        val reaction = Reaction.valueOf(villagers.getString(villager).toLowerCase().capitalize())
+                        val villagerReaction = villagers.getString(villager).toLowerCase().capitalize()
+                        // Weird bug occurs where Dıslıke can't be matched (note the missing dots on i)
+                        // Might be a translation issue, but don't know how to replicate so handle it here
+                        val reaction = try {
+                            Reaction.valueOf(villagerReaction)
+                        } catch (e: Exception) {
+                            e.printStackTrace()
+                            findClosestReaction(villagerReaction)
+                        }
+
                         list.add(GiftReaction(reaction, villager, item, category))
                     }
                 }
@@ -81,5 +90,46 @@ class GiftReactionRepository(
 
             it.onSuccess(list)
         }
+    }
+
+    private fun findClosestReaction(s: String): Reaction {
+        var min = Int.MAX_VALUE
+        val map = mutableMapOf<Int, Reaction>()
+        for (reaction: Reaction in Reaction.values()) {
+            val score = levenshtein(s, reaction.type)
+            map[score] = reaction
+            if (score < min) min = score
+        }
+
+        return map[min] ?: Reaction.Neutral
+    }
+
+    // https://gist.github.com/ademar111190/34d3de41308389a0d0d8
+    private fun levenshtein(lhs: CharSequence, rhs: CharSequence): Int {
+        val lhsLength = lhs.length
+        val rhsLength = rhs.length
+
+        var cost = Array(lhsLength) { it }
+        var newCost = Array(lhsLength) { 0 }
+
+        for (i in 1 until rhsLength) {
+            newCost[0] = i
+
+            for (j in 1 until lhsLength) {
+                val match = if (lhs[j - 1] == rhs[i - 1]) 0 else 1
+
+                val costReplace = cost[j - 1] + match
+                val costInsert = cost[j] + 1
+                val costDelete = newCost[j - 1] + 1
+
+                newCost[j] = Math.min(Math.min(costInsert, costDelete), costReplace)
+            }
+
+            val swap = cost
+            cost = newCost
+            newCost = swap
+        }
+
+        return cost[lhsLength - 1]
     }
 }

@@ -22,8 +22,8 @@ class ChecklistsFragment : Fragment() {
     }
 
     private fun setup() {
-        checklists_view_pager.adapter = ChecklistsAdapter(childFragmentManager)
-        checklists_tab_layout.setupWithViewPager(checklists_view_pager)
+        checklists_view_pager?.adapter = ChecklistsAdapter(childFragmentManager)
+        checklists_tab_layout?.setupWithViewPager(checklists_view_pager)
     }
 
     companion object {

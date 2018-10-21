@@ -12,7 +12,7 @@ class ReactionHeaderViewHolder(
         override val containerView: View
 ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
-    private val imageViews: List<ImageView> = listOf(
+    private val imageViews: List<ImageView?> = listOf(
             reaction_header_1_image_view,
             reaction_header_2_image_view,
             reaction_header_3_image_view,
@@ -22,7 +22,7 @@ class ReactionHeaderViewHolder(
     )
 
     fun bindReaction(reaction: Reaction) {
-        reaction_type_text_view.text = reaction.toString()
+        reaction_type_text_view?.text = reaction.toString()
         setupReactionDrawables(reaction)
     }
 
@@ -56,11 +56,11 @@ class ReactionHeaderViewHolder(
 
         for ((index: Int, p: Pair<Int, String>?) in drawableIdContentDescriptionPairList.withIndex()) {
             if (p != null) {
-                imageViews[index].setImageResource(p.first)
-                imageViews[index].contentDescription = p.second
-                imageViews[index].visibility = View.VISIBLE
+                imageViews[index]?.setImageResource(p.first)
+                imageViews[index]?.contentDescription = p.second
+                imageViews[index]?.visibility = View.VISIBLE
             } else {
-                imageViews[index].visibility = View.INVISIBLE
+                imageViews[index]?.visibility = View.INVISIBLE
             }
         }
     }

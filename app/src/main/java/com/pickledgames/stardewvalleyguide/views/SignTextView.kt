@@ -26,17 +26,18 @@ class SignTextView : RelativeLayout {
         ).apply {
             try {
                 val text = getText(R.styleable.SignTextView_text) ?: ""
-                text_view.text = text
+                text_view?.text = text
 
-                val textSize = getDimension(R.styleable.SignTextView_textSize, text_view.textSize)
-                text_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
+                val defaultTextSize = text_view?.textSize ?: 14f
+                val textSize = getDimension(R.styleable.SignTextView_textSize, defaultTextSize)
+                text_view?.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
 
-                val containerMarginLayoutParams = sign_header_container.layoutParams as MarginLayoutParams
+                val containerMarginLayoutParams = sign_header_container?.layoutParams as MarginLayoutParams
                 val margin = getDimensionPixelSize(R.styleable.SignTextView_margin, 0)
                 containerMarginLayoutParams.setMargins(margin, margin, margin, margin)
 
                 val padding = getDimensionPixelSize(R.styleable.SignTextView_padding, 0)
-                text_view.setPadding(padding, padding, padding, padding)
+                text_view?.setPadding(padding, padding, padding, padding)
             } finally {
                 recycle()
             }

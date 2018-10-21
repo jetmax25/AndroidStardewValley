@@ -60,8 +60,8 @@ class GiftReactionsAdapter(
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindGiftReaction(giftReaction: GiftReaction) {
-            gift_reaction_image_view.setImageResource(giftReaction.getImageId(context))
-            gift_reaction_image_view.contentDescription = giftReaction.itemName
+            gift_reaction_image_view?.setImageResource(giftReaction.getImageId(context))
+            gift_reaction_image_view?.contentDescription = giftReaction.itemName
             containerView.setOnClickListener {
                 SimpleTooltip.Builder(context)
                         .anchorView(containerView)

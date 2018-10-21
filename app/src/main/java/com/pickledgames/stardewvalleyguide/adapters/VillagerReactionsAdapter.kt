@@ -62,8 +62,8 @@ class VillagerReactionsAdapter(
 
         fun bindGiftReaction(giftReaction: GiftReaction) {
             val imageId = Villager(giftReaction.villagerName).getImageId(context)
-            villager_reaction_image_view.setImageResource(imageId)
-            villager_reaction_image_view.contentDescription = giftReaction.villagerName
+            villager_reaction_image_view?.setImageResource(imageId)
+            villager_reaction_image_view?.contentDescription = giftReaction.villagerName
             containerView.setOnClickListener {
                 SimpleTooltip.Builder(context)
                         .anchorView(containerView)

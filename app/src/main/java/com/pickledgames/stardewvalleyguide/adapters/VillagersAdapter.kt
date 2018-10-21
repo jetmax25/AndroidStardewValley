@@ -75,12 +75,12 @@ class VillagersAdapter(
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindVillager(villager: Villager) {
-            villager_name_text_view.text = villager.name
-            if (villager.canMarry) villager_name_text_view.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_heart_red, 0)
-            else villager_name_text_view.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
+            villager_name_text_view?.text = villager.name
+            if (villager.canMarry) villager_name_text_view?.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_heart_red, 0)
+            else villager_name_text_view?.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
 
-            villager_image_view.setImageResource(villager.getImageId(mainActivity))
-            villager_image_view.contentDescription = villager.name
+            villager_image_view?.setImageResource(villager.getImageId(mainActivity))
+            villager_image_view?.contentDescription = villager.name
             containerView.setOnClickListener {
                 mainActivity.pushFragment(VillagerFragment.newInstance(villager))
             }

@@ -43,8 +43,10 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.villagers_search)
-        val searchView = searchMenuItem.actionView as SearchView
-        searchView.setOnQueryTextListener(this)
+        searchMenuItem?.actionView?.let {
+            val searchView = it as SearchView
+            searchView.setOnQueryTextListener(this)
+        }
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
@@ -71,7 +73,7 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
             compositeDisposable.addAll(disposable)
         }
 
-        filter_villagers_tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        filter_villagers_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
@@ -85,10 +87,10 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
 
     private fun setupAdapter() {
         villagersAdapter = VillagersAdapter(villagers, activity as MainActivity)
-        villagers_recycler_view.adapter = villagersAdapter
-        villagers_recycler_view.layoutManager = GridLayoutManager(activity, 3)
+        villagers_recycler_view?.adapter = villagersAdapter
+        villagers_recycler_view?.layoutManager = GridLayoutManager(activity, 3)
         val offset = activity?.resources?.getDimensionPixelOffset(R.dimen.villagers_grid_layout_offset)
-        if (offset != null) villagers_recycler_view.addItemDecoration(GridDividerDecoration(offset, 3))
+        if (offset != null) villagers_recycler_view?.addItemDecoration(GridDividerDecoration(offset, 3))
         villagersAdapter.sort()
     }
 

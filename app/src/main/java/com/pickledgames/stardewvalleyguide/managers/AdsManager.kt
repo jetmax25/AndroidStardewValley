@@ -53,9 +53,7 @@ class AdsManager(
     init {
         @Suppress("CheckResult")
         // TODO: May cause memory leak, should investigate further
-        purchasesManager.isProSubject.subscribe {
-            isPro = it
-        }
+        purchasesManager.isProSubject.subscribe { isPro = it }
     }
 
     fun showAdFor(name: String) {
@@ -71,36 +69,30 @@ class AdsManager(
             private val limit: Int
     ) {
 
-        private val interstitialAd: InterstitialAd = InterstitialAd(context).apply {
-            adUnitId = if (BuildConfig.DEBUG) "ca-app-pub-3940256099942544/1033173712" else adId
-        }
         private var forceShow: Boolean = false
         private var shown: Boolean = false
+        private val interstitialAd: InterstitialAd = InterstitialAd(context).apply {
+            adUnitId = if (BuildConfig.DEBUG) "ca-app-pub-3940256099942544/1033173712" else adId
+            loadAd(AdRequest.Builder().build())
+            adListener = object : AdListener() {
+                override fun onAdFailedToLoad(errorCode: Int) {
+                    super.onAdFailedToLoad(errorCode)
+                    forceShow = true
+                }
+
+                override fun onAdOpened() {
+                    super.onAdOpened()
+                    shown = true
+                }
+            }
+        }
 
         fun showAd() {
             if (shown) return
             // bound is exclusive
             val randomInt = random.nextInt(limit)
             if (randomInt == 0 || forceShow) {
-                interstitialAd.apply {
-                    loadAd(AdRequest.Builder().build())
-                    adListener = object : AdListener() {
-                        override fun onAdLoaded() {
-                            super.onAdLoaded()
-                            show()
-                        }
-
-                        override fun onAdFailedToLoad(errorCode: Int) {
-                            super.onAdFailedToLoad(errorCode)
-                            forceShow = true
-                        }
-
-                        override fun onAdOpened() {
-                            super.onAdOpened()
-                            shown = true
-                        }
-                    }
-                }
+                interstitialAd.show()
             }
         }
     }

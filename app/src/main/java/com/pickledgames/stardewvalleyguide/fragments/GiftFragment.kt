@@ -59,13 +59,15 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.gift_search)
-        val searchView = searchMenuItem.actionView as SearchView
-        searchView.setQuery("", false)
-        searchView.clearFocus()
-        searchView.onActionViewCollapsed()
-        searchView.setOnQueryTextListener(this)
-        searchView.setOnQueryTextFocusChangeListener { _, b ->
-            header_item_layout?.visibility = if (b) View.GONE else View.VISIBLE
+        searchMenuItem.actionView?.let {
+            val searchView = it as SearchView
+            searchView.setQuery("", false)
+            searchView.clearFocus()
+            searchView.onActionViewCollapsed()
+            searchView.setOnQueryTextListener(this)
+            searchView.setOnQueryTextFocusChangeListener { _, b ->
+                header_item_layout?.visibility = if (b) View.GONE else View.VISIBLE
+            }
         }
     }
 
@@ -80,18 +82,20 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
 
     private fun setup() {
         setTitle(gift.name)
-        header_item_image_view.setImageResource(gift.getImageId(activity as MainActivity))
-        header_item_image_view.contentDescription = gift.name
-        header_item_name_text_view.text = gift.name
+        header_item_left_image_view?.setImageResource(gift.getImageId(activity as MainActivity))
+        header_item_left_image_view?.contentDescription = gift.name
+        header_item_name_text_view?.text = gift.name
+        header_item_right_image_view?.setImageResource(gift.getImageId(activity as MainActivity))
+        header_item_right_image_view?.contentDescription = gift.name
 
-        loading_container.visibility = View.VISIBLE
-        gift_reactions_recycler_view.visibility = View.GONE
+        loading_container?.visibility = View.VISIBLE
+        gift_reactions_recycler_view?.visibility = View.GONE
         val disposable = giftReactionRepository.getGiftReactionsByItemName(gift.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { giftReactions ->
-                    loading_container.visibility = View.GONE
-                    gift_reactions_recycler_view.visibility = View.VISIBLE
+                    loading_container?.visibility = View.GONE
+                    gift_reactions_recycler_view?.visibility = View.VISIBLE
                     setupAdapter(giftReactions)
                 }
 
@@ -115,7 +119,7 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
         }.toMutableList()
 
         adapter = VillagerReactionsAdapter(list)
-        gift_reactions_recycler_view.adapter = adapter
+        gift_reactions_recycler_view?.adapter = adapter
 
         layoutManager = GridLayoutManager(activity, SPAN_COUNT)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -125,7 +129,7 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
             }
         }
 
-        gift_reactions_recycler_view.layoutManager = layoutManager
+        gift_reactions_recycler_view?.layoutManager = layoutManager
     }
 
     override fun getFilter(): Filter {

@@ -40,10 +40,10 @@ class VillagerBirthdaysAdapter(
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindVillager(villager: Villager) {
-            villager_birthday_text_view.text = villager.birthday.toString()
-            villager_birthday_villager_image_view.setImageResource(villager.getImageId(mainActivity))
-            villager_birthday_villager_image_view.contentDescription = villager.name
-            villager_birthday_name_text_view.text = villager.name
+            villager_birthday_text_view?.text = villager.birthday.toString()
+            villager_birthday_villager_image_view?.setImageResource(villager.getImageId(mainActivity))
+            villager_birthday_villager_image_view?.contentDescription = villager.name
+            villager_birthday_name_text_view?.text = villager.name
 
             containerView.setOnClickListener {
                 mainActivity.pushFragment(VillagerFragment.newInstance(villager))

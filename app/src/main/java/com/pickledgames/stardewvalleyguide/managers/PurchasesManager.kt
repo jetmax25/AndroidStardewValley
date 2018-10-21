@@ -84,7 +84,7 @@ class PurchasesManager(
         if (purchased) {
             analyticsManager.get().logEvent("Purchase Succeeded")
         } else {
-            analyticsManager.get().logEvent("Purchase Failed")
+            analyticsManager.get().logEvent("Purchase Canceled")
         }
     }
 

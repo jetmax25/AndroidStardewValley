@@ -79,21 +79,21 @@ class CommunityCenterItemsAdapter(
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindCommunityCenterBundle(communityCenterBundle: CommunityCenterBundle, completedItemsCount: Int) {
-            community_center_bundle_image_view.setImageResource(communityCenterBundle.getImageId(mainActivity))
-            community_center_bundle_image_view.contentDescription = communityCenterBundle.name
-            community_center_bundle_name_text_view.text = communityCenterBundle.name
+            community_center_bundle_image_view?.setImageResource(communityCenterBundle.getImageId(mainActivity))
+            community_center_bundle_image_view?.contentDescription = communityCenterBundle.name
+            community_center_bundle_name_text_view?.text = communityCenterBundle.name
             val quantityCompleted = String.format(
                     mainActivity.getString(R.string.bundle_quantity_completed_template),
                     completedItemsCount,
                     communityCenterBundle.needed
             )
-            community_center_bundle_quantity_completed_text_view.text = quantityCompleted
+            community_center_bundle_quantity_completed_text_view?.text = quantityCompleted
             if (completedItemsCount == communityCenterBundle.needed) {
                 val green = ContextCompat.getColor(mainActivity, R.color.green)
-                community_center_bundle_quantity_completed_text_view.setTextColor(green)
+                community_center_bundle_quantity_completed_text_view?.setTextColor(green)
             } else {
                 val white = ContextCompat.getColor(mainActivity, android.R.color.white)
-                community_center_bundle_quantity_completed_text_view.setTextColor(white)
+                community_center_bundle_quantity_completed_text_view?.setTextColor(white)
             }
         }
     }
@@ -116,13 +116,13 @@ class CommunityCenterItemsAdapter(
                 containerView.layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             }
 
-            community_center_item_image_view.setImageResource(communityCenterItem.getImageId(mainActivity))
-            community_center_item_image_view.contentDescription = communityCenterItem.name
-            community_center_item_text_view.text = communityCenterItem.name
+            community_center_item_image_view?.setImageResource(communityCenterItem.getImageId(mainActivity))
+            community_center_item_image_view?.contentDescription = communityCenterItem.name
+            community_center_item_text_view?.text = communityCenterItem.name
             isChecked = isCompleted
-            community_center_item_check_box.isChecked = isChecked
+            community_center_item_check_box?.isChecked = isChecked
             // use onClick instead of onCheckChanged to avoid initial firing
-            community_center_item_check_box.setOnClickListener { _ ->
+            community_center_item_check_box?.setOnClickListener { _ ->
                 isChecked = !isChecked
                 onItemCheckedListener.onItemChecked(communityCenterItem, isChecked)
             }

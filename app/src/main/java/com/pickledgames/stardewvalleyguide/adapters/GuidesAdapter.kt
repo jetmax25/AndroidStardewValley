@@ -30,7 +30,7 @@ class GuidesAdapter(
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindGuide(guide: String) {
-            list_item_guide_text_view.text = guide
+            list_item_guide_text_view?.text = guide
         }
     }
 }

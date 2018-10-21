@@ -44,8 +44,10 @@ class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.gifts_search)
-        val searchView = searchMenuItem.actionView as SearchView
-        searchView.setOnQueryTextListener(this)
+        searchMenuItem?.actionView?.let {
+            val searchView = it as SearchView
+            searchView.setOnQueryTextListener(this)
+        }
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
@@ -119,10 +121,10 @@ class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
 
     private fun setupAdapter() {
         adapter = GiftsAdapter(list, activity as MainActivity)
-        gifts_recycler_view.adapter = adapter
+        gifts_recycler_view?.adapter = adapter
 
         layoutManager = GridLayoutManager(activity, SPAN_COUNT)
-        gifts_recycler_view.layoutManager = layoutManager
+        gifts_recycler_view?.layoutManager = layoutManager
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 // getSpanSize should return number of spans item should take up

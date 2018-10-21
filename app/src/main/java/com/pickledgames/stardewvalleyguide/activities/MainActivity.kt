@@ -23,6 +23,7 @@ import com.pickledgames.stardewvalleyguide.managers.LoginManager
 import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
 import com.pickledgames.stardewvalleyguide.models.Farm
 import dagger.android.AndroidInjection
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_main.*
 import org.threeten.bp.Instant
@@ -77,12 +78,14 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         val builder = FragNavController.newBuilder(savedInstanceState, supportFragmentManager, R.id.container)
         builder.rootFragments(fragments)
         fragNavController = builder.build()
-        navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        navigation?.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         val adRequest = AdRequest.Builder().build()
-        banner_ad_view.loadAd(adRequest)
-        val disposable = purchasesManager.isProSubject.subscribe {
-            banner_ad_view.visibility = if (it) View.GONE else View.VISIBLE
-        }
+        banner_ad_view?.loadAd(adRequest)
+        val disposable = purchasesManager.isProSubject
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe {
+                    banner_ad_view?.visibility = if (it) View.GONE else View.VISIBLE
+                }
 
         compositeDisposable.add(disposable)
 
@@ -115,7 +118,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         analyticsManager.logEvent("Opened App")
 
         if (purchasesManager.isPro) {
-            navigation.menu.removeItem(R.id.navigation_purchases)
+            navigation?.menu?.removeItem(R.id.navigation_purchases)
         }
     }
 

@@ -58,7 +58,7 @@ class CalendarDaysAdapter(
     class CalendarDayHeaderViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindDay(day: String) {
-            calendar_day_header_text_view.text = day
+            calendar_day_header_text_view?.text = day
         }
     }
 
@@ -68,16 +68,16 @@ class CalendarDaysAdapter(
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindCalendarDay(calendarDay: CalendarDay) {
-            calendar_day_text_view.text = calendarDay.day.toString()
+            calendar_day_text_view?.text = calendarDay.day.toString()
             val villager = calendarDay.villager
             if (villager != null) {
-                calendar_day_villager_image_view.visibility = View.VISIBLE
-                calendar_day_villager_image_view.setImageResource(villager.getImageId(mainActivity))
+                calendar_day_villager_image_view?.visibility = View.VISIBLE
+                calendar_day_villager_image_view?.setImageResource(villager.getImageId(mainActivity))
                 containerView.setOnClickListener {
                     mainActivity.pushFragment(VillagerFragment.newInstance(villager))
                 }
             } else {
-                calendar_day_villager_image_view.visibility = View.INVISIBLE
+                calendar_day_villager_image_view?.visibility = View.INVISIBLE
                 containerView.setOnClickListener { }
             }
         }

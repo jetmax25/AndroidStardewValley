@@ -58,7 +58,7 @@ class GiftsAdapter(
     class CategoryViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindCategory(category: String) {
-            category_text_view.text = category
+            category_text_view?.text = category
         }
     }
 
@@ -68,8 +68,8 @@ class GiftsAdapter(
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bindGift(gift: Gift) {
-            gift_image_view.setImageResource(gift.getImageId(mainActivity))
-            gift_image_view.contentDescription = gift.name
+            gift_image_view?.setImageResource(gift.getImageId(mainActivity))
+            gift_image_view?.contentDescription = gift.name
             containerView.setOnClickListener {
                 mainActivity.pushFragment(GiftFragment.newInstance(gift))
             }
