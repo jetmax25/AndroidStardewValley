@@ -53,9 +53,7 @@ class AdsManager(
     init {
         @Suppress("CheckResult")
         // TODO: May cause memory leak, should investigate further
-        purchasesManager.isProSubject.subscribe {
-            isPro = it
-        }
+        purchasesManager.isProSubject.subscribe { isPro = it }
     }
 
     fun showAdFor(name: String) {

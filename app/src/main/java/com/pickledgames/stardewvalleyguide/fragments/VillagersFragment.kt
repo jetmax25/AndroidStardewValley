@@ -43,8 +43,10 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.villagers_search)
-        val searchView = searchMenuItem.actionView as SearchView
-        searchView.setOnQueryTextListener(this)
+        if (searchMenuItem != null) {
+            val searchView = searchMenuItem.actionView as SearchView
+            searchView.setOnQueryTextListener(this)
+        }
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {

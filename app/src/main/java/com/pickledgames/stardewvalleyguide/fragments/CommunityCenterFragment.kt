@@ -178,8 +178,8 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 this
         )
 
-        community_center_items_recycler_view.adapter = adapter
-        community_center_items_recycler_view.layoutManager = LinearLayoutManager(activity)
+        community_center_items_recycler_view?.adapter = adapter
+        community_center_items_recycler_view?.layoutManager = LinearLayoutManager(activity)
     }
 
     override fun onItemChecked(communityCenterItem: CommunityCenterItem, isChecked: Boolean) {

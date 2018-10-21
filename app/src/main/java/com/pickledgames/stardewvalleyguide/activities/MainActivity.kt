@@ -23,6 +23,7 @@ import com.pickledgames.stardewvalleyguide.managers.LoginManager
 import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
 import com.pickledgames.stardewvalleyguide.models.Farm
 import dagger.android.AndroidInjection
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_main.*
 import org.threeten.bp.Instant
@@ -80,7 +81,9 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         val adRequest = AdRequest.Builder().build()
         banner_ad_view.loadAd(adRequest)
-        val disposable = purchasesManager.isProSubject.subscribe {
+        val disposable = purchasesManager.isProSubject
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe {
             banner_ad_view.visibility = if (it) View.GONE else View.VISIBLE
         }
 

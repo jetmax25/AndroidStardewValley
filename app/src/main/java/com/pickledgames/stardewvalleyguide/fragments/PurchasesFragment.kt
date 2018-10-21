@@ -5,6 +5,7 @@ import android.view.*
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
+import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_purchases.*
 import javax.inject.Inject
 
@@ -30,9 +31,10 @@ class PurchasesFragment : BaseFragment() {
 
     private fun setup() {
         val disposable = purchasesManager.isProSubject
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-                    thanks_text_view.visibility = if (it) View.VISIBLE else View.GONE
-                    purchases_group.visibility = if (it) View.GONE else View.VISIBLE
+                    thanks_text_view?.visibility = if (it) View.VISIBLE else View.GONE
+                    purchases_group?.visibility = if (it) View.GONE else View.VISIBLE
                 }
 
         compositeDisposable.add(disposable)

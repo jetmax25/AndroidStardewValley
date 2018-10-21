@@ -119,10 +119,10 @@ class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
 
     private fun setupAdapter() {
         adapter = GiftsAdapter(list, activity as MainActivity)
-        gifts_recycler_view.adapter = adapter
+        gifts_recycler_view?.adapter = adapter
 
         layoutManager = GridLayoutManager(activity, SPAN_COUNT)
-        gifts_recycler_view.layoutManager = layoutManager
+        gifts_recycler_view?.layoutManager = layoutManager
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 // getSpanSize should return number of spans item should take up

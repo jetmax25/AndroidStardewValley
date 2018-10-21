@@ -92,9 +92,10 @@ class EditFarmsFragment : InnerBaseFragment() {
 
         // Always subscribe to isProSubject
         val isProDisposable = purchasesManager.isProSubject
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     isPro = it
-                    go_pro_text_view.visibility = if (isPro) View.GONE else View.VISIBLE
+                    go_pro_text_view?.visibility = if (isPro) View.GONE else View.VISIBLE
                     (activity as MainActivity).invalidateOptionsMenu()
                 }
 
