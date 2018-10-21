@@ -7,4 +7,8 @@
     <color name="red">#f44336</color>
     <color name="gray">#BCBCBC</color>
     <color name="green">#00FF00</color>
+    <!-- Gift Selection Tooltip -->
+    <color name="simpletooltip_background">#B3000000</color>
+    <color name="simpletooltip_text">@android:color/white</color>
+    <color name="simpletooltip_arrow">#B3000000</color>
 </resources>
