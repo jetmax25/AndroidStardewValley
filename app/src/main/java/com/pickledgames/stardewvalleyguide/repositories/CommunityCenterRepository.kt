@@ -77,7 +77,7 @@ class CommunityCenterRepository(
                             if (isAvailable) seasons.add(Season.fromString(season))
                         }
 
-                        val communityCenterItem = CommunityCenterItem(item, itemQuantity, isTravelingMerchant, guides, seasons)
+                        val communityCenterItem = CommunityCenterItem(item, itemQuantity, isTravelingMerchant, guides, seasons, bundle)
                         communityCenterItems.add(communityCenterItem)
                     }
 

@@ -12,8 +12,14 @@ data class CommunityCenterItem(
         val quantity: Int,
         val isTravelingMerchant: Boolean,
         val guides: List<String>,
-        val seasons: Set<Season>
+        val seasons: Set<Season>,
+        val bundleName: String
 ) : StardewObject, Parcelable {
+
+    val uniqueId: String
+        get() {
+            return "$name$bundleName"
+        }
 
     override fun getImageId(context: Context): Int {
         val item = name.toLowerCase().replace("\\W".toRegex(), "_")

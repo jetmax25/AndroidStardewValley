@@ -18,7 +18,7 @@ data class Farm(
     fun getCompletedItemsCount(communityCenterBundle: CommunityCenterBundle): Int {
         var completed = 0
         for (item: CommunityCenterItem in communityCenterBundle.items) {
-            if (communityCenterItems.contains(item.name)) completed++
+            if (communityCenterItems.contains(item.uniqueId)) completed++
         }
         return completed
     }
