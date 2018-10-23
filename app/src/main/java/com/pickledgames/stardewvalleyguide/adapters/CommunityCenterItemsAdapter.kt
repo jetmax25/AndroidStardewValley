@@ -45,7 +45,7 @@ class CommunityCenterItemsAdapter(
             val completedItemsCount = farm.getCompletedItemsCount(item)
             holder.bindCommunityCenterBundle(item, completedItemsCount)
         } else if (holder is CommunityCenterItemViewHolder && item is CommunityCenterItem) {
-            val isCompleted = farm.communityCenterItems.contains(item.name)
+            val isCompleted = farm.communityCenterItems.contains(item.uniqueId)
             holder.bindCommunityCenterItem(item, isCompleted, showCompleted)
         }
     }

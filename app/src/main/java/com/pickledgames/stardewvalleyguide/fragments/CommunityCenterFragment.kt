@@ -187,8 +187,8 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     }
 
     override fun onItemChecked(communityCenterItem: CommunityCenterItem, isChecked: Boolean) {
-        if (isChecked) farm.communityCenterItems.add(communityCenterItem.name)
-        else farm.communityCenterItems.remove(communityCenterItem.name)
+        if (isChecked) farm.communityCenterItems.add(communityCenterItem.uniqueId)
+        else farm.communityCenterItems.remove(communityCenterItem.uniqueId)
         adapter.notifyDataSetChanged()
         farmRepository.updateSelectedFarm(farm)
                 .subscribeOn(Schedulers.io())
