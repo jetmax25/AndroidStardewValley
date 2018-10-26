@@ -5,6 +5,12 @@
     android:layout_height="wrap_content"
     android:background="@color/alphaBackground">
 
+    <android.support.constraint.Group
+        android:id="@+id/filter_community_center_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="filter_community_center_season_tab_layout, show_completed_text_view, show_completed_check_box" />
+
     <android.support.design.widget.TabLayout
         android:id="@+id/filter_community_center_season_tab_layout"
         android:layout_width="match_parent"
@@ -44,6 +50,7 @@
     </android.support.design.widget.TabLayout>
 
     <TextView
+        android:id="@+id/show_completed_text_view"
         style="@style/StardewTextViewStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -62,5 +69,24 @@
         app:buttonTint="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/filter_community_center_season_tab_layout" />
+
+    <TextView
+        android:id="@+id/toggle_filter_settings_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="8dp"
+        android:drawableEnd="@drawable/ic_chevron_double_up"
+        android:drawableRight="@drawable/ic_chevron_double_up"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="@string/hide_filter_settings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/show_completed_check_box" />
 
 </android.support.constraint.ConstraintLayout>

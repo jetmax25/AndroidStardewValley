@@ -51,4 +51,12 @@
     <string name="nope">Nope</string>
     <string name="later">Later</string>
     <string name="sign_background">Sign Background</string>
+    <string name="ocean">Ocean</string>
+    <string name="river">River</string>
+    <string name="lake">Lake</string>
+    <string name="other">Other</string>
+    <string name="sunny">Sunny</string>
+    <string name="rainy">Rainy</string>
+    <string name="hide_filter_settings">Hide Filter Settings</string>
+    <string name="show_filter_settings">Show Filter Settings</string>
 </resources>

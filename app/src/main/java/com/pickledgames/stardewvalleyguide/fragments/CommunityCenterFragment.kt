@@ -170,6 +170,18 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 }
 
         compositeDisposable.add(disposable)
+
+        toggle_filter_settings_text_view?.setOnClickListener {
+            if (toggle_filter_settings_text_view?.text == getString(R.string.hide_filter_settings)) {
+                filter_community_center_group?.visibility = View.GONE
+                toggle_filter_settings_text_view?.text = getString(R.string.show_filter_settings)
+                toggle_filter_settings_text_view.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_chevron_double_down, 0)
+            } else {
+                filter_community_center_group?.visibility = View.VISIBLE
+                toggle_filter_settings_text_view?.text = getString(R.string.hide_filter_settings)
+                toggle_filter_settings_text_view.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_chevron_double_up, 0)
+            }
+        }
     }
 
     private fun setupCommunityCenterItemsAdapter(list: List<Any>) {
