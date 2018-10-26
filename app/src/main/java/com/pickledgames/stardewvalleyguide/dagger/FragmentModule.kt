@@ -50,4 +50,8 @@ abstract class FragmentModule {
     @FragmentScope
     @ContributesAndroidInjector
     abstract fun purchasesFragment(): PurchasesFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector
+    abstract fun fishingFragment(): FishingFragment
 }
