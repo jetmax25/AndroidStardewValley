@@ -14,6 +14,7 @@ import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.GiftsAdapter
 import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
+import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_gifts.*
@@ -36,10 +37,7 @@ class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.gifts_search)
-        searchMenuItem?.actionView?.let {
-            val searchView = it as SearchView
-            searchView.setOnQueryTextListener(this)
-        }
+        FragmentUtil.setupSearchView(searchMenuItem, this, null)
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {

@@ -13,6 +13,7 @@ import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.VillagersAdapter
 import com.pickledgames.stardewvalleyguide.models.Villager
 import com.pickledgames.stardewvalleyguide.repositories.VillagerRepository
+import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import com.pickledgames.stardewvalleyguide.views.GridDividerDecoration
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -35,10 +36,7 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.villagers_search)
-        searchMenuItem?.actionView?.let {
-            val searchView = it as SearchView
-            searchView.setOnQueryTextListener(this)
-        }
+        FragmentUtil.setupSearchView(searchMenuItem, this, null)
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {

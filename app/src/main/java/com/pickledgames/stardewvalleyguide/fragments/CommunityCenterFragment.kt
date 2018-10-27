@@ -17,6 +17,7 @@ import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
 import com.pickledgames.stardewvalleyguide.models.Farm
 import com.pickledgames.stardewvalleyguide.repositories.CommunityCenterRepository
 import com.pickledgames.stardewvalleyguide.repositories.FarmRepository
+import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.BiFunction
@@ -70,16 +71,9 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     override fun onPrepareOptionsMenu(menu: Menu?) {
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu?.findItem(R.id.community_center_search)
-        searchMenuItem?.actionView?.let {
-            val searchView = it as SearchView
-            searchView.setQuery("", false)
-            searchView.clearFocus()
-            searchView.onActionViewCollapsed()
-            searchView.setOnQueryTextListener(this)
-            searchView.setOnQueryTextFocusChangeListener { _, b ->
-                community_center_header_group?.visibility = if (b) View.GONE else View.VISIBLE
-            }
-        }
+        FragmentUtil.setupSearchView(searchMenuItem, this, View.OnFocusChangeListener { _, b ->
+            community_center_header_group?.visibility = if (b) View.GONE else View.VISIBLE
+        })
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

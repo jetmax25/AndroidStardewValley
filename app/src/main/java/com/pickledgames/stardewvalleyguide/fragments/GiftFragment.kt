@@ -18,6 +18,7 @@ import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
+import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_gift.*
@@ -56,16 +57,9 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.gift_search)
-        searchMenuItem.actionView?.let {
-            val searchView = it as SearchView
-            searchView.setQuery("", false)
-            searchView.clearFocus()
-            searchView.onActionViewCollapsed()
-            searchView.setOnQueryTextListener(this)
-            searchView.setOnQueryTextFocusChangeListener { _, b ->
-                header_item_layout?.visibility = if (b) View.GONE else View.VISIBLE
-            }
-        }
+        FragmentUtil.setupSearchView(searchMenuItem, this, View.OnFocusChangeListener { _, b ->
+            header_item_layout?.visibility = if (b) View.GONE else View.VISIBLE
+        })
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
