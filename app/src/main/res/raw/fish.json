@@ -396,7 +396,7 @@
       }
     },
     "Availability": {
-      "Weather": "rainy",
+      "Weather": "Rainy",
       "Locations": [
         "Town River",
         "Forest River",
@@ -528,7 +528,7 @@
       }
     },
     "Availability": {
-      "Weather": "rainy",
+      "Weather": "Rainy",
       "Locations": [
         "Town River",
         "Forest River",
@@ -745,7 +745,7 @@
       }
     },
     "Availability": {
-      "Weather": "rainy",
+      "Weather": "Rainy",
       "Locations": [
         "Ocean"
       ],
@@ -827,7 +827,7 @@
       }
     },
     "Availability": {
-      "Weather": "rainy",
+      "Weather": "Rainy",
       "Locations": [
         "Ocean"
       ],
@@ -1529,7 +1529,7 @@
       }
     },
     "Availability": {
-      "Weather": "rainy",
+      "Weather": "Rainy",
       "Locations": [
         "Town River",
         "Forest River"
@@ -1860,7 +1860,7 @@
       }
     },
     "Availability": {
-      "Weather": "rainy",
+      "Weather": "Rainy",
       "Locations": [
         "Mountain Lake (deep water, near the log)"
       ],

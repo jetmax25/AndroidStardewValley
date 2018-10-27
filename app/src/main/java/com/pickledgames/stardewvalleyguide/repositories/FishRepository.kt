@@ -2,6 +2,7 @@ package com.pickledgames.stardewvalleyguide.repositories
 
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.enums.FishingLocationType
 import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.models.Availability
 import com.pickledgames.stardewvalleyguide.models.Fish
@@ -51,11 +52,11 @@ class FishRepository(
 
                 val availabilityJSONObject = fishJSONObject.getJSONObject("Availability")
                 val weather = availabilityJSONObject.getString("Weather")
-                val locations = mutableListOf<String>()
+                val locations = mutableMapOf<String, FishingLocationType>()
                 val locationsJSONArray = availabilityJSONObject.getJSONArray("Locations")
                 for (i in 0 until locationsJSONArray.length()) {
                     val location = locationsJSONArray.getString(i)
-                    locations.add(location)
+                    locations[location] = (FishingLocationType.fromString(location))
                 }
                 val seasonsJSONObject = availabilityJSONObject.getJSONObject("Seasons")
                 val seasons = mutableSetOf<Season>()

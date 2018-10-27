@@ -14,10 +14,7 @@
         app:constraint_referenced_ids="
             filter_fishing_season_tab_layout,
             filter_fishing_location_tab_layout,
-            sunny_text_view,
-            sunny_check_box,
-            rainy_text_view,
-            rainy_check_box,
+            filter_fishing_weather_tab_layout,
             time_range_text_view,
             time_range_seek_bar,
             show_completed_text_view,
@@ -33,7 +30,7 @@
 
     <android.support.design.widget.TabLayout
         android:id="@+id/filter_fishing_season_tab_layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +68,7 @@
 
     <android.support.design.widget.TabLayout
         android:id="@+id/filter_fishing_location_tab_layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,53 +104,43 @@
 
     </android.support.design.widget.TabLayout>
 
-    <android.support.v7.widget.AppCompatCheckBox
-        android:id="@+id/sunny_check_box"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/filter_fishing_weather_tab_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:buttonTint="@android:color/white"
-        app:layout_constraintEnd_toEndOf="@id/vertical_guideline"
-        app:layout_constraintTop_toBottomOf="@id/filter_fishing_location_tab_layout" />
-
-    <TextView
-        android:id="@+id/sunny_text_view"
-        style="@style/StardewTextViewStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/sunny"
-        app:layout_constraintBottom_toBottomOf="@+id/sunny_check_box"
-        app:layout_constraintEnd_toEndOf="@id/sunny_check_box"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sunny_check_box" />
-
-    <TextView
-        android:id="@+id/rainy_text_view"
-        style="@style/StardewTextViewStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/rainy"
-        app:layout_constraintBottom_toBottomOf="@+id/rainy_check_box"
-        app:layout_constraintEnd_toEndOf="@id/rainy_check_box"
-        app:layout_constraintStart_toStartOf="@id/vertical_guideline"
-        app:layout_constraintTop_toTopOf="@+id/rainy_check_box" />
-
-    <android.support.v7.widget.AppCompatCheckBox
-        android:id="@+id/rainy_check_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:buttonTint="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/filter_fishing_location_tab_layout" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter_fishing_location_tab_layout"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabMode="scrollable"
+        app:tabTextColor="@android:color/white">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/any" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sunny" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rainy" />
+
+    </android.support.design.widget.TabLayout>
 
     <TextView
         android:id="@+id/time_range_text_view"
         style="@style/StardewTextViewStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rainy_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/filter_fishing_weather_tab_layout"
         tools:text="6:00 AM - 2:00 AM" />
 
     <com.jaygoo.widget.RangeSeekBar

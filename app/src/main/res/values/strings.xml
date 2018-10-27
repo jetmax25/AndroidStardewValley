@@ -59,4 +59,6 @@
     <string name="rainy">Rainy</string>
     <string name="hide_filter_settings">Hide Filter Settings</string>
     <string name="show_filter_settings">Show Filter Settings</string>
+    <string name="time_range_template">%s - %s</string>
+    <string name="any">Any</string>
 </resources>

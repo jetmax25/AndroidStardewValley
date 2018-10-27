@@ -6,6 +6,7 @@ import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
 enum class Season(
         val type: String
 ) : StardewObject {
+
     Fall("Fall"),
     Winter("Winter"),
     Spring("Spring"),

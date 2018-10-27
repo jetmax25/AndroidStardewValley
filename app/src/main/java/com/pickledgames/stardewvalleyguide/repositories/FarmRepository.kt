@@ -57,7 +57,7 @@ class FarmRepository(
     fun addFarm(farm: Farm): Single<Farm> {
         return Single.create<Farm> { emitter ->
             val id = farmDao.insertFarm(farm)
-            val farmWithId = Farm(farm.name, farm.farmType, farm.communityCenterItems, id)
+            val farmWithId = Farm(farm.name, farm.farmType, farm.communityCenterItems, farm.fishes, id)
             farms.add(farmWithId)
             emitter.onSuccess(farmWithId)
         }

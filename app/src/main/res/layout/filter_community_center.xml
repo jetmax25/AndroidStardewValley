@@ -19,7 +19,7 @@
 
     <android.support.design.widget.TabLayout
         android:id="@+id/filter_community_center_season_tab_layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -6,6 +6,7 @@ import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
 enum class FarmType(
         val type: String
 ) : StardewObject {
+
     Standard("Standard"),
     Riverland("Riverland"),
     Forest("Forest"),

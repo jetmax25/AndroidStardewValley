@@ -103,12 +103,12 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     }
 
     override fun setup() {
+        header_farm_left_arrow_image_view?.setOnClickListener(this)
+        header_farm_right_arrow_image_view?.setOnClickListener(this)
         header_farm_easy_flip_view?.setOnClickListener {
             (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
         }
 
-        header_farm_left_arrow_image_view?.setOnClickListener(this)
-        header_farm_right_arrow_image_view?.setOnClickListener(this)
         filter_community_center_season_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
@@ -119,10 +119,10 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 filter.filter("")
             }
         })
+
         show_completed_check_box?.setOnCheckedChangeListener { _, b ->
             showCompleted = b
             adapter.updateShowCompleted(showCompleted)
-            filter.filter("")
         }
 
         data class Results(
