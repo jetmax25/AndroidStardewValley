@@ -1,7 +1,9 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
@@ -14,22 +16,11 @@ class PurchasesFragment : BaseFragment() {
     @Inject lateinit var purchasesManager: PurchasesManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_purchases, container, false)
+        layoutId = R.layout.fragment_purchases
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        setup()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater)
-        menu?.clear()
-    }
-
-    private fun setup() {
+    override fun setup() {
         val disposable = purchasesManager.isProSubject
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {

@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.SearchView
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import com.pickledgames.stardewvalleyguide.R
@@ -37,27 +40,21 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
     @Inject lateinit var analyticsManager: AnalyticsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        setHasOptionsMenu(true)
+        layoutId = R.layout.fragment_villager
+        menuId = R.menu.villager
         adsManager.showAdFor(AdsManager.VILLAGER_FRAGMENT)
-        return inflater.inflate(R.layout.fragment_villager, container, false)
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         if (arguments != null) {
             val selectedVillager: Villager? = arguments?.getParcelable(VILLAGER)
             if (selectedVillager != null) {
                 villager = selectedVillager
-                setup()
             }
         }
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater)
-        menu?.clear()
-        inflater?.inflate(R.menu.villager, menu)
+        super.onActivityCreated(savedInstanceState)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
@@ -85,7 +82,7 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
         return false
     }
 
-    private fun setup() {
+    override fun setup() {
         setTitle(villager.name)
         header_villager_image_view?.setImageResource(villager.getImageId(activity as MainActivity))
         header_villager_image_view?.contentDescription = villager.name

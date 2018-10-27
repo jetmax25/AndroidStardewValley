@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.SearchView
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.View
+import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.VillagersAdapter
@@ -24,20 +27,9 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
     private lateinit var villagersAdapter: VillagersAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_villagers, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        setup()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater)
-        menu?.clear()
-        inflater?.inflate(R.menu.villagers, menu)
+        layoutId = R.layout.fragment_villagers
+        menuId = R.menu.villagers
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
@@ -58,7 +50,7 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
         return false
     }
 
-    private fun setup() {
+    override fun setup() {
         if (villagers.isNotEmpty()) {
             setupAdapter()
         } else {

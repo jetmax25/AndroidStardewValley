@@ -3,7 +3,10 @@ package com.pickledgames.stardewvalleyguide.fragments
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.SearchView
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import com.pickledgames.stardewvalleyguide.R
@@ -25,20 +28,9 @@ class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
     private lateinit var layoutManager: GridLayoutManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_gifts, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        setup()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater)
-        menu?.clear()
-        inflater?.inflate(R.menu.gifts, menu)
+        layoutId = R.layout.fragment_gifts
+        menuId = R.menu.gifts
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
@@ -85,7 +77,7 @@ class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
         }
     }
 
-    private fun setup() {
+    override fun setup() {
         if (list.isNotEmpty()) {
             setupAdapter()
         } else {

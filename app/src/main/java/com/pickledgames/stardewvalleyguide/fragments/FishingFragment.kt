@@ -15,17 +15,12 @@ class FishingFragment : BaseFragment() {
     @Inject lateinit var fishRepository: FishRepository
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_fishing, container, false)
+        layoutId = R.layout.fragment_fishing
+        menuId = R.menu.fishing
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        setup()
-    }
-
-    private fun setup() {
+    override fun setup() {
         val disposable = fishRepository.getFishes()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

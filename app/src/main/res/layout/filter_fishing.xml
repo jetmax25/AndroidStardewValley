@@ -146,16 +146,6 @@
         app:layout_constraintTop_toBottomOf="@id/filter_fishing_location_tab_layout" />
 
     <TextView
-        style="@style/StardewTextViewStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/show_completed"
-        app:layout_constraintBottom_toBottomOf="@+id/show_completed_check_box"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/show_completed_check_box" />
-
-    <TextView
         android:id="@+id/time_range_text_view"
         style="@style/StardewTextViewStyle"
         android:layout_width="0dp"

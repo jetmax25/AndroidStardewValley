@@ -3,7 +3,10 @@ package com.pickledgames.stardewvalleyguide.fragments
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.SearchView
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import com.pickledgames.stardewvalleyguide.R
@@ -33,27 +36,21 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
     @Inject lateinit var analyticsManager: AnalyticsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        setHasOptionsMenu(true)
+        layoutId = R.layout.fragment_gift
+        menuId = R.menu.gift
         adsManager.showAdFor(AdsManager.GIFT_FRAGMENT)
-        return inflater.inflate(R.layout.fragment_gift, container, false)
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         if (arguments != null) {
             val selectedGift: Gift? = arguments?.getParcelable(GIFT)
             if (selectedGift != null) {
                 gift = selectedGift
-                setup()
             }
         }
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater)
-        menu?.clear()
-        inflater?.inflate(R.menu.gift, menu)
+        super.onActivityCreated(savedInstanceState)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
@@ -80,7 +77,7 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
         return false
     }
 
-    private fun setup() {
+    override fun setup() {
         setTitle(gift.name)
         header_item_left_image_view?.setImageResource(gift.getImageId(activity as MainActivity))
         header_item_left_image_view?.contentDescription = gift.name

@@ -40,14 +40,9 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     private var hasAdapterBeenSetup: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_community_center, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        setup()
+        layoutId = R.layout.fragment_community_center
+        menuId = R.menu.community_center
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onClick(view: View?) {
@@ -70,12 +65,6 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 }
 
         compositeDisposable.add(disposable)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater)
-        menu?.clear()
-        inflater?.inflate(R.menu.community_center, menu)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?) {
@@ -119,7 +108,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         hasAdapterBeenSetup = false
     }
 
-    private fun setup() {
+    override fun setup() {
         header_farm_easy_flip_view?.setOnClickListener {
             (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
         }

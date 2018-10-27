@@ -28,21 +28,10 @@ class EditFarmsFragment : InnerBaseFragment() {
     @Inject lateinit var analyticsManager: AnalyticsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        setHasOptionsMenu(true)
+        layoutId = R.layout.fragment_edit_farms
+        menuId = R.menu.edit_farms
         setTitle(R.string.edit_farms)
-        return inflater.inflate(R.layout.fragment_edit_farms, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        setup()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater)
-        menu?.clear()
-        inflater?.inflate(R.menu.edit_farms, menu)
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?) {
@@ -71,7 +60,7 @@ class EditFarmsFragment : InnerBaseFragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun setup() {
+    override fun setup() {
         if (farms.isNotEmpty()) {
             setupAdapter()
         } else {

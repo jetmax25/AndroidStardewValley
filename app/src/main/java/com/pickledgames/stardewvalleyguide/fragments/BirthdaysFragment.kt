@@ -40,13 +40,8 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_birthdays, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        setup()
+        layoutId = R.layout.fragment_birthdays
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onClick(v: View?) {
@@ -78,7 +73,7 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
         villagerBirthdaysAdapter.updateVillagers(filteredVillagers)
     }
 
-    private fun setup() {
+    override fun setup() {
         val season = seasons[seasonIndex]
         header_calendar_season_text_view?.text = season.type
         header_calendar_season_text_view?.setCompoundDrawablesWithIntrinsicBounds(
