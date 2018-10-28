@@ -20,7 +20,6 @@ import com.pickledgames.stardewvalleyguide.models.Farm
 import com.pickledgames.stardewvalleyguide.models.Fish
 import com.pickledgames.stardewvalleyguide.repositories.FarmRepository
 import com.pickledgames.stardewvalleyguide.repositories.FishRepository
-import com.pickledgames.stardewvalleyguide.utils.ChecklistFragmentUtil
 import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -103,7 +102,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         }
 
         val seasonTabIndex = sharedPreferences.getInt(SEASON_INDEX, 0)
-        filter_fishing_season_tab_layout.getTabAt(seasonTabIndex)?.select()
+        filter_fishing_season_tab_layout?.getTabAt(seasonTabIndex)?.select()
         seasonFilterBy = filter_fishing_season_tab_layout?.getTabAt(seasonTabIndex)?.text.toString()
         filter_fishing_season_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
@@ -118,7 +117,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         })
 
         val locationTabIndex = sharedPreferences.getInt(LOCATION_INDEX, 0)
-        filter_fishing_location_tab_layout.getTabAt(locationTabIndex)?.select()
+        filter_fishing_location_tab_layout?.getTabAt(locationTabIndex)?.select()
         locationFilterBy = filter_fishing_location_tab_layout?.getTabAt(locationTabIndex)?.text.toString()
         filter_fishing_location_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
@@ -133,8 +132,8 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         })
 
         val weatherIndex = sharedPreferences.getInt(WEATHER_INDEX, 0)
-        filter_fishing_weather_tab_layout.getTabAt(weatherIndex)?.select()
-        weatherFilterBy = filter_fishing_location_tab_layout?.getTabAt(weatherIndex)?.text.toString()
+        filter_fishing_weather_tab_layout?.getTabAt(weatherIndex)?.select()
+        weatherFilterBy = filter_fishing_weather_tab_layout?.getTabAt(weatherIndex)?.text.toString()
         filter_fishing_weather_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
@@ -149,17 +148,17 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
 
         startTime = sharedPreferences.getInt(START_TIME, MIN_START_TIME)
         endTime = sharedPreferences.getInt(END_TIME, MAX_END_TIME)
-        time_range_seek_bar.setRange(MIN_START_TIME.toFloat(), MAX_END_TIME.toFloat(), 1f)
-        time_range_seek_bar.setValue(startTime.toFloat(), endTime.toFloat())
-        setTimeRangeText()
+        time_range_seek_bar?.setRange(MIN_START_TIME.toFloat(), MAX_END_TIME.toFloat(), 1f)
+        time_range_seek_bar?.setValue(startTime.toFloat(), endTime.toFloat())
+        FragmentUtil.setTimeRangeText(startTime, endTime, time_range_text_view, resources)
 
-        time_range_seek_bar.setOnRangeChangedListener(object : OnRangeChangedListener {
+        time_range_seek_bar?.setOnRangeChangedListener(object : OnRangeChangedListener {
             override fun onStartTrackingTouch(view: RangeSeekBar?, isLeft: Boolean) {}
 
             override fun onRangeChanged(rangeSeekBar: RangeSeekBar?, leftValue: Float, rightValue: Float, isFromUser: Boolean) {
                 startTime = leftValue.toInt()
                 endTime = rightValue.toInt()
-                setTimeRangeText()
+                FragmentUtil.setTimeRangeText(startTime, endTime, time_range_text_view, resources)
                 filter.filter("")
                 sharedPreferences.edit().putInt(START_TIME, startTime).apply()
                 sharedPreferences.edit().putInt(END_TIME, endTime).apply()
@@ -169,14 +168,14 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         })
 
         showCompleted = sharedPreferences.getBoolean(SHOW_COMPLETED, false)
-        show_completed_check_box.isChecked = showCompleted
+        show_completed_check_box?.isChecked = showCompleted
         show_completed_check_box?.setOnCheckedChangeListener { _, b ->
             showCompleted = b
             adapter.updateShowCompleted(showCompleted)
             sharedPreferences.edit().putBoolean(SHOW_COMPLETED, showCompleted).apply()
         }
 
-        ChecklistFragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_fishing_group, sharedPreferences, SHOW_FILTER_SETTINGS)
+        FragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_fishing_group, sharedPreferences, SHOW_FILTER_SETTINGS)
 
         data class Results(
                 val farm: Farm,
@@ -212,28 +211,12 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { f ->
-                    ChecklistFragmentUtil.flipSelectedFarmText(header_farm_easy_flip_view, header_farm_name_front_text_view, header_farm_name_back_text_view, resources, f)
+                    FragmentUtil.flipSelectedFarmText(header_farm_easy_flip_view, header_farm_name_front_text_view, header_farm_name_back_text_view, resources, f)
                     farm = f
                     adapter.updateFarm(farm)
                 }
 
         compositeDisposable.add(selectedFarmChangesDisposable)
-    }
-
-    private fun getFormattedTimeString(time: Int): String {
-        return when (time) {
-            in 6 until 12 -> "$time AM"
-            12 -> "12 PM"
-            in 13 until 24 -> "${time % 12} PM"
-            24 -> "12 AM"
-            else -> "${time % 24} AM"
-        }
-    }
-
-    private fun setTimeRangeText() {
-        val formattedStartTime = getFormattedTimeString(startTime)
-        val formattedEndTime = getFormattedTimeString(endTime)
-        time_range_text_view.text = String.format(getString(R.string.time_range_template), formattedStartTime, formattedEndTime)
     }
 
     private fun setupFishesAdapter(fishes: List<Fish>) {

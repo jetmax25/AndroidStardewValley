@@ -67,8 +67,8 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
         }
 
         val sortByTabIndex = sharedPreferences.getInt(SORT_BY_TAB_INDEX, 0)
-        filter_villagers_tab_layout.getTabAt(sortByTabIndex)?.select()
-        sortBy = filter_villagers_tab_layout.getTabAt(sortByTabIndex)?.text.toString()
+        filter_villagers_tab_layout?.getTabAt(sortByTabIndex)?.select()
+        sortBy = filter_villagers_tab_layout?.getTabAt(sortByTabIndex)?.text.toString()
         filter_villagers_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 

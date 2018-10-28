@@ -31,6 +31,9 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
 
+    @Inject lateinit var purchasesManager: PurchasesManager
+    @Inject lateinit var analyticsManager: AnalyticsManager
+    @Inject lateinit var loginManager: LoginManager
     private var fragments: List<Fragment> = listOf(
             FriendshipsFragment.newInstance(),
             ChecklistsFragment.newInstance(),
@@ -57,10 +60,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         }
         false
     }
-    @Inject lateinit var purchasesManager: PurchasesManager
     private var compositeDisposable: CompositeDisposable = CompositeDisposable()
-    @Inject lateinit var analyticsManager: AnalyticsManager
-    @Inject lateinit var loginManager: LoginManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)

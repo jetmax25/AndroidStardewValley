@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.fragments.FishFragment
 import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
 import com.pickledgames.stardewvalleyguide.models.Farm
 import com.pickledgames.stardewvalleyguide.models.Fish
@@ -79,7 +80,7 @@ class FishesAdapter(
                 onItemCheckedListener.onItemChecked(fish, isChecked)
             }
             containerView.setOnClickListener {
-
+                mainActivity.pushFragment(FishFragment.newInstance(fish))
             }
         }
     }

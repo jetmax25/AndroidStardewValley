@@ -1,8 +1,11 @@
 package com.pickledgames.stardewvalleyguide.models
 
 import android.content.Context
+import android.os.Parcelable
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Fish(
         val name: String,
         val description: String,
@@ -15,7 +18,7 @@ data class Fish(
         val difficulty: Int,
         val isLegendary: Boolean,
         val fishingLevel: Int
-) : StardewObject {
+) : StardewObject, Parcelable {
 
     override fun getImageId(context: Context): Int {
         val item = name.toLowerCase().replace("\\W".toRegex(), "_")

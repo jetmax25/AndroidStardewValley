@@ -15,13 +15,14 @@ import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
 import kotlinx.android.synthetic.main.fragment_community_center_item.*
 import kotlinx.android.synthetic.main.header_item.*
+import kotlinx.android.synthetic.main.row_seasons.*
 import javax.inject.Inject
 
 class CommunityCenterItemFragment : InnerBaseFragment() {
 
-    private lateinit var communityCenterItem: CommunityCenterItem
     @Inject lateinit var adsManager: AdsManager
     @Inject lateinit var analyticsManager: AnalyticsManager
+    private lateinit var communityCenterItem: CommunityCenterItem
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_community_center_item

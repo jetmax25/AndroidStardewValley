@@ -103,9 +103,9 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
         compositeDisposable.addAll(disposable)
 
         val filterByTabIndex = sharedPreferences.getInt(FILTER_BY_TAB_INDEX, 0)
-        filter_villager_tab_layout.getTabAt(filterByTabIndex)?.select()
-        filterBy = filter_villager_tab_layout.getTabAt(filterByTabIndex)?.text.toString()
-        filter_villager_tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        filter_villager_tab_layout?.getTabAt(filterByTabIndex)?.select()
+        filterBy = filter_villager_tab_layout?.getTabAt(filterByTabIndex)?.text.toString()
+        filter_villager_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}

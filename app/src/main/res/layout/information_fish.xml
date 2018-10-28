@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/alphaBackground">
+
+    <com.pickledgames.stardewvalleyguide.views.SignTextView
+        android:id="@+id/information_header_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:text="@string/information"
+        app:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/description_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/information_header_text_view"
+        tools:text="A common freshwater fish known for its voracious appetite." />
+
+    <include
+        android:id="@+id/common_row_stats_layout"
+        layout="@layout/row_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_text_view" />
+
+    <include
+        android:id="@+id/silver_row_stats_layout"
+        layout="@layout/row_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/common_row_stats_layout" />
+
+    <include
+        android:id="@+id/gold_row_stats_layout"
+        layout="@layout/row_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/silver_row_stats_layout" />
+
+    <include
+        android:id="@+id/row_seasons_layout"
+        layout="@layout/row_seasons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gold_row_stats_layout" />
+
+    <TextView
+        android:id="@+id/sunny_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:drawableTop="@drawable/misc_sunny"
+        android:text="@string/sunny"
+        app:layout_constraintBottom_toBottomOf="@+id/row_seasons_layout"
+        app:layout_constraintEnd_toStartOf="@+id/rainy_text_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/row_seasons_layout"
+        app:layout_constraintTop_toTopOf="@+id/row_seasons_layout" />
+
+    <TextView
+        android:id="@+id/rainy_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:drawableTop="@drawable/misc_rainy"
+        android:text="@string/rainy"
+        app:layout_constraintBottom_toBottomOf="@+id/sunny_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/sunny_text_view"
+        app:layout_constraintTop_toTopOf="@+id/sunny_text_view" />
+
+    <TextView
+        android:id="@+id/time_range_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/row_seasons_layout"
+        tools:text="6:00 AM - 2:00 AM" />
+
+    <TextView
+        android:id="@+id/fishing_level_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_range_text_view"
+        tools:text="Fishing Level: 2" />
+
+    <TextView
+        android:id="@+id/behavior_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fishing_level_text_view"
+        tools:text="Behavior: Mixed" />
+
+    <TextView
+        android:id="@+id/difficulty_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="180dp"
+        android:layout_height="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fishing_level_text_view"
+        tools:text="Difficulty: 78" />
+
+    <TextView
+        android:id="@+id/xp_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/behavior_text_view"
+        tools:text="XP: 29" />
+
+</android.support.constraint.ConstraintLayout>

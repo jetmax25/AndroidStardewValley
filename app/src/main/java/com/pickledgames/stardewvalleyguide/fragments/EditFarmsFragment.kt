@@ -22,10 +22,10 @@ import javax.inject.Inject
 class EditFarmsFragment : InnerBaseFragment() {
 
     @Inject lateinit var farmRepository: FarmRepository
-    private var farms: MutableList<Farm> = mutableListOf()
     @Inject lateinit var purchasesManager: PurchasesManager
-    private var isPro: Boolean = false
     @Inject lateinit var analyticsManager: AnalyticsManager
+    private var farms: MutableList<Farm> = mutableListOf()
+    private var isPro: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_edit_farms

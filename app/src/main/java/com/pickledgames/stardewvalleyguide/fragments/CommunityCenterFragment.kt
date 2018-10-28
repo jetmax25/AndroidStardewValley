@@ -18,7 +18,6 @@ import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
 import com.pickledgames.stardewvalleyguide.models.Farm
 import com.pickledgames.stardewvalleyguide.repositories.CommunityCenterRepository
 import com.pickledgames.stardewvalleyguide.repositories.FarmRepository
-import com.pickledgames.stardewvalleyguide.utils.ChecklistFragmentUtil
 import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -119,7 +118,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
             sharedPreferences.edit().putBoolean(SHOW_COMPLETED, showCompleted).apply()
         }
 
-        ChecklistFragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_community_center_group, sharedPreferences, SHOW_FILTER_SETTINGS)
+        FragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_community_center_group, sharedPreferences, SHOW_FILTER_SETTINGS)
 
         data class Results(
                 val farm: Farm,
@@ -154,7 +153,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { f ->
-                    ChecklistFragmentUtil.flipSelectedFarmText(header_farm_easy_flip_view, header_farm_name_front_text_view, header_farm_name_back_text_view, resources, f)
+                    FragmentUtil.flipSelectedFarmText(header_farm_easy_flip_view, header_farm_name_front_text_view, header_farm_name_back_text_view, resources, f)
                     farm = f
                     adapter.updateFarm(farm)
                 }

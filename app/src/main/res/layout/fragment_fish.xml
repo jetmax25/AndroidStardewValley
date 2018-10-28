@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,46 +19,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
-        android:id="@+id/row_seasons_layout"
-        layout="@layout/row_seasons"
-        android:layout_width="wrap_content"
+        android:id="@+id/information_fish_layout"
+        layout="@layout/information_fish"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header_item_layout" />
 
-    <ImageView
-        android:id="@+id/traveling_merchant_image_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:alpha="0.5"
-        android:contentDescription="@string/traveling_merchant"
-        android:src="@drawable/misc_traveling_merchant"
-        app:layout_constraintBottom_toBottomOf="@id/row_seasons_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/row_seasons_layout"
-        app:layout_constraintTop_toTopOf="@+id/row_seasons_layout" />
-
     <com.pickledgames.stardewvalleyguide.views.SignTextView
-        android:id="@+id/guide_header_text_view"
+        android:id="@+id/fish_locations_header_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/row_seasons_layout"
-        app:margin="8dp"
-        app:padding="5dp"
-        app:text="@string/guide"
-        app:textSize="22sp" />
+        app:layout_constraintTop_toBottomOf="@id/information_fish_layout"
+        app:text="@string/locations"
+        app:textSize="18sp" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/guides_recycler_view"
+        android:id="@+id/fish_locations_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -70,6 +59,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guide_header_text_view" />
+        app:layout_constraintTop_toBottomOf="@id/fish_locations_header_text_view" />
 
 </android.support.constraint.ConstraintLayout>

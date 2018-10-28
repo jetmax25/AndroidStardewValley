@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:background="@color/alphaBackground">
+
+    <TextView
+        android:id="@+id/fall_availability_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:drawableTop="@drawable/season_fall"
+        android:drawablePadding="5dp"
+        android:text="@string/fall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/winter_availability_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:alpha="0.5"
+        android:drawableTop="@drawable/season_winter"
+        android:drawablePadding="5dp"
+        android:text="@string/winter"
+        app:layout_constraintStart_toEndOf="@+id/fall_availability_text_view"
+        app:layout_constraintTop_toTopOf="@+id/fall_availability_text_view" />
+
+    <TextView
+        android:id="@+id/spring_availability_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:alpha="0.5"
+        android:drawableTop="@drawable/season_spring"
+        android:drawablePadding="5dp"
+        android:text="@string/spring"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/winter_availability_text_view"
+        app:layout_constraintTop_toTopOf="@+id/winter_availability_text_view" />
+
+    <TextView
+        android:id="@+id/summer_availability_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:alpha="0.5"
+        android:drawableTop="@drawable/season_summer"
+        android:drawablePadding="5dp"
+        android:text="@string/summer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spring_availability_text_view"
+        app:layout_constraintTop_toTopOf="@+id/spring_availability_text_view" />
+
+</android.support.constraint.ConstraintLayout>

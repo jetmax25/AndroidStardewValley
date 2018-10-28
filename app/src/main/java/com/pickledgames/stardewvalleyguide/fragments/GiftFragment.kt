@@ -29,12 +29,12 @@ import javax.inject.Inject
 class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filterable {
 
     @Inject lateinit var giftReactionRepository: GiftReactionRepository
+    @Inject lateinit var adsManager: AdsManager
+    @Inject lateinit var analyticsManager: AnalyticsManager
     private lateinit var gift: Gift
     private var list: MutableList<Any> = mutableListOf()
     private lateinit var adapter: VillagerReactionsAdapter
     private lateinit var layoutManager: GridLayoutManager
-    @Inject lateinit var adsManager: AdsManager
-    @Inject lateinit var analyticsManager: AnalyticsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_gift
