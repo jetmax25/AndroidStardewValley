@@ -37,10 +37,12 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     private lateinit var farm: Farm
     private var bundles: MutableList<CommunityCenterBundle> = mutableListOf()
     private lateinit var adapter: CommunityCenterItemsAdapter
+    private lateinit var linearLayoutManager: LinearLayoutManager
     private var seasonFilterBy: String = ""
     private var searchTerm: String = ""
     private var showCompleted: Boolean = false
     private var hasAdapterBeenSetup: Boolean = false
+    private var adapterPosition: Int = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_community_center
@@ -86,6 +88,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         super.onPause()
         // Force refresh
         hasAdapterBeenSetup = false
+        adapterPosition = linearLayoutManager.findFirstVisibleItemPosition()
     }
 
     override fun setup() {
@@ -172,7 +175,9 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         )
 
         community_center_items_recycler_view?.adapter = adapter
-        community_center_items_recycler_view?.layoutManager = LinearLayoutManager(activity)
+        linearLayoutManager = LinearLayoutManager(activity)
+        community_center_items_recycler_view?.layoutManager = linearLayoutManager
+        linearLayoutManager.scrollToPosition(adapterPosition)
     }
 
     override fun onItemChecked(communityCenterItem: CommunityCenterItem, isChecked: Boolean) {

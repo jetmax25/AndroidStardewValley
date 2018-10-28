@@ -39,6 +39,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
     private lateinit var farm: Farm
     private var fishes: MutableList<Fish> = mutableListOf()
     private lateinit var adapter: FishesAdapter
+    private lateinit var linearLayoutManager: LinearLayoutManager
     private var searchTerm: String = ""
     private var seasonFilterBy: String = ""
     private var locationFilterBy: String = ""
@@ -47,6 +48,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
     private var endTime: Int = MAX_END_TIME
     private var showCompleted: Boolean = false
     private var hasAdapterBeenSetup: Boolean = false
+    private var adapterPosition: Int = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_fishing
@@ -92,6 +94,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         super.onPause()
         // Force refresh
         hasAdapterBeenSetup = false
+        adapterPosition = linearLayoutManager.findFirstVisibleItemPosition()
     }
 
     override fun setup() {
@@ -230,7 +233,9 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         )
 
         fishing_recycler_view?.adapter = adapter
-        fishing_recycler_view?.layoutManager = LinearLayoutManager(activity)
+        linearLayoutManager = LinearLayoutManager(activity)
+        fishing_recycler_view?.layoutManager = linearLayoutManager
+        linearLayoutManager.scrollToPosition(adapterPosition)
     }
 
     override fun onItemChecked(fish: Fish, isChecked: Boolean) {
