@@ -1,5 +1,6 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.widget.LinearLayoutManager
@@ -19,13 +20,13 @@ import com.pickledgames.stardewvalleyguide.models.Farm
 import com.pickledgames.stardewvalleyguide.models.Fish
 import com.pickledgames.stardewvalleyguide.repositories.FarmRepository
 import com.pickledgames.stardewvalleyguide.repositories.FishRepository
+import com.pickledgames.stardewvalleyguide.utils.ChecklistFragmentUtil
 import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.BiFunction
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.filter_fishing.*
-import kotlinx.android.synthetic.main.fragment_community_center.*
 import kotlinx.android.synthetic.main.fragment_fishing.*
 import kotlinx.android.synthetic.main.header_farm.*
 import kotlinx.android.synthetic.main.loading.*
@@ -35,15 +36,16 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
 
     @Inject lateinit var farmRepository: FarmRepository
     @Inject lateinit var fishRepository: FishRepository
+    @Inject lateinit var sharedPreferences: SharedPreferences
     private lateinit var farm: Farm
     private var fishes: MutableList<Fish> = mutableListOf()
     private lateinit var adapter: FishesAdapter
     private var searchTerm: String = ""
-    private var seasonFilterBy: String = "All"
-    private var locationFilterBy: String = "All"
-    private var weatherFilterBy: String = "Any"
-    private var startTime: Int = 6
-    private var endTime: Int = 26
+    private var seasonFilterBy: String = ""
+    private var locationFilterBy: String = ""
+    private var weatherFilterBy: String = ""
+    private var startTime: Int = MIN_START_TIME
+    private var endTime: Int = MAX_END_TIME
     private var showCompleted: Boolean = false
     private var hasAdapterBeenSetup: Boolean = false
 
@@ -55,23 +57,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
 
     override fun onClick(view: View?) {
         val direction = if (view?.id == R.id.header_farm_left_arrow_image_view) FarmRepository.LEFT else FarmRepository.RIGHT
-        val disposable = farmRepository.toggleSelectedFarm(direction)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { f ->
-                    farm = f
-                    header_farm_easy_flip_view?.isFrontSide?.let {
-                        if (it) {
-                            header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
-                        } else {
-                            header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
-                        }
-                        // Flip after setting text
-                        header_farm_easy_flip_view?.flipTheView()
-                    }
-                    adapter.updateFarm(farm)
-                }
-
+        val disposable = farmRepository.toggleSelectedFarm(direction).subscribe()
         compositeDisposable.add(disposable)
     }
 
@@ -85,7 +71,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
-            R.id.community_center_edit_farms -> {
+            R.id.fishing_edit_farms -> {
                 (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
                 return true
             }
@@ -116,6 +102,9 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
             (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
         }
 
+        val seasonTabIndex = sharedPreferences.getInt(SEASON_INDEX, 0)
+        filter_fishing_season_tab_layout.getTabAt(seasonTabIndex)?.select()
+        seasonFilterBy = filter_fishing_season_tab_layout?.getTabAt(seasonTabIndex)?.text.toString()
         filter_fishing_season_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
@@ -124,9 +113,13 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 seasonFilterBy = tab?.text.toString()
                 filter.filter("")
+                sharedPreferences.edit().putInt(SEASON_INDEX, tab?.position ?: 0).apply()
             }
         })
 
+        val locationTabIndex = sharedPreferences.getInt(LOCATION_INDEX, 0)
+        filter_fishing_location_tab_layout.getTabAt(locationTabIndex)?.select()
+        locationFilterBy = filter_fishing_location_tab_layout?.getTabAt(locationTabIndex)?.text.toString()
         filter_fishing_location_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
@@ -135,9 +128,13 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 locationFilterBy = tab?.text.toString()
                 filter.filter("")
+                sharedPreferences.edit().putInt(LOCATION_INDEX, tab?.position ?: 0).apply()
             }
         })
 
+        val weatherIndex = sharedPreferences.getInt(WEATHER_INDEX, 0)
+        filter_fishing_weather_tab_layout.getTabAt(weatherIndex)?.select()
+        weatherFilterBy = filter_fishing_location_tab_layout?.getTabAt(weatherIndex)?.text.toString()
         filter_fishing_weather_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
@@ -146,10 +143,13 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 weatherFilterBy = tab?.text.toString()
                 filter.filter("")
+                sharedPreferences.edit().putInt(WEATHER_INDEX, tab?.position ?: 0).apply()
             }
         })
 
-        time_range_seek_bar.setRange(startTime.toFloat(), endTime.toFloat(), 1f)
+        startTime = sharedPreferences.getInt(START_TIME, MIN_START_TIME)
+        endTime = sharedPreferences.getInt(END_TIME, MAX_END_TIME)
+        time_range_seek_bar.setRange(MIN_START_TIME.toFloat(), MAX_END_TIME.toFloat(), 1f)
         time_range_seek_bar.setValue(startTime.toFloat(), endTime.toFloat())
         setTimeRangeText()
 
@@ -161,20 +161,31 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
                 endTime = rightValue.toInt()
                 setTimeRangeText()
                 filter.filter("")
+                sharedPreferences.edit().putInt(START_TIME, startTime).apply()
+                sharedPreferences.edit().putInt(END_TIME, endTime).apply()
             }
 
             override fun onStopTrackingTouch(view: RangeSeekBar?, isLeft: Boolean) {}
         })
 
+        showCompleted = sharedPreferences.getBoolean(SHOW_COMPLETED, false)
+        show_completed_check_box.isChecked = showCompleted
         show_completed_check_box?.setOnCheckedChangeListener { _, b ->
             showCompleted = b
             adapter.updateShowCompleted(showCompleted)
+            sharedPreferences.edit().putBoolean(SHOW_COMPLETED, showCompleted).apply()
         }
+
+        ChecklistFragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_fishing_group, sharedPreferences, SHOW_FILTER_SETTINGS)
 
         data class Results(
                 val farm: Farm,
                 val fishes: List<Fish>
         )
+
+        loading_container?.visibility = View.VISIBLE
+        fishing_header_group?.visibility = View.INVISIBLE
+        fishing_recycler_view?.visibility = View.INVISIBLE
 
         val disposable = Single.zip(
                 farmRepository.getSelectedFarm(),
@@ -185,8 +196,8 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { results ->
                     loading_container?.visibility = View.INVISIBLE
-                    community_center_header_group?.visibility = View.VISIBLE
-                    community_center_items_recycler_view?.visibility = View.VISIBLE
+                    fishing_header_group?.visibility = View.VISIBLE
+                    fishing_recycler_view?.visibility = View.VISIBLE
                     farm = results.farm
                     header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
                     header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
@@ -197,7 +208,16 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
 
         compositeDisposable.add(disposable)
 
-        FragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_fishing_group)
+        val selectedFarmChangesDisposable = farmRepository.getSelectedFarmChanges()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe { f ->
+                    ChecklistFragmentUtil.flipSelectedFarmText(header_farm_easy_flip_view, header_farm_name_front_text_view, header_farm_name_back_text_view, resources, f)
+                    farm = f
+                    adapter.updateFarm(farm)
+                }
+
+        compositeDisposable.add(selectedFarmChangesDisposable)
     }
 
     private fun getFormattedTimeString(time: Int): String {
@@ -279,6 +299,16 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
     }
 
     companion object {
+        private val SEASON_INDEX = "${FishingFragment::class.java.simpleName}_SEASON_INDEX"
+        private val LOCATION_INDEX = "${FishingFragment::class.java.simpleName}_LOCATION_INDEX"
+        private val WEATHER_INDEX = "${FishingFragment::class.java.simpleName}_WEATHER_INDEX"
+        private val START_TIME = "${FishingFragment::class.java.simpleName}_START_TIME"
+        private val END_TIME = "${FishingFragment::class.java.simpleName}_END_TIME"
+        private val SHOW_COMPLETED = "${FishingFragment::class.java.simpleName}_SHOW_COMPLETED"
+        private val SHOW_FILTER_SETTINGS = "${FishingFragment::class.java.simpleName}_SHOW_FILTER_SETTINGS"
+        private const val MIN_START_TIME = 6
+        private const val MAX_END_TIME = 26
+
         fun newInstance(): FishingFragment {
             return FishingFragment()
         }

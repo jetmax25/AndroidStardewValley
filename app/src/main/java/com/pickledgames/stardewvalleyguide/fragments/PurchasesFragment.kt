@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.pickledgames.stardewvalleyguide.BuildConfig
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
@@ -29,11 +30,20 @@ class PurchasesFragment : BaseFragment() {
                 }
 
         compositeDisposable.add(disposable)
+
         purchase_button?.setOnClickListener {
             purchasesManager.purchaseProVersion(activity as MainActivity)
         }
+
         restore_purchases_button?.setOnClickListener {
             purchasesManager.restorePurchases()
+        }
+
+        if (BuildConfig.DEBUG) {
+            toggle_pro_button.visibility = View.VISIBLE
+            toggle_pro_button.setOnClickListener {
+                purchasesManager.isPro = !purchasesManager.isPro
+            }
         }
     }
 

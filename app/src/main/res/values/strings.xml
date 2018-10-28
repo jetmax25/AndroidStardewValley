@@ -61,4 +61,5 @@
     <string name="show_filter_settings">Show Filter Settings</string>
     <string name="time_range_template">%s - %s</string>
     <string name="any">Any</string>
+    <string name="toggle_pro_debug_only">Toggle Pro (Debug Only)</string>
 </resources>

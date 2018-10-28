@@ -1,5 +1,6 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.widget.GridLayoutManager
@@ -31,14 +32,15 @@ import javax.inject.Inject
 class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filterable {
 
     @Inject lateinit var giftReactionRepository: GiftReactionRepository
+    @Inject lateinit var adsManager: AdsManager
+    @Inject lateinit var analyticsManager: AnalyticsManager
+    @Inject lateinit var sharedPreferences: SharedPreferences
     private lateinit var villager: Villager
     private var list: MutableList<Any> = mutableListOf()
     private lateinit var adapter: GiftReactionsAdapter
     private lateinit var layoutManager: GridLayoutManager
     private var filterBy: String = "All"
     private var searchTerm: String = ""
-    @Inject lateinit var adsManager: AdsManager
-    @Inject lateinit var analyticsManager: AnalyticsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_villager
@@ -100,6 +102,9 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
 
         compositeDisposable.addAll(disposable)
 
+        val filterByTabIndex = sharedPreferences.getInt(FILTER_BY_TAB_INDEX, 0)
+        filter_villager_tab_layout.getTabAt(filterByTabIndex)?.select()
+        filterBy = filter_villager_tab_layout.getTabAt(filterByTabIndex)?.text.toString()
         filter_villager_tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
@@ -108,6 +113,7 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 filterBy = tab?.text.toString()
                 filter.filter("")
+                sharedPreferences.edit().putInt(FILTER_BY_TAB_INDEX, tab?.position ?: 0).apply()
             }
         })
 
@@ -182,6 +188,7 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
     companion object {
         private const val VILLAGER = "VILLAGER"
         private const val SPAN_COUNT = 8
+        private val FILTER_BY_TAB_INDEX = "${VillagerFragment::class.java.simpleName}_FILTER_BY_TAB_INDEX"
 
         fun newInstance(villager: Villager): VillagerFragment {
             val villagerFragment = VillagerFragment()

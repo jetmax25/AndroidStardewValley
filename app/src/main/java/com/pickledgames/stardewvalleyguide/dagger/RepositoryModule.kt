@@ -1,5 +1,6 @@
 package com.pickledgames.stardewvalleyguide.dagger
 
+import android.content.SharedPreferences
 import com.pickledgames.stardewvalleyguide.StardewApp
 import com.pickledgames.stardewvalleyguide.database.FarmDao
 import com.pickledgames.stardewvalleyguide.repositories.*
@@ -25,8 +26,8 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun providesFarmRepository(farmDao: FarmDao): FarmRepository {
-        return FarmRepository(farmDao)
+    fun providesFarmRepository(farmDao: FarmDao, sharedPreferences: SharedPreferences): FarmRepository {
+        return FarmRepository(farmDao, sharedPreferences)
     }
 
     @Provides

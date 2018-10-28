@@ -1,5 +1,6 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.GridLayoutManager
@@ -25,6 +26,7 @@ import javax.inject.Inject
 class BirthdaysFragment : BaseFragment(), View.OnClickListener {
 
     @Inject lateinit var villagerRepository: VillagerRepository
+    @Inject lateinit var sharedPreferences: SharedPreferences
     private var villagers: MutableList<Villager> = mutableListOf()
     private val list: MutableList<Any> = mutableListOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
     private var initializedList: Boolean = false
@@ -51,6 +53,7 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
             if (seasonIndex == seasons.size - 1) 0 else seasonIndex + 1
         }
 
+        sharedPreferences.edit().putInt(SEASON_INDEX, seasonIndex).apply()
         val season = seasons[seasonIndex]
         header_calendar_season_text_view?.text = season.type
         header_calendar_season_text_view?.setCompoundDrawablesWithIntrinsicBounds(
@@ -74,6 +77,7 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
     }
 
     override fun setup() {
+        seasonIndex = sharedPreferences.getInt(SEASON_INDEX, 0)
         val season = seasons[seasonIndex]
         header_calendar_season_text_view?.text = season.type
         header_calendar_season_text_view?.setCompoundDrawablesWithIntrinsicBounds(
@@ -125,6 +129,8 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
     }
 
     companion object {
+        private val SEASON_INDEX = "${BirthdaysFragment::class.java.simpleName}_SEASON_INDEX"
+
         fun newInstance(): BirthdaysFragment {
             return BirthdaysFragment()
         }

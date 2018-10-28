@@ -1,5 +1,6 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.widget.GridLayoutManager
@@ -24,8 +25,10 @@ import javax.inject.Inject
 class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
 
     @Inject lateinit var villagerRepository: VillagerRepository
+    @Inject lateinit var sharedPreferences: SharedPreferences
     private var villagers: MutableList<Villager> = mutableListOf()
     private lateinit var villagersAdapter: VillagersAdapter
+    private var sortBy: String = "A-Z"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_villagers
@@ -63,14 +66,18 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
             compositeDisposable.addAll(disposable)
         }
 
+        val sortByTabIndex = sharedPreferences.getInt(SORT_BY_TAB_INDEX, 0)
+        filter_villagers_tab_layout.getTabAt(sortByTabIndex)?.select()
+        sortBy = filter_villagers_tab_layout.getTabAt(sortByTabIndex)?.text.toString()
         filter_villagers_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                villagersAdapter.setSortBy(tab?.position)
-                villagersAdapter.sort()
+                sortBy = tab?.text.toString()
+                villagersAdapter.setSortBy(sortBy)
+                sharedPreferences.edit().putInt(SORT_BY_TAB_INDEX, tab?.position ?: 0).apply()
             }
         })
     }
@@ -81,10 +88,12 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
         villagers_recycler_view?.layoutManager = GridLayoutManager(activity, 3)
         val offset = activity?.resources?.getDimensionPixelOffset(R.dimen.villagers_grid_layout_offset)
         if (offset != null) villagers_recycler_view?.addItemDecoration(GridDividerDecoration(offset, 3))
-        villagersAdapter.sort()
+        villagersAdapter.setSortBy(sortBy)
     }
 
     companion object {
+        private val SORT_BY_TAB_INDEX = "${VillagersFragment::class.java.simpleName}_SORT_BY_TAB_INDEX"
+
         fun newInstance(): VillagersFragment {
             return VillagersFragment()
         }
