@@ -53,6 +53,7 @@ class AppModule(private val stardewApp: StardewApp) {
     }
 
     @Provides
+    @Singleton
     fun providesLoginManager(sharedPreferences: SharedPreferences): LoginManager {
         return LoginManager(sharedPreferences)
     }

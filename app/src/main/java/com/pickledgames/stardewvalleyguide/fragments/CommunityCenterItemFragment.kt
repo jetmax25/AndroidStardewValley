@@ -3,7 +3,9 @@ package com.pickledgames.stardewvalleyguide.fragments
 import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.GuidesAdapter
@@ -13,38 +15,33 @@ import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
 import kotlinx.android.synthetic.main.fragment_community_center_item.*
 import kotlinx.android.synthetic.main.header_item.*
+import kotlinx.android.synthetic.main.row_seasons.*
 import javax.inject.Inject
 
 class CommunityCenterItemFragment : InnerBaseFragment() {
 
-    private lateinit var communityCenterItem: CommunityCenterItem
     @Inject lateinit var adsManager: AdsManager
     @Inject lateinit var analyticsManager: AnalyticsManager
+    private lateinit var communityCenterItem: CommunityCenterItem
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        setHasOptionsMenu(true)
+        layoutId = R.layout.fragment_community_center_item
         adsManager.showAdFor(AdsManager.COMMUNITY_CENTER_ITEM_FRAGMENT)
-        return inflater.inflate(R.layout.fragment_community_center_item, container, false)
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         if (arguments != null) {
             val selectedCommunityCenterItem: CommunityCenterItem? = arguments?.getParcelable(COMMUNITY_CENTER_ITEM)
             if (selectedCommunityCenterItem != null) {
                 communityCenterItem = selectedCommunityCenterItem
-                setup()
             }
         }
+
+        super.onActivityCreated(savedInstanceState)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater)
-        menu?.clear()
-    }
-
-    private fun setup() {
+    override fun setup() {
         header_item_left_image_view?.setImageResource(communityCenterItem.getImageId(activity as MainActivity))
         header_item_left_image_view?.contentDescription = communityCenterItem.name
         header_item_name_text_view?.text = communityCenterItem.name

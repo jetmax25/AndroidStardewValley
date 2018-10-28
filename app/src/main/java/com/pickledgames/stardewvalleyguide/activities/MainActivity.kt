@@ -31,6 +31,9 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
 
+    @Inject lateinit var purchasesManager: PurchasesManager
+    @Inject lateinit var analyticsManager: AnalyticsManager
+    @Inject lateinit var loginManager: LoginManager
     private var fragments: List<Fragment> = listOf(
             FriendshipsFragment.newInstance(),
             ChecklistsFragment.newInstance(),
@@ -57,10 +60,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         }
         false
     }
-    @Inject lateinit var purchasesManager: PurchasesManager
     private var compositeDisposable: CompositeDisposable = CompositeDisposable()
-    @Inject lateinit var analyticsManager: AnalyticsManager
-    @Inject lateinit var loginManager: LoginManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -79,15 +79,22 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         builder.rootFragments(fragments)
         fragNavController = builder.build()
         navigation?.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
-        val adRequest = AdRequest.Builder().build()
-        banner_ad_view?.loadAd(adRequest)
-        val disposable = purchasesManager.isProSubject
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe {
-                    banner_ad_view?.visibility = if (it) View.GONE else View.VISIBLE
-                }
 
-        compositeDisposable.add(disposable)
+        if (purchasesManager.isPro) {
+            navigation?.menu?.removeItem(R.id.navigation_purchases)
+            banner_ad_view?.visibility = View.GONE
+        } else {
+            val adRequest = AdRequest.Builder().build()
+            banner_ad_view?.loadAd(adRequest)
+
+            val disposable = purchasesManager.isProSubject
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe {
+                        banner_ad_view?.visibility = if (it) View.GONE else View.VISIBLE
+                    }
+
+            compositeDisposable.add(disposable)
+        }
 
         if (loginManager.numberOfLogins == 0) {
             loginManager.firstLogin = Instant.now()
@@ -116,10 +123,6 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         loginManager.lastLogin = Instant.now()
         loginManager.numberOfLogins++
         analyticsManager.logEvent("Opened App")
-
-        if (purchasesManager.isPro) {
-            navigation?.menu?.removeItem(R.id.navigation_purchases)
-        }
     }
 
     private fun openPlayStore() {

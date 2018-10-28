@@ -3,6 +3,7 @@ package com.pickledgames.stardewvalleyguide.enums
 enum class Reaction(
         val type: String
 ) {
+
     Love("Love"),
     Like("Like"),
     Neutral("Neutral"),

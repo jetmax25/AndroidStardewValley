@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 
-open class InnerBaseFragment : BaseFragment() {
+abstract class InnerBaseFragment : BaseFragment() {
 
     private var savedTitle: String? = null
     private lateinit var appTitle: String
@@ -45,5 +45,4 @@ open class InnerBaseFragment : BaseFragment() {
         (activity as MainActivity).supportActionBar?.setTitle(titleId)
         savedTitle = (activity as MainActivity).getString(titleId)
     }
-
 }

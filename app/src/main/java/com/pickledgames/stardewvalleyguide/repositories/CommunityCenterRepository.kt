@@ -41,8 +41,8 @@ class CommunityCenterRepository(
 
         return Single.create {
             val roomsJSONObject = JSONObject(json)
-            for (room in roomsJSONObject.keys()) {
-                val roomJSONObject = roomsJSONObject.getJSONObject(room)
+            for (name in roomsJSONObject.keys()) {
+                val roomJSONObject = roomsJSONObject.getJSONObject(name)
                 val roomReward = roomJSONObject.getString("Reward")
 
                 val bundlesJSONObject = roomJSONObject.getJSONObject("Bundles")
@@ -87,7 +87,7 @@ class CommunityCenterRepository(
                     communityCenterBundles.add(communityCenterBundle)
                 }
 
-                val communityCenterRoom = CommunityCenterRoom(room, roomReward, communityCenterBundles)
+                val communityCenterRoom = CommunityCenterRoom(name, roomReward, communityCenterBundles)
                 communityCenterRooms.add(communityCenterRoom)
             }
 

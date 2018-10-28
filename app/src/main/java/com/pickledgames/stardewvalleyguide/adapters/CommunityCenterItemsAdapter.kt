@@ -66,6 +66,7 @@ class CommunityCenterItemsAdapter(
 
     fun updateShowCompleted(s: Boolean) {
         showCompleted = s
+        notifyDataSetChanged()
     }
 
     companion object {

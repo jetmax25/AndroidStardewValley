@@ -12,6 +12,7 @@ data class Farm(
         val name: String,
         val farmType: FarmType,
         val communityCenterItems: MutableSet<String> = mutableSetOf(),
+        val fishes: MutableSet<String> = mutableSetOf(),
         @PrimaryKey(autoGenerate = true) val id: Long = 0
 ) : Parcelable {
 
