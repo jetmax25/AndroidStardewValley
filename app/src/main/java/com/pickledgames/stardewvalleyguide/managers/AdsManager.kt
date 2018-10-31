@@ -85,6 +85,11 @@ class AdsManager(
                     shown = true
                     forceShow = false
                 }
+
+                override fun onAdClosed() {
+                    super.onAdClosed()
+                    loadAd(AdRequest.Builder().build())
+                }
             }
         }
 
