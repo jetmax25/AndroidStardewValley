@@ -7,7 +7,7 @@ enum class LegendaryFishingLocation(
 ) {
 
     Angler("Angler"),
-    CrimsonFish("CrimsonFish"),
+    CrimsonFish("Crimsonfish"),
     Glacierfish("Glacierfish"),
     Legend("Legend"),
     MutantCarp("Mutant Carp");
@@ -26,7 +26,7 @@ enum class LegendaryFishingLocation(
         fun fromString(string: String): LegendaryFishingLocation {
             return when (string) {
                 "Angler" -> LegendaryFishingLocation.Angler
-                "CrimsonFish" -> LegendaryFishingLocation.CrimsonFish
+                "Crimsonfish" -> LegendaryFishingLocation.CrimsonFish
                 "Glacierfish" -> LegendaryFishingLocation.Glacierfish
                 "Legend" -> LegendaryFishingLocation.Legend
                 "Mutant Carp" -> LegendaryFishingLocation.MutantCarp

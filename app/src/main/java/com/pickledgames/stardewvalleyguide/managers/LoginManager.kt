@@ -25,9 +25,14 @@ class LoginManager(private val sharedPreferences: SharedPreferences) {
             sharedPreferences.edit().putBoolean(REVIEWED, value).apply()
         }
 
-    var declinedReview: Boolean = sharedPreferences.getBoolean(DECLINED_REVIEWED, false)
+    var declinedReview: Boolean = sharedPreferences.getBoolean(DECLINED_REVIEW, false)
         set(value) {
-            sharedPreferences.edit().putBoolean(DECLINED_REVIEWED, value).apply()
+            sharedPreferences.edit().putBoolean(DECLINED_REVIEW, value).apply()
+        }
+
+    var shouldShowReview: Boolean = false
+        get() {
+            return !reviewed && !declinedReview && numberOfLogins > 0 && numberOfLogins % 3 == 0
         }
 
     companion object {
@@ -35,6 +40,6 @@ class LoginManager(private val sharedPreferences: SharedPreferences) {
         private const val FIRST_LOGIN = "FIRST_LOGIN"
         private const val LAST_LOGIN = "LAST_LOGIN"
         private const val REVIEWED = "REVIEWED"
-        private const val DECLINED_REVIEWED = "DECLINED_REVIEWED"
+        private const val DECLINED_REVIEW = "DECLINED_REVIEW"
     }
 }
