@@ -83,12 +83,22 @@ class AdsManager(
                 override fun onAdOpened() {
                     super.onAdOpened()
                     shown = true
+                    forceShow = false
+                }
+
+                override fun onAdClosed() {
+                    super.onAdClosed()
+                    loadAd(AdRequest.Builder().build())
                 }
             }
         }
 
         fun showAd() {
-            if (shown) return
+            // Don't show ad twice in a row
+            if (shown) {
+                shown = false
+                return
+            }
             // bound is exclusive
             val randomInt = random.nextInt(limit)
             if (randomInt == 0 || forceShow) {

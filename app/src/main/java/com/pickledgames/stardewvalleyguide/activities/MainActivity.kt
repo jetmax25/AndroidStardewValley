@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
             loginManager.firstLogin = Instant.now()
         }
 
-        if (!loginManager.reviewed && !loginManager.declinedReview && loginManager.numberOfLogins == 3) {
+        if (loginManager.shouldShowReview) {
             analyticsManager.logEvent("Requesting Review")
             AlertDialog.Builder(this)
                     .setMessage(R.string.play_store_review_message)

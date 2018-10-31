@@ -34,10 +34,10 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     @Inject lateinit var farmRepository: FarmRepository
     @Inject lateinit var communityCenterRepository: CommunityCenterRepository
     @Inject lateinit var sharedPreferences: SharedPreferences
-    private lateinit var farm: Farm
+    private var farm: Farm? = null
     private var bundles: MutableList<CommunityCenterBundle> = mutableListOf()
-    private lateinit var adapter: CommunityCenterItemsAdapter
-    private lateinit var linearLayoutManager: LinearLayoutManager
+    private var adapter: CommunityCenterItemsAdapter? = null
+    private var linearLayoutManager: LinearLayoutManager? = null
     private var seasonFilterBy: String = ""
     private var searchTerm: String = ""
     private var showCompleted: Boolean = false
@@ -88,7 +88,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         super.onPause()
         // Force refresh
         hasAdapterBeenSetup = false
-        adapterPosition = linearLayoutManager.findFirstVisibleItemPosition()
+        adapterPosition = linearLayoutManager?.findFirstVisibleItemPosition() ?: 0
     }
 
     override fun setup() {
@@ -117,7 +117,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         show_completed_check_box.isChecked = showCompleted
         show_completed_check_box?.setOnCheckedChangeListener { _, b ->
             showCompleted = b
-            adapter.updateShowCompleted(showCompleted)
+            adapter?.updateShowCompleted(showCompleted)
             sharedPreferences.edit().putBoolean(SHOW_COMPLETED, showCompleted).apply()
         }
 
@@ -144,8 +144,10 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                     community_center_header_group?.visibility = View.VISIBLE
                     community_center_items_recycler_view?.visibility = View.VISIBLE
                     farm = results.farm
-                    header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
-                    header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    farm?.let {
+                        header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
+                        header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
+                    }
                     bundles.addAll(results.bundles)
                     filter.filter("")
                 }
@@ -158,36 +160,42 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 .subscribe { f ->
                     FragmentUtil.flipSelectedFarmText(header_farm_easy_flip_view, header_farm_name_front_text_view, header_farm_name_back_text_view, resources, f)
                     farm = f
-                    adapter.updateFarm(farm)
+                    farm?.let {
+                        adapter?.updateFarm(it)
+                    }
                 }
 
         compositeDisposable.add(selectedFarmChangesDisposable)
     }
 
     private fun setupCommunityCenterItemsAdapter(list: List<Any>) {
-        hasAdapterBeenSetup = true
-        adapter = CommunityCenterItemsAdapter(
-                list,
-                farm,
-                showCompleted,
-                activity as MainActivity,
-                this
-        )
+        farm?.let {
+            hasAdapterBeenSetup = true
+            adapter = CommunityCenterItemsAdapter(
+                    list,
+                    it,
+                    showCompleted,
+                    activity as MainActivity,
+                    this
+            )
 
-        community_center_items_recycler_view?.adapter = adapter
-        linearLayoutManager = LinearLayoutManager(activity)
-        community_center_items_recycler_view?.layoutManager = linearLayoutManager
-        linearLayoutManager.scrollToPosition(adapterPosition)
+            community_center_items_recycler_view?.adapter = adapter
+            linearLayoutManager = LinearLayoutManager(activity)
+            community_center_items_recycler_view?.layoutManager = linearLayoutManager
+            linearLayoutManager?.scrollToPosition(adapterPosition)
+        }
     }
 
     override fun onItemChecked(communityCenterItem: CommunityCenterItem, isChecked: Boolean) {
-        if (isChecked) farm.communityCenterItems.add(communityCenterItem.uniqueId)
-        else farm.communityCenterItems.remove(communityCenterItem.uniqueId)
-        adapter.notifyDataSetChanged()
-        farmRepository.updateSelectedFarm(farm)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe()
+        if (isChecked) farm?.communityCenterItems?.add(communityCenterItem.uniqueId)
+        else farm?.communityCenterItems?.remove(communityCenterItem.uniqueId)
+        adapter?.notifyDataSetChanged()
+        farm?.let {
+            farmRepository.updateSelectedFarm(it)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe()
+        }
     }
 
     override fun getFilter(): Filter {
@@ -201,12 +209,13 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                             }
                             .filter { item ->
                                 if (showCompleted) return@filter true
-                                return@filter !farm.communityCenterItems.contains(item.name)
+                                return@filter !(farm?.communityCenterItems?.contains(item.name)
+                                        ?: false)
                             }
                             .filter { item -> item.name.contains(searchTerm, true) || bundle.name.contains(searchTerm, true) }
                             .toMutableList()
 
-                    val isComplete = farm.getCompletedItemsCount(bundle) == bundle.needed
+                    val isComplete = farm?.getCompletedItemsCount(bundle) == bundle.needed
 
                     if ((showCompleted || !isComplete) && filteredBundleItems.isNotEmpty()) {
                         filteredList.add(bundle)
@@ -225,7 +234,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 val filteredList = filterResults?.values as List<Any>
 
                 if (hasAdapterBeenSetup) {
-                    adapter.updateList(filteredList)
+                    adapter?.updateList(filteredList)
                 } else {
                     setupCommunityCenterItemsAdapter(filteredList)
                 }

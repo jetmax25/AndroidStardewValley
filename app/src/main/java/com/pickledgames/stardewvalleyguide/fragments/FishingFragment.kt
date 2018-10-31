@@ -36,10 +36,10 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
     @Inject lateinit var farmRepository: FarmRepository
     @Inject lateinit var fishRepository: FishRepository
     @Inject lateinit var sharedPreferences: SharedPreferences
-    private lateinit var farm: Farm
+    private var farm: Farm? = null
     private var fishes: MutableList<Fish> = mutableListOf()
-    private lateinit var adapter: FishesAdapter
-    private lateinit var linearLayoutManager: LinearLayoutManager
+    private var adapter: FishesAdapter? = null
+    private var linearLayoutManager: LinearLayoutManager? = null
     private var searchTerm: String = ""
     private var seasonFilterBy: String = ""
     private var locationFilterBy: String = ""
@@ -94,7 +94,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         super.onPause()
         // Force refresh
         hasAdapterBeenSetup = false
-        adapterPosition = linearLayoutManager.findFirstVisibleItemPosition()
+        adapterPosition = linearLayoutManager?.findFirstVisibleItemPosition() ?: 0
     }
 
     override fun setup() {
@@ -174,7 +174,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         show_completed_check_box?.isChecked = showCompleted
         show_completed_check_box?.setOnCheckedChangeListener { _, b ->
             showCompleted = b
-            adapter.updateShowCompleted(showCompleted)
+            adapter?.updateShowCompleted(showCompleted)
             sharedPreferences.edit().putBoolean(SHOW_COMPLETED, showCompleted).apply()
         }
 
@@ -201,8 +201,10 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
                     fishing_header_group?.visibility = View.VISIBLE
                     fishing_recycler_view?.visibility = View.VISIBLE
                     farm = results.farm
-                    header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
-                    header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, farm.name))
+                    farm?.let {
+                        header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
+                        header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
+                    }
                     fishes.clear()
                     fishes.addAll(results.fishes.sortedBy { it.name })
                     filter.filter("")
@@ -216,35 +218,41 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
                 .subscribe { f ->
                     FragmentUtil.flipSelectedFarmText(header_farm_easy_flip_view, header_farm_name_front_text_view, header_farm_name_back_text_view, resources, f)
                     farm = f
-                    adapter.updateFarm(farm)
+                    farm?.let {
+                        adapter?.updateFarm(it)
+                    }
                 }
 
         compositeDisposable.add(selectedFarmChangesDisposable)
     }
 
     private fun setupFishesAdapter(fishes: List<Fish>) {
-        hasAdapterBeenSetup = true
-        adapter = FishesAdapter(
-                fishes,
-                farm,
-                showCompleted,
-                activity as MainActivity,
-                this
-        )
+        farm?.let {
+            hasAdapterBeenSetup = true
+            adapter = FishesAdapter(
+                    fishes,
+                    it,
+                    showCompleted,
+                    activity as MainActivity,
+                    this
+            )
 
-        fishing_recycler_view?.adapter = adapter
-        linearLayoutManager = LinearLayoutManager(activity)
-        fishing_recycler_view?.layoutManager = linearLayoutManager
-        linearLayoutManager.scrollToPosition(adapterPosition)
+            fishing_recycler_view?.adapter = adapter
+            linearLayoutManager = LinearLayoutManager(activity)
+            fishing_recycler_view?.layoutManager = linearLayoutManager
+            linearLayoutManager?.scrollToPosition(adapterPosition)
+        }
     }
 
     override fun onItemChecked(fish: Fish, isChecked: Boolean) {
-        if (isChecked) farm.fishes.add(fish.name)
-        else farm.fishes.remove(fish.name)
-        adapter.notifyDataSetChanged()
-        farmRepository.updateSelectedFarm(farm)
-                .subscribeOn(Schedulers.io())
-                .subscribe()
+        if (isChecked) farm?.fishes?.add(fish.name)
+        else farm?.fishes?.remove(fish.name)
+        adapter?.notifyDataSetChanged()
+        farm?.let {
+            farmRepository.updateSelectedFarm(it)
+                    .subscribeOn(Schedulers.io())
+                    .subscribe()
+        }
     }
 
     override fun getFilter(): Filter {
@@ -278,7 +286,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
                 val filteredList = filterResults?.values as List<Fish>
 
                 if (hasAdapterBeenSetup) {
-                    adapter.updateFishes(filteredList)
+                    adapter?.updateFishes(filteredList)
                 } else {
                     setupFishesAdapter(filteredList)
                 }
