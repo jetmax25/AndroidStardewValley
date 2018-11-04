@@ -15,9 +15,9 @@ class VillagerRepository(
         moshi: Moshi
 ) {
 
-    private var villagers: MutableList<Villager> = mutableListOf()
-    private var type: ParameterizedType = Types.newParameterizedType(List::class.java, Villager::class.java)
-    private var adapter: JsonAdapter<List<Villager>> = moshi.adapter<List<Villager>>(type)
+    private val villagers: MutableList<Villager> = mutableListOf()
+    private val type: ParameterizedType = Types.newParameterizedType(List::class.java, Villager::class.java)
+    private val adapter: JsonAdapter<List<Villager>> = moshi.adapter<List<Villager>>(type)
 
     fun getVillagers(): Single<List<Villager>> {
         if (villagers.isNotEmpty()) return Single.just(villagers)

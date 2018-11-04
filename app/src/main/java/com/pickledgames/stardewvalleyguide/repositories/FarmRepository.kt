@@ -14,7 +14,7 @@ class FarmRepository(
         private val sharedPreferences: SharedPreferences
 ) {
 
-    private var farms: MutableList<Farm> = mutableListOf()
+    private val farms: MutableList<Farm> = mutableListOf()
     private var selectedFarmSubject: PublishSubject<Farm> = PublishSubject.create()
     private var selectedFarmIndex: Int = 0
     private var selectedFarmId: Long = sharedPreferences.getLong(SELECTED_FARM_ID, -1)
