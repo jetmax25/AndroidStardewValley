@@ -76,7 +76,7 @@ class FarmRepository(
     fun addFarm(farm: Farm): Single<Farm> {
         return Single.create<Farm> { emitter ->
             val id = farmDao.insertFarm(farm)
-            val farmWithId = Farm(farm.name, farm.farmType, farm.communityCenterItems, farm.fishes, id)
+            val farmWithId = Farm(farm.name, farm.farmType, farm.communityCenterItems, farm.fishes, farm.museumItems, id)
             farms.add(farmWithId)
             selectedFarmIndex = farms.size - 1
             selectedFarmId = id

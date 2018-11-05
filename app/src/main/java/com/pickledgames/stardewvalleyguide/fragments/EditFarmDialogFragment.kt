@@ -45,7 +45,7 @@ class EditFarmDialogFragment : DialogFragment() {
                 .setPositiveButton(android.R.string.ok) { _, _ ->
                     val name = edit_farm_name_text_input_edit_text?.text.toString()
                     val farmType = edit_farm_type_spinner?.selectedItem as FarmType
-                    val newFarm = Farm(name, farmType, farm.communityCenterItems, farm.fishes, farm.id)
+                    val newFarm = Farm(name, farmType, farm.communityCenterItems, farm.fishes, farm.museumItems, farm.id)
                     onFarmUpdatedListener.onFarmUpdated(newFarm, position)
                 }
                 .setNegativeButton(android.R.string.cancel, null)

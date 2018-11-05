@@ -13,6 +13,7 @@ data class Farm(
         val farmType: FarmType,
         val communityCenterItems: MutableSet<String> = mutableSetOf(),
         val fishes: MutableSet<String> = mutableSetOf(),
+        val museumItems: MutableSet<String> = mutableSetOf(),
         @PrimaryKey(autoGenerate = true) val id: Long = 0
 ) : Parcelable {
 
@@ -20,6 +21,14 @@ data class Farm(
         var completed = 0
         for (item: CommunityCenterItem in communityCenterBundle.items) {
             if (communityCenterItems.contains(item.uniqueId)) completed++
+        }
+        return completed
+    }
+
+    fun getCompletedItemsCount(museumItemCollection: MuseumItemCollection): Int {
+        var completed = 0
+        for (item: String in museumItems) {
+            if (item.contains(museumItemCollection.name, true)) completed++
         }
         return completed
     }

@@ -7,7 +7,7 @@ import android.arch.persistence.room.TypeConverters
 import com.pickledgames.stardewvalleyguide.StardewApp
 import com.pickledgames.stardewvalleyguide.models.Farm
 
-@Database(entities = [Farm::class], version = 2, exportSchema = false)
+@Database(entities = [Farm::class], version = 3, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class StardewDatabase : RoomDatabase() {
 
@@ -22,7 +22,7 @@ abstract class StardewDatabase : RoomDatabase() {
                     StardewDatabase::class.java,
                     DATABASE_NAME
             )
-                    .addMigrations(Migrations.MIGRATION_1_2)
+                    .addMigrations(*Migrations.migrations)
                     .build()
         }
     }

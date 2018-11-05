@@ -41,4 +41,10 @@ class RepositoryModule {
     fun providesFishRepository(stardewApp: StardewApp): FishRepository {
         return FishRepository(stardewApp)
     }
+
+    @Provides
+    @Singleton
+    fun providesMuseumItemRepository(stardewApp: StardewApp): MuseumItemRepository {
+        return MuseumItemRepository(stardewApp)
+    }
 }

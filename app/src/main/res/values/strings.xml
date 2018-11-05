@@ -75,4 +75,7 @@
     <string name="locations">Locations</string>
     <string name="legendary_fish_map_cd_template">%s Legendary Fish Map</string>
     <string name="legendary_fish_location_cd_template">%s Legendary Fish Location</string>
+    <string name="minerals">Minerals</string>
+    <string name="lost_books">Lost Books</string>
+    <string name="artifacts">Artifacts</string>
 </resources>

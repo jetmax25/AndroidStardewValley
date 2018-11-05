@@ -10,43 +10,42 @@ import android.widget.Filter
 import android.widget.Filterable
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
-import com.pickledgames.stardewvalleyguide.adapters.CommunityCenterItemsAdapter
-import com.pickledgames.stardewvalleyguide.enums.Season
+import com.pickledgames.stardewvalleyguide.adapters.MuseumItemsAdapter
 import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
-import com.pickledgames.stardewvalleyguide.models.CommunityCenterBundle
-import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
 import com.pickledgames.stardewvalleyguide.models.Farm
-import com.pickledgames.stardewvalleyguide.repositories.CommunityCenterRepository
+import com.pickledgames.stardewvalleyguide.models.MuseumItem
+import com.pickledgames.stardewvalleyguide.models.MuseumItemCollection
 import com.pickledgames.stardewvalleyguide.repositories.FarmRepository
+import com.pickledgames.stardewvalleyguide.repositories.MuseumItemRepository
 import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.BiFunction
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.filter_community_center.*
-import kotlinx.android.synthetic.main.fragment_community_center.*
+import kotlinx.android.synthetic.main.filter_museum.*
+import kotlinx.android.synthetic.main.fragment_museum.*
 import kotlinx.android.synthetic.main.header_farm.*
 import kotlinx.android.synthetic.main.loading.*
 import javax.inject.Inject
 
-class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListener, SearchView.OnQueryTextListener, Filterable {
+class MuseumFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListener, SearchView.OnQueryTextListener, Filterable {
 
     @Inject lateinit var farmRepository: FarmRepository
-    @Inject lateinit var communityCenterRepository: CommunityCenterRepository
+    @Inject lateinit var museumItemRepository: MuseumItemRepository
     @Inject lateinit var sharedPreferences: SharedPreferences
     private var farm: Farm? = null
-    private var bundles: MutableList<CommunityCenterBundle> = mutableListOf()
-    private var adapter: CommunityCenterItemsAdapter? = null
+    private var museumItemsWrapper: MuseumItemRepository.MuseumItemsWrapper? = null
+    private var adapter: MuseumItemsAdapter? = null
     private var linearLayoutManager: LinearLayoutManager? = null
-    private var seasonFilterBy: String = ""
     private var searchTerm: String = ""
+    private var collectionFilterBy: String = ""
     private var showCompleted: Boolean = false
     private var hasAdapterBeenSetup: Boolean = false
     private var adapterPosition: Int = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        layoutId = R.layout.fragment_community_center
-        menuId = R.menu.community_center
+        layoutId = R.layout.fragment_museum
+        menuId = R.menu.museum
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
@@ -58,15 +57,15 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
 
     override fun onPrepareOptionsMenu(menu: Menu?) {
         super.onPrepareOptionsMenu(menu)
-        val searchMenuItem = menu?.findItem(R.id.community_center_search)
+        val searchMenuItem = menu?.findItem(R.id.museum_search)
         FragmentUtil.setupSearchView(searchMenuItem, this, View.OnFocusChangeListener { _, b ->
-            community_center_header_group?.visibility = if (b) View.GONE else View.VISIBLE
+            museum_header_group?.visibility = if (b) View.GONE else View.VISIBLE
         })
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
-            R.id.community_center_edit_farms -> {
+            R.id.museum_edit_farms -> {
                 (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
                 return true
             }
@@ -98,18 +97,19 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
             (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
         }
 
-        val seasonTabIndex = sharedPreferences.getInt(SEASON_INDEX, 0)
-        filter_community_center_season_tab_layout?.getTabAt(seasonTabIndex)?.select()
-        seasonFilterBy = filter_community_center_season_tab_layout?.getTabAt(seasonTabIndex)?.text.toString()
-        filter_community_center_season_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        val collectionTabIndex = sharedPreferences.getInt(COLLECTION_INDEX, 0)
+        filter_museum_tab_layout?.getTabAt(collectionTabIndex)?.select()
+        collectionFilterBy = filter_museum_tab_layout?.getTabAt(collectionTabIndex)?.text.toString()
+        filter_museum_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                seasonFilterBy = tab?.text.toString()
+                collectionFilterBy = tab?.text.toString()
                 filter.filter("")
-                sharedPreferences.edit().putInt(SEASON_INDEX, tab?.position ?: 0).apply()
+                sharedPreferences.edit().putInt(COLLECTION_INDEX, tab?.position
+                        ?: 0).apply()
             }
         })
 
@@ -121,35 +121,34 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
             sharedPreferences.edit().putBoolean(SHOW_COMPLETED, showCompleted).apply()
         }
 
-        FragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_community_center_group, sharedPreferences, SHOW_FILTER_SETTINGS)
+        FragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_museum_group, sharedPreferences, SHOW_FILTER_SETTINGS)
 
         data class Results(
                 val farm: Farm,
-                val bundles: List<CommunityCenterBundle>
+                val museumItemsWrapper: MuseumItemRepository.MuseumItemsWrapper
         )
 
         loading_container?.visibility = View.VISIBLE
-        community_center_header_group?.visibility = View.INVISIBLE
-        community_center_items_recycler_view?.visibility = View.INVISIBLE
+        museum_header_group?.visibility = View.INVISIBLE
+        museum_recycler_view?.visibility = View.INVISIBLE
 
         val disposable = Single.zip(
                 farmRepository.getSelectedFarm(),
-                communityCenterRepository.getBundles(),
-                BiFunction { f: Farm, b: List<CommunityCenterBundle> -> Results(f, b) }
+                museumItemRepository.getMuseumItemsWrapper(),
+                BiFunction { f: Farm, miw: MuseumItemRepository.MuseumItemsWrapper -> Results(f, miw) }
         )
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { results ->
                     loading_container?.visibility = View.INVISIBLE
-                    community_center_header_group?.visibility = View.VISIBLE
-                    community_center_items_recycler_view?.visibility = View.VISIBLE
+                    museum_header_group?.visibility = View.VISIBLE
+                    museum_recycler_view?.visibility = View.VISIBLE
                     farm = results.farm
                     farm?.let {
                         header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
                         header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
                     }
-                    bundles.clear()
-                    bundles.addAll(results.bundles)
+                    museumItemsWrapper = results.museumItemsWrapper
                     filter.filter("")
                 }
 
@@ -169,10 +168,10 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         compositeDisposable.add(selectedFarmChangesDisposable)
     }
 
-    private fun setupCommunityCenterItemsAdapter(list: List<Any>) {
+    private fun setupFishesAdapter(list: List<Any>) {
         farm?.let {
             hasAdapterBeenSetup = true
-            adapter = CommunityCenterItemsAdapter(
+            adapter = MuseumItemsAdapter(
                     list,
                     it,
                     showCompleted,
@@ -180,16 +179,16 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                     this
             )
 
-            community_center_items_recycler_view?.adapter = adapter
+            museum_recycler_view?.adapter = adapter
             linearLayoutManager = LinearLayoutManager(activity)
-            community_center_items_recycler_view?.layoutManager = linearLayoutManager
+            museum_recycler_view?.layoutManager = linearLayoutManager
             linearLayoutManager?.scrollToPosition(adapterPosition)
         }
     }
 
-    override fun onItemChecked(communityCenterItem: CommunityCenterItem, isChecked: Boolean) {
-        if (isChecked) farm?.communityCenterItems?.add(communityCenterItem.uniqueId)
-        else farm?.communityCenterItems?.remove(communityCenterItem.uniqueId)
+    override fun onItemChecked(museumItem: MuseumItem, isChecked: Boolean) {
+        if (isChecked) farm?.museumItems?.add(museumItem.uniqueId)
+        else farm?.museumItems?.remove(museumItem.uniqueId)
         adapter?.notifyDataSetChanged()
         farm?.let {
             farmRepository.updateSelectedFarm(it)
@@ -203,24 +202,31 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val filteredList = mutableListOf<Any>()
-                bundles.forEach { bundle ->
-                    val filteredBundleItems = bundle.items
-                            .filter { item ->
-                                seasonFilterBy == "All" || (item.seasons.contains(Season.fromString(seasonFilterBy)) && item.seasons.size != Season.values().size)
-                            }
-                            .filter { item ->
-                                if (showCompleted) return@filter true
-                                return@filter !(farm?.communityCenterItems?.contains(item.name)
-                                        ?: false)
-                            }
-                            .filter { item -> item.name.contains(searchTerm, true) || bundle.name.contains(searchTerm, true) }
-                            .toMutableList()
 
-                    val isComplete = farm?.getCompletedItemsCount(bundle) == bundle.needed
+                if (museumItemsWrapper?.artifacts != null && (collectionFilterBy == "All" || collectionFilterBy == "Artifacts")) {
+                    val filteredArtifacts = museumItemsWrapper?.artifacts!!
+                            .filter { artifact -> artifact.name.contains(searchTerm, true) }
+                    if (filteredArtifacts.isNotEmpty()) {
+                        filteredList.add(MuseumItemCollection("Artifacts", museumItemsWrapper?.artifacts!!.size))
+                        filteredList.addAll(filteredArtifacts)
+                    }
+                }
 
-                    if ((showCompleted || !isComplete) && filteredBundleItems.isNotEmpty()) {
-                        filteredList.add(bundle)
-                        filteredList.addAll(filteredBundleItems)
+                if (museumItemsWrapper?.lostBooks != null && (collectionFilterBy == "All" || collectionFilterBy == "Lost Books")) {
+                    val filteredLostBooks = museumItemsWrapper?.lostBooks!!
+                            .filter { lostBook -> lostBook.name.contains(searchTerm, true) }
+                    if (filteredLostBooks.isNotEmpty()) {
+                        filteredList.add(MuseumItemCollection("Lost Books", museumItemsWrapper?.lostBooks!!.size))
+                        filteredList.addAll(filteredLostBooks)
+                    }
+                }
+
+                if (museumItemsWrapper?.minerals != null && (collectionFilterBy == "All" || collectionFilterBy == "Minerals")) {
+                    val filteredMinerals = museumItemsWrapper?.minerals!!
+                            .filter { mineral -> mineral.name.contains(searchTerm, true) }
+                    if (filteredMinerals.isNotEmpty()) {
+                        filteredList.add(MuseumItemCollection("Minerals", museumItemsWrapper?.minerals!!.size))
+                        filteredList.addAll(filteredMinerals)
                     }
                 }
 
@@ -237,19 +243,19 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 if (hasAdapterBeenSetup) {
                     adapter?.updateList(filteredList)
                 } else {
-                    setupCommunityCenterItemsAdapter(filteredList)
+                    setupFishesAdapter(filteredList)
                 }
             }
         }
     }
 
     companion object {
-        private val SEASON_INDEX = "${CommunityCenterFragment::class.java.simpleName}_SEASON_INDEX"
-        private val SHOW_COMPLETED = "${CommunityCenterFragment::class.java.simpleName}_SHOW_COMPLETED"
-        private val SHOW_FILTER_SETTINGS = "${CommunityCenterFragment::class.java.simpleName}_SHOW_FILTER_SETTINGS"
+        private val COLLECTION_INDEX = "${MuseumFragment::class.java.simpleName}_COLLECTION_INDEX"
+        private val SHOW_COMPLETED = "${MuseumFragment::class.java.simpleName}_SHOW_COMPLETED"
+        private val SHOW_FILTER_SETTINGS = "${MuseumFragment::class.java.simpleName}_SHOW_FILTER_SETTINGS"
 
-        fun newInstance(): CommunityCenterFragment {
-            return CommunityCenterFragment()
+        fun newInstance(): MuseumFragment {
+            return MuseumFragment()
         }
     }
 }

@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/alphaBackground">
+    android:background="@drawable/sign">
 
     <ImageView
-        android:id="@+id/community_center_item_image_view"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/museum_item_collection_header_image_view"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -18,35 +18,37 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/item_hardwood" />
+        tools:src="@drawable/item_diamond" />
 
     <TextView
-        android:id="@+id/community_center_item_text_view"
+        android:id="@+id/museum_item_collection_header_name_text_view"
         style="@style/StardewTextViewStyle"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/community_center_item_check_box"
-        app:layout_constraintStart_toEndOf="@+id/community_center_item_image_view"
+        app:layout_constraintEnd_toStartOf="@+id/museum_item_collection_header_quantity_completed_text_view"
+        app:layout_constraintStart_toEndOf="@+id/museum_item_collection_header_image_view"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Hardwood (10)" />
+        tools:text="Minerals" />
 
-    <android.support.v7.widget.AppCompatCheckBox
-        android:id="@+id/community_center_item_check_box"
+    <TextView
+        android:id="@+id/museum_item_collection_header_quantity_completed_text_view"
+        style="@style/StardewTextViewStyle"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:paddingStart="8dp"
-        android:paddingLeft="8dp"
-        android:paddingEnd="8dp"
-        android:paddingRight="8dp"
-        android:theme="@style/BundleItemCheckBoxStyle"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="0/53" />
 
 </android.support.constraint.ConstraintLayout>
