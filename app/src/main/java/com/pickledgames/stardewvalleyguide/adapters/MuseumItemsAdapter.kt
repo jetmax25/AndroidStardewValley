@@ -7,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.fragments.MuseumItemFragment
 import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
-import com.pickledgames.stardewvalleyguide.models.Farm
-import com.pickledgames.stardewvalleyguide.models.MuseumItem
-import com.pickledgames.stardewvalleyguide.models.MuseumItemCollection
+import com.pickledgames.stardewvalleyguide.models.*
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_museum_item.*
 import kotlinx.android.synthetic.main.list_item_museum_item_collection_header.*
@@ -128,7 +127,13 @@ class MuseumItemsAdapter(
                 }
             }
             containerView.setOnClickListener {
-                // TODO: Add MuseumItemFragment
+                val museumItemFragment = when (museumItem) {
+                    is Artifact -> MuseumItemFragment.newInstance(museumItem)
+                    is LostBook -> MuseumItemFragment.newInstance(museumItem)
+                    is Mineral -> MuseumItemFragment.newInstance(museumItem)
+                    else -> throw Exception("Invalid MuseumItem Type")
+                }
+                mainActivity.pushFragment(museumItemFragment)
             }
         }
     }

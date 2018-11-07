@@ -62,4 +62,8 @@ abstract class FragmentModule {
     @FragmentScope
     @ContributesAndroidInjector
     abstract fun museumFragment(): MuseumFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector
+    abstract fun museumItemFragment(): MuseumItemFragment
 }

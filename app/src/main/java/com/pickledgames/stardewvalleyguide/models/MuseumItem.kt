@@ -1,13 +1,16 @@
 package com.pickledgames.stardewvalleyguide.models
 
 import android.content.Context
+import android.os.Parcelable
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 open class MuseumItem(
-        val name: String,
-        val description: String,
+        open val name: String,
+        open val description: String,
         private val collectionName: String
-) : StardewObject {
+) : StardewObject, Parcelable {
 
     val uniqueId: String
         get() {

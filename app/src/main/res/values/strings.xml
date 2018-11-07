@@ -78,4 +78,6 @@
     <string name="minerals">Minerals</string>
     <string name="lost_books">Lost Books</string>
     <string name="artifacts">Artifacts</string>
+    <string name="price_template">Price: %d</string>
+    <string name="mine_levels_template">Mine Levels: %d-%d</string>
 </resources>
