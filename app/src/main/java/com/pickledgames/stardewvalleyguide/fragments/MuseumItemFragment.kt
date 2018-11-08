@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.MuseumItemLocationsAdapter
+import com.pickledgames.stardewvalleyguide.managers.AdsManager
 import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.models.Artifact
 import com.pickledgames.stardewvalleyguide.models.LostBook
@@ -21,12 +22,13 @@ import javax.inject.Inject
 
 class MuseumItemFragment : InnerBaseFragment() {
 
+    @Inject lateinit var adsManager: AdsManager
     @Inject lateinit var analyticsManager: AnalyticsManager
     private lateinit var museumItem: MuseumItem
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_museum_item
-        // TODO: Ads?
+        adsManager.showAdFor(AdsManager.MUSEUM_ITEM_FRAGMENT)
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
