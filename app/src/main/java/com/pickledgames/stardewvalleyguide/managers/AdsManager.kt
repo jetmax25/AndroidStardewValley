@@ -31,6 +31,10 @@ class AdsManager(
                     "ca-app-pub-5594325776314197/1372751378",
                     2
             ),
+            MUSEUM_ITEM_FRAGMENT to StardewInterstitialAd(stardewApp, random,
+                    "ca-app-pub-5594325776314197/5975706715",
+                    3
+            ),
             CROP_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/7443050293",
                     2
@@ -112,6 +116,7 @@ class AdsManager(
         const val GIFT_FRAGMENT = "GIFT_FRAGMENT"
         const val COMMUNITY_CENTER_ITEM_FRAGMENT = "COMMUNITY_CENTER_ITEM_FRAGMENT"
         const val FISH_FRAGMENT = "FISH_FRAGMENT"
+        const val MUSEUM_ITEM_FRAGMENT = "MUSEUM_ITEM_FRAGMENT"
         const val CROP_FRAGMENT = "CROP_FRAGMENT"
         const val EVENT_FRAGMENT = "EVENT_FRAGMENT"
         const val RECIPE_FRAGMENT = "RECIPE_FRAGMENT"

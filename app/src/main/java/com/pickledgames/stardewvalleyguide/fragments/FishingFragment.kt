@@ -3,6 +3,7 @@ package com.pickledgames.stardewvalleyguide.fragments
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.design.widget.TabLayout
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.SearchView
 import android.view.*
@@ -240,6 +241,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
             fishing_recycler_view?.adapter = adapter
             linearLayoutManager = LinearLayoutManager(activity)
             fishing_recycler_view?.layoutManager = linearLayoutManager
+            fishing_recycler_view?.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
             linearLayoutManager?.scrollToPosition(adapterPosition)
         }
     }

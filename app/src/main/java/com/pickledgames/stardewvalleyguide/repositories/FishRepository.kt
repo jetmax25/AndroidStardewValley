@@ -15,7 +15,7 @@ class FishRepository(
         private val context: Context
 ) {
 
-    private var fishes: MutableList<Fish> = mutableListOf()
+    private val fishes: MutableList<Fish> = mutableListOf()
 
     fun getFishes(): Single<List<Fish>> {
         if (fishes.isNotEmpty()) return Single.just(fishes)
@@ -24,7 +24,7 @@ class FishRepository(
     }
 
     private fun getFishesFromAssets(): Single<List<Fish>> {
-        val inputStream = context.resources.openRawResource(R.raw.fish)
+        val inputStream = context.resources.openRawResource(R.raw.fishes)
         val json = RepositoryUtil.inputStreamToString(inputStream)
         val fishes: MutableList<Fish> = mutableListOf()
 

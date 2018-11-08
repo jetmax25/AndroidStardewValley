@@ -1,0 +1,369 @@
+{
+  "Dwarf Scroll I": {
+    "Description": "A yellowed scroll of parchment filled with dwarven script. This one's tied with a red bow",
+    "Price": 1,
+    "Locations": [
+      "Mines\/Skull Cavern (any level)",
+      "Several monsters (0.5% each)"
+    ]
+  },
+  "Dwarf Scroll II": {
+    "Description": "A yellowed scroll of parchment filled with dwarven script. This one's tied with a green ribbon.",
+    "Price": 1,
+    "Locations": [
+      "Mines\/Skull Cavern (any level)",
+      "Ghost (Mine lvls 50-90)",
+      "Frost Bat (Mines lvl 40-65)",
+      "Dust Sprites (Mines level 40-79)",
+      "Blue Slime"
+    ]
+  },
+  "Dwarf Scroll III": {
+    "Description": "A yellowed scroll of parchment filled with dwarven script. This one's tied with a blue rope.",
+    "Price": 1,
+    "Locations": [
+      "Several monsters drop"
+    ]
+  },
+  "Dwarf Scroll IV": {
+    "Description": "A yellowed scroll of parchment filled with dwarven script. This one's tied with a gold chain.",
+    "Price": 1,
+    "Locations": [
+      "Any monster (other than Serpent, Skeleton, Wilderness Golem)",
+      "Mines (level 80+)",
+      "Skull Cavern"
+    ]
+  },
+  "Chipped Amphora": {
+    "Description": "An ancient vessel made of ceramic material. Used to transport both dry and wet goods.",
+    "Price": 40,
+    "Locations": [
+      "Artifiact spot within town (4%)"
+    ]
+  },
+  "Arrowhead": {
+    "Description": "A crudely fashioned point used for hunting.",
+    "Price": 40,
+    "Locations": [
+      "Mountain (2%)",
+      "Forest (2%",
+      "Bus Stop (2%)"
+    ]
+  },
+  "Ancient Doll": {
+    "Description": "An ancient doll covered in grime. This doll may have been used as a toy, a decoration, or a prop in some kind of ritual.",
+    "Price": 60,
+    "Locations": [
+      "Mountain (4%)",
+      "Forest (3%)",
+      "Bus Stop (3%)",
+      "Town (1%)",
+      "Fishing Chest",
+      "Feast of the Winter Star"
+    ]
+  },
+  "Elvish Jewelry": {
+    "Description": "Dirty but still beautiful. On the side is a flowing script thought by some to be the ancient language of the elves. No Elvish bones have ever been found.",
+    "Price": 200,
+    "Locations": [
+      "Forest (1%)",
+      "Fishing Chest"
+    ]
+  },
+  "Chewing Stick": {
+    "Description": "Ancient people chewed on these to keep their teeth clean.",
+    "Price": 50,
+    "Locations": [
+      "Mountain (2%)",
+      "Forest (2%) ",
+      "Town (1%)",
+      "Fishing Chest",
+      "Duggy Drop (2%)"
+    ]
+  },
+  "Ornamental Fan": {
+    "Description": "This exquisute fan most likely belonged to a noblewoman. Historians believe that the valley was a popular sixth-era vacation spot for the wealthy.",
+    "Price": 300,
+    "Locations": [
+      "Beach (2%)",
+      "Forest (1%)",
+      "Town (0.8%)",
+      "Fishing Chest"
+    ]
+  },
+  "Dinosaur Egg": {
+    "Description": "A giant dino egg... The entire shell is still intact!",
+    "Price": 350,
+    "Locations": [
+      "Mines (1%)",
+      "Mountain (0.8%)",
+      "Fishing Chest"
+    ]
+  },
+  "Rare Disc": {
+    "Description": "A heavy black disc studded with peculiar red stones. When you hold it, you're overwhelmed with a feeling of dread.",
+    "Price": 300,
+    "Locations": [
+      "Mines (1%)",
+      "Fishing Chest",
+      "Drop from Bats, Shadow rute, or Shadow Shaman"
+    ]
+  },
+  "Ancient Sword": {
+    "Description": "It's the remains of an ancient sword. Most of the blade has turned to rust, but the hilt is very finely crafted.",
+    "Price": 100,
+    "Locations": [
+      "Forest (1%)",
+      "Mountain (0.8%)",
+      "Fishing Chest"
+    ]
+  },
+  "Rusty Spoon": {
+    "Description": "A plain old spoon, probably ten years old. Not very interesting.",
+    "Price": 25,
+    "Locations": [
+      "The Farm",
+      "Town (5%)",
+      "Fishing Chest",
+      "Mines\/Skull Cavern (any level)"
+    ]
+  },
+  "Rusty Spur": {
+    "Description": "An old spur that was once attached to a cowboy's boot. People must have been raising animals in this area for many generations.",
+    "Price": 25,
+    "Locations": [
+      "Fishing Chest",
+      "Farm (10%)"
+    ]
+  },
+  "Rusty Cog": {
+    "Description": "A well preserved cog that must have been part of some ancient machine. This could be dwarven technology.",
+    "Price": 25,
+    "Locations": [
+      "Mountain (5%)",
+      "Mines\/Skull Cavern (any level)",
+      "Fishing Chest"
+    ]
+  },
+  "Chicken Statue": {
+    "Description": "It's a statue of a chicken on a bronze base. The ancient people of this area must have been very fond of chickens.",
+    "Price": 50,
+    "Locations": [
+      "Fishing Chest",
+      "Farm (10%)"
+    ]
+  },
+  "Ancient Seed": {
+    "Description": "It's a dry old seed from some ancient plant. By all appearances it's long since dead...",
+    "Price": 5,
+    "Locations": [
+      "Forest (1%)",
+      "Mountain (1%)",
+      "Fishing Chest",
+      "Monster Drop (Bug, Grub, Fly: 0.5%)"
+    ]
+  },
+  "Prehistoric Tool": {
+    "Description": "Some kind of gnarly old digging tool.",
+    "Price": 50,
+    "Locations": [
+      "Bus Stop (4%)",
+      "Mountain (3%)",
+      "Forest (3%)",
+      "Fishing Chest"
+    ]
+  },
+  "Dried Starfish": {
+    "Description": "A starfish from the primordial ocean. It's an unusually pristine specimen!",
+    "Price": 40,
+    "Locations": [
+      "Beach (10%)",
+      "Fishing Chest"
+    ]
+  },
+  "Anchor": {
+    "Description": "It may have belonged to ancient pirates.",
+    "Price": 100,
+    "Locations": [
+      "Beach (5%)",
+      "Fishing Chest"
+    ]
+  },
+  "Glass Shards": {
+    "Description": "A mixture of glass shards smoothed by centuries of ocean surf. These could have belonged to an ancient mosaic or necklace.",
+    "Price": 20,
+    "Locations": [
+      "Beach (10%)",
+      "Fishing Chest"
+    ]
+  },
+  "Bone Flute": {
+    "Description": "It's a prehistoric wind instrument carved from an animal's bone. It produces an eerie tone.",
+    "Price": 100,
+    "Locations": [
+      "Mines (2%)",
+      "Mountain (1%)",
+      "Town (0.5%)",
+      "Fishing Chest"
+    ]
+  },
+  "Prehistoric Handaxe": {
+    "Description": "One of the earliest tools employed by humans. This \"crude\" tool was created by striking one rock with another to form a sharp edge.",
+    "Price": 50,
+    "Locations": [
+      "Mountain (5%)",
+      "Forest (5%)",
+      "Bus Stop (5%)"
+    ]
+  },
+  "Dwarvish Helm": {
+    "Description": "It's one of the helmets commonly worn by dwarves. The thick metal plating protects them from falling debris and stalactites.",
+    "Price": 100,
+    "Locations": [
+      "Mines (1%)",
+      "Geode",
+      "Omni Geode"
+    ]
+  },
+  "Dwarf Gadget": {
+    "Description": "It's a piece of the advanced technology once known to the dwarves. It's still glowing and humming, but you're unable to understand how it works.",
+    "Price": 200,
+    "Locations": [
+      "Mines (0.1%)",
+      "Magma Geode",
+      "Omni Geode"
+    ]
+  },
+  "Ancient Drum": {
+    "Description": "It's a drum made from wood and animal skin. It has a low, reverberating tone.",
+    "Price": 100,
+    "Locations": [
+      "Mines (2%)",
+      "Bus Stop (1%)",
+      "Forest (1%)",
+      "Town (0.5%)",
+      "Frozen Geode, Omni Geode"
+    ]
+  },
+  "Golden Mask": {
+    "Description": "A creepy golden mask probably used in an ancient magic ritual. A socket in the forehead contains a large purple gemstone.",
+    "Price": 500,
+    "Locations": [
+      "Desert (4%)"
+    ]
+  },
+  "Golden Relic": {
+    "Description": "It's a golden slab with heiroglyphs and pictures emblazoned onto the front.",
+    "Price": 250,
+    "Locations": [
+      "Desert (8%)"
+    ]
+  },
+  "Strange Doll 1": {
+    "Description": "???",
+    "Price": 1000,
+    "Locations": [
+      "Everywhere (except desert) (0.1%)",
+      "Mines\/Skull Cavern (any level)",
+      "Fishing Chest"
+    ]
+  },
+  "Strange Doll 2": {
+    "Description": "???",
+    "Price": 1000,
+    "Locations": [
+      "Everywhere (except desert) (0.1%)",
+      "Mines\/Skull Cavern (any level)",
+      "Fishing Chest"
+    ]
+  },
+  "Prehistoric Scapula": {
+    "Description": "Commonly known as a \"shoulder blade\"... It's unclear what species it belonged to.",
+    "Price": 100,
+    "Locations": [
+      "Town (1%)",
+      "Forest (?%)"
+    ]
+  },
+  "Prehistoric Tibia": {
+    "Description": "A thick and sturdy leg bone.",
+    "Price": 100,
+    "Locations": [
+      "Forest (1%)",
+      "Railroad"
+    ]
+  },
+  "Prehistoric Skull": {
+    "Description": "This is definitely a mammalian skull.",
+    "Price": 100,
+    "Locations": [
+      "Mountain (1%)"
+    ]
+  },
+  "Skeletal Hand": {
+    "Description": "It's a wonder all these ancient little pieces lasted so long.",
+    "Price": 100,
+    "Locations": [
+      "Beach (1%)",
+      "Backwoods"
+    ]
+  },
+  "Prehistoric Rib": {
+    "Description": "Little gouge marks on the side suggest that this rib was someone's dinner.",
+    "Price": 100,
+    "Locations": [
+      "Town)",
+      "Farm (1%)"
+    ]
+  },
+  "Prehistoric Vertebra": {
+    "Description": "A segment of some prehistoric creature's spine.",
+    "Price": 100,
+    "Locations": [
+      "Bus Stop (1%)"
+    ]
+  },
+  "Skeletal Tail": {
+    "Description": "It's pretty short for a tail.",
+    "Price": 100,
+    "Locations": [
+      "Mines\/Skull Cavern (any level)",
+      "Fishing Chest"
+    ]
+  },
+  "Nautilus Fossil": {
+    "Description": "This must've washed up ages ago from an ancient coral reef.",
+    "Price": 80,
+    "Locations": [
+      "Beach (3%)",
+      "Fishing Chest"
+    ]
+  },
+  "Amphibian Fossil": {
+    "Description": "The relatively short hind legs suggest some kind of primordial toad.",
+    "Price": 150,
+    "Locations": [
+      "Forest (1%)",
+      "Mountain (1%)",
+      "Fishing Chest"
+    ]
+  },
+  "Palm Fossil": {
+    "Description": "Palm Fossils are relatively common, but this happens to be a particularly well-preserved specimen.",
+    "Price": 50,
+    "Locations": [
+      "Forest (1%)",
+      "Beach (1%)",
+      "Desert (10%)"
+    ]
+  },
+  "Trilobite": {
+    "Description": "A long extinct relative of the crab.",
+    "Price": 50,
+    "Locations": [
+      "Forest (3%)",
+      "Beach (3%)",
+      "Mountain (3%)"
+    ]
+  }
+}

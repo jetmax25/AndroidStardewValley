@@ -7,7 +7,7 @@
     android:background="@color/alphaBackground">
 
     <ImageView
-        android:id="@+id/community_center_item_image_view"
+        android:id="@+id/museum_item_image_view"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -18,10 +18,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/item_hardwood" />
+        tools:src="@drawable/item_sandstone" />
 
     <TextView
-        android:id="@+id/community_center_item_text_view"
+        android:id="@+id/museum_item_text_view"
         style="@style/StardewTextViewStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -31,13 +31,13 @@
         android:layout_marginRight="8dp"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/community_center_item_check_box"
-        app:layout_constraintStart_toEndOf="@+id/community_center_item_image_view"
+        app:layout_constraintEnd_toStartOf="@+id/museum_item_check_box"
+        app:layout_constraintStart_toEndOf="@+id/museum_item_image_view"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Hardwood (10)" />
+        tools:text="Sandstone" />
 
     <android.support.v7.widget.AppCompatCheckBox
-        android:id="@+id/community_center_item_check_box"
+        android:id="@+id/museum_item_check_box"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:paddingStart="8dp"

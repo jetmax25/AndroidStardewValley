@@ -15,7 +15,7 @@ class CommunityCenterRepository(
         private val context: Context
 ) {
 
-    private var rooms: MutableList<CommunityCenterRoom> = mutableListOf()
+    private val rooms: MutableList<CommunityCenterRoom> = mutableListOf()
 
     fun getBundles(): Single<List<CommunityCenterBundle>> {
         return getRooms()

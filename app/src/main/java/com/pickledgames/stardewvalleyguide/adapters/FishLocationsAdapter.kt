@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.enums.LegendaryFishingLocation
 import com.pickledgames.stardewvalleyguide.models.Fish
+import com.pickledgames.stardewvalleyguide.views.ImageOverlayView
 import com.stfalcon.frescoimageviewer.ImageViewer
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_fish_location.*
@@ -94,9 +95,22 @@ class FishLocationsAdapter(
                         Uri.parse("res:///${legendaryFishingLocation.getLocationImageId(context)}")
                 )
 
-                ImageViewer.Builder(context, imageUrls)
+                val overlayView = ImageOverlayView(context)
+                val imageViewer = ImageViewer.Builder(context, imageUrls)
                         .setStartPosition(position)
+                        .setOverlayView(overlayView)
+                        .setImageChangeListener { position ->
+                            val text = if (position == 0) {
+                                "${fish.name.capitalize()} Map"
+                            } else {
+                                "${fish.name.capitalize()} Location"
+                            }
+
+                            overlayView.setText(text)
+                        }
                         .show()
+
+                overlayView.imageViewer = imageViewer
             }
         }
     }

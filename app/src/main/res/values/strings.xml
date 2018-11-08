@@ -36,7 +36,7 @@
     <string name="menu_item_purchases">Purchases</string>
     <string name="purchase_pro">Purchase the pro version and never see an ad again!\n\nChecklists for multiple farms.\n\nMore exclusive features coming soon.</string>
     <string name="impoverished_farmers">200% of revenue this month will buy livestock for impoverished farmers.</string>
-    <string name="go_pro">Go Pro $3.99</string>
+    <string name="go_pro">Go Pro $1.99</string>
     <string name="restore_purchases">Restore Purchases</string>
     <string name="direct_donation">Direct Donation Link</string>
     <string name="about_heifer_international">About Heifer International</string>
@@ -75,4 +75,10 @@
     <string name="locations">Locations</string>
     <string name="legendary_fish_map_cd_template">%s Legendary Fish Map</string>
     <string name="legendary_fish_location_cd_template">%s Legendary Fish Location</string>
+    <string name="minerals">Minerals</string>
+    <string name="lost_books">Lost Books</string>
+    <string name="artifacts">Artifacts</string>
+    <string name="price_template">Price: %d</string>
+    <string name="mine_levels_template">Mine Levels: %d-%d</string>
+    <string name="exit">Exit</string>
 </resources>
