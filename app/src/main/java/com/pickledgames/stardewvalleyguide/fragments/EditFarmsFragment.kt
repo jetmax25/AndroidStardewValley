@@ -25,7 +25,6 @@ class EditFarmsFragment : InnerBaseFragment() {
     @Inject lateinit var purchasesManager: PurchasesManager
     @Inject lateinit var analyticsManager: AnalyticsManager
     private var farms: MutableList<Farm> = mutableListOf()
-    private var isPro: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_edit_farms
@@ -37,7 +36,7 @@ class EditFarmsFragment : InnerBaseFragment() {
     override fun onPrepareOptionsMenu(menu: Menu?) {
         super.onPrepareOptionsMenu(menu)
         val addFarmMenuItem = menu?.findItem(R.id.add_farm)
-        addFarmMenuItem?.isVisible = isPro
+        addFarmMenuItem?.isVisible = purchasesManager.isPro
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -83,10 +82,14 @@ class EditFarmsFragment : InnerBaseFragment() {
         val isProDisposable = purchasesManager.isProSubject
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-                    isPro = it
-                    go_pro_text_view?.visibility = if (isPro) View.GONE else View.VISIBLE
+                    go_pro_text_view?.visibility = if (it) View.GONE else View.VISIBLE
                     (activity as MainActivity).invalidateOptionsMenu()
                 }
+
+        if (purchasesManager.isPro) {
+            go_pro_text_view?.visibility = View.GONE
+            (activity as MainActivity).invalidateOptionsMenu()
+        }
 
         compositeDisposable.add(isProDisposable)
     }
@@ -100,6 +103,8 @@ class EditFarmsFragment : InnerBaseFragment() {
     }
 
     fun updateFarm(farm: Farm?, position: Int) {
+        if (position < 0 || position >= farms.size) return
+
         if (farm == null && farms.size == 1) {
             Toast.makeText(activity, R.string.delete_error_message, Toast.LENGTH_LONG).show()
         } else if (farm == null) {

@@ -101,8 +101,8 @@ class FarmRepository(
                 }
                 .doOnSuccess { f ->
                     for (i in 0 until f.size) {
-                        val farm = f[i]
-                        if (farm.id == selectedFarmId) {
+                        val farm: Farm? = f[i]
+                        if (farm?.id == selectedFarmId) {
                             selectedFarmIndex = i
                             break
                         }
