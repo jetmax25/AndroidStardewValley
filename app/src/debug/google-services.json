@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "744706976245",
+    "firebase_url": "https://stardew-valley-companion.firebaseio.com",
+    "project_id": "stardew-valley-companion",
+    "storage_bucket": "stardew-valley-companion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744706976245:android:0d8a997045cf6568",
+        "android_client_info": {
+          "package_name": "com.pickledgames.stardewvalleyguide.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744706976245-0no5s9nkvbtnjptn1n7cbt29haq5hk81.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8ngxbapkdpH7xbGaBrm0KUGs8-taL8Qo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
