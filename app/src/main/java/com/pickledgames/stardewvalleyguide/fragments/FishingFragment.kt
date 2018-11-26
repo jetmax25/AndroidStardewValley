@@ -227,7 +227,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         compositeDisposable.add(selectedFarmChangesDisposable)
     }
 
-    private fun setupFishesAdapter(fishes: List<Fish>) {
+    private fun setupAdapter(fishes: List<Fish>) {
         farm?.let {
             hasAdapterBeenSetup = true
             adapter = FishesAdapter(
@@ -290,7 +290,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
                 if (hasAdapterBeenSetup) {
                     adapter?.updateFishes(filteredList)
                 } else {
-                    setupFishesAdapter(filteredList)
+                    setupAdapter(filteredList)
                 }
             }
         }

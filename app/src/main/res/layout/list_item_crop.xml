@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/alphaBackground">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <ImageView
+        android:id="@+id/crop_image_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/item_amaranth" />
+
+    <TextView
+        android:id="@+id/crop_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Amaranth" />
+
+    <ImageView
+        android:id="@+id/crop_seed_price_image_view"
+        android:layout_width="20dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/crop_seed_price_text_view"
+        app:layout_constraintEnd_toStartOf="@+id/crop_seed_price_text_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/crop_seed_price_text_view"
+        tools:src="@drawable/item_amaranth_seeds" />
+
+    <TextView
+        android:id="@+id/crop_seed_price_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/crop_gold_image_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/crop_seed_price_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/crop_text_view"
+        tools:text="70" />
+
+    <ImageView
+        android:id="@+id/crop_gold_image_view"
+        android:layout_width="20dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:contentDescription="@string/gold"
+        android:src="@drawable/item_gold"
+        app:layout_constraintBottom_toBottomOf="@+id/crop_gold_text_view"
+        app:layout_constraintEnd_toStartOf="@+id/crop_gold_text_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/crop_seed_price_text_view"
+        app:layout_constraintTop_toTopOf="@+id/crop_gold_text_view" />
+
+    <TextView
+        android:id="@+id/crop_gold_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/crop_seed_price_text_view"
+        app:layout_constraintEnd_toStartOf="@+id/crop_harvest_time_image_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/crop_gold_image_view"
+        app:layout_constraintTop_toTopOf="@+id/crop_seed_price_text_view"
+        tools:text="150" />
+
+    <ImageView
+        android:id="@+id/crop_harvest_time_image_view"
+        android:layout_width="20dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/harvest_time"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintBottom_toBottomOf="@+id/crop_harvest_time_text_view"
+        app:layout_constraintEnd_toStartOf="@+id/crop_harvest_time_text_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/crop_gold_text_view"
+        app:layout_constraintTop_toTopOf="@+id/crop_harvest_time_text_view" />
+
+    <TextView
+        android:id="@+id/crop_harvest_time_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/crop_gold_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/crop_harvest_time_image_view"
+        app:layout_constraintTop_toTopOf="@+id/crop_gold_text_view"
+        tools:text="7" />
+
+</android.support.constraint.ConstraintLayout>

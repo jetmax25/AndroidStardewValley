@@ -81,4 +81,11 @@
     <string name="price_template">Price: %d</string>
     <string name="mine_levels_template">Mine Levels: %d-%d</string>
     <string name="exit">Exit</string>
+    <string name="menu_item_crops">Crops</string>
+    <string name="price">Price</string>
+    <string name="time">Time</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
+    <string name="harvest_time">Harvest Time</string>
+    <string name="gold_per_day">Gold/Day</string>
 </resources>

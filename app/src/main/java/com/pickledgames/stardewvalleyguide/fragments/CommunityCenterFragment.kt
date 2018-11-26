@@ -170,7 +170,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         compositeDisposable.add(selectedFarmChangesDisposable)
     }
 
-    private fun setupCommunityCenterItemsAdapter(list: List<Any>) {
+    private fun setupAdapter(list: List<Any>) {
         farm?.let {
             hasAdapterBeenSetup = true
             adapter = CommunityCenterItemsAdapter(
@@ -239,7 +239,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 if (hasAdapterBeenSetup) {
                     adapter?.updateList(filteredList)
                 } else {
-                    setupCommunityCenterItemsAdapter(filteredList)
+                    setupAdapter(filteredList)
                 }
             }
         }

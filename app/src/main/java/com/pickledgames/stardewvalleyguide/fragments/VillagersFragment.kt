@@ -63,7 +63,7 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
                         setupAdapter()
                     }
 
-            compositeDisposable.addAll(disposable)
+            compositeDisposable.add(disposable)
         }
 
         val sortByTabIndex = sharedPreferences.getInt(SORT_BY_TAB_INDEX, 0)

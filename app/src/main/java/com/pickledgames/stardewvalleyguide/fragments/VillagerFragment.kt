@@ -100,7 +100,7 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
                     setupAdapter(giftReactions)
                 }
 
-        compositeDisposable.addAll(disposable)
+        compositeDisposable.add(disposable)
 
         val filterByTabIndex = sharedPreferences.getInt(FILTER_BY_TAB_INDEX, 0)
         filter_villager_tab_layout?.getTabAt(filterByTabIndex)?.select()
