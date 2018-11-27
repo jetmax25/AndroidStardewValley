@@ -70,4 +70,8 @@ abstract class FragmentModule {
     @FragmentScope
     @ContributesAndroidInjector
     abstract fun cropsFragment(): CropsFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector
+    abstract fun cropFragment(): CropFragment
 }

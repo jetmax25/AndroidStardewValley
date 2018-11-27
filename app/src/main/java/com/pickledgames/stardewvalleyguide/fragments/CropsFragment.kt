@@ -166,7 +166,7 @@ class CropsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
                 val comparator = when (sortBy) {
                     getString(R.string.a_z) -> Comparator { c1, c2 -> c1.name.compareTo(c2.name) }
                     getString(R.string.price) -> Comparator { c1, c2 -> c1.seedPrice.compareTo(c2.seedPrice) }
-                    getString(R.string.time) -> Comparator { c1, c2 -> c1.harvestTime.toInt().compareTo(c2.harvestTime.toInt()) }
+                    getString(R.string.time) -> Comparator { c1, c2 -> c1.harvestTime.compareTo(c2.harvestTime) }
                     getString(R.string.gold_per_day) -> Comparator { c1, c2 -> c1.goldPerDay.compareTo(c2.goldPerDay) }
                     else -> Comparator<Crop> { c1, c2 -> c1.name.compareTo(c2.name) }
                 }

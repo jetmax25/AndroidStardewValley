@@ -31,15 +31,21 @@ class CropRepository(
             for (name in cropsJSONObject.keys()) {
                 val cropJSONObject = cropsJSONObject.getJSONObject(name)
                 val seeds = if (cropJSONObject.has("Seeds")) cropJSONObject.getString("Seeds") else null
-                val harvestTime = cropJSONObject.getString("Harvest Time")
+                val harvestTime = cropJSONObject.getString("Harvest Time").toInt()
                 val goldPerDay = cropJSONObject.getDouble("Gold Per Day")
                 val seedPrice = cropJSONObject.getInt("Seed Price")
                 val regrowthDays = cropJSONObject.getInt("Regrowth Days")
-                val stages = mutableListOf<Int>()
+
+                val stages = mutableListOf(0)
                 val stagesJSONArray = cropJSONObject.getJSONArray("Stages")
+
+                var total = 0
                 for (i in 0 until stagesJSONArray.length()) {
                     val stage = stagesJSONArray.getInt(i)
-                    stages.add(stage)
+                    if (stage != 0) {
+                        total += stage
+                        stages.add(total)
+                    }
                 }
 
                 val seasonsJSONObject = cropJSONObject.getJSONObject("Seasons")

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.fragments.CropFragment
 import com.pickledgames.stardewvalleyguide.models.Crop
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_crop.*
@@ -46,9 +47,9 @@ class CropsAdapter(
             crop_seed_price_image_view?.contentDescription = crop.name
             crop_seed_price_text_view?.text = crop.seedPrice.toString()
             crop_gold_text_view?.text = crop.commonStats.price.toString()
-            crop_harvest_time_text_view?.text = crop.harvestTime
+            crop_harvest_time_text_view?.text = crop.harvestTime.toString()
             containerView.setOnClickListener {
-                // TODO: Add CropFragment
+                mainActivity.pushFragment(CropFragment.newInstance(crop))
             }
         }
     }

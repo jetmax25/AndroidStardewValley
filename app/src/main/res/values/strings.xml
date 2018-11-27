@@ -88,4 +88,10 @@
     <string name="descending">Descending</string>
     <string name="harvest_time">Harvest Time</string>
     <string name="gold_per_day">Gold/Day</string>
+    <string name="gold_per_day_template">%.2f Gold/Day</string>
+    <string name="stages">Stages</string>
+    <string name="planting">Planting</string>
+    <string name="day_stage_template">Day: %d</string>
+    <string name="harvest_stage_template">Harvest: %d Days</string>
+    <string name="regrowth_stage_template">Regrowth: %d Days</string>
 </resources>
