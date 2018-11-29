@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/alphaBackground">
+
+    <com.pickledgames.stardewvalleyguide.views.SignTextView
+        android:id="@+id/information_header_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:text="@string/information"
+        app:textSize="18sp" />
+
+    <include
+        android:id="@+id/common_row_stats_layout"
+        layout="@layout/row_stats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/information_header_text_view" />
+
+    <include
+        android:id="@+id/silver_row_stats_layout"
+        layout="@layout/row_stats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/common_row_stats_layout" />
+
+    <include
+        android:id="@+id/gold_row_stats_layout"
+        layout="@layout/row_stats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/silver_row_stats_layout" />
+
+    <include
+        android:id="@+id/row_seasons_layout"
+        layout="@layout/row_seasons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gold_row_stats_layout" />
+
+    <ImageView
+        android:id="@+id/information_crop_gold_per_day_image_view"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:contentDescription="@string/gold"
+        android:src="@drawable/item_gold"
+        app:layout_constraintBottom_toBottomOf="@+id/row_seasons_layout"
+        app:layout_constraintEnd_toStartOf="@+id/information_crop_gold_per_day_text_view"
+        app:layout_constraintTop_toTopOf="@+id/row_seasons_layout" />
+
+    <TextView
+        android:id="@+id/information_crop_gold_per_day_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/row_seasons_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/row_seasons_layout"
+        app:layout_constraintTop_toTopOf="@+id/row_seasons_layout"
+        tools:text="1.67 Gold/Day" />
+
+</android.support.constraint.ConstraintLayout>

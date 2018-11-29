@@ -90,7 +90,7 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
                     setupAdapter(giftReactions)
                 }
 
-        compositeDisposable.addAll(disposable)
+        compositeDisposable.add(disposable)
 
         analyticsManager.logEvent("Gift Detail", mapOf("Gift" to gift.name))
     }

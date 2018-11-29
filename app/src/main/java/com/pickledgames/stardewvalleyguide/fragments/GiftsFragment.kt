@@ -89,7 +89,7 @@ class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
                         setupAdapter()
                     }
 
-            compositeDisposable.addAll(disposable)
+            compositeDisposable.add(disposable)
         }
     }
 

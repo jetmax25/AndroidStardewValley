@@ -169,7 +169,7 @@ class MuseumFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListen
         compositeDisposable.add(selectedFarmChangesDisposable)
     }
 
-    private fun setupFishesAdapter(list: List<Any>) {
+    private fun setupAdapter(list: List<Any>) {
         farm?.let {
             hasAdapterBeenSetup = true
             adapter = MuseumItemsAdapter(
@@ -245,7 +245,7 @@ class MuseumFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListen
                 if (hasAdapterBeenSetup) {
                     adapter?.updateList(filteredList)
                 } else {
-                    setupFishesAdapter(filteredList)
+                    setupAdapter(filteredList)
                 }
             }
         }

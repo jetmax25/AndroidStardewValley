@@ -13,10 +13,7 @@ import android.view.View
 import com.google.android.gms.ads.AdRequest
 import com.ncapdevi.fragnav.FragNavController
 import com.pickledgames.stardewvalleyguide.R
-import com.pickledgames.stardewvalleyguide.fragments.ChecklistsFragment
-import com.pickledgames.stardewvalleyguide.fragments.EditFarmsFragment
-import com.pickledgames.stardewvalleyguide.fragments.FriendshipsFragment
-import com.pickledgames.stardewvalleyguide.fragments.PurchasesFragment
+import com.pickledgames.stardewvalleyguide.fragments.*
 import com.pickledgames.stardewvalleyguide.interfaces.OnFarmUpdatedListener
 import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.managers.LoginManager
@@ -37,6 +34,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
     private var fragments: List<Fragment> = listOf(
             FriendshipsFragment.newInstance(),
             ChecklistsFragment.newInstance(),
+            CropsFragment.newInstance(),
             PurchasesFragment.newInstance()
     )
     private lateinit var fragNavController: FragNavController
@@ -50,6 +48,11 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
             R.id.navigation_checklists -> {
                 analyticsManager.logEvent("Tab Opened: Checklists")
                 fragNavController.switchTab(CHECKLISTS)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_crops -> {
+                analyticsManager.logEvent("Tab Opened: Crops")
+                fragNavController.switchTab(CROPS)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_purchases -> {
@@ -177,6 +180,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
     companion object {
         const val FRIENDSHIPS: Int = FragNavController.TAB1
         const val CHECKLISTS: Int = FragNavController.TAB2
-        const val PURCHASES: Int = FragNavController.TAB3
+        const val CROPS: Int = FragNavController.TAB3
+        const val PURCHASES: Int = FragNavController.TAB4
     }
 }

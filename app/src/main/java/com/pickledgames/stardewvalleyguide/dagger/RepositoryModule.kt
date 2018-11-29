@@ -47,4 +47,10 @@ class RepositoryModule {
     fun providesMuseumItemRepository(stardewApp: StardewApp): MuseumItemRepository {
         return MuseumItemRepository(stardewApp)
     }
+
+    @Provides
+    @Singleton
+    fun providesCropRepository(stardewApp: StardewApp): CropRepository {
+        return CropRepository(stardewApp)
+    }
 }

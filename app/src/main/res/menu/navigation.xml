@@ -12,6 +12,11 @@
         android:title="@string/menu_item_checklists" />
 
     <item
+        android:id="@+id/navigation_crops"
+        android:icon="@drawable/ic_leaf"
+        android:title="@string/menu_item_crops" />
+
+    <item
         android:id="@+id/navigation_purchases"
         android:icon="@drawable/ic_cash_usd"
         android:title="@string/menu_item_purchases" />

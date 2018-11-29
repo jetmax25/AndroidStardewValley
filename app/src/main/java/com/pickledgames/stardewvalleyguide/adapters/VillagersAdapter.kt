@@ -20,7 +20,7 @@ class VillagersAdapter(
 ) : RecyclerView.Adapter<VillagersAdapter.VillagerViewHolder>(), Filterable, Sortable {
 
     private var filteredVillagers: MutableList<Villager> = villagers.toMutableList()
-    private var sortBy: String = "A-Z"
+    private var sortBy: String = mainActivity.getString(R.string.a_z)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VillagerViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_villager, parent, false)
@@ -60,9 +60,9 @@ class VillagersAdapter(
 
     override fun sort() {
         val comparator = when (sortBy) {
-            "A-Z" -> Comparator { v1, v2 -> v1.name.compareTo(v2.name) }
-            "Z-A" -> Comparator { v1, v2 -> v2.name.compareTo(v1.name) }
-            "Romanceable" -> Comparator { v1, v2 -> v2.canMarry.compareTo(v1.canMarry) }
+            mainActivity.getString(R.string.a_z) -> Comparator { v1, v2 -> v1.name.compareTo(v2.name) }
+            mainActivity.getString(R.string.z_a) -> Comparator { v1, v2 -> v2.name.compareTo(v1.name) }
+            mainActivity.getString(R.string.romanceable) -> Comparator { v1, v2 -> v2.canMarry.compareTo(v1.canMarry) }
             else -> Comparator<Villager> { v1, v2 -> v1.name.compareTo(v2.name) }
         }
 

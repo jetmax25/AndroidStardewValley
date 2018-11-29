@@ -1,0 +1,1345 @@
+{
+  "Blue Jazz": {
+    "Seeds": "Jazz Seeds",
+    "Harvest Time": "7",
+    "Gold Per Day": 2.86,
+    "Seed Price": 30,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      2,
+      2,
+      2,
+      0
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": false,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 20,
+        "Energy": 45,
+        "Price": 50
+      },
+      "Silver": {
+        "Health": 28,
+        "Energy": 62,
+        "Price": 62
+      },
+      "Gold": {
+        "Health": 36,
+        "Energy": 81,
+        "Price": 75
+      }
+    }
+  },
+  "Cauliflower": {
+    "Harvest Time": "12",
+    "Gold Per Day": 7.92,
+    "Seed Price": 80,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      2,
+      4,
+      4,
+      1
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": false,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 33,
+        "Energy": 75,
+        "Price": 175
+      },
+      "Silver": {
+        "Health": 46,
+        "Energy": 105,
+        "Price": 218
+      },
+      "Gold": {
+        "Health": 59,
+        "Energy": 135,
+        "Price": 262
+      }
+    }
+  },
+  "Coffee Bean": {
+    "Seeds": "Coffee Bean",
+    "Harvest Time": "10",
+    "Gold Per Day": -20.74,
+    "Seed Price": 2500,
+    "Regrowth Days": 2,
+    "Stages": [
+      1,
+      2,
+      2,
+      3,
+      2
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 15
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 18
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 22
+      }
+    }
+  },
+  "Garlic": {
+    "Harvest Time": "4",
+    "Gold Per Day": 5,
+    "Seed Price": 40,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": false,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 9,
+        "Energy": 20,
+        "Price": 60
+      },
+      "Silver": {
+        "Health": 12,
+        "Energy": 28,
+        "Price": 75
+      },
+      "Gold": {
+        "Health": 16,
+        "Energy": 36,
+        "Price": 90
+      }
+    }
+  },
+  "Green Bean": {
+    "Seeds": "Bean Starter",
+    "Harvest Time": "10",
+    "Gold Per Day": 7.2,
+    "Seed Price": 60,
+    "Regrowth Days": 3,
+    "Stages": [
+      1,
+      1,
+      1,
+      3,
+      4
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": false,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 11,
+        "Energy": 25,
+        "Price": 40
+      },
+      "Silver": {
+        "Health": 15,
+        "Energy": 35,
+        "Price": 50
+      },
+      "Gold": {
+        "Health": 19,
+        "Energy": 45,
+        "Price": 60
+      }
+    }
+  },
+  "Kale": {
+    "Harvest Time": "6",
+    "Gold Per Day": 6.67,
+    "Seed Price": 70,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      2,
+      2,
+      1,
+      0
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": false,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 22,
+        "Energy": 50,
+        "Price": 110
+      },
+      "Silver": {
+        "Health": 30,
+        "Energy": 70,
+        "Price": 137
+      },
+      "Gold": {
+        "Health": 39,
+        "Energy": 90,
+        "Price": 165
+      }
+    }
+  },
+  "Parsnip": {
+    "Harvest Time": "4",
+    "Gold Per Day": 3.75,
+    "Seed Price": 20,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": false,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 11,
+        "Energy": 25,
+        "Price": 35
+      },
+      "Silver": {
+        "Health": 15,
+        "Energy": 35,
+        "Price": 43
+      },
+      "Gold": {
+        "Health": 19,
+        "Energy": 45,
+        "Price": 52
+      }
+    }
+  },
+  "Potato": {
+    "Harvest Time": "6",
+    "Gold Per Day": 5,
+    "Seed Price": 50,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      1,
+      1,
+      2,
+      1
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": false,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 11,
+        "Energy": 25,
+        "Price": 80
+      },
+      "Silver": {
+        "Health": 15,
+        "Energy": 35,
+        "Price": 100
+      },
+      "Gold": {
+        "Health": 19,
+        "Energy": 45,
+        "Price": 120
+      }
+    }
+  },
+  "Rhubarb": {
+    "Harvest Time": "13",
+    "Gold Per Day": 9.23,
+    "Seed Price": 100,
+    "Regrowth Days": 0,
+    "Stages": [
+      2,
+      2,
+      2,
+      3,
+      4
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": false,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 220
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 275
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 330
+      }
+    }
+  },
+  "Strawberry": {
+    "Harvest Time": "8",
+    "Gold Per Day": 20.83,
+    "Seed Price": 100,
+    "Regrowth Days": 4,
+    "Stages": [
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": false,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 22,
+        "Energy": 50,
+        "Price": 120
+      },
+      "Silver": {
+        "Health": 30,
+        "Energy": 70,
+        "Price": 150
+      },
+      "Gold": {
+        "Health": 39,
+        "Energy": 90,
+        "Price": 180
+      }
+    }
+  },
+  "Tulip": {
+    "Seeds": "Tulip Bulbs",
+    "Harvest Time": "6",
+    "Gold Per Day": 1.67,
+    "Seed Price": 20,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      1,
+      2,
+      2,
+      0
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": false,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 20,
+        "Energy": 45,
+        "Price": 30
+      },
+      "Silver": {
+        "Health": 28,
+        "Energy": 62,
+        "Price": 37
+      },
+      "Gold": {
+        "Health": 36,
+        "Energy": 81,
+        "Price": 45
+      }
+    }
+  },
+  "Blueberry": {
+    "Harvest Time": "13",
+    "Gold Per Day": 20.8,
+    "Seed Price": 80,
+    "Regrowth Days": 4,
+    "Stages": [
+      1,
+      3,
+      3,
+      4,
+      2
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 11,
+        "Energy": 25,
+        "Price": 50
+      },
+      "Silver": {
+        "Health": 15,
+        "Energy": 35,
+        "Price": 62
+      },
+      "Gold": {
+        "Health": 19,
+        "Energy": 45,
+        "Price": 75
+      }
+    }
+  },
+  "Corn": {
+    "Harvest Time": "14",
+    "Gold Per Day": 1.92,
+    "Seed Price": 150,
+    "Regrowth Days": 4,
+    "Stages": [
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 11,
+        "Energy": 25,
+        "Price": 50
+      },
+      "Silver": {
+        "Health": 15,
+        "Energy": 35,
+        "Price": 62
+      },
+      "Gold": {
+        "Health": 19,
+        "Energy": 45,
+        "Price": 75
+      }
+    }
+  },
+  "Hops": {
+    "Harvest Time": "11",
+    "Gold Per Day": 13.52,
+    "Seed Price": 60,
+    "Regrowth Days": 1,
+    "Stages": [
+      1,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 20,
+        "Energy": 45,
+        "Price": 25
+      },
+      "Silver": {
+        "Health": 28,
+        "Energy": 62,
+        "Price": 31
+      },
+      "Gold": {
+        "Health": 36,
+        "Energy": 81,
+        "Price": 37
+      }
+    }
+  },
+  "Hot Pepper": {
+    "Seeds": "Pepper Seeds",
+    "Harvest Time": "5",
+    "Gold Per Day": 10.77,
+    "Seed Price": 40,
+    "Regrowth Days": 3,
+    "Stages": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 5,
+        "Energy": 13,
+        "Price": 40
+      },
+      "Silver": {
+        "Health": 7,
+        "Energy": 18,
+        "Price": 50
+      },
+      "Gold": {
+        "Health": 9,
+        "Energy": 23,
+        "Price": 60
+      }
+    }
+  },
+  "Melon": {
+    "Harvest Time": "12",
+    "Gold Per Day": 14.17,
+    "Seed Price": 80,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      2,
+      3,
+      3,
+      3
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 50,
+        "Energy": 113,
+        "Price": 250
+      },
+      "Silver": {
+        "Health": 70,
+        "Energy": 158,
+        "Price": 312
+      },
+      "Gold": {
+        "Health": 90,
+        "Energy": 203,
+        "Price": 375
+      }
+    }
+  },
+  "Poppy": {
+    "Harvest Time": "7",
+    "Gold Per Day": 5.71,
+    "Seed Price": 100,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      2,
+      2,
+      2,
+      0
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 20,
+        "Energy": 45,
+        "Price": 140
+      },
+      "Silver": {
+        "Health": 28,
+        "Energy": 62,
+        "Price": 175
+      },
+      "Gold": {
+        "Health": 36,
+        "Energy": 81,
+        "Price": 210
+      }
+    }
+  },
+  "Radish": {
+    "Harvest Time": "6",
+    "Gold Per Day": 8.33,
+    "Seed Price": 40,
+    "Regrowth Days": 0,
+    "Stages": [
+      2,
+      1,
+      2,
+      1,
+      0
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 20,
+        "Energy": 45,
+        "Price": 90
+      },
+      "Silver": {
+        "Health": 28,
+        "Energy": 62,
+        "Price": 112
+      },
+      "Gold": {
+        "Health": 36,
+        "Energy": 81,
+        "Price": 135
+      }
+    }
+  },
+  "Red Cabbage": {
+    "Harvest Time": "9",
+    "Gold Per Day": 17.78,
+    "Seed Price": 100,
+    "Regrowth Days": 0,
+    "Stages": [
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 33,
+        "Energy": 75,
+        "Price": 260
+      },
+      "Silver": {
+        "Health": 46,
+        "Energy": 105,
+        "Price": 325
+      },
+      "Gold": {
+        "Health": 59,
+        "Energy": 135,
+        "Price": 390
+      }
+    }
+  },
+  "Starfruit": {
+    "Harvest Time": "13",
+    "Gold Per Day": 26.92,
+    "Seed Price": 400,
+    "Regrowth Days": 0,
+    "Stages": [
+      2,
+      3,
+      2,
+      3,
+      3
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 56,
+        "Energy": 125,
+        "Price": 750
+      },
+      "Silver": {
+        "Health": 78,
+        "Energy": 175,
+        "Price": 937
+      },
+      "Gold": {
+        "Health": 100,
+        "Energy": 225,
+        "Price": 1125
+      }
+    }
+  },
+  "Summer Spangle": {
+    "Seeds": "Spangle Seeds",
+    "Harvest Time": "8",
+    "Gold Per Day": 5,
+    "Seed Price": 50,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      2,
+      3,
+      2,
+      0
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 20,
+        "Energy": 45,
+        "Price": 90
+      },
+      "Silver": {
+        "Health": 28,
+        "Energy": 62,
+        "Price": 112
+      },
+      "Gold": {
+        "Health": 36,
+        "Energy": 81,
+        "Price": 135
+      }
+    }
+  },
+  "Sunflower": {
+    "Harvest Time": "8",
+    "Gold Per Day": -15,
+    "Seed Price": 200,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      2,
+      3,
+      2,
+      0
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 20,
+        "Energy": 45,
+        "Price": 80
+      },
+      "Silver": {
+        "Health": 28,
+        "Energy": 62,
+        "Price": 100
+      },
+      "Gold": {
+        "Health": 36,
+        "Energy": 81,
+        "Price": 120
+      }
+    }
+  },
+  "Tomato": {
+    "Harvest Time": "11",
+    "Gold Per Day": 9.26,
+    "Seed Price": 50,
+    "Regrowth Days": 4,
+    "Stages": [
+      2,
+      2,
+      2,
+      2,
+      3
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 9,
+        "Energy": 20,
+        "Price": 60
+      },
+      "Silver": {
+        "Health": 12,
+        "Energy": 28,
+        "Price": 75
+      },
+      "Gold": {
+        "Health": 16,
+        "Energy": 36,
+        "Price": 90
+      }
+    }
+  },
+  "Wheat": {
+    "Harvest Time": "4",
+    "Gold Per Day": 3.75,
+    "Seed Price": 10,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": true,
+      "Fall": false,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 25
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 31
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 37
+      }
+    }
+  },
+  "Amaranth": {
+    "Harvest Time": "7",
+    "Gold Per Day": 11.43,
+    "Seed Price": 70,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      2,
+      2,
+      2,
+      0
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": false,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 22,
+        "Energy": 50,
+        "Price": 150
+      },
+      "Silver": {
+        "Health": 30,
+        "Energy": 70,
+        "Price": 187
+      },
+      "Gold": {
+        "Health": 39,
+        "Energy": 90,
+        "Price": 225
+      }
+    }
+  },
+  "Artichoke": {
+    "Harvest Time": "8",
+    "Gold Per Day": 16.25,
+    "Seed Price": 30,
+    "Regrowth Days": 0,
+    "Stages": [
+      2,
+      2,
+      1,
+      2,
+      1
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": false,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 13,
+        "Energy": 30,
+        "Price": 160
+      },
+      "Silver": {
+        "Health": 18,
+        "Energy": 42,
+        "Price": 200
+      },
+      "Gold": {
+        "Health": 23,
+        "Energy": 54,
+        "Price": 240
+      }
+    }
+  },
+  "Beet": {
+    "Harvest Time": "6",
+    "Gold Per Day": 13.33,
+    "Seed Price": 20,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      1,
+      2,
+      2,
+      0
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": false,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 13,
+        "Energy": 30,
+        "Price": 100
+      },
+      "Silver": {
+        "Health": 18,
+        "Energy": 42,
+        "Price": 125
+      },
+      "Gold": {
+        "Health": 23,
+        "Energy": 54,
+        "Price": 150
+      }
+    }
+  },
+  "Bok Choy": {
+    "Harvest Time": "4",
+    "Gold Per Day": 7.5,
+    "Seed Price": 50,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": false,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 11,
+        "Energy": 25,
+        "Price": 80
+      },
+      "Silver": {
+        "Health": 15,
+        "Energy": 35,
+        "Price": 100
+      },
+      "Gold": {
+        "Health": 19,
+        "Energy": 45,
+        "Price": 120
+      }
+    }
+  },
+  "Cranberries": {
+    "Harvest Time": "7",
+    "Gold Per Day": 18.89,
+    "Seed Price": 240,
+    "Regrowth Days": 5,
+    "Stages": [
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": false,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 17,
+        "Energy": 38,
+        "Price": 75
+      },
+      "Silver": {
+        "Health": 23,
+        "Energy": 53,
+        "Price": 93
+      },
+      "Gold": {
+        "Health": 30,
+        "Energy": 68,
+        "Price": 112
+      }
+    }
+  },
+  "Eggplant": {
+    "Harvest Time": "5",
+    "Gold Per Day": 11.2,
+    "Seed Price": 20,
+    "Regrowth Days": 5,
+    "Stages": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": false,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 9,
+        "Energy": 20,
+        "Price": 60
+      },
+      "Silver": {
+        "Health": 12,
+        "Energy": 28,
+        "Price": 75
+      },
+      "Gold": {
+        "Health": 16,
+        "Energy": 36,
+        "Price": 90
+      }
+    }
+  },
+  "Fairy Rose": {
+    "Seeds": "Fairy Seeds",
+    "Harvest Time": "12",
+    "Gold Per Day": 7.5,
+    "Seed Price": 200,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      4,
+      4,
+      3,
+      0
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": false,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 20,
+        "Energy": 45,
+        "Price": 290
+      },
+      "Silver": {
+        "Health": 28,
+        "Energy": 62,
+        "Price": 362
+      },
+      "Gold": {
+        "Health": 36,
+        "Energy": 81,
+        "Price": 435
+      }
+    }
+  },
+  "Grape": {
+    "Seeds": "Grape Starter",
+    "Harvest Time": "10",
+    "Gold Per Day": 16.8,
+    "Seed Price": 60,
+    "Regrowth Days": 3,
+    "Stages": [
+      1,
+      1,
+      2,
+      3,
+      3
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": false,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 17,
+        "Energy": 38,
+        "Price": 80
+      },
+      "Silver": {
+        "Health": 23,
+        "Energy": 53,
+        "Price": 100
+      },
+      "Gold": {
+        "Health": 30,
+        "Energy": 68,
+        "Price": 120
+      }
+    }
+  },
+  "Pumpkin": {
+    "Harvest Time": "13",
+    "Gold Per Day": 16.92,
+    "Seed Price": 100,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      2,
+      3,
+      4,
+      3
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": false,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 320
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 400
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 480
+      }
+    }
+  },
+  "Yam": {
+    "Harvest Time": "10",
+    "Gold Per Day": 10,
+    "Seed Price": 60,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      3,
+      3,
+      3,
+      0
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": false,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 20,
+        "Energy": 45,
+        "Price": 160
+      },
+      "Silver": {
+        "Health": 28,
+        "Energy": 62,
+        "Price": 200
+      },
+      "Gold": {
+        "Health": 36,
+        "Energy": 81,
+        "Price": 240
+      }
+    }
+  },
+  "Sweet Gem Berry": {
+    "Seeds": "Rare Seed",
+    "Harvest Time": "24",
+    "Gold Per Day": 83.33,
+    "Seed Price": 1000,
+    "Regrowth Days": 0,
+    "Stages": [
+      2,
+      4,
+      6,
+      6,
+      6
+    ],
+    "Seasons": {
+      "Spring": false,
+      "Summer": false,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 3000
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 3750
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 4500
+      }
+    }
+  },
+  "Ancient Fruit": {
+    "Seeds": "Ancient Seeds",
+    "Harvest Time": "28",
+    "Gold Per Day": 57.14,
+    "Seed Price": 1000,
+    "Regrowth Days": 7,
+    "Stages": [
+      2,
+      7,
+      7,
+      7,
+      5
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": true,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 550
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 687
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 825
+      }
+    }
+  },
+  "Cactus Fruit": {
+    "Seeds": "Cactus Seeds",
+    "Harvest Time": "12",
+    "Gold Per Day": 11.11,
+    "Seed Price": 150,
+    "Regrowth Days": 3,
+    "Stages": [
+      2,
+      2,
+      2,
+      3,
+      3
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": true,
+      "Fall": true,
+      "Winter": true
+    },
+    "Stats": {
+      "Common": {
+        "Health": 30,
+        "Energy": 75,
+        "Price": 75
+      },
+      "Silver": {
+        "Health": 42,
+        "Energy": 105,
+        "Price": 93
+      },
+      "Gold": {
+        "Health": 54,
+        "Energy": 135,
+        "Price": 112
+      }
+    }
+  }
+}
