@@ -2,6 +2,7 @@ package com.pickledgames.stardewvalleyguide.enums
 
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
+import com.pickledgames.stardewvalleyguide.utils.ImageUtil
 
 enum class FarmType(
         val type: String
@@ -14,6 +15,6 @@ enum class FarmType(
     Wilderness("Wilderness");
 
     override fun getImageId(context: Context): Int {
-        return context.resources.getIdentifier("farm_type_${type.toLowerCase()}", "drawable", context.packageName)
+        return ImageUtil.getImageId(context, "farm_type_${type.toLowerCase()}")
     }
 }

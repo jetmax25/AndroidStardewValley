@@ -23,17 +23,6 @@
         app:text="@string/purchase_pro"
         app:textSize="22sp" />
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/dancing_junimo_gif_image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_margin="8dp"
-        android:src="@drawable/dancing_junimo"
-        app:layout_constraintBottom_toTopOf="@id/purchase_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/purchase_text_view" />
-
     <Button
         android:id="@+id/purchase_button"
         style="@style/Base.Widget.AppCompat.Button.Colored"
@@ -80,7 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dancing_junimo_gif_image_view"
+        app:layout_constraintTop_toBottomOf="@id/purchase_text_view"
         app:layout_constraintVertical_bias="1.0"
         app:margin="8dp"
         app:padding="5dp"

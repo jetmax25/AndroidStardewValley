@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Parcelable
 import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
+import com.pickledgames.stardewvalleyguide.utils.ImageUtil
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -23,7 +24,7 @@ data class Crop(
 
     override fun getImageId(context: Context): Int {
         val item = name.toLowerCase().replace("\\W".toRegex(), "_")
-        return context.resources.getIdentifier("item_$item", "drawable", context.packageName)
+        return ImageUtil.getImageId(context, "item_$item")
     }
 
     // If seed name exists use that, otherwise use name appended with _seeds, as a final fallback

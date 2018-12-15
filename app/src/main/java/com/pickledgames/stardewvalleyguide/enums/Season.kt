@@ -2,6 +2,7 @@ package com.pickledgames.stardewvalleyguide.enums
 
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
+import com.pickledgames.stardewvalleyguide.utils.ImageUtil
 
 enum class Season(
         val type: String
@@ -13,7 +14,7 @@ enum class Season(
     Summer("Summer");
 
     override fun getImageId(context: Context): Int {
-        return context.resources.getIdentifier("season_${type.toLowerCase()}", "drawable", context.packageName)
+        return ImageUtil.getImageId(context, "season_${type.toLowerCase()}")
     }
 
     companion object {

@@ -2,6 +2,7 @@ package com.pickledgames.stardewvalleyguide.models
 
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
+import com.pickledgames.stardewvalleyguide.utils.ImageUtil
 
 data class CommunityCenterBundle(
         val name: String,
@@ -12,7 +13,7 @@ data class CommunityCenterBundle(
 
     override fun getImageId(context: Context): Int {
         val cleanedName = name.toLowerCase().replace("bundle", "").trim().replace("\\W".toRegex(), "_")
-        return context.resources.getIdentifier("community_center_bundle_$cleanedName", "drawable", context.packageName)
+        return ImageUtil.getImageId(context, "community_center_bundle_$cleanedName")
     }
 
     override fun toString(): String {
