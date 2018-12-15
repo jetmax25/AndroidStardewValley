@@ -144,11 +144,12 @@ class CropsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
     }
 
     private fun toggleSortOrderDrawable() {
+        // Images are flipped
         if (sortOrder == SortOrder.Ascending.toString()) {
-            filter_crops_sort_order_image_view?.setImageResource(R.drawable.ic_sort_ascending)
+            filter_crops_sort_order_image_view?.setImageResource(R.drawable.ic_sort_descending)
             filter_crops_sort_order_image_view?.contentDescription = getString(R.string.ascending)
         } else {
-            filter_crops_sort_order_image_view?.setImageResource(R.drawable.ic_sort_descending)
+            filter_crops_sort_order_image_view?.setImageResource(R.drawable.ic_sort_ascending)
             filter_crops_sort_order_image_view?.contentDescription = getString(R.string.descending)
         }
     }

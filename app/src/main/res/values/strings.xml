@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Stardew Valley Guide</string>
+    <string name="app_name">SV Guide</string>
     <string name="menu_item_friendships">Friendships</string>
     <string name="menu_item_search">Search</string>
     <string name="a_z">A-Z</string>
@@ -35,18 +35,15 @@
     <string name="guide">Guide</string>
     <string name="menu_item_purchases">Purchases</string>
     <string name="purchase_pro">Purchase the pro version and never see an ad again!\n\nChecklists for multiple farms.\n\nMore exclusive features coming soon.</string>
-    <string name="impoverished_farmers">200% of revenue this month will buy livestock for impoverished farmers.</string>
     <string name="go_pro">Go Pro $1.99</string>
     <string name="restore_purchases">Restore Purchases</string>
-    <string name="direct_donation">Direct Donation Link</string>
-    <string name="about_heifer_international">About Heifer International</string>
-    <string name="companion_guide">Companion Guide For Stardew Valley</string>
-    <string name="stardew_valley">Stardew Valley</string>
+    <string name="companion_guide">Companion Guide For SV</string>
+    <string name="stardew_valley">SV</string>
     <string name="thank_you_pro">Thank you for purchasing the Pro version.</string>
     <string name="billing_not_enabled">Sorry, billing is not available at this time. Please try again later.</string>
     <string name="go_pro_farms">Go Pro to track multiple farms. Never see ads again!</string>
     <string name="banner_ad_id">ca-app-pub-5594325776314197/5332464105</string>
-    <string name="play_store_review_message">If you are enjoying the Stardew Valley Companion app and would love to see more features in the future please help us out by giving us a review.</string>
+    <string name="play_store_review_message">If you are enjoying the SV Companion app and would love to see more features in the future please help us out by giving us a review.</string>
     <string name="absolutely">Absolutely</string>
     <string name="nope">Nope</string>
     <string name="later">Later</string>
