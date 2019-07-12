@@ -29,7 +29,7 @@ class AdsManager(
             ),
             FISH_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/1372751378",
-                    2
+                    3
             ),
             MUSEUM_ITEM_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/5975706715",
@@ -37,7 +37,7 @@ class AdsManager(
             ),
             CROP_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/7443050293",
-                    2
+                    3
             ),
             EVENT_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/3041056264",
@@ -49,7 +49,7 @@ class AdsManager(
             ),
             SHOP_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/2561709969",
-                    2
+                    3
             )
     )
     private var isPro: Boolean = false
