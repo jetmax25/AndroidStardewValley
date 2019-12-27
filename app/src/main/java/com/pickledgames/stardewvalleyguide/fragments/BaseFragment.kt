@@ -2,9 +2,9 @@ package com.pickledgames.stardewvalleyguide.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.support.annotation.CallSuper
-import android.support.v4.app.Fragment
 import android.view.*
+import androidx.annotation.CallSuper
+import androidx.fragment.app.Fragment
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.disposables.CompositeDisposable
 
@@ -14,7 +14,7 @@ abstract class BaseFragment : Fragment() {
     protected var layoutId: Int = 0
     protected var menuId: Int = 0
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
     }
@@ -31,11 +31,11 @@ abstract class BaseFragment : Fragment() {
         setup()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        menu?.clear()
+        menu.clear()
         if (menuId != 0) {
-            inflater?.inflate(menuId, menu)
+            inflater.inflate(menuId, menu)
         }
     }
 

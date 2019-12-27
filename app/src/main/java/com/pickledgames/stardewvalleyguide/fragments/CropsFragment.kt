@@ -2,16 +2,16 @@ package com.pickledgames.stardewvalleyguide.fragments
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.SearchView
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.appcompat.widget.SearchView
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.tabs.TabLayout
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.CropsAdapter
@@ -47,9 +47,9 @@ class CropsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
-    override fun onPrepareOptionsMenu(menu: Menu?) {
+    override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-        val searchMenuItem = menu?.findItem(R.id.crops_search)
+        val searchMenuItem = menu.findItem(R.id.crops_search)
         FragmentUtil.setupSearchView(searchMenuItem, this, View.OnFocusChangeListener { _, b ->
             filter_crops_layout?.visibility = if (b) View.GONE else View.VISIBLE
         })
@@ -103,7 +103,8 @@ class CropsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
             }
         })
 
-        sortOrder = sharedPreferences.getString(SORT_ORDER, SortOrder.Descending.toString()) ?: SortOrder.Descending.toString()
+        sortOrder = sharedPreferences.getString(SORT_ORDER, SortOrder.Descending.toString())
+                ?: SortOrder.Descending.toString()
         toggleSortOrderDrawable()
         filter_crops_sort_order_image_view?.setOnClickListener {
             sortOrder = if (sortOrder == SortOrder.Ascending.toString()) SortOrder.Descending.toString() else SortOrder.Ascending.toString()

@@ -1,11 +1,11 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
 import android.os.Bundle
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.MuseumItemLocationsAdapter
@@ -32,13 +32,13 @@ class MuseumItemFragment : InnerBaseFragment() {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
+    @Suppress("RemoveExplicitTypeArguments")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         if (arguments != null) {
-            val museumItemType = arguments?.getString(MUSEUM_ITEM_TYPE)
-            when (museumItemType) {
-                ARTIFACT -> museumItem = arguments?.getParcelable(ARTIFACT) as Artifact
-                LOST_BOOK -> museumItem = arguments?.getParcelable(LOST_BOOK) as LostBook
-                MINERAL -> museumItem = arguments?.getParcelable(MINERAL) as Mineral
+            when (arguments?.getString(MUSEUM_ITEM_TYPE)) {
+                ARTIFACT -> museumItem = arguments?.getParcelable<Artifact>(ARTIFACT) as Artifact
+                LOST_BOOK -> museumItem = arguments?.getParcelable<LostBook>(LOST_BOOK) as LostBook
+                MINERAL -> museumItem = arguments?.getParcelable<Mineral>(MINERAL) as Mineral
             }
         }
 

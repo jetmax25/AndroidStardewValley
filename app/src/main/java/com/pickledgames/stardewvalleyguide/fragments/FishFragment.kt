@@ -1,12 +1,13 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
+import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.FishLocationsAdapter
@@ -48,6 +49,7 @@ class FishFragment : InnerBaseFragment() {
         super.onActivityCreated(savedInstanceState)
     }
 
+    @SuppressLint("DefaultLocale")
     override fun setup() {
         header_item_left_image_view?.setImageResource(fish.getImageId(activity as MainActivity))
         header_item_left_image_view?.contentDescription = fish.name
@@ -82,13 +84,17 @@ class FishFragment : InnerBaseFragment() {
         if (fish.availability.seasons.contains(Season.Winter)) winter_availability_text_view?.alpha = 1.0f
         if (fish.availability.seasons.contains(Season.Spring)) spring_availability_text_view?.alpha = 1.0f
         if (fish.availability.seasons.contains(Season.Summer)) summer_availability_text_view?.alpha = 1.0f
-        if (fish.availability.weather.equals("Any", true)) {
-            sunny_text_view?.alpha = 1.0f
-            rainy_text_view?.alpha = 1.0f
-        } else if (fish.availability.weather.equals("Sunny", true)) {
-            sunny_text_view?.alpha = 1.0f
-        } else if (fish.availability.weather.equals("Rainy", true)) {
-            rainy_text_view?.alpha = 1.0f
+        when {
+            fish.availability.weather.equals("Any", true) -> {
+                sunny_text_view?.alpha = 1.0f
+                rainy_text_view?.alpha = 1.0f
+            }
+            fish.availability.weather.equals("Sunny", true) -> {
+                sunny_text_view?.alpha = 1.0f
+            }
+            fish.availability.weather.equals("Rainy", true) -> {
+                rainy_text_view?.alpha = 1.0f
+            }
         }
 
         FragmentUtil.setTimeRangeText(fish.availability.startTime, fish.availability.endTime, time_range_text_view, resources)

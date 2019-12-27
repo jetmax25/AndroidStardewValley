@@ -43,9 +43,25 @@ class FarmRepository(
         }
     }
 
-    fun getSelectedFarm(): Single<Farm> {
+    fun getSelectedFarm(): Single<Farm?> {
         return getFarms()
-                .map { f -> f[selectedFarmIndex] }
+                .map { f ->
+                    if (f.isEmpty()) {
+                        return@map null
+                    }
+
+                    var index = selectedFarmIndex
+
+                    if (index < 0) {
+                        index = 0
+                    }
+
+                    if (index >= f.size) {
+                        index = f.size - 1
+                    }
+
+                    f[index]
+                }
     }
 
     fun getSelectedFarmChanges(): Observable<Farm> {
@@ -100,7 +116,7 @@ class FarmRepository(
                     return@flatMap Single.just(farms)
                 }
                 .doOnSuccess { f ->
-                    for (i in 0 until f.size) {
+                    for (i in f.indices) {
                         val farm: Farm? = f[i]
                         if (farm?.id == selectedFarmId) {
                             selectedFarmIndex = i

@@ -49,7 +49,7 @@ class MuseumItemRepository(
                 artifacts.add(artifact)
             }
 
-            it.onSuccess(artifacts.sortedBy { it.name })
+            it.onSuccess(artifacts.sortedBy { artifact -> artifact.name })
         }
     }
 
@@ -66,7 +66,7 @@ class MuseumItemRepository(
                 lostBooks.add(lostBook)
             }
 
-            it.onSuccess(lostBooks.sortedBy { it.name })
+            it.onSuccess(lostBooks.sortedBy { lostBook -> lostBook.name })
         }
     }
 
@@ -102,7 +102,7 @@ class MuseumItemRepository(
                 minerals.add(mineral)
             }
 
-            it.onSuccess(minerals.sortedBy { it.name })
+            it.onSuccess(minerals.sortedBy { mineral -> mineral.name })
         }
     }
 

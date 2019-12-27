@@ -1,11 +1,11 @@
 package com.pickledgames.stardewvalleyguide.adapters
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.fragments.VillagerFragment
@@ -13,6 +13,8 @@ import com.pickledgames.stardewvalleyguide.interfaces.Sortable
 import com.pickledgames.stardewvalleyguide.models.Villager
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_villager.*
+import java.util.*
+import kotlin.Comparator
 
 class VillagersAdapter(
         private val villagers: List<Villager>,
@@ -39,7 +41,7 @@ class VillagersAdapter(
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val filterResults = FilterResults()
-                val filteredVillagers = villagers.filter { it.name.toLowerCase().contains(constraint.toString().toLowerCase()) }
+                val filteredVillagers = villagers.filter { it.name.toLowerCase(Locale.US).contains(constraint.toString().toLowerCase(Locale.US)) }
                 filterResults.values = filteredVillagers
                 filterResults.count = filteredVillagers.size
                 return filterResults

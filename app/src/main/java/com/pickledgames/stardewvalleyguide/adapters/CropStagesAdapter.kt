@@ -1,10 +1,10 @@
 package com.pickledgames.stardewvalleyguide.adapters
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.models.Crop
 import kotlinx.android.extensions.LayoutContainer
@@ -35,7 +35,7 @@ class CropStagesAdapter(
         fun bindCropStage(crop: Crop, position: Int) {
             // Regrowth
             if (position == crop.stages.size) {
-                val regrowthText = String.format(context.getString(R.string.regrowth_stage_template), crop.regrowthDays)
+                val regrowthText = context.resources.getQuantityString(R.plurals.regrowth_stage_template, crop.regrowthDays, crop.regrowthDays)
                 crop_stage_text_view?.text = regrowthText
                 crop_stage_image_view?.setImageResource(crop.getRegrowthImageId(context))
                 crop_stage_image_view?.contentDescription = regrowthText
@@ -45,7 +45,7 @@ class CropStagesAdapter(
             val stageText = when (position) {
                 0 -> context.getString(R.string.planting)
                 in 1 until crop.stages.size - 1 -> String.format(context.getString(R.string.day_stage_template), crop.stages[position])
-                crop.stages.size - 1 -> String.format(context.getString(R.string.harvest_stage_template), crop.harvestTime)
+                crop.stages.size - 1 -> context.resources.getQuantityString(R.plurals.harvest_stage_template, crop.harvestTime, crop.harvestTime)
                 else -> throw Exception("$position is not a valid crop stage position for ${crop.name}")
             }
 

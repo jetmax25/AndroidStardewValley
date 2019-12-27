@@ -2,13 +2,13 @@ package com.pickledgames.stardewvalleyguide.fragments
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.SearchView
 import android.view.*
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.appcompat.widget.SearchView
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.tabs.TabLayout
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.CommunityCenterItemsAdapter
@@ -57,16 +57,16 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         compositeDisposable.add(disposable)
     }
 
-    override fun onPrepareOptionsMenu(menu: Menu?) {
+    override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-        val searchMenuItem = menu?.findItem(R.id.community_center_search)
+        val searchMenuItem = menu.findItem(R.id.community_center_search)
         FragmentUtil.setupSearchView(searchMenuItem, this, View.OnFocusChangeListener { _, b ->
             community_center_header_group?.visibility = if (b) View.GONE else View.VISIBLE
         })
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
             R.id.community_center_edit_farms -> {
                 (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
                 return true
@@ -125,7 +125,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         FragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_community_center_group, sharedPreferences, SHOW_FILTER_SETTINGS)
 
         data class Results(
-                val farm: Farm,
+                val farm: Farm?,
                 val bundles: List<CommunityCenterBundle>
         )
 
@@ -136,7 +136,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         val disposable = Single.zip(
                 farmRepository.getSelectedFarm(),
                 communityCenterRepository.getBundles(),
-                BiFunction { f: Farm, b: List<CommunityCenterBundle> -> Results(f, b) }
+                BiFunction { f: Farm?, b: List<CommunityCenterBundle> -> Results(f, b) }
         )
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

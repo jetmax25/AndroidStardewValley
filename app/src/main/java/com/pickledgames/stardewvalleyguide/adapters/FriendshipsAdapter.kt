@@ -1,13 +1,13 @@
 package com.pickledgames.stardewvalleyguide.adapters
 
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import com.pickledgames.stardewvalleyguide.fragments.BirthdaysFragment
 import com.pickledgames.stardewvalleyguide.fragments.GiftsFragment
 import com.pickledgames.stardewvalleyguide.fragments.VillagersFragment
 
-class FriendshipsAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
+class FriendshipsAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     private val fragments: List<Fragment> = listOf(
             VillagersFragment.newInstance(),

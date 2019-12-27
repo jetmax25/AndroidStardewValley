@@ -2,11 +2,11 @@ package com.pickledgames.stardewvalleyguide.utils
 
 import android.content.SharedPreferences
 import android.content.res.Resources
-import android.support.constraint.Group
-import android.support.v7.widget.SearchView
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.widget.SearchView
+import androidx.constraintlayout.widget.Group
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.models.Farm
 import com.wajahatkarim3.easyflipview.EasyFlipView
@@ -15,7 +15,7 @@ object FragmentUtil {
 
     fun setupSearchView(m: MenuItem?, q: SearchView.OnQueryTextListener, f: View.OnFocusChangeListener?) {
         m?.actionView?.let {
-            val searchView = it as android.support.v7.widget.SearchView
+            val searchView = it as SearchView
             searchView.setQuery("", false)
             searchView.clearFocus()
             searchView.onActionViewCollapsed()

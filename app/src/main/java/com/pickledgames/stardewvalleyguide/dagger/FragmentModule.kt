@@ -4,6 +4,7 @@ import com.pickledgames.stardewvalleyguide.fragments.*
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
+@Suppress("unused")
 @Module
 abstract class FragmentModule {
 

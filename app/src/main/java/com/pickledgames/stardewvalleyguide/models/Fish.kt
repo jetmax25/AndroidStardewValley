@@ -5,6 +5,7 @@ import android.os.Parcelable
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
 import com.pickledgames.stardewvalleyguide.utils.ImageUtil
 import kotlinx.android.parcel.Parcelize
+import java.util.*
 
 @Parcelize
 data class Fish(
@@ -22,7 +23,7 @@ data class Fish(
 ) : StardewObject, Parcelable {
 
     override fun getImageId(context: Context): Int {
-        val item = name.toLowerCase().replace("\\W".toRegex(), "_")
+        val item = name.toLowerCase(Locale.US).replace("\\W".toRegex(), "_")
         return ImageUtil.getImageId(context, "item_$item")
     }
 }

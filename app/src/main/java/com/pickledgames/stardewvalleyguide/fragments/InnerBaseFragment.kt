@@ -1,10 +1,10 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
 import android.os.Bundle
-import android.support.annotation.StringRes
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.StringRes
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 

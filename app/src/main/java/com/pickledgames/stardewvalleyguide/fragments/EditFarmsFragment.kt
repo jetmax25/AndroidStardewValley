@@ -1,10 +1,10 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
 import android.os.Bundle
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
 import android.view.*
 import android.widget.Toast
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.FarmsAdapter
@@ -33,24 +33,24 @@ class EditFarmsFragment : InnerBaseFragment() {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
-    override fun onPrepareOptionsMenu(menu: Menu?) {
+    override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-        val addFarmMenuItem = menu?.findItem(R.id.add_farm)
+        val addFarmMenuItem = menu.findItem(R.id.add_farm)
         addFarmMenuItem?.isVisible = purchasesManager.isPro
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
             R.id.add_farm -> {
                 val farm = Farm("Unnamed", FarmType.Standard)
                 val disposable = farmRepository.addFarm(farm)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe { _ ->
+                        .subscribe({
                             farms.add(farm)
                             edit_farms_recycler_view?.adapter?.notifyItemInserted(farms.size - 1)
                             analyticsManager.logEvent("Farm Added", mapOf("Name" to farm.name))
-                        }
+                        }, { it.printStackTrace() })
 
                 compositeDisposable.add(disposable)
                 return true

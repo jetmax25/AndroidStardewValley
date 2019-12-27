@@ -3,6 +3,7 @@ package com.pickledgames.stardewvalleyguide.managers
 import android.content.SharedPreferences
 import org.threeten.bp.Instant
 
+@Suppress("SetterBackingFieldAssignment")
 class LoginManager(private val sharedPreferences: SharedPreferences) {
 
     var numberOfLogins: Int = sharedPreferences.getInt(NUMBER_OF_LOGINS, 0)
@@ -30,7 +31,7 @@ class LoginManager(private val sharedPreferences: SharedPreferences) {
             sharedPreferences.edit().putBoolean(DECLINED_REVIEW, value).apply()
         }
 
-    var shouldShowReview: Boolean = false
+    val shouldShowReview: Boolean
         get() {
             return !reviewed && !declinedReview && numberOfLogins > 0 && numberOfLogins % 3 == 0
         }

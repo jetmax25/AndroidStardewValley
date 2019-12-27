@@ -4,13 +4,13 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.android.gms.ads.AdRequest
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ncapdevi.fragnav.FragNavController
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.fragments.*
@@ -77,10 +77,16 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         compositeDisposable.clear()
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        fragNavController.onSaveInstanceState(outState)
+    }
+
     private fun setup(savedInstanceState: Bundle?) {
-        val builder = FragNavController.newBuilder(savedInstanceState, supportFragmentManager, R.id.container)
-        builder.rootFragments(fragments)
-        fragNavController = builder.build()
+        fragNavController = FragNavController(supportFragmentManager, R.id.container)
+        fragNavController.rootFragments = fragments
+        fragNavController.initialize(FragNavController.TAB1, savedInstanceState)
+
         navigation?.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
         if (purchasesManager.isPro) {
@@ -160,8 +166,8 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         if (!popFragment()) super.onBackPressed()
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
                 return true

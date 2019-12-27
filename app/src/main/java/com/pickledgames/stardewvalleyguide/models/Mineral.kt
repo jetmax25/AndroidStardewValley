@@ -1,9 +1,12 @@
 package com.pickledgames.stardewvalleyguide.models
 
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 class Mineral(
-        name: String,
+        override val name: String,
         val price: Int,
-        description: String,
+        override val description: String,
         val minMineLevel: Int,
         val maxMineLevel: Int,
         val locations: List<String>

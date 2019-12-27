@@ -2,13 +2,13 @@ package com.pickledgames.stardewvalleyguide.fragments
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.SearchView
 import android.view.*
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.appcompat.widget.SearchView
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.tabs.TabLayout
 import com.jaygoo.widget.OnRangeChangedListener
 import com.jaygoo.widget.RangeSeekBar
 import com.pickledgames.stardewvalleyguide.R
@@ -63,16 +63,16 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         compositeDisposable.add(disposable)
     }
 
-    override fun onPrepareOptionsMenu(menu: Menu?) {
+    override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-        val searchMenuItem = menu?.findItem(R.id.fishing_search)
+        val searchMenuItem = menu.findItem(R.id.fishing_search)
         FragmentUtil.setupSearchView(searchMenuItem, this, View.OnFocusChangeListener { _, b ->
             fishing_header_group?.visibility = if (b) View.GONE else View.VISIBLE
         })
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
             R.id.fishing_edit_farms -> {
                 (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
                 return true
@@ -182,7 +182,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         FragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_fishing_group, sharedPreferences, SHOW_FILTER_SETTINGS)
 
         data class Results(
-                val farm: Farm,
+                val farm: Farm?,
                 val fishes: List<Fish>
         )
 
@@ -193,7 +193,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         val disposable = Single.zip(
                 farmRepository.getSelectedFarm(),
                 fishRepository.getFishes(),
-                BiFunction { farm: Farm, fishes: List<Fish> -> Results(farm, fishes) }
+                BiFunction { farm: Farm?, fishes: List<Fish> -> Results(farm, fishes) }
         )
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

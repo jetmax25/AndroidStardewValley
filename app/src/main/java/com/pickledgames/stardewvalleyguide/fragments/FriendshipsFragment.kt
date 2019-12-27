@@ -1,10 +1,10 @@
 package com.pickledgames.stardewvalleyguide.fragments
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.adapters.FriendshipsAdapter
 import kotlinx.android.synthetic.main.fragment_friendships.*

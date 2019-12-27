@@ -1,9 +1,9 @@
 package com.pickledgames.stardewvalleyguide.adapters
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.fragments.CropFragment
@@ -25,7 +25,7 @@ class CropsAdapter(
         return crops.size
     }
 
-    override fun onBindViewHolder(holder: CropsAdapter.CropViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CropViewHolder, position: Int) {
         holder.bindCrop(crops[position])
     }
 

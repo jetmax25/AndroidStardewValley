@@ -1,6 +1,6 @@
 package com.pickledgames.stardewvalleyguide.database
 
-import android.arch.persistence.room.TypeConverter
+import androidx.room.TypeConverter
 import com.pickledgames.stardewvalleyguide.enums.FarmType
 
 class Converters {

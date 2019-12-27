@@ -12,10 +12,10 @@ enum class FishingLocationType(
     companion object {
         fun fromString(string: String): FishingLocationType {
             return when {
-                string.contains("Ocean", true) -> FishingLocationType.Ocean
-                string.contains("River", true) -> FishingLocationType.River
-                string.contains("Lake", true) -> FishingLocationType.Lake
-                else -> FishingLocationType.Other
+                string.contains("Ocean", true) -> Ocean
+                string.contains("River", true) -> River
+                string.contains("Lake", true) -> Lake
+                else -> Other
             }
         }
     }

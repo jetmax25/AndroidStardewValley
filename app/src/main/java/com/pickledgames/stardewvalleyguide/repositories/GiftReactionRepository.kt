@@ -1,5 +1,6 @@
 package com.pickledgames.stardewvalleyguide.repositories
 
+import android.annotation.SuppressLint
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.enums.Reaction
@@ -8,6 +9,8 @@ import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.utils.RepositoryUtil
 import io.reactivex.Single
 import org.json.JSONObject
+import java.util.*
+import kotlin.math.min
 
 class GiftReactionRepository(
         private val context: Context
@@ -61,6 +64,7 @@ class GiftReactionRepository(
                 }
     }
 
+    @SuppressLint("DefaultLocale")
     private fun getGiftReactionsFromAssets(): Single<List<GiftReaction>> {
         val inputStream = context.resources.openRawResource(R.raw.gift_reactions)
         val json = RepositoryUtil.inputStreamToString(inputStream)
@@ -73,7 +77,7 @@ class GiftReactionRepository(
                 for (item in items.keys()) {
                     val villagers = items.getJSONObject(item)
                     for (villager in villagers.keys()) {
-                        val villagerReaction = villagers.getString(villager).toLowerCase().capitalize()
+                        val villagerReaction = villagers.getString(villager).toLowerCase(Locale.US).capitalize()
                         // Weird bug occurs where Dıslıke can't be matched (note the missing dots on i)
                         // Might be a translation issue, but don't know how to replicate so handle it here
                         val reaction = try {
@@ -122,7 +126,7 @@ class GiftReactionRepository(
                 val costInsert = cost[j] + 1
                 val costDelete = newCost[j - 1] + 1
 
-                newCost[j] = Math.min(Math.min(costInsert, costDelete), costReplace)
+                newCost[j] = min(min(costInsert, costDelete), costReplace)
             }
 
             val swap = cost

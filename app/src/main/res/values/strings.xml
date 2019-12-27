@@ -89,6 +89,12 @@
     <string name="stages">Stages</string>
     <string name="planting">Planting</string>
     <string name="day_stage_template">Day: %d</string>
-    <string name="harvest_stage_template">Harvest: %d Days</string>
-    <string name="regrowth_stage_template">Regrowth: %d Days</string>
+    <plurals name="harvest_stage_template">
+        <item quantity="other">Harvest: %d Days</item>
+        <item quantity="one">Harvest: %d Day</item>
+    </plurals>
+    <plurals name="regrowth_stage_template">
+        <item quantity="other">Regrowth: %d Days</item>
+        <item quantity="one">Regrowth: %d Day</item>
+    </plurals>
 </resources>

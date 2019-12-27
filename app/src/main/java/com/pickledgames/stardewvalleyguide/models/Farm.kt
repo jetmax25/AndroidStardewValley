@@ -1,8 +1,8 @@
 package com.pickledgames.stardewvalleyguide.models
 
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.PrimaryKey
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.pickledgames.stardewvalleyguide.enums.FarmType
 import kotlinx.android.parcel.Parcelize
 

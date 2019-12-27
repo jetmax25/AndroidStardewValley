@@ -1,8 +1,6 @@
 package com.pickledgames.stardewvalleyguide
 
-import android.app.Activity
-import android.support.multidex.MultiDexApplication
-import android.support.v4.app.Fragment
+import androidx.multidex.MultiDexApplication
 import com.crashlytics.android.Crashlytics
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.google.android.gms.ads.MobileAds
@@ -10,15 +8,13 @@ import com.jakewharton.threetenabp.AndroidThreeTen
 import com.pickledgames.stardewvalleyguide.dagger.*
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
-import dagger.android.support.HasSupportFragmentInjector
+import dagger.android.HasAndroidInjector
 import io.fabric.sdk.android.Fabric
 import javax.inject.Inject
 
-class StardewApp : MultiDexApplication(), HasActivityInjector, HasSupportFragmentInjector {
+class StardewApp : MultiDexApplication(), HasAndroidInjector {
 
-    @Inject lateinit var dispatchingAndroidInjectorActivity: DispatchingAndroidInjector<Activity>
-    @Inject lateinit var dispatchingAndroidInjectorFragment: DispatchingAndroidInjector<Fragment>
+    @Inject lateinit var androidInjector : DispatchingAndroidInjector<Any>
     val component: AppComponent by lazy {
         DaggerAppComponent
                 .builder()
@@ -37,12 +33,8 @@ class StardewApp : MultiDexApplication(), HasActivityInjector, HasSupportFragmen
         Fresco.initialize(this)
     }
 
-    override fun activityInjector(): AndroidInjector<Activity> {
-        return dispatchingAndroidInjectorActivity
-    }
-
-    override fun supportFragmentInjector(): AndroidInjector<Fragment> {
-        return dispatchingAndroidInjectorFragment
+    override fun androidInjector(): AndroidInjector<Any> {
+        return androidInjector
     }
 
     companion object {

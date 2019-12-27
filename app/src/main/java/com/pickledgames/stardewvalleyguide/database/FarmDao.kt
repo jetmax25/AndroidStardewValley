@@ -1,6 +1,6 @@
 package com.pickledgames.stardewvalleyguide.database
 
-import android.arch.persistence.room.*
+import androidx.room.*
 import com.pickledgames.stardewvalleyguide.models.Farm
 import io.reactivex.Single
 
@@ -10,12 +10,12 @@ interface FarmDao {
     @Query("SELECT * FROM Farm")
     fun getAllFarms(): Single<List<Farm>>
 
-    @Insert()
+    @Insert
     fun insertFarm(farm: Farm): Long
 
-    @Delete()
+    @Delete
     fun deleteFarm(farm: Farm)
 
-    @Update()
+    @Update
     fun updateFarm(farm: Farm): Int
 }

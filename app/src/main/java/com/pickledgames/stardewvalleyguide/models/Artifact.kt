@@ -1,8 +1,11 @@
 package com.pickledgames.stardewvalleyguide.models
 
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 class Artifact(
-        name: String,
-        description: String,
+        override val name: String,
+        override val description: String,
         val price: Int,
         val locations: List<String>
 ) : MuseumItem(name, description, "Artifacts")

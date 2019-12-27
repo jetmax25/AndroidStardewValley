@@ -32,8 +32,9 @@ class PurchasesManager(
     var initializedSubject: PublishSubject<Any> = PublishSubject.create()
     var isProSubject: BehaviorSubject<Boolean> = BehaviorSubject.create()
     private var isBillingEnabled: Boolean = false
+    @Suppress("DEPRECATION")
     private val flowParams: BillingFlowParams = BillingFlowParams.newBuilder()
-            .setSku(PurchasesManager.PRO_SKU)
+            .setSku(PRO_SKU)
             .setType(BillingClient.SkuType.INAPP)
             .build()
     private val queryPurchasesObservable: Single<Purchase.PurchasesResult> = Single.create<Purchase.PurchasesResult> {
@@ -73,7 +74,7 @@ class PurchasesManager(
         var purchased = false
         if (responseCode == BillingClient.BillingResponse.OK) {
             for (purchase: Purchase in purchases.orEmpty()) {
-                if (purchase.sku == PurchasesManager.PRO_SKU) {
+                if (purchase.sku == PRO_SKU) {
                     isPro = true
                     purchased = true
                     break
@@ -115,8 +116,9 @@ class PurchasesManager(
     }
 
     private fun onQueryPurchases(purchasesResult: Purchase.PurchasesResult) {
-        for (purchase: Purchase in purchasesResult.purchasesList) {
-            if (purchase.sku == PurchasesManager.PRO_SKU) {
+        val purchases = purchasesResult.purchasesList ?: emptyList()
+        for (purchase: Purchase in purchases) {
+            if (purchase.sku == PRO_SKU) {
                 isPro = true
                 break
             }
@@ -127,8 +129,9 @@ class PurchasesManager(
 
     private fun onQueryRestoredPurchases(purchasesResult: Purchase.PurchasesResult) {
         var restored = false
-        for (purchase: Purchase in purchasesResult.purchasesList) {
-            if (purchase.sku == PurchasesManager.PRO_SKU) {
+        val purchases = purchasesResult.purchasesList ?: emptyList()
+        for (purchase: Purchase in purchases) {
+            if (purchase.sku == PRO_SKU) {
                 isPro = true
                 restored = true
                 break

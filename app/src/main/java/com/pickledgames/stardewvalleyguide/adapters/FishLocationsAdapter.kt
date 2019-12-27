@@ -1,11 +1,12 @@
 package com.pickledgames.stardewvalleyguide.adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.net.Uri
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.enums.LegendaryFishingLocation
 import com.pickledgames.stardewvalleyguide.models.Fish
@@ -14,7 +15,6 @@ import com.stfalcon.frescoimageviewer.ImageViewer
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_fish_location.*
 import kotlinx.android.synthetic.main.list_item_legendary_fish_location.*
-
 
 class FishLocationsAdapter(
         private val fish: Fish
@@ -71,6 +71,7 @@ class FishLocationsAdapter(
             private val context: Context
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
+        @SuppressLint("DefaultLocale")
         fun bindLegendaryFishLocation(fish: Fish, position: Int) {
             val legendaryFishingLocation = LegendaryFishingLocation.fromString(fish.name)
             when (position) {
