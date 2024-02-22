@@ -1,8 +1,6 @@
 package com.pickledgames.stardewvalleyguide.managers
 
 import android.os.Bundle
-import com.crashlytics.android.answers.Answers
-import com.crashlytics.android.answers.CustomEvent
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.pickledgames.stardewvalleyguide.StardewApp
 
@@ -17,7 +15,6 @@ class AnalyticsManager(
 
     fun logEvent(name: String, params: Map<String, String> = emptyMap()) {
         logEventForFirebase(name, params)
-        logEventForFabric(name, params)
     }
 
     private fun logEventForFirebase(name: String, params: Map<String, String>) {
@@ -30,17 +27,6 @@ class AnalyticsManager(
         }
 
         firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
-    }
-
-    private fun logEventForFabric(name: String, params: Map<String, String>) {
-        val customEvent = CustomEvent(name).apply {
-            putCustomAttribute(FIRST_LOGIN_KEY, loginManager.firstLogin.toString())
-            putCustomAttribute(LAST_LOGIN_KEY, loginManager.lastLogin.toString())
-            putCustomAttribute(IS_AD_FREE_KEY, purchasesManager.isPro.toString())
-            params.forEach { (key, value) -> putCustomAttribute(key, value) }
-        }
-
-        Answers.getInstance().logCustom(customEvent)
     }
 
     companion object {

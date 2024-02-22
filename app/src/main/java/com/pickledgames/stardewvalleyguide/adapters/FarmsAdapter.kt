@@ -1,15 +1,13 @@
 package com.pickledgames.stardewvalleyguide.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.databinding.ListItemFarmBinding
 import com.pickledgames.stardewvalleyguide.fragments.EditFarmDialogFragment
 import com.pickledgames.stardewvalleyguide.models.Farm
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_farm.*
 
 class FarmsAdapter(
         private val farms: List<Farm>,
@@ -17,8 +15,8 @@ class FarmsAdapter(
 ) : RecyclerView.Adapter<FarmsAdapter.FarmViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FarmViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_farm, parent, false)
-        return FarmViewHolder(v, mainActivity)
+        val binding = ListItemFarmBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return FarmViewHolder(binding, mainActivity)
     }
 
     override fun getItemCount(): Int {
@@ -30,16 +28,16 @@ class FarmsAdapter(
     }
 
     class FarmViewHolder(
-            override val containerView: View,
+            private val binding: ListItemFarmBinding,
             private val mainActivity: MainActivity
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindFarm(farm: Farm, position: Int) {
-            farm_name_text_view?.text = String.format(mainActivity.resources.getString(R.string.farm_name_template), farm.name)
-            farm_type_text_view?.text = String.format(mainActivity.resources.getString(R.string.farm_type_template), farm.farmType)
-            farm_type_image_view?.setImageResource(farm.farmType.getImageId(mainActivity))
-            farm_type_image_view?.contentDescription = farm.name
-            containerView.setOnClickListener {
+            binding.farmNameTextView.text = String.format(mainActivity.resources.getString(R.string.farm_name_template), farm.name)
+            binding.farmTypeTextView.text = String.format(mainActivity.resources.getString(R.string.farm_type_template), farm.farmType)
+            binding.farmTypeImageView.setImageResource(farm.farmType.getImageId(mainActivity))
+            binding.farmTypeImageView.contentDescription = farm.name
+            binding.root.setOnClickListener {
                 val editFarmDialogFragment = EditFarmDialogFragment.newInstance(farm, position)
                 editFarmDialogFragment.show(mainActivity.supportFragmentManager, EditFarmDialogFragment.TAG)
             }

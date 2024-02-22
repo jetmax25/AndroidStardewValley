@@ -1,7 +1,6 @@
 package com.pickledgames.stardewvalleyguide
 
 import androidx.multidex.MultiDexApplication
-import com.crashlytics.android.Crashlytics
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.google.android.gms.ads.MobileAds
 import com.jakewharton.threetenabp.AndroidThreeTen
@@ -9,7 +8,6 @@ import com.pickledgames.stardewvalleyguide.dagger.*
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
-import io.fabric.sdk.android.Fabric
 import javax.inject.Inject
 
 class StardewApp : MultiDexApplication(), HasAndroidInjector {
@@ -27,9 +25,8 @@ class StardewApp : MultiDexApplication(), HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
         component.inject(this)
-        MobileAds.initialize(this, "ca-app-pub-5594325776314197~2267317062")
+        MobileAds.initialize(this) {}
         AndroidThreeTen.init(this)
-        Fabric.with(this, Crashlytics())
         Fresco.initialize(this)
     }
 

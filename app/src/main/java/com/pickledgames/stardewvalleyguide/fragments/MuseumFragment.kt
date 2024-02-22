@@ -12,6 +12,7 @@ import com.google.android.material.tabs.TabLayout
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.MuseumItemsAdapter
+import com.pickledgames.stardewvalleyguide.databinding.FragmentMuseumBinding
 import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
 import com.pickledgames.stardewvalleyguide.models.Farm
 import com.pickledgames.stardewvalleyguide.models.MuseumItem
@@ -23,10 +24,6 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.BiFunction
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.filter_museum.*
-import kotlinx.android.synthetic.main.fragment_museum.*
-import kotlinx.android.synthetic.main.header_farm.*
-import kotlinx.android.synthetic.main.loading.*
 import javax.inject.Inject
 
 class MuseumFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListener, SearchView.OnQueryTextListener, Filterable {
@@ -43,11 +40,14 @@ class MuseumFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListen
     private var showCompleted: Boolean = false
     private var hasAdapterBeenSetup: Boolean = false
     private var adapterPosition: Int = 0
+    private lateinit var binding: FragmentMuseumBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_museum
         menuId = R.menu.museum
-        return super.onCreateView(inflater, container, savedInstanceState)
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentMuseumBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onClick(view: View?) {
@@ -60,7 +60,7 @@ class MuseumFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListen
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.museum_search)
         FragmentUtil.setupSearchView(searchMenuItem, this, View.OnFocusChangeListener { _, b ->
-            museum_header_group?.visibility = if (b) View.GONE else View.VISIBLE
+            binding.museumHeaderGroup.visibility = if (b) View.GONE else View.VISIBLE
         })
     }
 
@@ -92,16 +92,16 @@ class MuseumFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListen
     }
 
     override fun setup() {
-        header_farm_left_arrow_image_view?.setOnClickListener(this)
-        header_farm_right_arrow_image_view?.setOnClickListener(this)
-        header_farm_easy_flip_view?.setOnClickListener {
+        binding.headerFarmLayout.headerFarmLeftArrowImageView.setOnClickListener(this)
+        binding.headerFarmLayout.headerFarmRightArrowImageView.setOnClickListener(this)
+        binding.headerFarmLayout.headerFarmEasyFlipView.setOnClickListener {
             (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
         }
 
         val collectionTabIndex = sharedPreferences.getInt(COLLECTION_INDEX, 0)
-        filter_museum_tab_layout?.getTabAt(collectionTabIndex)?.select()
-        collectionFilterBy = filter_museum_tab_layout?.getTabAt(collectionTabIndex)?.text.toString()
-        filter_museum_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        binding.filterMuseumLayout.filterMuseumTabLayout.getTabAt(collectionTabIndex)?.select()
+        collectionFilterBy = binding.filterMuseumLayout.filterMuseumTabLayout.getTabAt(collectionTabIndex)?.text.toString()
+        binding.filterMuseumLayout.filterMuseumTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
@@ -115,23 +115,29 @@ class MuseumFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListen
         })
 
         showCompleted = sharedPreferences.getBoolean(SHOW_COMPLETED, false)
-        show_completed_check_box.isChecked = showCompleted
-        show_completed_check_box?.setOnCheckedChangeListener { _, b ->
+        binding.filterMuseumLayout.showCompletedCheckBox.isChecked = showCompleted
+        binding.filterMuseumLayout.showCompletedCheckBox.setOnCheckedChangeListener { _, b ->
             showCompleted = b
             adapter?.updateShowCompleted(showCompleted)
             sharedPreferences.edit().putBoolean(SHOW_COMPLETED, showCompleted).apply()
         }
 
-        FragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_museum_group, sharedPreferences, SHOW_FILTER_SETTINGS)
+        FragmentUtil.setupToggleFilterSettings(
+            binding.filterMuseumLayout.toggleFilterSettingsTextView,
+            resources,
+            binding.filterMuseumLayout.filterMuseumGroup,
+            sharedPreferences,
+            SHOW_FILTER_SETTINGS
+        )
 
         data class Results(
                 val farm: Farm?,
                 val museumItemsWrapper: MuseumItemRepository.MuseumItemsWrapper
         )
 
-        loading_container?.visibility = View.VISIBLE
-        museum_header_group?.visibility = View.INVISIBLE
-        museum_recycler_view?.visibility = View.INVISIBLE
+        binding.loadingLayout.loadingContainer.visibility = View.VISIBLE
+        binding.museumHeaderGroup.visibility = View.INVISIBLE
+        binding.museumRecyclerView.visibility = View.INVISIBLE
 
         val disposable = Single.zip(
                 farmRepository.getSelectedFarm(),
@@ -141,13 +147,13 @@ class MuseumFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListen
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { results ->
-                    loading_container?.visibility = View.INVISIBLE
-                    museum_header_group?.visibility = View.VISIBLE
-                    museum_recycler_view?.visibility = View.VISIBLE
+                    binding.loadingLayout.loadingContainer.visibility = View.INVISIBLE
+                    binding.museumHeaderGroup.visibility = View.VISIBLE
+                    binding.museumRecyclerView.visibility = View.VISIBLE
                     farm = results.farm
                     farm?.let {
-                        header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
-                        header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
+                        binding.headerFarmLayout.headerFarmNameFrontTextView.text = String.format(getString(R.string.farm_name_template, it.name))
+                        binding.headerFarmLayout.headerFarmNameBackTextView.text = String.format(getString(R.string.farm_name_template, it.name))
                     }
                     museumItemsWrapper = results.museumItemsWrapper
                     filter.filter("")
@@ -159,7 +165,13 @@ class MuseumFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListen
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { f ->
-                    FragmentUtil.flipSelectedFarmText(header_farm_easy_flip_view, header_farm_name_front_text_view, header_farm_name_back_text_view, resources, f)
+                    FragmentUtil.flipSelectedFarmText(
+                        binding.headerFarmLayout.headerFarmEasyFlipView,
+                        binding.headerFarmLayout.headerFarmNameFrontTextView,
+                        binding.headerFarmLayout.headerFarmNameBackTextView,
+                        resources,
+                        f
+                    )
                     farm = f
                     farm?.let {
                         adapter?.updateFarm(it)
@@ -180,10 +192,10 @@ class MuseumFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListen
                     this
             )
 
-            museum_recycler_view?.adapter = adapter
+            binding.museumRecyclerView.adapter = adapter
             linearLayoutManager = LinearLayoutManager(activity)
-            museum_recycler_view?.layoutManager = linearLayoutManager
-            museum_recycler_view?.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+            binding.museumRecyclerView.layoutManager = linearLayoutManager
+            binding.museumRecyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
             linearLayoutManager?.scrollToPosition(adapterPosition)
         }
     }

@@ -4,27 +4,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.databinding.ListItemCalendarDayBinding
+import com.pickledgames.stardewvalleyguide.databinding.ListItemCalendarDayHeaderBinding
 import com.pickledgames.stardewvalleyguide.fragments.VillagerFragment
 import com.pickledgames.stardewvalleyguide.models.CalendarDay
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_calendar_day.*
-import kotlinx.android.synthetic.main.list_item_calendar_day_header.*
 
 class CalendarDaysAdapter(
-        private var list: List<Any>,
-        private val mainActivity: MainActivity
+    private var list: List<Any>,
+    private val mainActivity: MainActivity
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val v: View
         return if (viewType == HEADER_TYPE) {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_calendar_day_header, parent, false)
-            CalendarDayHeaderViewHolder(v)
+            val binding =
+                ListItemCalendarDayHeaderBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+            CalendarDayHeaderViewHolder(binding)
         } else {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_calendar_day, parent, false)
-            CalendarDayViewHolder(v, mainActivity)
+            val binding = ListItemCalendarDayBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+            CalendarDayViewHolder(binding, mainActivity)
         }
     }
 
@@ -55,30 +61,31 @@ class CalendarDaysAdapter(
         private const val ITEM_TYPE = 1
     }
 
-    class CalendarDayHeaderViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    class CalendarDayHeaderViewHolder(private val binding: ListItemCalendarDayHeaderBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bindDay(day: String) {
-            calendar_day_header_text_view?.text = day
+            binding.calendarDayHeaderTextView.text = day
         }
     }
 
     class CalendarDayViewHolder(
-            override val containerView: View,
-            private val mainActivity: MainActivity
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+        private val binding: ListItemCalendarDayBinding,
+        private val mainActivity: MainActivity
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindCalendarDay(calendarDay: CalendarDay) {
-            calendar_day_text_view?.text = calendarDay.day.toString()
+            binding.calendarDayTextView.text = calendarDay.day.toString()
             val villager = calendarDay.villager
             if (villager != null) {
-                calendar_day_villager_image_view?.visibility = View.VISIBLE
-                calendar_day_villager_image_view?.setImageResource(villager.getImageId(mainActivity))
-                containerView.setOnClickListener {
+                binding.calendarDayVillagerImageView.visibility = View.VISIBLE
+                binding.calendarDayVillagerImageView.setImageResource(villager.getImageId(mainActivity))
+                binding.root.setOnClickListener {
                     mainActivity.pushFragment(VillagerFragment.newInstance(villager))
                 }
             } else {
-                calendar_day_villager_image_view?.visibility = View.INVISIBLE
-                containerView.setOnClickListener { }
+                binding.calendarDayVillagerImageView.visibility = View.INVISIBLE
+                binding.root.setOnClickListener { }
             }
         }
     }

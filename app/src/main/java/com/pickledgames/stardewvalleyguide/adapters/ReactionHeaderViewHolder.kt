@@ -4,25 +4,24 @@ import android.view.View
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.databinding.ListItemReactionHeaderBinding
 import com.pickledgames.stardewvalleyguide.enums.Reaction
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_reaction_header.*
 
 class ReactionHeaderViewHolder(
-        override val containerView: View
-) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    private val binding: ListItemReactionHeaderBinding,
+) : RecyclerView.ViewHolder(binding.root) {
 
     private val imageViews: List<ImageView?> = listOf(
-            reaction_header_1_image_view,
-            reaction_header_2_image_view,
-            reaction_header_3_image_view,
-            reaction_header_4_image_view,
-            reaction_header_5_image_view,
-            reaction_header_6_image_view
+            binding.reactionHeader1ImageView,
+            binding.reactionHeader2ImageView,
+            binding.reactionHeader3ImageView,
+            binding.reactionHeader4ImageView,
+            binding.reactionHeader5ImageView,
+            binding.reactionHeader6ImageView
     )
 
     fun bindReaction(reaction: Reaction) {
-        reaction_type_text_view?.text = reaction.toString()
+        binding.reactionTypeTextView.text = reaction.toString()
         setupReactionDrawables(reaction)
     }
 

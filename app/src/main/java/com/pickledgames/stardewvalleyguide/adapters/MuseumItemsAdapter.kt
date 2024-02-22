@@ -7,12 +7,11 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.databinding.ListItemMuseumItemBinding
+import com.pickledgames.stardewvalleyguide.databinding.ListItemMuseumItemCollectionHeaderBinding
 import com.pickledgames.stardewvalleyguide.fragments.MuseumItemFragment
 import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
 import com.pickledgames.stardewvalleyguide.models.*
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_museum_item.*
-import kotlinx.android.synthetic.main.list_item_museum_item_collection_header.*
 
 class MuseumItemsAdapter(
         private var list: List<Any>,
@@ -23,13 +22,12 @@ class MuseumItemsAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val v: View
         return if (viewType == HEADER_TYPE) {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_museum_item_collection_header, parent, false)
-            MuseumItemCollectionHeaderViewHolder(v, mainActivity)
+            val binding = ListItemMuseumItemCollectionHeaderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            MuseumItemCollectionHeaderViewHolder(binding, mainActivity)
         } else {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_museum_item, parent, false)
-            MuseumItemViewHolder(v, mainActivity, onItemCheckedListener)
+            val binding = ListItemMuseumItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            MuseumItemViewHolder(binding, mainActivity, onItemCheckedListener)
         }
     }
 
@@ -73,60 +71,60 @@ class MuseumItemsAdapter(
     }
 
     class MuseumItemCollectionHeaderViewHolder(
-            override val containerView: View,
+            private val binding: ListItemMuseumItemCollectionHeaderBinding,
             private val mainActivity: MainActivity
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindMuseumItemCollection(museumItemCollection: MuseumItemCollection, completedItemsCount: Int) {
-            museum_item_collection_header_image_view?.setImageResource(museumItemCollection.getImageId(mainActivity))
-            museum_item_collection_header_image_view?.contentDescription = museumItemCollection.name
-            museum_item_collection_header_name_text_view?.text = museumItemCollection.name
+            binding.museumItemCollectionHeaderImageView.setImageResource(museumItemCollection.getImageId(mainActivity))
+            binding.museumItemCollectionHeaderImageView.contentDescription = museumItemCollection.name
+            binding.museumItemCollectionHeaderNameTextView.text = museumItemCollection.name
             val quantityCompleted = String.format(
                     mainActivity.getString(R.string.bundle_quantity_completed_template),
                     completedItemsCount,
                     museumItemCollection.numberOfItems
             )
-            museum_item_collection_header_quantity_completed_text_view?.text = quantityCompleted
+            binding.museumItemCollectionHeaderQuantityCompletedTextView.text = quantityCompleted
             if (completedItemsCount == museumItemCollection.numberOfItems) {
                 val green = ContextCompat.getColor(mainActivity, R.color.green)
-                museum_item_collection_header_quantity_completed_text_view?.setTextColor(green)
+                binding.museumItemCollectionHeaderQuantityCompletedTextView.setTextColor(green)
             } else {
                 val white = ContextCompat.getColor(mainActivity, android.R.color.white)
-                museum_item_collection_header_quantity_completed_text_view?.setTextColor(white)
+                binding.museumItemCollectionHeaderQuantityCompletedTextView.setTextColor(white)
             }
         }
     }
 
     class MuseumItemViewHolder(
-            override val containerView: View,
+            private val binding: ListItemMuseumItemBinding,
             private val mainActivity: MainActivity,
             private val onItemCheckedListener: OnItemCheckedListener
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         private var isChecked: Boolean = false
 
         fun bindMuseumItem(museumItem: Any, isCompleted: Boolean, showCompleted: Boolean) {
             if (isCompleted && !showCompleted) {
-                containerView.visibility = View.GONE
-                containerView.layoutParams = RecyclerView.LayoutParams(0, 0)
+                binding.root.visibility = View.GONE
+                binding.root.layoutParams = RecyclerView.LayoutParams(0, 0)
                 return
             } else {
-                containerView.visibility = View.VISIBLE
-                containerView.layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+                binding.root.visibility = View.VISIBLE
+                binding.root.layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             }
             (museumItem as MuseumItem).let {
-                museum_item_image_view?.setImageResource(it.getImageId(mainActivity))
-                museum_item_image_view?.contentDescription = it.name
-                museum_item_text_view?.text = it.name
+                binding.museumItemImageView.setImageResource(it.getImageId(mainActivity))
+                binding.museumItemImageView.contentDescription = it.name
+                binding.museumItemTextView.text = it.name
                 isChecked = isCompleted
-                museum_item_check_box?.isChecked = isChecked
+                binding.museumItemCheckBox.isChecked = isChecked
                 // use onClick instead of onCheckChanged to avoid initial firing
-                museum_item_check_box?.setOnClickListener { _ ->
+                binding.museumItemCheckBox.setOnClickListener { _ ->
                     isChecked = !isChecked
                     onItemCheckedListener.onItemChecked(it, isChecked)
                 }
             }
-            containerView.setOnClickListener {
+            binding.root.setOnClickListener {
                 val museumItemFragment = when (museumItem) {
                     is Artifact -> MuseumItemFragment.newInstance(museumItem)
                     is LostBook -> MuseumItemFragment.newInstance(museumItem)

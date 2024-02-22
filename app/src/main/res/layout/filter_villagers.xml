@@ -13,19 +13,16 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/filter_villagers_a_z"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/a_z" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/filter_villagers_z_a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/z_a" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/filter_villagers_romanceable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/romanceable" />

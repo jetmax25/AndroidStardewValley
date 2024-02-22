@@ -12,6 +12,7 @@ import com.google.android.material.tabs.TabLayout
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.CommunityCenterItemsAdapter
+import com.pickledgames.stardewvalleyguide.databinding.FragmentCommunityCenterBinding
 import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterBundle
@@ -24,10 +25,6 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.BiFunction
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.filter_community_center.*
-import kotlinx.android.synthetic.main.fragment_community_center.*
-import kotlinx.android.synthetic.main.header_farm.*
-import kotlinx.android.synthetic.main.loading.*
 import javax.inject.Inject
 
 class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListener, SearchView.OnQueryTextListener, Filterable {
@@ -44,11 +41,14 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     private var showCompleted: Boolean = false
     private var hasAdapterBeenSetup: Boolean = false
     private var adapterPosition: Int = 0
+    private lateinit var binding: FragmentCommunityCenterBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         layoutId = R.layout.fragment_community_center
         menuId = R.menu.community_center
-        return super.onCreateView(inflater, container, savedInstanceState)
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentCommunityCenterBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onClick(view: View?) {
@@ -61,7 +61,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.community_center_search)
         FragmentUtil.setupSearchView(searchMenuItem, this, View.OnFocusChangeListener { _, b ->
-            community_center_header_group?.visibility = if (b) View.GONE else View.VISIBLE
+            binding.communityCenterHeaderGroup.visibility = if (b) View.GONE else View.VISIBLE
         })
     }
 
@@ -93,16 +93,16 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
     }
 
     override fun setup() {
-        header_farm_left_arrow_image_view?.setOnClickListener(this)
-        header_farm_right_arrow_image_view?.setOnClickListener(this)
-        header_farm_easy_flip_view?.setOnClickListener {
+        binding.headerFarmLayout.headerFarmLeftArrowImageView.setOnClickListener(this)
+        binding.headerFarmLayout.headerFarmRightArrowImageView.setOnClickListener(this)
+        binding.headerFarmLayout.headerFarmEasyFlipView.setOnClickListener {
             (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
         }
 
         val seasonTabIndex = sharedPreferences.getInt(SEASON_INDEX, 0)
-        filter_community_center_season_tab_layout?.getTabAt(seasonTabIndex)?.select()
-        seasonFilterBy = filter_community_center_season_tab_layout?.getTabAt(seasonTabIndex)?.text.toString()
-        filter_community_center_season_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        binding.filterCommunityCenterLayout.filterCommunityCenterSeasonTabLayout.getTabAt(seasonTabIndex)?.select()
+        seasonFilterBy = binding.filterCommunityCenterLayout.filterCommunityCenterSeasonTabLayout.getTabAt(seasonTabIndex)?.text.toString()
+        binding.filterCommunityCenterLayout.filterCommunityCenterSeasonTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
@@ -115,23 +115,29 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
         })
 
         showCompleted = sharedPreferences.getBoolean(SHOW_COMPLETED, false)
-        show_completed_check_box.isChecked = showCompleted
-        show_completed_check_box?.setOnCheckedChangeListener { _, b ->
+        binding.filterCommunityCenterLayout.showCompletedCheckBox.isChecked = showCompleted
+        binding.filterCommunityCenterLayout.showCompletedCheckBox.setOnCheckedChangeListener { _, b ->
             showCompleted = b
             adapter?.updateShowCompleted(showCompleted)
             sharedPreferences.edit().putBoolean(SHOW_COMPLETED, showCompleted).apply()
         }
 
-        FragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_community_center_group, sharedPreferences, SHOW_FILTER_SETTINGS)
+        FragmentUtil.setupToggleFilterSettings(
+            binding.filterCommunityCenterLayout.toggleFilterSettingsTextView,
+            resources,
+            binding.filterCommunityCenterLayout.filterCommunityCenterGroup,
+            sharedPreferences,
+            SHOW_FILTER_SETTINGS
+        )
 
         data class Results(
                 val farm: Farm?,
                 val bundles: List<CommunityCenterBundle>
         )
 
-        loading_container?.visibility = View.VISIBLE
-        community_center_header_group?.visibility = View.INVISIBLE
-        community_center_items_recycler_view?.visibility = View.INVISIBLE
+        binding.loadingLayout.loadingContainer.visibility = View.VISIBLE
+        binding.communityCenterHeaderGroup.visibility = View.INVISIBLE
+        binding.communityCenterItemsRecyclerView.visibility = View.INVISIBLE
 
         val disposable = Single.zip(
                 farmRepository.getSelectedFarm(),
@@ -141,13 +147,13 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { results ->
-                    loading_container?.visibility = View.INVISIBLE
-                    community_center_header_group?.visibility = View.VISIBLE
-                    community_center_items_recycler_view?.visibility = View.VISIBLE
+                    binding.loadingLayout.loadingContainer.visibility = View.INVISIBLE
+                    binding.communityCenterHeaderGroup.visibility = View.VISIBLE
+                    binding.communityCenterItemsRecyclerView.visibility = View.VISIBLE
                     farm = results.farm
                     farm?.let {
-                        header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
-                        header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
+                        binding.headerFarmLayout.headerFarmNameFrontTextView.text = String.format(getString(R.string.farm_name_template, it.name))
+                        binding.headerFarmLayout.headerFarmNameBackTextView.text = String.format(getString(R.string.farm_name_template, it.name))
                     }
                     bundles.clear()
                     bundles.addAll(results.bundles)
@@ -160,7 +166,13 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { f ->
-                    FragmentUtil.flipSelectedFarmText(header_farm_easy_flip_view, header_farm_name_front_text_view, header_farm_name_back_text_view, resources, f)
+                    FragmentUtil.flipSelectedFarmText(
+                        binding.headerFarmLayout.headerFarmEasyFlipView,
+                        binding.headerFarmLayout.headerFarmNameFrontTextView,
+                        binding.headerFarmLayout.headerFarmNameBackTextView,
+                        resources,
+                        f
+                    )
                     farm = f
                     farm?.let {
                         adapter?.updateFarm(it)
@@ -181,10 +193,10 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                     this
             )
 
-            community_center_items_recycler_view?.adapter = adapter
+            binding.communityCenterItemsRecyclerView.adapter = adapter
             linearLayoutManager = LinearLayoutManager(activity)
-            community_center_items_recycler_view?.layoutManager = linearLayoutManager
-            community_center_items_recycler_view?.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+            binding.communityCenterItemsRecyclerView.layoutManager = linearLayoutManager
+            binding.communityCenterItemsRecyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
             linearLayoutManager?.scrollToPosition(adapterPosition)
         }
     }

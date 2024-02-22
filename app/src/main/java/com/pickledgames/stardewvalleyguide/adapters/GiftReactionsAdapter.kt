@@ -2,28 +2,25 @@ package com.pickledgames.stardewvalleyguide.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.databinding.ListItemGiftReactionBinding
+import com.pickledgames.stardewvalleyguide.databinding.ListItemReactionHeaderBinding
 import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import io.github.douglasjunior.androidSimpleTooltip.SimpleTooltip
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_gift_reaction.*
 
 class GiftReactionsAdapter(
         private var list: List<Any>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val v: View
         return if (viewType == HEADER_TYPE) {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_reaction_header, parent, false)
-            ReactionHeaderViewHolder(v)
+            val binding = ListItemReactionHeaderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ReactionHeaderViewHolder(binding)
         } else {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_gift_reaction, parent, false)
-            GiftReactionViewHolder(v, parent.context)
+            val binding = ListItemGiftReactionBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            GiftReactionViewHolder(binding, parent.context)
         }
     }
 
@@ -55,16 +52,16 @@ class GiftReactionsAdapter(
     }
 
     class GiftReactionViewHolder(
-            override val containerView: View,
+            private val binding: ListItemGiftReactionBinding,
             private val context: Context
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindGiftReaction(giftReaction: GiftReaction) {
-            gift_reaction_image_view?.setImageResource(giftReaction.getImageId(context))
-            gift_reaction_image_view?.contentDescription = giftReaction.itemName
-            containerView.setOnClickListener {
+            binding.giftReactionImageView.setImageResource(giftReaction.getImageId(context))
+            binding.giftReactionImageView.contentDescription = giftReaction.itemName
+            binding.root.setOnClickListener {
                 SimpleTooltip.Builder(context)
-                        .anchorView(containerView)
+                        .anchorView(binding.root)
                         .text("${giftReaction.itemName} - ${giftReaction.reaction}")
                         .animated(true)
                         .transparentOverlay(false)

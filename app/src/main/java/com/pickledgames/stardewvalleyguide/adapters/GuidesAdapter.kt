@@ -4,17 +4,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.databinding.ListItemGuideBinding
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_guide.*
 
 class GuidesAdapter(
         private val guides: List<String>
 ) : RecyclerView.Adapter<GuidesAdapter.GuideViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GuideViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_guide, parent, false)
-        return GuideViewHolder(v)
+        val binding = ListItemGuideBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return GuideViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -26,11 +25,11 @@ class GuidesAdapter(
     }
 
     class GuideViewHolder(
-            override val containerView: View
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+        private val binding: ListItemGuideBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindGuide(guide: String) {
-            list_item_guide_text_view?.text = guide
+            binding.listItemGuideTextView.text = guide
         }
     }
 }

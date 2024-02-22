@@ -14,6 +14,7 @@ import com.google.android.material.tabs.TabLayout
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.GiftReactionsAdapter
+import com.pickledgames.stardewvalleyguide.databinding.FragmentVillagerBinding
 import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.managers.AdsManager
 import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
@@ -23,10 +24,6 @@ import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
 import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.filter_villager.*
-import kotlinx.android.synthetic.main.fragment_villager.*
-import kotlinx.android.synthetic.main.header_villager.*
-import kotlinx.android.synthetic.main.loading.*
 import javax.inject.Inject
 
 class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filterable {
@@ -41,12 +38,15 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
     private lateinit var layoutManager: GridLayoutManager
     private var filterBy: String = "All"
     private var searchTerm: String = ""
+    private lateinit var binding: FragmentVillagerBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         layoutId = R.layout.fragment_villager
         menuId = R.menu.villager
-        adsManager.showAdFor(AdsManager.VILLAGER_FRAGMENT)
-        return super.onCreateView(inflater, container, savedInstanceState)
+        adsManager.showAdFor(AdsManager.VILLAGER_FRAGMENT, requireActivity())
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentVillagerBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -64,7 +64,7 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.villager_search)
         FragmentUtil.setupSearchView(searchMenuItem, this, View.OnFocusChangeListener { _, b ->
-            header_villager_layout?.visibility = if (b) View.GONE else View.VISIBLE
+            binding.headerVillagerLayout.root.visibility = if (b) View.GONE else View.VISIBLE
         })
     }
 
@@ -80,44 +80,48 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
 
     override fun setup() {
         setTitle(villager.name)
-        header_villager_image_view?.setImageResource(villager.getImageId(activity as MainActivity))
-        header_villager_image_view?.contentDescription = villager.name
-        header_villager_name_text_view?.text = villager.name
-        header_villager_birthday_text_view?.text = villager.birthday.toString()
-        header_villager_birthday_text_view?.setCompoundDrawablesWithIntrinsicBounds(
-                villager.birthday.season.getImageId(activity as MainActivity),
-                0, 0, 0
-        )
-
-        loading_container?.visibility = View.VISIBLE
-        villager_recycler_view?.visibility = View.GONE
-        val disposable = giftReactionRepository.getGiftReactionsByVillagerName(villager.name)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { giftReactions ->
-                    loading_container?.visibility = View.GONE
-                    villager_recycler_view?.visibility = View.VISIBLE
-                    setupAdapter(giftReactions)
-                }
-
-        compositeDisposable.add(disposable)
-
-        val filterByTabIndex = sharedPreferences.getInt(FILTER_BY_TAB_INDEX, 0)
-        filter_villager_tab_layout?.getTabAt(filterByTabIndex)?.select()
-        filterBy = filter_villager_tab_layout?.getTabAt(filterByTabIndex)?.text.toString()
-        filter_villager_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {}
-
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                filterBy = tab?.text.toString()
-                filter.filter("")
-                sharedPreferences.edit().putInt(FILTER_BY_TAB_INDEX, tab?.position ?: 0).apply()
+        with (binding) {
+            with (binding.headerVillagerLayout) {
+                headerVillagerImageView.setImageResource(villager.getImageId(activity as MainActivity))
+                headerVillagerImageView.contentDescription = villager.name
+                headerVillagerNameTextView.text = villager.name
+                headerVillagerBirthdayTextView.text = villager.birthday.toString()
+                headerVillagerBirthdayTextView.setCompoundDrawablesWithIntrinsicBounds(
+                    villager.birthday.season.getImageId(activity as MainActivity),
+                    0, 0, 0
+                )
             }
-        })
 
-        analyticsManager.logEvent("Villager Detail", mapOf("Villager" to villager.name))
+            binding.loadingVillagerLayout.loadingContainer.visibility = View.VISIBLE
+            villagerRecyclerView.visibility = View.GONE
+            val disposable = giftReactionRepository.getGiftReactionsByVillagerName(villager.name)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe { giftReactions ->
+                        binding.loadingVillagerLayout.loadingContainer.visibility = View.GONE
+                        villagerRecyclerView.visibility = View.VISIBLE
+                        setupAdapter(giftReactions)
+                    }
+
+            compositeDisposable.add(disposable)
+
+            val filterByTabIndex = sharedPreferences.getInt(FILTER_BY_TAB_INDEX, 0)
+            binding.filterVillagerLayout.filterVillagerTabLayout.getTabAt(filterByTabIndex)?.select()
+            filterBy = binding.filterVillagerLayout.filterVillagerTabLayout.getTabAt(filterByTabIndex)?.text.toString()
+            binding.filterVillagerLayout.filterVillagerTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+                override fun onTabReselected(tab: TabLayout.Tab?) {}
+
+                override fun onTabUnselected(tab: TabLayout.Tab?) {}
+
+                override fun onTabSelected(tab: TabLayout.Tab?) {
+                    filterBy = tab?.text.toString()
+                    filter.filter("")
+                    sharedPreferences.edit().putInt(FILTER_BY_TAB_INDEX, tab?.position ?: 0).apply()
+                }
+            })
+
+            analyticsManager.logEvent("Villager Detail", mapOf("Villager" to villager.name))
+        }
     }
 
     private fun setupAdapter(giftReactions: List<GiftReaction>) {
@@ -135,7 +139,7 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
         }.toMutableList()
 
         adapter = GiftReactionsAdapter(list)
-        villager_recycler_view?.adapter = adapter
+        binding.villagerRecyclerView.adapter = adapter
 
         layoutManager = GridLayoutManager(activity, SPAN_COUNT)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -145,7 +149,7 @@ class VillagerFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Fi
             }
         }
 
-        villager_recycler_view?.layoutManager = layoutManager
+        binding.villagerRecyclerView.layoutManager = layoutManager
     }
 
     override fun getFilter(): Filter {

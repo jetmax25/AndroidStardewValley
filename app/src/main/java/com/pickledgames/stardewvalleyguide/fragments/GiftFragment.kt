@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.VillagerReactionsAdapter
+import com.pickledgames.stardewvalleyguide.databinding.FragmentGiftBinding
 import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.managers.AdsManager
 import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
@@ -21,9 +22,6 @@ import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
 import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_gift.*
-import kotlinx.android.synthetic.main.header_item.*
-import kotlinx.android.synthetic.main.loading.*
 import javax.inject.Inject
 
 class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filterable {
@@ -35,12 +33,14 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
     private var list: MutableList<Any> = mutableListOf()
     private lateinit var adapter: VillagerReactionsAdapter
     private lateinit var layoutManager: GridLayoutManager
+    private lateinit var binding: FragmentGiftBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        layoutId = R.layout.fragment_gift
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         menuId = R.menu.gift
-        adsManager.showAdFor(AdsManager.GIFT_FRAGMENT)
-        return super.onCreateView(inflater, container, savedInstanceState)
+        adsManager.showAdFor(AdsManager.GIFT_FRAGMENT, requireActivity())
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentGiftBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -58,7 +58,7 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.gift_search)
         FragmentUtil.setupSearchView(searchMenuItem, this, View.OnFocusChangeListener { _, b ->
-            header_item_layout?.visibility = if (b) View.GONE else View.VISIBLE
+            binding.headerItemLayout.root.visibility = if (b) View.GONE else View.VISIBLE
         })
     }
 
@@ -73,20 +73,23 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
 
     override fun setup() {
         setTitle(gift.name)
-        header_item_left_image_view?.setImageResource(gift.getImageId(activity as MainActivity))
-        header_item_left_image_view?.contentDescription = gift.name
-        header_item_name_text_view?.text = gift.name
-        header_item_right_image_view?.setImageResource(gift.getImageId(activity as MainActivity))
-        header_item_right_image_view?.contentDescription = gift.name
-
-        loading_container?.visibility = View.VISIBLE
-        gift_reactions_recycler_view?.visibility = View.GONE
+        binding.headerItemLayout.headerItemLeftImageView.setImageResource(
+            gift.getImageId(activity as MainActivity)
+        )
+        binding.headerItemLayout.headerItemLeftImageView.contentDescription = gift.name
+        binding.headerItemLayout.headerItemNameTextView.text = gift.name
+        binding.headerItemLayout.headerItemRightImageView.setImageResource(
+            gift.getImageId(activity as MainActivity)
+        )
+        binding.headerItemLayout.headerItemRightImageView.contentDescription = gift.name
+        binding.loadingLayout.loadingContainer.visibility = View.VISIBLE
+        binding.giftReactionsRecyclerView.visibility = View.GONE
         val disposable = giftReactionRepository.getGiftReactionsByItemName(gift.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { giftReactions ->
-                    loading_container?.visibility = View.GONE
-                    gift_reactions_recycler_view?.visibility = View.VISIBLE
+                    binding.loadingLayout.loadingContainer.visibility = View.GONE
+                    binding.giftReactionsRecyclerView.visibility = View.VISIBLE
                     setupAdapter(giftReactions)
                 }
 
@@ -110,7 +113,7 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
         }.toMutableList()
 
         adapter = VillagerReactionsAdapter(list)
-        gift_reactions_recycler_view?.adapter = adapter
+        binding.giftReactionsRecyclerView.adapter = adapter
 
         layoutManager = GridLayoutManager(activity, SPAN_COUNT)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -120,7 +123,7 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
             }
         }
 
-        gift_reactions_recycler_view?.layoutManager = layoutManager
+        binding.giftReactionsRecyclerView.layoutManager = layoutManager
     }
 
     override fun getFilter(): Filter {

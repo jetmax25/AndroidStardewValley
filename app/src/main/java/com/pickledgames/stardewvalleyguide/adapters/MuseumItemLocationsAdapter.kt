@@ -4,17 +4,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.databinding.ListItemMuseumItemLocationBinding
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_museum_item_location.*
 
 class MuseumItemLocationsAdapter(
         private val locations: List<String>
 ) : RecyclerView.Adapter<MuseumItemLocationsAdapter.MuseumItemLocationViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MuseumItemLocationViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_museum_item_location, parent, false)
-        return MuseumItemLocationViewHolder(v)
+        val binding = ListItemMuseumItemLocationBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MuseumItemLocationViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -26,11 +25,11 @@ class MuseumItemLocationsAdapter(
     }
 
     class MuseumItemLocationViewHolder(
-            override val containerView: View
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+        private val binding: ListItemMuseumItemLocationBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindLocation(location: String) {
-            museum_item_location_text_view?.text = location
+            binding.museumItemLocationTextView.text = location
         }
     }
 }
