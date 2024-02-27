@@ -15,37 +15,31 @@
             app:tabMode="scrollable">
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/filter_villager_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/all" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/filter_villager_love"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/love" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/filter_villager_like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/like" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/filter_villager_neutral"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/neutral" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/filter_villager_dislike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/dislike" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/filter_villager_hate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hate" />
