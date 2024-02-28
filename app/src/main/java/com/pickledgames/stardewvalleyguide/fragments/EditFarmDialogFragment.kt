@@ -11,17 +11,16 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.databinding.DialogFragmentEditFarmBinding
 import com.pickledgames.stardewvalleyguide.enums.FarmType
 import com.pickledgames.stardewvalleyguide.interfaces.OnFarmUpdatedListener
 import com.pickledgames.stardewvalleyguide.models.Farm
-import kotlinx.android.synthetic.main.dialog_fragment_edit_farm.*
 
 class EditFarmDialogFragment : DialogFragment() {
 
     private lateinit var containerView: View
-    override fun getView(): View? {
-        return containerView
-    }
+    private lateinit var binding: DialogFragmentEditFarmBinding
+    override fun getView(): View = binding.root
 
     private lateinit var farm: Farm
     private var position: Int = -1
@@ -39,12 +38,13 @@ class EditFarmDialogFragment : DialogFragment() {
     @SuppressLint("InflateParams")
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(activity as MainActivity)
-        containerView = LayoutInflater.from(activity).inflate(R.layout.dialog_fragment_edit_farm, null)
+        binding = DialogFragmentEditFarmBinding.inflate(LayoutInflater.from(context))
+        containerView = binding.root
         return builder
                 .setView(containerView)
                 .setPositiveButton(android.R.string.ok) { _, _ ->
-                    val name = edit_farm_name_text_input_edit_text?.text.toString()
-                    val farmType = edit_farm_type_spinner?.selectedItem as FarmType
+                    val name = binding.editFarmNameTextInputEditText.text.toString()
+                    val farmType = binding.editFarmTypeSpinner.selectedItem as FarmType
                     val newFarm = Farm(name, farmType, farm.communityCenterItems, farm.fishes, farm.museumItems, farm.id)
                     onFarmUpdatedListener.onFarmUpdated(newFarm, position)
                 }
@@ -62,29 +62,31 @@ class EditFarmDialogFragment : DialogFragment() {
     }
 
     private fun setup() {
-        edit_farm_name_text_input_edit_text?.setText(farm.name)
-        edit_farm_name_text_input_edit_text?.setSelection(farm.name.length)
+        with (binding) {
+            editFarmNameTextInputEditText.setText(farm.name)
+            editFarmNameTextInputEditText.setSelection(farm.name.length)
 
-        ArrayAdapter<FarmType>(
-                activity as MainActivity,
-                android.R.layout.simple_spinner_item,
-                FarmType.values()
-        ).also {
-            it.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            edit_farm_type_spinner.adapter = it
-        }
+            ArrayAdapter<FarmType>(
+                    activity as MainActivity,
+                    android.R.layout.simple_spinner_item,
+                    FarmType.values()
+            ).also {
+                it.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                editFarmTypeSpinner.adapter = it
+            }
 
-        edit_farm_delete_button.setOnClickListener {
-            AlertDialog.Builder(activity as MainActivity)
-                    .setTitle(R.string.confirm_delete_title)
-                    .setMessage(R.string.confirm_delete_message)
-                    .setPositiveButton(android.R.string.ok) { _, _ ->
-                        onFarmUpdatedListener.onFarmUpdated(null, position)
-                        dismiss()
-                    }
-                    .setNegativeButton(android.R.string.cancel, null)
-                    .create()
-                    .show()
+            editFarmDeleteButton.setOnClickListener {
+                AlertDialog.Builder(activity as MainActivity)
+                        .setTitle(R.string.confirm_delete_title)
+                        .setMessage(R.string.confirm_delete_message)
+                        .setPositiveButton(android.R.string.ok) { _, _ ->
+                            onFarmUpdatedListener.onFarmUpdated(null, position)
+                            dismiss()
+                        }
+                        .setNegativeButton(android.R.string.cancel, null)
+                        .create()
+                        .show()
+            }
         }
     }
 

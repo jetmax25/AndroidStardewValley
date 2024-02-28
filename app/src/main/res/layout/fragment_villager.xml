@@ -34,6 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/header_villager_layout" />
 
     <include
+        android:id="@+id/loading_villager_layout"
         layout="@layout/loading"
         android:layout_width="match_parent"
         android:layout_height="0dp"

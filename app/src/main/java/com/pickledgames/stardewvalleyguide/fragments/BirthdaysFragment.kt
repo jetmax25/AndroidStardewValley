@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.CalendarDaysAdapter
 import com.pickledgames.stardewvalleyguide.adapters.VillagerBirthdaysAdapter
+import com.pickledgames.stardewvalleyguide.databinding.FragmentBirthdaysBinding
 import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.models.CalendarDay
 import com.pickledgames.stardewvalleyguide.models.Villager
@@ -19,8 +19,6 @@ import com.pickledgames.stardewvalleyguide.repositories.VillagerRepository
 import com.pickledgames.stardewvalleyguide.views.GridDividerDecoration
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_birthdays.*
-import kotlinx.android.synthetic.main.header_calendar.*
 import javax.inject.Inject
 
 class BirthdaysFragment : BaseFragment(), View.OnClickListener {
@@ -34,6 +32,7 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
     private var seasonIndex: Int = 0
     private lateinit var calendarDaysAdapter: CalendarDaysAdapter
     private lateinit var villagerBirthdaysAdapter: VillagerBirthdaysAdapter
+    private lateinit var binding: FragmentBirthdaysBinding
 
     init {
         for (i in 1..28) {
@@ -41,13 +40,14 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        layoutId = R.layout.fragment_birthdays
-        return super.onCreateView(inflater, container, savedInstanceState)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentBirthdaysBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onClick(v: View?) {
-        seasonIndex = if (v == header_calendar_left_arrow_image_view) {
+        seasonIndex = if (v == binding.headerCalendarLayout.headerCalendarLeftArrowImageView) {
             if (seasonIndex == 0) seasons.size - 1 else seasonIndex - 1
         } else {
             if (seasonIndex == seasons.size - 1) 0 else seasonIndex + 1
@@ -55,8 +55,8 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
 
         sharedPreferences.edit().putInt(SEASON_INDEX, seasonIndex).apply()
         val season = seasons[seasonIndex]
-        header_calendar_season_text_view?.text = season.type
-        header_calendar_season_text_view?.setCompoundDrawablesWithIntrinsicBounds(
+        binding.headerCalendarLayout.headerCalendarSeasonTextView.text = season.type
+        binding.headerCalendarLayout.headerCalendarSeasonTextView.setCompoundDrawablesWithIntrinsicBounds(
                 season.getImageId(activity as MainActivity),
                 0, 0, 0
         )
@@ -79,15 +79,15 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
     override fun setup() {
         seasonIndex = sharedPreferences.getInt(SEASON_INDEX, 0)
         val season = seasons[seasonIndex]
-        header_calendar_season_text_view?.text = season.type
-        header_calendar_season_text_view?.setCompoundDrawablesWithIntrinsicBounds(
+        binding.headerCalendarLayout.headerCalendarSeasonTextView.text = season.type
+        binding.headerCalendarLayout.headerCalendarSeasonTextView.setCompoundDrawablesWithIntrinsicBounds(
                 season.getImageId(activity as MainActivity),
                 0, 0, 0
         )
 
         if (initializedList) {
-            header_calendar_left_arrow_image_view?.setOnClickListener(this)
-            header_calendar_right_arrow_image_view?.setOnClickListener(this)
+            binding.headerCalendarLayout.headerCalendarLeftArrowImageView.setOnClickListener(this)
+            binding.headerCalendarLayout.headerCalendarRightArrowImageView.setOnClickListener(this)
             setupCalendarDaysAdapter()
             setupVillagerBirthdaysAdapter()
         } else {
@@ -102,8 +102,8 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
                                     (list[6 + it.birthday.day] as CalendarDay).villager = it
                                 }
 
-                        header_calendar_left_arrow_image_view?.setOnClickListener(this)
-                        header_calendar_right_arrow_image_view?.setOnClickListener(this)
+                        binding.headerCalendarLayout.headerCalendarLeftArrowImageView.setOnClickListener(this)
+                        binding.headerCalendarLayout.headerCalendarRightArrowImageView.setOnClickListener(this)
                         setupCalendarDaysAdapter()
                         setupVillagerBirthdaysAdapter()
                     }
@@ -114,18 +114,18 @@ class BirthdaysFragment : BaseFragment(), View.OnClickListener {
 
     private fun setupCalendarDaysAdapter() {
         calendarDaysAdapter = CalendarDaysAdapter(list, activity as MainActivity)
-        calendar_days_recycler_view?.adapter = calendarDaysAdapter
-        calendar_days_recycler_view?.layoutManager = GridLayoutManager(activity, 7)
-        calendar_days_recycler_view?.addItemDecoration(GridDividerDecoration(5, 7))
+        binding.calendarDaysRecyclerView.adapter = calendarDaysAdapter
+        binding.calendarDaysRecyclerView.layoutManager = GridLayoutManager(activity, 7)
+        binding.calendarDaysRecyclerView.addItemDecoration(GridDividerDecoration(5, 7))
     }
 
     private fun setupVillagerBirthdaysAdapter() {
         val season = seasons[seasonIndex]
         val filteredVillagers = villagers.filter { it.birthday.season == season }.sortedBy { it.birthday.day }
         villagerBirthdaysAdapter = VillagerBirthdaysAdapter(filteredVillagers, activity as MainActivity)
-        villager_birthdays_recycler_view?.adapter = villagerBirthdaysAdapter
-        villager_birthdays_recycler_view?.layoutManager = LinearLayoutManager(activity)
-        villager_birthdays_recycler_view?.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+        binding.villagerBirthdaysRecyclerView.adapter = villagerBirthdaysAdapter
+        binding.villagerBirthdaysRecyclerView.layoutManager = LinearLayoutManager(activity)
+        binding.villagerBirthdaysRecyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
     }
 
     companion object {

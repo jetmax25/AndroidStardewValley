@@ -8,13 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.databinding.ListItemFishLocationBinding
+import com.pickledgames.stardewvalleyguide.databinding.ListItemLegendaryFishLocationBinding
 import com.pickledgames.stardewvalleyguide.enums.LegendaryFishingLocation
 import com.pickledgames.stardewvalleyguide.models.Fish
 import com.pickledgames.stardewvalleyguide.views.ImageOverlayView
 import com.stfalcon.frescoimageviewer.ImageViewer
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_fish_location.*
-import kotlinx.android.synthetic.main.list_item_legendary_fish_location.*
 
 class FishLocationsAdapter(
         private val fish: Fish
@@ -26,13 +25,12 @@ class FishLocationsAdapter(
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val v: View
         return if (viewType == REGULAR) {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_fish_location, parent, false)
-            FishLocationViewHolder(v)
+            val binding = ListItemFishLocationBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            FishLocationViewHolder(binding)
         } else {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_legendary_fish_location, parent, false)
-            LegendaryFishLocationViewHolder(v, parent.context)
+            val binding = ListItemLegendaryFishLocationBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            LegendaryFishLocationViewHolder(binding, parent.context)
         }
     }
 
@@ -58,39 +56,39 @@ class FishLocationsAdapter(
     }
 
     class FishLocationViewHolder(
-            override val containerView: View
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+            private val binding: ListItemFishLocationBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindFishLocation(fishLocation: String) {
-            fish_location_text_view?.text = fishLocation
+            binding.fishLocationTextView.text = fishLocation
         }
     }
 
     class LegendaryFishLocationViewHolder(
-            override val containerView: View,
+            private val binding: ListItemLegendaryFishLocationBinding,
             private val context: Context
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         @SuppressLint("DefaultLocale")
         fun bindLegendaryFishLocation(fish: Fish, position: Int) {
             val legendaryFishingLocation = LegendaryFishingLocation.fromString(fish.name)
             when (position) {
                 0 -> {
-                    legendary_fish_location_image_view?.setImageResource(legendaryFishingLocation.getMapImageId(context))
-                    legendary_fish_location_image_view?.contentDescription = String.format(context.getString(R.string.legendary_fish_map_cd_template), fish.name)
+                    binding.legendaryFishLocationImageView.setImageResource(legendaryFishingLocation.getMapImageId(context))
+                    binding.legendaryFishLocationImageView.contentDescription = String.format(context.getString(R.string.legendary_fish_map_cd_template), fish.name)
                 }
                 1 -> {
-                    legendary_fish_location_image_view?.setImageResource(legendaryFishingLocation.getLocationImageId(context))
-                    legendary_fish_location_image_view?.contentDescription = String.format(context.getString(R.string.legendary_fish_location_cd_template), fish.name)
+                    binding.legendaryFishLocationImageView.setImageResource(legendaryFishingLocation.getLocationImageId(context))
+                    binding.legendaryFishLocationImageView.contentDescription = String.format(context.getString(R.string.legendary_fish_location_cd_template), fish.name)
                 }
                 else -> {
                     // Failsafe
-                    containerView.visibility = View.GONE
-                    containerView.layoutParams = RecyclerView.LayoutParams(0, 0)
+                    binding.root.visibility = View.GONE
+                    binding.root.layoutParams = RecyclerView.LayoutParams(0, 0)
                 }
             }
 
-            containerView.setOnClickListener {
+            binding.root.setOnClickListener {
                 val imageUrls = listOf<Uri>(
                         Uri.parse("res:///${legendaryFishingLocation.getMapImageId(context)}"),
                         Uri.parse("res:///${legendaryFishingLocation.getLocationImageId(context)}")

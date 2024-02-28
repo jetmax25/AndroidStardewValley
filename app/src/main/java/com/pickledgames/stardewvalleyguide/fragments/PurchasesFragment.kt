@@ -5,43 +5,44 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.pickledgames.stardewvalleyguide.BuildConfig
-import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.databinding.FragmentPurchasesBinding
 import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
 import io.reactivex.android.schedulers.AndroidSchedulers
-import kotlinx.android.synthetic.main.fragment_purchases.*
 import javax.inject.Inject
 
 class PurchasesFragment : BaseFragment() {
 
     @Inject lateinit var purchasesManager: PurchasesManager
+    private lateinit var binding: FragmentPurchasesBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        layoutId = R.layout.fragment_purchases
-        return super.onCreateView(inflater, container, savedInstanceState)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentPurchasesBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun setup() {
         val disposable = purchasesManager.isProSubject
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-                    thanks_text_view?.visibility = if (it) View.VISIBLE else View.GONE
-                    purchases_group?.visibility = if (it) View.GONE else View.VISIBLE
+                    binding.thanksTextView.visibility = if (it) View.VISIBLE else View.GONE
+                    binding.purchasesGroup.visibility = if (it) View.GONE else View.VISIBLE
                 }
 
         compositeDisposable.add(disposable)
 
-        purchase_button?.setOnClickListener {
+        binding.purchaseButton.setOnClickListener {
             purchasesManager.purchaseProVersion(activity as MainActivity)
         }
 
-        restore_purchases_button?.setOnClickListener {
+        binding.restorePurchasesButton.setOnClickListener {
             purchasesManager.restorePurchases()
         }
 
         if (BuildConfig.DEBUG) {
-            toggle_pro_button.visibility = View.VISIBLE
-            toggle_pro_button.setOnClickListener {
+            binding.toggleProButton.visibility = View.VISIBLE
+            binding.toggleProButton.setOnClickListener {
                 purchasesManager.isPro = !purchasesManager.isPro
             }
         }

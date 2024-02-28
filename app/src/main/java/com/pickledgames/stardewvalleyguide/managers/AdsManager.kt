@@ -1,9 +1,13 @@
 package com.pickledgames.stardewvalleyguide.managers
 
+import android.app.Activity
 import android.content.Context
-import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.pickledgames.stardewvalleyguide.BuildConfig
 import com.pickledgames.stardewvalleyguide.StardewApp
 import java.util.*
@@ -60,14 +64,14 @@ class AdsManager(
         purchasesManager.isProSubject.subscribe { isPro = it }
     }
 
-    fun showAdFor(name: String) {
+    fun showAdFor(name: String, activity: Activity) {
         if (!isPro) {
-            ads[name]?.showAd()
+            ads[name]?.showAd(activity)
         }
     }
 
     class StardewInterstitialAd(
-            context: Context,
+            private val context: Context,
             private val random: Random,
             private val adId: String,
             private val limit: Int
@@ -75,29 +79,29 @@ class AdsManager(
 
         private var forceShow: Boolean = false
         private var shown: Boolean = false
-        private val interstitialAd: InterstitialAd = InterstitialAd(context).apply {
-            adUnitId = if (BuildConfig.DEBUG) "ca-app-pub-3940256099942544/1033173712" else adId
-            loadAd(AdRequest.Builder().build())
-            adListener = object : AdListener() {
-                override fun onAdFailedToLoad(errorCode: Int) {
-                    super.onAdFailedToLoad(errorCode)
-                    forceShow = true
-                }
 
-                override fun onAdOpened() {
-                    super.onAdOpened()
-                    shown = true
-                    forceShow = false
-                }
+        private fun initializeAdAndShow(activity: Activity) {
+            val adRequest = AdRequest.Builder().build()
+            val adUnitId =
+                if (BuildConfig.DEBUG) "ca-app-pub-3940256099942544/1033173712" else adId
+            InterstitialAd.load(
+                context,
+                adUnitId,
+                adRequest,
+                object : InterstitialAdLoadCallback() {
+                    override fun onAdFailedToLoad(adError: LoadAdError) {
+                        forceShow = true
+                    }
 
-                override fun onAdClosed() {
-                    super.onAdClosed()
-                    loadAd(AdRequest.Builder().build())
-                }
-            }
+                    override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                        interstitialAd.show(activity)
+                        shown = true
+                        forceShow = false
+                    }
+                })
         }
 
-        fun showAd() {
+        fun showAd(activity: Activity) {
             // Don't show ad twice in a row
             if (shown) {
                 shown = false
@@ -106,7 +110,7 @@ class AdsManager(
             // bound is exclusive
             val randomInt = random.nextInt(limit)
             if (randomInt == 0 || forceShow) {
-                interstitialAd.show()
+                initializeAdAndShow(activity)
             }
         }
     }

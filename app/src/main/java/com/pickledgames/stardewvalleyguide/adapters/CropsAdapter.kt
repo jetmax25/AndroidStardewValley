@@ -1,15 +1,12 @@
 package com.pickledgames.stardewvalleyguide.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.databinding.ListItemCropBinding
 import com.pickledgames.stardewvalleyguide.fragments.CropFragment
 import com.pickledgames.stardewvalleyguide.models.Crop
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_crop.*
 
 class CropsAdapter(
         private var crops: List<Crop>,
@@ -17,8 +14,8 @@ class CropsAdapter(
 ) : RecyclerView.Adapter<CropsAdapter.CropViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CropViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_crop, parent, false)
-        return CropViewHolder(v, mainActivity)
+        val binding = ListItemCropBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CropViewHolder(binding, mainActivity)
     }
 
     override fun getItemCount(): Int {
@@ -35,20 +32,20 @@ class CropsAdapter(
     }
 
     class CropViewHolder(
-            override val containerView: View,
+            private val binding: ListItemCropBinding,
             private val mainActivity: MainActivity
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindCrop(crop: Crop) {
-            crop_image_view?.setImageResource(crop.getImageId(mainActivity))
-            crop_image_view?.contentDescription = crop.name
-            crop_text_view?.text = crop.name
-            crop_seed_price_image_view?.setImageResource(crop.getSeedImageId(mainActivity))
-            crop_seed_price_image_view?.contentDescription = crop.name
-            crop_seed_price_text_view?.text = crop.seedPrice.toString()
-            crop_gold_text_view?.text = crop.commonStats.price.toString()
-            crop_harvest_time_text_view?.text = crop.harvestTime.toString()
-            containerView.setOnClickListener {
+            binding.cropImageView.setImageResource(crop.getImageId(mainActivity))
+            binding.cropImageView.contentDescription = crop.name
+            binding.cropTextView.text = crop.name
+            binding.cropSeedPriceImageView.setImageResource(crop.getSeedImageId(mainActivity))
+            binding.cropSeedPriceImageView.contentDescription = crop.name
+            binding.cropSeedPriceTextView.text = crop.seedPrice.toString()
+            binding.cropGoldTextView.text = crop.commonStats.price.toString()
+            binding.cropHarvestTimeTextView.text = crop.harvestTime.toString()
+            binding.root.setOnClickListener {
                 mainActivity.pushFragment(CropFragment.newInstance(crop))
             }
         }

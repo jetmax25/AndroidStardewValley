@@ -6,17 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.databinding.ListItemCropStageBinding
 import com.pickledgames.stardewvalleyguide.models.Crop
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_crop_stage.*
 
 class CropStagesAdapter(
         private val crop: Crop
 ) : RecyclerView.Adapter<CropStagesAdapter.CropStageViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CropStageViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_crop_stage, parent, false)
-        return CropStageViewHolder(v, parent.context)
+        val binding = ListItemCropStageBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return CropStageViewHolder(binding, parent.context)
     }
 
     override fun getItemCount(): Int {
@@ -28,17 +31,17 @@ class CropStagesAdapter(
     }
 
     class CropStageViewHolder(
-            override val containerView: View,
+            private val binding: ListItemCropStageBinding,
             val context: Context
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindCropStage(crop: Crop, position: Int) {
             // Regrowth
             if (position == crop.stages.size) {
                 val regrowthText = context.resources.getQuantityString(R.plurals.regrowth_stage_template, crop.regrowthDays, crop.regrowthDays)
-                crop_stage_text_view?.text = regrowthText
-                crop_stage_image_view?.setImageResource(crop.getRegrowthImageId(context))
-                crop_stage_image_view?.contentDescription = regrowthText
+                binding.cropStageTextView.text = regrowthText
+                binding.cropStageImageView.setImageResource(crop.getRegrowthImageId(context))
+                binding.cropStageImageView.contentDescription = regrowthText
                 return
             }
 
@@ -49,9 +52,9 @@ class CropStagesAdapter(
                 else -> throw Exception("$position is not a valid crop stage position for ${crop.name}")
             }
 
-            crop_stage_text_view?.text = stageText
-            crop_stage_image_view?.setImageResource(crop.getStageImageId(position, context))
-            crop_stage_image_view?.contentDescription = stageText
+            binding.cropStageTextView.text = stageText
+            binding.cropStageImageView.setImageResource(crop.getStageImageId(position, context))
+            binding.cropStageImageView.contentDescription = stageText
         }
     }
 }

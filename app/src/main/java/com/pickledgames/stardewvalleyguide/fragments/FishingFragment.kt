@@ -14,6 +14,7 @@ import com.jaygoo.widget.RangeSeekBar
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.FishesAdapter
+import com.pickledgames.stardewvalleyguide.databinding.FragmentFishingBinding
 import com.pickledgames.stardewvalleyguide.enums.FishingLocationType
 import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
@@ -26,10 +27,6 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.BiFunction
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.filter_fishing.*
-import kotlinx.android.synthetic.main.fragment_fishing.*
-import kotlinx.android.synthetic.main.header_farm.*
-import kotlinx.android.synthetic.main.loading.*
 import javax.inject.Inject
 
 class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListener, SearchView.OnQueryTextListener, Filterable {
@@ -50,11 +47,14 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
     private var showCompleted: Boolean = false
     private var hasAdapterBeenSetup: Boolean = false
     private var adapterPosition: Int = 0
+    private lateinit var binding: FragmentFishingBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_fishing
         menuId = R.menu.fishing
-        return super.onCreateView(inflater, container, savedInstanceState)
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentFishingBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onClick(view: View?) {
@@ -67,7 +67,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
         super.onPrepareOptionsMenu(menu)
         val searchMenuItem = menu.findItem(R.id.fishing_search)
         FragmentUtil.setupSearchView(searchMenuItem, this, View.OnFocusChangeListener { _, b ->
-            fishing_header_group?.visibility = if (b) View.GONE else View.VISIBLE
+            binding.fishingHeaderGroup.visibility = if (b) View.GONE else View.VISIBLE
         })
     }
 
@@ -99,132 +99,146 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
     }
 
     override fun setup() {
-        header_farm_left_arrow_image_view?.setOnClickListener(this)
-        header_farm_right_arrow_image_view?.setOnClickListener(this)
-        header_farm_easy_flip_view?.setOnClickListener {
-            (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
-        }
-
-        val seasonTabIndex = sharedPreferences.getInt(SEASON_INDEX, 0)
-        filter_fishing_season_tab_layout?.getTabAt(seasonTabIndex)?.select()
-        seasonFilterBy = filter_fishing_season_tab_layout?.getTabAt(seasonTabIndex)?.text.toString()
-        filter_fishing_season_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {}
-
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                seasonFilterBy = tab?.text.toString()
-                filter.filter("")
-                sharedPreferences.edit().putInt(SEASON_INDEX, tab?.position ?: 0).apply()
-            }
-        })
-
-        val locationTabIndex = sharedPreferences.getInt(LOCATION_INDEX, 0)
-        filter_fishing_location_tab_layout?.getTabAt(locationTabIndex)?.select()
-        locationFilterBy = filter_fishing_location_tab_layout?.getTabAt(locationTabIndex)?.text.toString()
-        filter_fishing_location_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {}
-
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                locationFilterBy = tab?.text.toString()
-                filter.filter("")
-                sharedPreferences.edit().putInt(LOCATION_INDEX, tab?.position ?: 0).apply()
-            }
-        })
-
-        val weatherIndex = sharedPreferences.getInt(WEATHER_INDEX, 0)
-        filter_fishing_weather_tab_layout?.getTabAt(weatherIndex)?.select()
-        weatherFilterBy = filter_fishing_weather_tab_layout?.getTabAt(weatherIndex)?.text.toString()
-        filter_fishing_weather_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {}
-
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                weatherFilterBy = tab?.text.toString()
-                filter.filter("")
-                sharedPreferences.edit().putInt(WEATHER_INDEX, tab?.position ?: 0).apply()
-            }
-        })
-
-        startTime = sharedPreferences.getInt(START_TIME, MIN_START_TIME)
-        endTime = sharedPreferences.getInt(END_TIME, MAX_END_TIME)
-        time_range_seek_bar?.setRange(MIN_START_TIME.toFloat(), MAX_END_TIME.toFloat(), 1f)
-        time_range_seek_bar?.setValue(startTime.toFloat(), endTime.toFloat())
-        FragmentUtil.setTimeRangeText(startTime, endTime, time_range_text_view, resources)
-
-        time_range_seek_bar?.setOnRangeChangedListener(object : OnRangeChangedListener {
-            override fun onStartTrackingTouch(view: RangeSeekBar?, isLeft: Boolean) {}
-
-            override fun onRangeChanged(rangeSeekBar: RangeSeekBar?, leftValue: Float, rightValue: Float, isFromUser: Boolean) {
-                startTime = leftValue.toInt()
-                endTime = rightValue.toInt()
-                FragmentUtil.setTimeRangeText(startTime, endTime, time_range_text_view, resources)
-                filter.filter("")
-                sharedPreferences.edit().putInt(START_TIME, startTime).apply()
-                sharedPreferences.edit().putInt(END_TIME, endTime).apply()
+        with (binding) {
+            headerFarmLayout.headerFarmLeftArrowImageView.setOnClickListener(this@FishingFragment)
+            headerFarmLayout.headerFarmRightArrowImageView.setOnClickListener(this@FishingFragment)
+            headerFarmLayout.headerFarmEasyFlipView.setOnClickListener {
+                (activity as MainActivity).pushFragment(EditFarmsFragment.newInstance())
             }
 
-            override fun onStopTrackingTouch(view: RangeSeekBar?, isLeft: Boolean) {}
-        })
+            val seasonTabIndex = sharedPreferences.getInt(SEASON_INDEX, 0)
+            filterFishingLayout.filterFishingSeasonTabLayout.getTabAt(seasonTabIndex)?.select()
+            seasonFilterBy = filterFishingLayout.filterFishingSeasonTabLayout.getTabAt(seasonTabIndex)?.text.toString()
+            filterFishingLayout.filterFishingSeasonTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+                override fun onTabReselected(tab: TabLayout.Tab?) {}
 
-        showCompleted = sharedPreferences.getBoolean(SHOW_COMPLETED, false)
-        show_completed_check_box?.isChecked = showCompleted
-        show_completed_check_box?.setOnCheckedChangeListener { _, b ->
-            showCompleted = b
-            adapter?.updateShowCompleted(showCompleted)
-            sharedPreferences.edit().putBoolean(SHOW_COMPLETED, showCompleted).apply()
-        }
+                override fun onTabUnselected(tab: TabLayout.Tab?) {}
 
-        FragmentUtil.setupToggleFilterSettings(toggle_filter_settings_text_view, resources, filter_fishing_group, sharedPreferences, SHOW_FILTER_SETTINGS)
+                override fun onTabSelected(tab: TabLayout.Tab?) {
+                    seasonFilterBy = tab?.text.toString()
+                    filter.filter("")
+                    sharedPreferences.edit().putInt(SEASON_INDEX, tab?.position ?: 0).apply()
+                }
+            })
 
-        data class Results(
+            val locationTabIndex = sharedPreferences.getInt(LOCATION_INDEX, 0)
+            filterFishingLayout.filterFishingLocationTabLayout.getTabAt(locationTabIndex)?.select()
+            locationFilterBy = filterFishingLayout.filterFishingSeasonTabLayout.getTabAt(locationTabIndex)?.text.toString()
+            filterFishingLayout.filterFishingLocationTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+                override fun onTabReselected(tab: TabLayout.Tab?) {}
+
+                override fun onTabUnselected(tab: TabLayout.Tab?) {}
+
+                override fun onTabSelected(tab: TabLayout.Tab?) {
+                    locationFilterBy = tab?.text.toString()
+                    filter.filter("")
+                    sharedPreferences.edit().putInt(LOCATION_INDEX, tab?.position ?: 0).apply()
+                }
+            })
+
+            val weatherIndex = sharedPreferences.getInt(WEATHER_INDEX, 0)
+            filterFishingLayout.filterFishingWeatherTabLayout.getTabAt(weatherIndex)?.select()
+            weatherFilterBy = filterFishingLayout.filterFishingWeatherTabLayout.getTabAt(weatherIndex)?.text.toString()
+            filterFishingLayout.filterFishingWeatherTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+                override fun onTabReselected(tab: TabLayout.Tab?) {}
+
+                override fun onTabUnselected(tab: TabLayout.Tab?) {}
+
+                override fun onTabSelected(tab: TabLayout.Tab?) {
+                    weatherFilterBy = tab?.text.toString()
+                    filter.filter("")
+                    sharedPreferences.edit().putInt(WEATHER_INDEX, tab?.position ?: 0).apply()
+                }
+            })
+
+            startTime = sharedPreferences.getInt(START_TIME, MIN_START_TIME)
+            endTime = sharedPreferences.getInt(END_TIME, MAX_END_TIME)
+            filterFishingLayout.timeRangeSeekBar.setRange(MIN_START_TIME.toFloat(), MAX_END_TIME.toFloat(), 1f)
+            filterFishingLayout.timeRangeSeekBar.setValue(startTime.toFloat(), endTime.toFloat())
+            FragmentUtil.setTimeRangeText(startTime, endTime, filterFishingLayout.timeRangeTextView, resources)
+
+            filterFishingLayout.timeRangeSeekBar.setOnRangeChangedListener(object : OnRangeChangedListener {
+                override fun onStartTrackingTouch(view: RangeSeekBar?, isLeft: Boolean) {}
+
+                override fun onRangeChanged(rangeSeekBar: RangeSeekBar?, leftValue: Float, rightValue: Float, isFromUser: Boolean) {
+                    startTime = leftValue.toInt()
+                    endTime = rightValue.toInt()
+                    FragmentUtil.setTimeRangeText(startTime, endTime, filterFishingLayout.timeRangeTextView, resources)
+                    filter.filter("")
+                    sharedPreferences.edit().putInt(START_TIME, startTime).apply()
+                    sharedPreferences.edit().putInt(END_TIME, endTime).apply()
+                }
+
+                override fun onStopTrackingTouch(view: RangeSeekBar?, isLeft: Boolean) {}
+            })
+
+            showCompleted = sharedPreferences.getBoolean(SHOW_COMPLETED, false)
+            filterFishingLayout.showCompletedCheckBox.isChecked = showCompleted
+            filterFishingLayout.showCompletedCheckBox.setOnCheckedChangeListener { _, b ->
+                showCompleted = b
+                adapter?.updateShowCompleted(showCompleted)
+                sharedPreferences.edit().putBoolean(SHOW_COMPLETED, showCompleted).apply()
+            }
+
+            FragmentUtil.setupToggleFilterSettings(
+                filterFishingLayout.toggleFilterSettingsTextView,
+                resources,
+                filterFishingLayout.filterFishingGroup,
+                sharedPreferences,
+                SHOW_FILTER_SETTINGS
+            )
+
+            data class Results(
                 val farm: Farm?,
                 val fishes: List<Fish>
-        )
+            )
 
-        loading_container?.visibility = View.VISIBLE
-        fishing_header_group?.visibility = View.INVISIBLE
-        fishing_recycler_view?.visibility = View.INVISIBLE
+            loadingLayout.loadingContainer.visibility = View.VISIBLE
+            fishingHeaderGroup.visibility = View.INVISIBLE
+            fishingRecyclerView.visibility = View.INVISIBLE
 
-        val disposable = Single.zip(
+            val disposable = Single.zip(
                 farmRepository.getSelectedFarm(),
                 fishRepository.getFishes(),
                 BiFunction { farm: Farm?, fishes: List<Fish> -> Results(farm, fishes) }
-        )
+            )
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { results ->
-                    loading_container?.visibility = View.INVISIBLE
-                    fishing_header_group?.visibility = View.VISIBLE
-                    fishing_recycler_view?.visibility = View.VISIBLE
+                    loadingLayout.loadingContainer.visibility = View.INVISIBLE
+                    fishingHeaderGroup.visibility = View.VISIBLE
+                    fishingRecyclerView.visibility = View.VISIBLE
                     farm = results.farm
                     farm?.let {
-                        header_farm_name_front_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
-                        header_farm_name_back_text_view?.text = String.format(getString(R.string.farm_name_template, it.name))
+                        headerFarmLayout.headerFarmNameFrontTextView.text = String.format(getString(R.string.farm_name_template, it.name))
+                        headerFarmLayout.headerFarmNameBackTextView.text = String.format(getString(R.string.farm_name_template, it.name))
                     }
                     fishes.clear()
                     fishes.addAll(results.fishes.sortedBy { it.name })
                     filter.filter("")
                 }
 
-        compositeDisposable.add(disposable)
+            compositeDisposable.add(disposable)
 
-        val selectedFarmChangesDisposable = farmRepository.getSelectedFarmChanges()
+            val selectedFarmChangesDisposable = farmRepository.getSelectedFarmChanges()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { f ->
-                    FragmentUtil.flipSelectedFarmText(header_farm_easy_flip_view, header_farm_name_front_text_view, header_farm_name_back_text_view, resources, f)
+                    FragmentUtil.flipSelectedFarmText(
+                        headerFarmLayout.headerFarmEasyFlipView,
+                        headerFarmLayout.headerFarmNameFrontTextView,
+                        headerFarmLayout.headerFarmNameBackTextView,
+                        resources,
+                        f
+                    )
                     farm = f
                     farm?.let {
                         adapter?.updateFarm(it)
                     }
                 }
 
-        compositeDisposable.add(selectedFarmChangesDisposable)
+            compositeDisposable.add(selectedFarmChangesDisposable)
+        }
     }
 
     private fun setupAdapter(fishes: List<Fish>) {
@@ -238,10 +252,10 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
                     this
             )
 
-            fishing_recycler_view?.adapter = adapter
+            binding.fishingRecyclerView.adapter = adapter
             linearLayoutManager = LinearLayoutManager(activity)
-            fishing_recycler_view?.layoutManager = linearLayoutManager
-            fishing_recycler_view?.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+            binding.fishingRecyclerView.layoutManager = linearLayoutManager
+            binding.fishingRecyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
             linearLayoutManager?.scrollToPosition(adapterPosition)
         }
     }

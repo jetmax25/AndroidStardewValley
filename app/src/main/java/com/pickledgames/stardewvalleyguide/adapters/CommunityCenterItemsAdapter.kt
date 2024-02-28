@@ -7,14 +7,13 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.databinding.ListItemCommunityCenterBundleHeaderBinding
+import com.pickledgames.stardewvalleyguide.databinding.ListItemCommunityCenterItemBinding
 import com.pickledgames.stardewvalleyguide.fragments.CommunityCenterItemFragment
 import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterBundle
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterItem
 import com.pickledgames.stardewvalleyguide.models.Farm
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_community_center_bundle_header.*
-import kotlinx.android.synthetic.main.list_item_community_center_item.*
 
 class CommunityCenterItemsAdapter(
         private var list: List<Any>,
@@ -25,13 +24,20 @@ class CommunityCenterItemsAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val v: View
         return if (viewType == HEADER_TYPE) {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_community_center_bundle_header, parent, false)
-            CommunityCenterBundleHeaderViewHolder(v, mainActivity)
+            val binding = ListItemCommunityCenterBundleHeaderBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+            CommunityCenterBundleHeaderViewHolder(binding, mainActivity)
         } else {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_community_center_item, parent, false)
-            CommunityCenterItemViewHolder(v, mainActivity, onItemCheckedListener)
+            val binding = ListItemCommunityCenterItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+            CommunityCenterItemViewHolder(binding, mainActivity, onItemCheckedListener)
         }
     }
 
@@ -75,59 +81,59 @@ class CommunityCenterItemsAdapter(
     }
 
     class CommunityCenterBundleHeaderViewHolder(
-            override val containerView: View,
-            private val mainActivity: MainActivity
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+        private val binding: ListItemCommunityCenterBundleHeaderBinding,
+        private val mainActivity: MainActivity
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindCommunityCenterBundle(communityCenterBundle: CommunityCenterBundle, completedItemsCount: Int) {
-            community_center_bundle_image_view?.setImageResource(communityCenterBundle.getImageId(mainActivity))
-            community_center_bundle_image_view?.contentDescription = communityCenterBundle.name
-            community_center_bundle_name_text_view?.text = communityCenterBundle.name
+            binding.communityCenterBundleImageView.setImageResource(communityCenterBundle.getImageId(mainActivity))
+            binding.communityCenterBundleImageView.contentDescription = communityCenterBundle.name
+            binding.communityCenterBundleNameTextView.text = communityCenterBundle.name
             val quantityCompleted = String.format(
                     mainActivity.getString(R.string.bundle_quantity_completed_template),
                     completedItemsCount,
                     communityCenterBundle.needed
             )
-            community_center_bundle_quantity_completed_text_view?.text = quantityCompleted
+            binding.communityCenterBundleQuantityCompletedTextView.text = quantityCompleted
             if (completedItemsCount == communityCenterBundle.needed) {
                 val green = ContextCompat.getColor(mainActivity, R.color.green)
-                community_center_bundle_quantity_completed_text_view?.setTextColor(green)
+                binding.communityCenterBundleQuantityCompletedTextView.setTextColor(green)
             } else {
                 val white = ContextCompat.getColor(mainActivity, android.R.color.white)
-                community_center_bundle_quantity_completed_text_view?.setTextColor(white)
+                binding.communityCenterBundleQuantityCompletedTextView.setTextColor(white)
             }
         }
     }
 
     class CommunityCenterItemViewHolder(
-            override val containerView: View,
+            private val binding: ListItemCommunityCenterItemBinding,
             private val mainActivity: MainActivity,
             private val onItemCheckedListener: OnItemCheckedListener
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         private var isChecked: Boolean = false
 
         fun bindCommunityCenterItem(communityCenterItem: CommunityCenterItem, isCompleted: Boolean, showCompleted: Boolean) {
             if (isCompleted && !showCompleted) {
-                containerView.visibility = View.GONE
-                containerView.layoutParams = RecyclerView.LayoutParams(0, 0)
+                binding.root.visibility = View.GONE
+                binding.root.layoutParams = RecyclerView.LayoutParams(0, 0)
                 return
             } else {
-                containerView.visibility = View.VISIBLE
-                containerView.layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+                binding.root.visibility = View.VISIBLE
+                binding.root.layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             }
 
-            community_center_item_image_view?.setImageResource(communityCenterItem.getImageId(mainActivity))
-            community_center_item_image_view?.contentDescription = communityCenterItem.name
-            community_center_item_text_view?.text = communityCenterItem.name
+            binding.communityCenterItemImageView.setImageResource(communityCenterItem.getImageId(mainActivity))
+            binding.communityCenterItemImageView.contentDescription = communityCenterItem.name
+            binding.communityCenterItemTextView.text = communityCenterItem.name
             isChecked = isCompleted
-            community_center_item_check_box?.isChecked = isChecked
+            binding.communityCenterItemCheckBox.isChecked = isChecked
             // use onClick instead of onCheckChanged to avoid initial firing
-            community_center_item_check_box?.setOnClickListener { _ ->
+            binding.communityCenterItemCheckBox.setOnClickListener { _ ->
                 isChecked = !isChecked
                 onItemCheckedListener.onItemChecked(communityCenterItem, isChecked)
             }
-            containerView.setOnClickListener {
+            binding.root.setOnClickListener {
                 mainActivity.pushFragment(CommunityCenterItemFragment.newInstance(communityCenterItem))
             }
         }

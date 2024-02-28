@@ -13,6 +13,7 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ncapdevi.fragnav.FragNavController
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.databinding.ActivityMainBinding
 import com.pickledgames.stardewvalleyguide.fragments.*
 import com.pickledgames.stardewvalleyguide.interfaces.OnFarmUpdatedListener
 import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
@@ -22,7 +23,6 @@ import com.pickledgames.stardewvalleyguide.models.Farm
 import dagger.android.AndroidInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import kotlinx.android.synthetic.main.activity_main.*
 import org.threeten.bp.Instant
 import javax.inject.Inject
 
@@ -64,11 +64,13 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         false
     }
     private var compositeDisposable: CompositeDisposable = CompositeDisposable()
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setup(savedInstanceState)
     }
 
@@ -87,19 +89,19 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         fragNavController.rootFragments = fragments
         fragNavController.initialize(FragNavController.TAB1, savedInstanceState)
 
-        navigation?.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        binding.navigation?.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
         if (purchasesManager.isPro) {
-            navigation?.menu?.removeItem(R.id.navigation_purchases)
-            banner_ad_view?.visibility = View.GONE
+            binding.navigation?.menu?.removeItem(R.id.navigation_purchases)
+            binding.bannerAdView?.visibility = View.GONE
         } else {
             val adRequest = AdRequest.Builder().build()
-            banner_ad_view?.loadAd(adRequest)
+            binding.bannerAdView?.loadAd(adRequest)
 
             val disposable = purchasesManager.isProSubject
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe {
-                        banner_ad_view?.visibility = if (it) View.GONE else View.VISIBLE
+                        binding.bannerAdView?.visibility = if (it) View.GONE else View.VISIBLE
                     }
 
             compositeDisposable.add(disposable)
@@ -154,7 +156,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
     }
 
     fun changeTab(tabIndex: Int) {
-        navigation.selectedItemId = when (tabIndex) {
+        binding.navigation.selectedItemId = when (tabIndex) {
             FRIENDSHIPS -> R.id.navigation_friendships
             CHECKLISTS -> R.id.navigation_checklists
             PURCHASES -> R.id.navigation_purchases

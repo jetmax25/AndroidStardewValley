@@ -5,15 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.adapters.ChecklistsAdapter
-import kotlinx.android.synthetic.main.fragment_checklists.*
+import com.pickledgames.stardewvalleyguide.databinding.FragmentChecklistsBinding
 
 class ChecklistsFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    private lateinit var binding: FragmentChecklistsBinding
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_checklists, container, false)
+        binding = FragmentChecklistsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -22,8 +24,8 @@ class ChecklistsFragment : Fragment() {
     }
 
     private fun setup() {
-        checklists_view_pager?.adapter = ChecklistsAdapter(childFragmentManager)
-        checklists_tab_layout?.setupWithViewPager(checklists_view_pager)
+        binding.checklistsViewPager.adapter = ChecklistsAdapter(childFragmentManager)
+        binding.checklistsTabLayout.setupWithViewPager(binding.checklistsViewPager)
     }
 
     companion object {

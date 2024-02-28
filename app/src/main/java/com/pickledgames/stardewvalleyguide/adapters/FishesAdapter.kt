@@ -4,14 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.databinding.ListItemFishBinding
 import com.pickledgames.stardewvalleyguide.fragments.FishFragment
 import com.pickledgames.stardewvalleyguide.interfaces.OnItemCheckedListener
 import com.pickledgames.stardewvalleyguide.models.Farm
 import com.pickledgames.stardewvalleyguide.models.Fish
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_fish.*
 
 class FishesAdapter(
         private var fishes: List<Fish>,
@@ -22,8 +20,8 @@ class FishesAdapter(
 ) : RecyclerView.Adapter<FishesAdapter.FishViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FishViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_fish, parent, false)
-        return FishViewHolder(v, mainActivity, onItemCheckedListener)
+        val binding = ListItemFishBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return FishViewHolder(binding, mainActivity, onItemCheckedListener)
     }
 
     override fun getItemCount(): Int {
@@ -52,34 +50,34 @@ class FishesAdapter(
     }
 
     class FishViewHolder(
-            override val containerView: View,
+            private val binding: ListItemFishBinding,
             private val mainActivity: MainActivity,
             private val onItemCheckedListener: OnItemCheckedListener
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         private var isChecked: Boolean = false
 
         fun bindFish(fish: Fish, isCompleted: Boolean, showCompleted: Boolean) {
             if (isCompleted && !showCompleted) {
-                containerView.visibility = View.GONE
-                containerView.layoutParams = RecyclerView.LayoutParams(0, 0)
+                binding.root.visibility = View.GONE
+                binding.root.layoutParams = RecyclerView.LayoutParams(0, 0)
                 return
             } else {
-                containerView.visibility = View.VISIBLE
-                containerView.layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+                binding.root.visibility = View.VISIBLE
+                binding.root.layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             }
 
-            fish_image_view?.setImageResource(fish.getImageId(mainActivity))
-            fish_image_view?.contentDescription = fish.name
-            fish_text_view?.text = fish.name
+            binding.fishImageView.setImageResource(fish.getImageId(mainActivity))
+            binding.fishImageView.contentDescription = fish.name
+            binding.fishTextView.text = fish.name
             isChecked = isCompleted
-            fish_check_box?.isChecked = isChecked
+            binding.fishCheckBox.isChecked = isChecked
             // use onClick instead of onCheckChanged to avoid initial firing
-            fish_check_box?.setOnClickListener { _ ->
+            binding.fishCheckBox.setOnClickListener { _ ->
                 isChecked = !isChecked
                 onItemCheckedListener.onItemChecked(fish, isChecked)
             }
-            containerView.setOnClickListener {
+            binding.root.setOnClickListener {
                 mainActivity.pushFragment(FishFragment.newInstance(fish))
             }
         }

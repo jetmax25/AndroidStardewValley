@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.GiftsAdapter
+import com.pickledgames.stardewvalleyguide.databinding.FragmentGiftsBinding
 import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.repositories.GiftReactionRepository
 import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_gifts.*
 import javax.inject.Inject
 
 class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable {
@@ -27,11 +27,13 @@ class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
     private var list: MutableList<Any> = mutableListOf()
     private lateinit var adapter: GiftsAdapter
     private lateinit var layoutManager: GridLayoutManager
+    private lateinit var binding: FragmentGiftsBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        layoutId = R.layout.fragment_gifts
         menuId = R.menu.gifts
-        return super.onCreateView(inflater, container, savedInstanceState)
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentGiftsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
@@ -111,10 +113,10 @@ class GiftsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
 
     private fun setupAdapter() {
         adapter = GiftsAdapter(list, activity as MainActivity)
-        gifts_recycler_view?.adapter = adapter
+        binding.giftsRecyclerView.adapter = adapter
 
         layoutManager = GridLayoutManager(activity, SPAN_COUNT)
-        gifts_recycler_view?.layoutManager = layoutManager
+        binding.giftsRecyclerView.layoutManager = layoutManager
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 // getSpanSize should return number of spans item should take up

@@ -4,13 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.databinding.ListItemCategoryHeaderBinding
+import com.pickledgames.stardewvalleyguide.databinding.ListItemGiftBinding
 import com.pickledgames.stardewvalleyguide.fragments.GiftFragment
 import com.pickledgames.stardewvalleyguide.models.Gift
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_category_header.*
-import kotlinx.android.synthetic.main.list_item_gift.*
 
 class GiftsAdapter(
         private var list: List<Any>,
@@ -18,13 +17,12 @@ class GiftsAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val v: View
         return if (viewType == HEADER_TYPE) {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_category_header, parent, false)
-            CategoryViewHolder(v)
+            val binding = ListItemCategoryHeaderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            CategoryViewHolder(binding)
         } else {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_gift, parent, false)
-            GiftViewHolder(v, mainActivity)
+            val binding = ListItemGiftBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            GiftViewHolder(binding, mainActivity)
         }
     }
 
@@ -55,22 +53,22 @@ class GiftsAdapter(
         private const val ITEM_TYPE = 1
     }
 
-    class CategoryViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    class CategoryViewHolder(private val binding: ListItemCategoryHeaderBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindCategory(category: String) {
-            category_text_view?.text = category
+            binding.categoryTextView.text = category
         }
     }
 
     class GiftViewHolder(
-            override val containerView: View,
+            private val binding: ListItemGiftBinding,
             private val mainActivity: MainActivity
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindGift(gift: Gift) {
-            gift_image_view?.setImageResource(gift.getImageId(mainActivity))
-            gift_image_view?.contentDescription = gift.name
-            containerView.setOnClickListener {
+            binding.giftImageView.setImageResource(gift.getImageId(mainActivity))
+            binding.giftImageView.contentDescription = gift.name
+            binding.root.setOnClickListener {
                 mainActivity.pushFragment(GiftFragment.newInstance(gift))
             }
         }

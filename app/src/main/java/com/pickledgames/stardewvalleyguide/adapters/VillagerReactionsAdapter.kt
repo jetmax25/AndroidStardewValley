@@ -5,26 +5,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.databinding.ListItemReactionHeaderBinding
+import com.pickledgames.stardewvalleyguide.databinding.ListItemVillagerReactionBinding
 import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.models.Villager
 import io.github.douglasjunior.androidSimpleTooltip.SimpleTooltip
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_villager_reaction.*
 
 class VillagerReactionsAdapter(
-        private var list: List<Any>
+    private var list: List<Any>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val v: View
         return if (viewType == HEADER_TYPE) {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_reaction_header, parent, false)
-            ReactionHeaderViewHolder(v)
+            val binding = ListItemReactionHeaderBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+            ReactionHeaderViewHolder(binding)
         } else {
-            v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_villager_reaction, parent, false)
-            VillagerReactionViewHolder(v, parent.context)
+            val binding = ListItemVillagerReactionBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+            VillagerReactionViewHolder(binding, parent.context)
         }
     }
 
@@ -56,22 +63,22 @@ class VillagerReactionsAdapter(
     }
 
     class VillagerReactionViewHolder(
-            override val containerView: View,
-            private val context: Context
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+        private val binding: ListItemVillagerReactionBinding,
+        private val context: Context
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindGiftReaction(giftReaction: GiftReaction) {
             val imageId = Villager(giftReaction.villagerName).getImageId(context)
-            villager_reaction_image_view?.setImageResource(imageId)
-            villager_reaction_image_view?.contentDescription = giftReaction.villagerName
-            containerView.setOnClickListener {
+            binding.villagerReactionImageView.setImageResource(imageId)
+            binding.villagerReactionImageView.contentDescription = giftReaction.villagerName
+            binding.root.setOnClickListener {
                 SimpleTooltip.Builder(context)
-                        .anchorView(containerView)
-                        .text("${giftReaction.villagerName} - ${giftReaction.reaction}")
-                        .animated(true)
-                        .transparentOverlay(false)
-                        .build()
-                        .show()
+                    .anchorView(binding.root)
+                    .text("${giftReaction.villagerName} - ${giftReaction.reaction}")
+                    .animated(true)
+                    .transparentOverlay(false)
+                    .build()
+                    .show()
             }
         }
     }

@@ -6,7 +6,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
 import com.pickledgames.stardewvalleyguide.R
-import kotlinx.android.synthetic.main.sign_text_view.view.*
+import com.pickledgames.stardewvalleyguide.databinding.SignTextViewBinding
 
 class SignTextView : RelativeLayout {
 
@@ -16,8 +16,9 @@ class SignTextView : RelativeLayout {
         setup(attrs)
     }
 
+    private val binding: SignTextViewBinding =
+        SignTextViewBinding.bind(LayoutInflater.from(context).inflate(R.layout.sign_text_view, this, false))
     private fun setup(attrs: AttributeSet?) {
-        LayoutInflater.from(context).inflate(R.layout.sign_text_view, this, true)
         context.theme.obtainStyledAttributes(
                 attrs,
                 R.styleable.SignTextView,
@@ -26,18 +27,18 @@ class SignTextView : RelativeLayout {
         ).apply {
             try {
                 val text = getText(R.styleable.SignTextView_text) ?: ""
-                text_view?.text = text
+                binding.textView.text = text
 
-                val defaultTextSize = text_view?.textSize ?: 14f
+                val defaultTextSize = binding.textView.textSize ?: 14f
                 val textSize = getDimension(R.styleable.SignTextView_textSize, defaultTextSize)
-                text_view?.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
+                binding.textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
 
-                val containerMarginLayoutParams = sign_header_container?.layoutParams as MarginLayoutParams
+                val containerMarginLayoutParams = binding.signHeaderContainer.layoutParams as MarginLayoutParams
                 val margin = getDimensionPixelSize(R.styleable.SignTextView_margin, 0)
                 containerMarginLayoutParams.setMargins(margin, margin, margin, margin)
 
                 val padding = getDimensionPixelSize(R.styleable.SignTextView_padding, 0)
-                text_view?.setPadding(padding, padding, padding, padding)
+                binding.textView.setPadding(padding, padding, padding, padding)
             } finally {
                 recycle()
             }

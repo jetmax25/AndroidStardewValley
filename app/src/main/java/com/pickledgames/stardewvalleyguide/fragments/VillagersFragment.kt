@@ -12,14 +12,13 @@ import com.google.android.material.tabs.TabLayout
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.VillagersAdapter
+import com.pickledgames.stardewvalleyguide.databinding.FragmentVillagersBinding
 import com.pickledgames.stardewvalleyguide.models.Villager
 import com.pickledgames.stardewvalleyguide.repositories.VillagerRepository
 import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import com.pickledgames.stardewvalleyguide.views.GridDividerDecoration
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.filter_villagers.*
-import kotlinx.android.synthetic.main.fragment_villagers.*
 import javax.inject.Inject
 
 class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
@@ -29,11 +28,15 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
     private var villagers: MutableList<Villager> = mutableListOf()
     private lateinit var villagersAdapter: VillagersAdapter
     private var sortBy: String = "A-Z"
+    private lateinit var binding: FragmentVillagersBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        layoutId = R.layout.fragment_villagers
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = FragmentVillagersBinding.bind(
+            inflater.inflate(R.layout.fragment_villagers, container, false)
+        )
         menuId = R.menu.villagers
-        return super.onCreateView(inflater, container, savedInstanceState)
+        super.onCreateView(inflater, container, savedInstanceState)
+        return binding.root
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
@@ -67,9 +70,9 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
         }
 
         val sortByTabIndex = sharedPreferences.getInt(SORT_BY_TAB_INDEX, 0)
-        filter_villagers_tab_layout?.getTabAt(sortByTabIndex)?.select()
-        sortBy = filter_villagers_tab_layout?.getTabAt(sortByTabIndex)?.text.toString()
-        filter_villagers_tab_layout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        binding.include.filterVillagersTabLayout.getTabAt(sortByTabIndex)?.select()
+        sortBy = binding.include.filterVillagersTabLayout.getTabAt(sortByTabIndex)?.text.toString()
+        binding.include.filterVillagersTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
@@ -84,10 +87,10 @@ class VillagersFragment : BaseFragment(), SearchView.OnQueryTextListener {
 
     private fun setupAdapter() {
         villagersAdapter = VillagersAdapter(villagers, activity as MainActivity)
-        villagers_recycler_view?.adapter = villagersAdapter
-        villagers_recycler_view?.layoutManager = GridLayoutManager(activity, 3)
+        binding.villagersRecyclerView.adapter = villagersAdapter
+        binding.villagersRecyclerView.layoutManager = GridLayoutManager(activity, 3)
         val offset = activity?.resources?.getDimensionPixelOffset(R.dimen.villagers_grid_layout_offset)
-        if (offset != null) villagers_recycler_view?.addItemDecoration(GridDividerDecoration(offset, 3))
+        if (offset != null) binding.villagersRecyclerView.addItemDecoration(GridDividerDecoration(offset, 3))
         villagersAdapter.setSortBy(sortBy)
     }
 

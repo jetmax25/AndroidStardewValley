@@ -8,11 +8,11 @@ import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.databinding.ListItemVillagerBinding
 import com.pickledgames.stardewvalleyguide.fragments.VillagerFragment
 import com.pickledgames.stardewvalleyguide.interfaces.Sortable
 import com.pickledgames.stardewvalleyguide.models.Villager
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_villager.*
 import java.util.*
 import kotlin.Comparator
 
@@ -25,8 +25,8 @@ class VillagersAdapter(
     private var sortBy: String = mainActivity.getString(R.string.a_z)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VillagerViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_villager, parent, false)
-        return VillagerViewHolder(v, mainActivity)
+        val binding = ListItemVillagerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return VillagerViewHolder(binding, mainActivity)
     }
 
     override fun getItemCount(): Int {
@@ -73,18 +73,22 @@ class VillagersAdapter(
     }
 
     class VillagerViewHolder(
-            override val containerView: View,
+            private val binding: ListItemVillagerBinding,
             private val mainActivity: MainActivity
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindVillager(villager: Villager) {
-            villager_name_text_view?.text = villager.name
-            if (villager.canMarry) villager_name_text_view?.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_heart_red, 0)
-            else villager_name_text_view?.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
+            binding.villagerNameTextView.text = villager.name
+            if (villager.canMarry) {
+                binding.villagerNameTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_heart_red, 0)
+            }
+            else {
+                binding.villagerNameTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
+            }
 
-            villager_image_view?.setImageResource(villager.getImageId(mainActivity))
-            villager_image_view?.contentDescription = villager.name
-            containerView.setOnClickListener {
+            binding.villagerImageView.setImageResource(villager.getImageId(mainActivity))
+            binding.villagerImageView.contentDescription = villager.name
+            binding.root.setOnClickListener {
                 mainActivity.pushFragment(VillagerFragment.newInstance(villager))
             }
         }

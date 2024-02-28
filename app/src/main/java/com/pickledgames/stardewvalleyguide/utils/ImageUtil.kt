@@ -2,7 +2,6 @@ package com.pickledgames.stardewvalleyguide.utils
 
 import android.content.Context
 import android.util.Log
-import com.crashlytics.android.Crashlytics
 
 object ImageUtil {
 
@@ -13,7 +12,6 @@ object ImageUtil {
         if (imageId == 0) {
             val errorMessage = "Image resource $resourceName not found."
             Log.e(TAG, errorMessage)
-            Crashlytics.logException(Exception(errorMessage))
         }
 
         return imageId

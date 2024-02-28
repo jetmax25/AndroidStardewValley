@@ -4,9 +4,8 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
-import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.databinding.ImageOverlayViewBinding
 import com.stfalcon.frescoimageviewer.ImageViewer
-import kotlinx.android.synthetic.main.image_overlay_view.view.*
 
 class ImageOverlayView : RelativeLayout {
 
@@ -18,14 +17,14 @@ class ImageOverlayView : RelativeLayout {
         setup()
     }
 
+    private val binding = ImageOverlayViewBinding.inflate(LayoutInflater.from(context), this, true)
     private fun setup() {
-        LayoutInflater.from(context).inflate(R.layout.image_overlay_view, this, true)
-        image_overlay_exit_button.setOnClickListener {
+        binding.imageOverlayExitButton.setOnClickListener {
             imageViewer?.onDismiss()
         }
     }
 
     fun setText(text: String) {
-        image_overlay_text_view.text = text
+        binding.imageOverlayTextView.text = text
     }
 }

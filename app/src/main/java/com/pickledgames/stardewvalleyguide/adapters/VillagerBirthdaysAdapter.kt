@@ -1,15 +1,12 @@
 package com.pickledgames.stardewvalleyguide.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
+import com.pickledgames.stardewvalleyguide.databinding.ListItemVillagerBirthdayBinding
 import com.pickledgames.stardewvalleyguide.fragments.VillagerFragment
 import com.pickledgames.stardewvalleyguide.models.Villager
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_item_villager_birthday.*
 
 class VillagerBirthdaysAdapter(
         private var villagers: List<Villager>,
@@ -17,8 +14,8 @@ class VillagerBirthdaysAdapter(
 ) : RecyclerView.Adapter<VillagerBirthdaysAdapter.VillagerBirthdayViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VillagerBirthdayViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_villager_birthday, parent, false)
-        return VillagerBirthdayViewHolder(v, mainActivity)
+        val binding = ListItemVillagerBirthdayBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return VillagerBirthdayViewHolder(binding, mainActivity)
     }
 
     override fun getItemCount(): Int {
@@ -35,17 +32,17 @@ class VillagerBirthdaysAdapter(
     }
 
     class VillagerBirthdayViewHolder(
-            override val containerView: View,
+            private val binding: ListItemVillagerBirthdayBinding,
             private val mainActivity: MainActivity
-    ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindVillager(villager: Villager) {
-            villager_birthday_text_view?.text = villager.birthday.toString()
-            villager_birthday_villager_image_view?.setImageResource(villager.getImageId(mainActivity))
-            villager_birthday_villager_image_view?.contentDescription = villager.name
-            villager_birthday_name_text_view?.text = villager.name
+            binding.villagerBirthdayTextView.text = villager.birthday.toString()
+            binding.villagerBirthdayVillagerImageView.setImageResource(villager.getImageId(mainActivity))
+            binding.villagerBirthdayVillagerImageView.contentDescription = villager.name
+            binding.villagerBirthdayNameTextView.text = villager.name
 
-            containerView.setOnClickListener {
+            binding.root.setOnClickListener {
                 mainActivity.pushFragment(VillagerFragment.newInstance(villager))
             }
         }

@@ -9,15 +9,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.MuseumItemLocationsAdapter
+import com.pickledgames.stardewvalleyguide.databinding.FragmentMuseumItemBinding
 import com.pickledgames.stardewvalleyguide.managers.AdsManager
 import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.models.Artifact
 import com.pickledgames.stardewvalleyguide.models.LostBook
 import com.pickledgames.stardewvalleyguide.models.Mineral
 import com.pickledgames.stardewvalleyguide.models.MuseumItem
-import kotlinx.android.synthetic.main.fragment_museum_item.*
-import kotlinx.android.synthetic.main.header_item.*
-import kotlinx.android.synthetic.main.information_museum_item.*
 import javax.inject.Inject
 
 class MuseumItemFragment : InnerBaseFragment() {
@@ -25,11 +23,14 @@ class MuseumItemFragment : InnerBaseFragment() {
     @Inject lateinit var adsManager: AdsManager
     @Inject lateinit var analyticsManager: AnalyticsManager
     private lateinit var museumItem: MuseumItem
+    private lateinit var binding: FragmentMuseumItemBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_museum_item
-        adsManager.showAdFor(AdsManager.MUSEUM_ITEM_FRAGMENT)
-        return super.onCreateView(inflater, container, savedInstanceState)
+        adsManager.showAdFor(AdsManager.MUSEUM_ITEM_FRAGMENT, requireActivity())
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentMuseumItemBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     @Suppress("RemoveExplicitTypeArguments")
@@ -46,36 +47,39 @@ class MuseumItemFragment : InnerBaseFragment() {
     }
 
     override fun setup() {
-        header_item_left_image_view?.setImageResource(museumItem.getImageId(activity as MainActivity))
-        header_item_left_image_view?.contentDescription = museumItem.name
-        header_item_name_text_view?.text = museumItem.name
-        header_item_right_image_view?.setImageResource(museumItem.getImageId(activity as MainActivity))
-        header_item_right_image_view?.contentDescription = museumItem.name
-        description_text_view?.text = museumItem.description
+        with(binding) {
+            headerItemLayout.headerItemLeftImageView.setImageResource(museumItem.getImageId(activity as MainActivity))
+            headerItemLayout.headerItemLeftImageView.contentDescription = museumItem.name
+            headerItemLayout.headerItemNameTextView.text = museumItem.name
+            headerItemLayout.headerItemRightImageView.setImageResource(museumItem.getImageId(activity as MainActivity))
+            headerItemLayout.headerItemRightImageView.contentDescription = museumItem.name
+            informationMuseumItemLayout.descriptionTextView.text = museumItem.description
 
-        when (museumItem) {
-            is Artifact -> {
-                val artifact = museumItem as Artifact
-                price_text_view?.text = String.format(getString(R.string.price_template), artifact.price)
-                museum_item_locations_recycler_view?.adapter = MuseumItemLocationsAdapter(artifact.locations)
-                museum_item_locations_recycler_view?.layoutManager = LinearLayoutManager(activity)
-                museum_item_locations_recycler_view?.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
-            }
-            is LostBook -> {
-                price_text_view?.visibility = View.GONE
-                museum_item_locations_header_text_view?.visibility = View.GONE
-                museum_item_locations_recycler_view?.visibility = View.GONE
-            }
-            is Mineral -> {
-                val mineral = (museumItem as Mineral)
-                price_text_view?.text = String.format(getString(R.string.price_template), mineral.price)
-                if (mineral.minMineLevel != -1 && mineral.maxMineLevel != -1) {
-                    mine_levels_text_view?.visibility = View.VISIBLE
-                    mine_levels_text_view?.text = String.format(getString(R.string.mine_levels_template), mineral.minMineLevel, mineral.maxMineLevel)
+
+            when (museumItem) {
+                is Artifact -> {
+                    val artifact = museumItem as Artifact
+                    informationMuseumItemLayout.priceTextView.text = String.format(getString(R.string.price_template), artifact.price)
+                    museumItemLocationsRecyclerView.adapter = MuseumItemLocationsAdapter(artifact.locations)
+                    museumItemLocationsRecyclerView.layoutManager = LinearLayoutManager(activity)
+                    museumItemLocationsRecyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
                 }
-                museum_item_locations_recycler_view?.adapter = MuseumItemLocationsAdapter(mineral.locations)
-                museum_item_locations_recycler_view?.layoutManager = LinearLayoutManager(activity)
-                museum_item_locations_recycler_view?.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+                is LostBook -> {
+                    informationMuseumItemLayout.priceTextView.visibility = View.GONE
+                    informationMuseumItemLayout.informationHeaderTextView.visibility = View.GONE
+                    museumItemLocationsRecyclerView.visibility = View.GONE
+                }
+                is Mineral -> {
+                    val mineral = (museumItem as Mineral)
+                    informationMuseumItemLayout.priceTextView.text = String.format(getString(R.string.price_template), mineral.price)
+                    if (mineral.minMineLevel != -1 && mineral.maxMineLevel != -1) {
+                        informationMuseumItemLayout.mineLevelsTextView.visibility = View.VISIBLE
+                        informationMuseumItemLayout.mineLevelsTextView.text = String.format(getString(R.string.mine_levels_template), mineral.minMineLevel, mineral.maxMineLevel)
+                    }
+                    museumItemLocationsRecyclerView.adapter = MuseumItemLocationsAdapter(mineral.locations)
+                    museumItemLocationsRecyclerView.layoutManager = LinearLayoutManager(activity)
+                    museumItemLocationsRecyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+                }
             }
         }
 
