@@ -4,6 +4,7 @@ import android.app.Activity
 import android.util.Log
 import android.widget.Toast
 import com.android.billingclient.api.*
+import com.android.billingclient.api.BillingClient.BillingResponseCode
 import com.pickledgames.stardewvalleyguide.BuildConfig
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.StardewApp
@@ -20,8 +21,9 @@ class PurchasesManager(
 ) : BillingClientStateListener, PurchasesUpdatedListener, ConsumeResponseListener {
 
     private var billingClient: BillingClient = BillingClient.newBuilder(stardewApp)
-            .setListener(this)
-            .build()
+        .enablePendingPurchases()
+        .setListener(this)
+        .build()
     private var billingConnectionAttempts: Int = 0
     var isPro: Boolean = false
         set(value) {
@@ -32,16 +34,33 @@ class PurchasesManager(
     var initializedSubject: PublishSubject<Any> = PublishSubject.create()
     var isProSubject: BehaviorSubject<Boolean> = BehaviorSubject.create()
     private var isBillingEnabled: Boolean = false
-    @Suppress("DEPRECATION")
-    private val flowParams: BillingFlowParams = BillingFlowParams.newBuilder()
-            .setSku(PRO_SKU)
-            .setType(BillingClient.SkuType.INAPP)
+    private val queryProductDetailsParams =
+        QueryProductDetailsParams.newBuilder()
+            .setProductList(
+                listOf(
+                    QueryProductDetailsParams.Product.newBuilder()
+                        .setProductId(PRO_SKU)
+                        .setProductType(BillingClient.ProductType.INAPP)
+                        .build()
+                )
+            )
             .build()
-    private val queryPurchasesObservable: Single<Purchase.PurchasesResult> = Single.create<Purchase.PurchasesResult> {
-        val purchasesResult = billingClient.queryPurchases(BillingClient.SkuType.INAPP)
-        it.onSuccess(purchasesResult)
+    private val queryPurchasesObservable: Single<PurchaseResult> = Single.create<PurchaseResult> {
+        val queryPurchaseParams = QueryPurchasesParams.newBuilder()
+            .setProductType(BillingClient.ProductType.INAPP)
+            .build()
+        billingClient.queryPurchasesAsync(queryPurchaseParams) { billingResult, purchases ->
+            it.onSuccess(
+                PurchaseResult(
+                    billingResult.responseCode,
+                    purchases
+                )
+            )
+        }
     }.subscribeOn(Schedulers.io()).observeOn(Schedulers.io())
     private val compositeDisposable: CompositeDisposable = CompositeDisposable()
+
+    data class PurchaseResult(val responseCode: Int, val purchases: List<Purchase>)
 
     init {
         billingClient.startConnection(this)
@@ -49,7 +68,19 @@ class PurchasesManager(
 
     fun purchaseProVersion(activity: Activity) {
         if (isBillingEnabled) {
-            billingClient.launchBillingFlow(activity, flowParams)
+            billingClient.queryProductDetailsAsync(queryProductDetailsParams) { _, products ->
+                val productDetailsParamsList = products.map { product ->
+                    BillingFlowParams.ProductDetailsParams.newBuilder()
+                        .setProductDetails(product)
+                        .build()
+                }
+
+                val billingFlowParams = BillingFlowParams.newBuilder()
+                    .setProductDetailsParamsList(productDetailsParamsList)
+                    .build()
+
+                billingClient.launchBillingFlow(activity, billingFlowParams)
+            }
             analyticsManager.get().logEvent("Purchase Clicked")
         } else {
             billingConnectionAttempts = 0
@@ -70,11 +101,11 @@ class PurchasesManager(
         }
     }
 
-    override fun onPurchasesUpdated(@BillingClient.BillingResponse responseCode: Int, purchases: MutableList<Purchase>?) {
+    override fun onPurchasesUpdated(result: BillingResult, purchases: MutableList<Purchase>?) {
         var purchased = false
-        if (responseCode == BillingClient.BillingResponse.OK) {
-            for (purchase: Purchase in purchases.orEmpty()) {
-                if (purchase.sku == PRO_SKU) {
+        if (result.responseCode == BillingResponseCode.OK) {
+            for (sku in purchases.orEmpty().flatMap { it.products }) {
+                if (sku == PRO_SKU) {
                     isPro = true
                     purchased = true
                     break
@@ -99,9 +130,10 @@ class PurchasesManager(
         }
     }
 
-    override fun onBillingSetupFinished(@BillingClient.BillingResponse responseCode: Int) {
-        isBillingEnabled = responseCode == BillingClient.BillingResponse.OK
-        if (responseCode == BillingClient.BillingResponse.OK) {
+    override fun onBillingSetupFinished(billingResult: BillingResult) {
+        val responseCode = billingResult.responseCode
+        isBillingEnabled = responseCode == BillingResponseCode.OK
+        if (responseCode == BillingResponseCode.OK) {
             val disposable = queryPurchasesObservable.subscribe({ pr ->
                 onQueryPurchases(pr)
                 initializedSubject.onComplete()
@@ -115,10 +147,10 @@ class PurchasesManager(
         }
     }
 
-    private fun onQueryPurchases(purchasesResult: Purchase.PurchasesResult) {
-        val purchases = purchasesResult.purchasesList ?: emptyList()
-        for (purchase: Purchase in purchases) {
-            if (purchase.sku == PRO_SKU) {
+    private fun onQueryPurchases(purchasesResult: PurchaseResult) {
+        val purchases = purchasesResult.purchases
+        for (product in purchases.flatMap { it.products }) {
+            if (product == PRO_SKU) {
                 isPro = true
                 break
             }
@@ -127,11 +159,11 @@ class PurchasesManager(
         compositeDisposable.clear()
     }
 
-    private fun onQueryRestoredPurchases(purchasesResult: Purchase.PurchasesResult) {
+    private fun onQueryRestoredPurchases(purchasesResult: PurchaseResult) {
         var restored = false
-        val purchases = purchasesResult.purchasesList ?: emptyList()
-        for (purchase: Purchase in purchases) {
-            if (purchase.sku == PRO_SKU) {
+        val purchases = purchasesResult.purchases
+        for (product in purchases.flatMap { it.products }) {
+            if (product == PRO_SKU) {
                 isPro = true
                 restored = true
                 break
@@ -147,8 +179,8 @@ class PurchasesManager(
         }
     }
 
-    override fun onConsumeResponse(@BillingClient.BillingResponse responseCode: Int, purchaseToken: String?) {
-        Log.i(TAG, "onConsumeResponse called with responseCode: $responseCode for purchaseToken: $purchaseToken.")
+    override fun onConsumeResponse(billingResult: BillingResult, purchaseToken: String) {
+        Log.i(TAG, "onConsumeResponse called with responseCode: ${billingResult.responseCode} for purchaseToken: $purchaseToken.")
     }
 
     companion object {
