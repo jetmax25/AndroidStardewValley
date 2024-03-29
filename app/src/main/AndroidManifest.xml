@@ -4,6 +4,7 @@
     package="com.pickledgames.stardewvalleyguide">
 
     <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
     <application
         android:name=".StardewApp"

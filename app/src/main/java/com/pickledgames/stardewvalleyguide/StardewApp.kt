@@ -3,6 +3,7 @@ package com.pickledgames.stardewvalleyguide
 import androidx.multidex.MultiDexApplication
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.pickledgames.stardewvalleyguide.dagger.*
 import dagger.android.AndroidInjector
@@ -25,9 +26,20 @@ class StardewApp : MultiDexApplication(), HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
         component.inject(this)
-        MobileAds.initialize(this) {}
         AndroidThreeTen.init(this)
         Fresco.initialize(this)
+        initMobileAds()
+    }
+
+
+    private fun initMobileAds() {
+        MobileAds.initialize(this) {}
+        val requestConfiguration = RequestConfiguration.Builder()
+            .setTagForChildDirectedTreatment(RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE)
+            .setTagForUnderAgeOfConsent(RequestConfiguration.TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE)
+            .setMaxAdContentRating(RequestConfiguration.MAX_AD_CONTENT_RATING_G)
+            .build()
+        MobileAds.setRequestConfiguration(requestConfiguration)
     }
 
     override fun androidInjector(): AndroidInjector<Any> {
