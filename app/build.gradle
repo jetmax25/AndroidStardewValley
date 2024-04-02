@@ -18,6 +18,9 @@ android {
         multiDexEnabled true
     }
     buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
         debug {
             applicationIdSuffix ".debug"
         }
@@ -42,7 +45,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:1.6.1"
     implementation "com.google.android.material:material:1.11.0"
     implementation "androidx.vectordrawable:vectordrawable:1.1.0"
-    implementation "androidx.browser:browser:1.7.0"
+    implementation "androidx.browser:browser:1.8.0"
     implementation "androidx.media:media:1.7.0"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
@@ -65,8 +68,8 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     ksp "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-rxjava2:$room_version"
-    implementation "com.google.android.gms:play-services-ads:22.6.0"
-    implementation "com.android.billingclient:billing:6.1.0"
+    implementation "com.google.android.gms:play-services-ads:23.0.0"
+    implementation "com.android.billingclient:billing:6.2.0"
     implementation "com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.0"
     implementation "com.google.firebase:firebase-core:21.1.1"
     implementation "com.jakewharton.threetenabp:threetenabp:1.2.1"
