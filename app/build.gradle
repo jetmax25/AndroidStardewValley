@@ -1,7 +1,6 @@
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "kotlin-kapt"
-apply plugin: "com.google.gms.google-services"
 apply plugin: "kotlin-parcelize"
 apply plugin: "com.google.devtools.ksp"
 
@@ -12,8 +11,8 @@ android {
         applicationId "com.pickledgames.stardewvalleyguide"
         minSdkVersion 29
         targetSdkVersion 33
-        versionCode 71
-        versionName "1.5.2"
+        versionCode 103
+        versionName "2.0.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
