@@ -3,6 +3,7 @@ package com.pickledgames.stardewvalleyguide.dagger
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 import com.pickledgames.stardewvalleyguide.StardewApp
+import com.pickledgames.stardewvalleyguide.ads.AdsService
 import com.pickledgames.stardewvalleyguide.managers.AdsManager
 import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.managers.LoginManager
@@ -11,6 +12,7 @@ import com.squareup.moshi.Moshi
 import dagger.Lazy
 import dagger.Module
 import dagger.Provides
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -56,5 +58,11 @@ class AppModule(private val stardewApp: StardewApp) {
     @Singleton
     fun providesLoginManager(sharedPreferences: SharedPreferences): LoginManager {
         return LoginManager(sharedPreferences)
+    }
+
+    @Provides
+    @Named("ads_settings")
+    fun provideAdsSharedPreferences(): SharedPreferences {
+        return stardewApp.getSharedPreferences(AdsService.PREFS_NAME, MODE_PRIVATE)
     }
 }

@@ -97,4 +97,8 @@
         <item quantity="other">Regrowth: %d Days</item>
         <item quantity="one">Regrowth: %d Day</item>
     </plurals>
+    <string name="ads_permission_title">Age Verification</string>
+    <string name="ads_permission_message">Please, enter your age</string>
+    <string name="ads_permission_accept">Enter</string>
+    <string name="ads_permission_edit_hint">Your Age</string>
 </resources>

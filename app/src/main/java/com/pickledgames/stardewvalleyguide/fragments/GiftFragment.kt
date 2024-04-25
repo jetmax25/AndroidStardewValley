@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.VillagerReactionsAdapter
+import com.pickledgames.stardewvalleyguide.ads.AdsService
 import com.pickledgames.stardewvalleyguide.databinding.FragmentGiftBinding
 import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.managers.AdsManager
@@ -29,6 +30,7 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
     @Inject lateinit var giftReactionRepository: GiftReactionRepository
     @Inject lateinit var adsManager: AdsManager
     @Inject lateinit var analyticsManager: AnalyticsManager
+    @Inject lateinit var adsService: AdsService
     private lateinit var gift: Gift
     private var list: MutableList<Any> = mutableListOf()
     private lateinit var adapter: VillagerReactionsAdapter
@@ -37,7 +39,9 @@ class GiftFragment : InnerBaseFragment(), SearchView.OnQueryTextListener, Filter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         menuId = R.menu.gift
-        adsManager.showAdFor(AdsManager.GIFT_FRAGMENT, requireActivity())
+        if (adsService.areAdsEnabled()) {
+            adsManager.showAdFor(AdsManager.GIFT_FRAGMENT, requireActivity())
+        }
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentGiftBinding.inflate(inflater, container, false)
         return binding.root

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.CropStagesAdapter
+import com.pickledgames.stardewvalleyguide.ads.AdsService
 import com.pickledgames.stardewvalleyguide.databinding.FragmentCropBinding
 import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.managers.AdsManager
@@ -22,12 +23,15 @@ class CropFragment : InnerBaseFragment() {
     @Inject lateinit var adsManager: AdsManager
     @Inject lateinit var analyticsManager: AnalyticsManager
     @Inject lateinit var sharedPreferences: SharedPreferences
+    @Inject lateinit var adsService: AdsService
     private lateinit var crop: Crop
     private lateinit var binding: FragmentCropBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_crop
-        adsManager.showAdFor(AdsManager.CROP_FRAGMENT, requireActivity() as MainActivity)
+        if (adsService.areAdsEnabled()) {
+            adsManager.showAdFor(AdsManager.CROP_FRAGMENT, requireActivity() as MainActivity)
+        }
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentCropBinding.inflate(inflater, container, false)
         return binding.root

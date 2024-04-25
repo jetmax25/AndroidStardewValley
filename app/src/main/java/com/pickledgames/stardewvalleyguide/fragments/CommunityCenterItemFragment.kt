@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.GuidesAdapter
+import com.pickledgames.stardewvalleyguide.ads.AdsService
 import com.pickledgames.stardewvalleyguide.databinding.FragmentCommunityCenterItemBinding
 import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.managers.AdsManager
@@ -19,12 +20,15 @@ class CommunityCenterItemFragment : InnerBaseFragment() {
 
     @Inject lateinit var adsManager: AdsManager
     @Inject lateinit var analyticsManager: AnalyticsManager
+    @Inject lateinit var adsService: AdsService
     private lateinit var communityCenterItem: CommunityCenterItem
     private lateinit var binding: FragmentCommunityCenterItemBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        adsManager.showAdFor(AdsManager.COMMUNITY_CENTER_ITEM_FRAGMENT, requireActivity())
+        if (adsService.areAdsEnabled()) {
+            adsManager.showAdFor(AdsManager.COMMUNITY_CENTER_ITEM_FRAGMENT, requireActivity())
+        }
         binding = FragmentCommunityCenterItemBinding.inflate(
             inflater,
             container,

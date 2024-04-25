@@ -13,6 +13,7 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ncapdevi.fragnav.FragNavController
 import com.pickledgames.stardewvalleyguide.R
+import com.pickledgames.stardewvalleyguide.ads.AdsService
 import com.pickledgames.stardewvalleyguide.databinding.ActivityMainBinding
 import com.pickledgames.stardewvalleyguide.fragments.*
 import com.pickledgames.stardewvalleyguide.interfaces.OnFarmUpdatedListener
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
     @Inject lateinit var purchasesManager: PurchasesManager
     @Inject lateinit var analyticsManager: AnalyticsManager
     @Inject lateinit var loginManager: LoginManager
+    @Inject lateinit var adsService: AdsService
     private var fragments: List<Fragment> = listOf(
             FriendshipsFragment.newInstance(),
             ChecklistsFragment.newInstance(),
@@ -72,6 +74,9 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setup(savedInstanceState)
+        if (adsService.areAdsEnabled()) {
+            binding.bannerAdView.visibility = View.VISIBLE
+        }
     }
 
     override fun onDestroy() {

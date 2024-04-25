@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.activities.MainActivity
 import com.pickledgames.stardewvalleyguide.adapters.MuseumItemLocationsAdapter
+import com.pickledgames.stardewvalleyguide.ads.AdsService
 import com.pickledgames.stardewvalleyguide.databinding.FragmentMuseumItemBinding
 import com.pickledgames.stardewvalleyguide.managers.AdsManager
 import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
@@ -22,12 +23,15 @@ class MuseumItemFragment : InnerBaseFragment() {
 
     @Inject lateinit var adsManager: AdsManager
     @Inject lateinit var analyticsManager: AnalyticsManager
+    @Inject lateinit var adsService: AdsService
     private lateinit var museumItem: MuseumItem
     private lateinit var binding: FragmentMuseumItemBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutId = R.layout.fragment_museum_item
-        adsManager.showAdFor(AdsManager.MUSEUM_ITEM_FRAGMENT, requireActivity())
+        if (adsService.areAdsEnabled()) {
+            adsManager.showAdFor(AdsManager.MUSEUM_ITEM_FRAGMENT, requireActivity())
+        }
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentMuseumItemBinding.inflate(inflater, container, false)
         return binding.root
