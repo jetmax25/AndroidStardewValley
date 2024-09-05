@@ -147,8 +147,8 @@ class CropsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
         hasAdapterBeenSetup = true
         adapter = CropsAdapter(crops, activity as MainActivity)
         linearLayoutManager = LinearLayoutManager(activity)
+        binding.cropsRecyclerView.adapter = adapter
         binding.cropsRecyclerView.apply {
-            adapter = adapter
             layoutManager = linearLayoutManager
             addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
         }
