@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import com.android.billingclient.api.*
 import com.android.billingclient.api.BillingClient.BillingResponseCode
+import com.android.billingclient.api.Purchase.PurchaseState
 import com.pickledgames.stardewvalleyguide.BuildConfig
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.StardewApp
@@ -14,6 +15,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
+import kotlin.math.pow
 
 class PurchasesManager(
         private val stardewApp: StardewApp,
@@ -104,12 +106,9 @@ class PurchasesManager(
     override fun onPurchasesUpdated(result: BillingResult, purchases: MutableList<Purchase>?) {
         var purchased = false
         if (result.responseCode == BillingResponseCode.OK) {
-            for (sku in purchases.orEmpty().flatMap { it.products }) {
-                if (sku == PRO_SKU) {
-                    isPro = true
-                    purchased = true
-                    break
-                }
+            processPurchases(purchases) {
+                isPro = true
+                purchased = true
             }
         }
 
@@ -149,11 +148,8 @@ class PurchasesManager(
 
     private fun onQueryPurchases(purchasesResult: PurchaseResult) {
         val purchases = purchasesResult.purchases
-        for (product in purchases.flatMap { it.products }) {
-            if (product == PRO_SKU) {
-                isPro = true
-                break
-            }
+        processPurchases(purchases) {
+            isPro = true
         }
 
         compositeDisposable.clear()
@@ -162,12 +158,9 @@ class PurchasesManager(
     private fun onQueryRestoredPurchases(purchasesResult: PurchaseResult) {
         var restored = false
         val purchases = purchasesResult.purchases
-        for (product in purchases.flatMap { it.products }) {
-            if (product == PRO_SKU) {
-                isPro = true
-                restored = true
-                break
-            }
+        processPurchases(purchases) {
+            isPro = true
+            restored = true
         }
 
         compositeDisposable.clear()
@@ -179,6 +172,89 @@ class PurchasesManager(
         }
     }
 
+    private fun processPurchases(purchases: List<Purchase>?, onPurchased: () -> Unit) {
+        Log.d(TAG, "processPurchases: ${purchases?.size} purchase(s)")
+
+        if (purchases.isNullOrEmpty()) {
+            return
+        }
+
+        val oneTimeProductPurchases =  purchases.filter { purchase ->
+            purchase.products.contains(PRO_SKU)
+        }
+
+        oneTimeProductPurchases.forEach { purchase ->
+            if (purchase.purchaseState == PurchaseState.PURCHASED ) {
+                if (purchase.isAcknowledged) {
+                    onPurchased()
+                } else {
+                    acknowledgePurchase(purchase.purchaseToken) {
+                        onPurchased()
+                    }
+                }
+            }
+        }
+    }
+
+    private fun acknowledgePurchase(purchaseToken: String, onSuccess: () -> Unit) {
+        val params = AcknowledgePurchaseParams.newBuilder()
+            .setPurchaseToken(purchaseToken)
+            .build()
+
+        // Using a background thread to handle retries asynchronously
+        Thread {
+            var retryCount = 1
+            var response = BillingResponse(500)
+            var bResult: BillingResult? = null
+
+            while (retryCount <= MAX_RETRY_ATTEMPT) {
+                // Call to acknowledge purchase
+                billingClient.acknowledgePurchase(params) { billingResult ->
+                    Log.i(TAG, "Acknowledge response code: ${billingResult.responseCode}")
+                    response = BillingResponse(billingResult.responseCode)
+                    bResult = billingResult
+                    bResult = billingResult
+                }
+
+                // Waiting for acknowledgePurchase to finish
+                Thread.sleep(500)
+
+                // Handling the response
+                when {
+                    response.isOk -> {
+                        Log.i(TAG, "Acknowledge success - token: $purchaseToken")
+                        onSuccess()
+                        return@Thread
+                    }
+
+                    response.canFailGracefully -> {
+                        Log.i(TAG, "Token $purchaseToken is already owned.")
+                        onSuccess()
+                        return@Thread
+                    }
+
+                    response.isRecoverableError -> {
+                        // Retry on recoverable errors
+                        val duration = 500L * 2.0.pow(retryCount).toLong()
+                        Thread.sleep(duration) // Delay between retries with exponential backoff
+                        if (retryCount < MAX_RETRY_ATTEMPT) {
+                            Log.i(TAG, "Retrying($retryCount) to acknowledge for token $purchaseToken - code: ${bResult!!.responseCode}, message: ${bResult!!.debugMessage}")
+                        }
+                    }
+
+                    response.isNonrecoverableError || response.isTerribleFailure -> {
+                        Log.e(TAG, "Failed to acknowledge for token $purchaseToken - code: ${bResult!!.responseCode}, message: ${bResult!!.debugMessage}")
+                        break
+                    }
+                }
+                retryCount++
+            }
+
+            Log.i(TAG, "Failed to acknowledge the purchase!")
+        }.start()  // Start the background thread
+    }
+
+
     override fun onConsumeResponse(billingResult: BillingResult, purchaseToken: String) {
         Log.i(TAG, "onConsumeResponse called with responseCode: ${billingResult.responseCode} for purchaseToken: $purchaseToken.")
     }
@@ -186,5 +262,6 @@ class PurchasesManager(
     companion object {
         const val TAG = "PurchasesManager"
         val PRO_SKU = if (BuildConfig.DEBUG) "android.test.purchased" else "pro"
+        private const val MAX_RETRY_ATTEMPT = 3
     }
 }
