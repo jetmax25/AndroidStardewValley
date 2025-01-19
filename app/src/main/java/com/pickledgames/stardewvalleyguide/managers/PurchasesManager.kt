@@ -41,7 +41,7 @@ class PurchasesManager(
             .setProductList(
                 listOf(
                     QueryProductDetailsParams.Product.newBuilder()
-                        .setProductId(PRO_SKU)
+                        .setProductId(NEW_PRO_SKU)
                         .setProductType(BillingClient.ProductType.INAPP)
                         .build()
                 )
@@ -179,8 +179,10 @@ class PurchasesManager(
             return
         }
 
-        val oneTimeProductPurchases =  purchases.filter { purchase ->
-            purchase.products.contains(PRO_SKU)
+        val oneTimeProductPurchases = purchases.filter { purchase ->
+            purchase.products.any { sku ->
+                sku in setOf(PRO_SKU, NEW_PRO_SKU)
+            }
         }
 
         oneTimeProductPurchases.forEach { purchase ->
@@ -262,6 +264,7 @@ class PurchasesManager(
     companion object {
         const val TAG = "PurchasesManager"
         val PRO_SKU = if (BuildConfig.DEBUG) "android.test.purchased" else "pro"
+        val NEW_PRO_SKU = if (BuildConfig.DEBUG) "android.test.purchased" else "pro_update"
         private const val MAX_RETRY_ATTEMPT = 3
     }
 }
