@@ -21,6 +21,7 @@ import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.managers.LoginManager
 import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
 import com.pickledgames.stardewvalleyguide.models.Farm
+import com.pickledgames.stardewvalleyguide.utils.runWithDelay
 import dagger.android.AndroidInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -139,6 +140,8 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         loginManager.lastLogin = Instant.now()
         loginManager.numberOfLogins++
         analyticsManager.logEvent("Opened App")
+
+        showPurchaseDialog()
     }
 
     private fun openPlayStore() {
@@ -159,6 +162,13 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
     private fun popFragment(): Boolean {
         return if (fragNavController.isRootFragment) false else fragNavController.popFragment()
     }
+
+    private fun showPurchaseDialog() {
+        runWithDelay(3000) {
+            PurchaseDialogFragment().show(supportFragmentManager, null)
+        }
+    }
+
 
     fun changeTab(tabIndex: Int) {
         binding.navigation.selectedItemId = when (tabIndex) {
