@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.databinding.FragmentDialogPurchaseBinding
 
 class PurchaseDialogFragment : BottomSheetDialogFragment() {
@@ -22,6 +23,8 @@ class PurchaseDialogFragment : BottomSheetDialogFragment() {
         _binding = FragmentDialogPurchaseBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun getTheme(): Int = R.style.TransparentBottomSheetStyle
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,7 +44,7 @@ class PurchaseDialogFragment : BottomSheetDialogFragment() {
             val behavior = BottomSheetBehavior.from(it)
 
             val screenHeight = resources.displayMetrics.heightPixels
-            val desiredHeight = (screenHeight * 0.85).toInt() // 85% of screen height
+            val desiredHeight = (screenHeight * 0.9).toInt() // 90% of screen height
 
             it.layoutParams.height = desiredHeight
             it.requestLayout()
