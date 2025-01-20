@@ -26,10 +26,6 @@ class PurchaseDialogFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.closeButton.setOnClickListener {
-            dismissNow()
-        }
-
         val fragment = PurchasesFragment()
         childFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
@@ -45,7 +41,7 @@ class PurchaseDialogFragment : BottomSheetDialogFragment() {
             val behavior = BottomSheetBehavior.from(it)
 
             val screenHeight = resources.displayMetrics.heightPixels
-            val desiredHeight = (screenHeight * 0.8).toInt() // 80% of screen height
+            val desiredHeight = (screenHeight * 0.85).toInt() // 85% of screen height
 
             it.layoutParams.height = desiredHeight
             it.requestLayout()

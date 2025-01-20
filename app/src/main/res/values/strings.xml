@@ -101,5 +101,6 @@
     <string name="ads_permission_message">Please, enter your age</string>
     <string name="ads_permission_accept">Enter</string>
     <string name="ads_permission_edit_hint">Your Age</string>
+    <string name="purchase">PURCHASE</string>
     <string name="dismiss">Dismiss</string>
 </resources>
