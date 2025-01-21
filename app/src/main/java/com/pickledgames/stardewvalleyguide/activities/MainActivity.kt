@@ -165,6 +165,7 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
 
     private fun showPurchaseDialog() {
         runWithDelay(3000) {
+            if (purchasesManager.isPro) return@runWithDelay
             PurchaseDialogFragment().show(supportFragmentManager, null)
         }
     }

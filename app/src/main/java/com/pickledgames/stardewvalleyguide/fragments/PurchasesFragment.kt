@@ -31,7 +31,7 @@ class PurchasesFragment : BaseFragment() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     binding.thanksTextView.visibility = if (it) View.VISIBLE else View.GONE
-                    binding.purchasesGroup.visibility = if (it) View.GONE else View.VISIBLE
+                    binding.purchasesGroup.visibility = if (it) { binding.purchaseButton.clearAnimation(); View.GONE } else View.VISIBLE
                 }
 
         compositeDisposable.add(disposable)

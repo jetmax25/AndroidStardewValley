@@ -22,19 +22,7 @@
         android:id="@+id/purchases_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="purchase_text_view, purchase_button, restore_purchases_button" />
-
-    <com.pickledgames.stardewvalleyguide.views.SignTextView
-        android:id="@+id/purchase_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:margin="8dp"
-        app:padding="5dp"
-        app:text="@string/purchase_pro"
-        app:textSize="22sp" />
+        app:constraint_referenced_ids="purchase_button, restore_purchases_button" />
 
     <Button
         android:id="@+id/purchase_button"
@@ -78,23 +66,25 @@
         android:layout_height="wrap_content"
         android:text="@string/toggle_pro_debug_only"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/restore_purchases_button"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.pickledgames.stardewvalleyguide.views.SignTextView
+    <TextView
         android:id="@+id/thanks_text_view"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/thank_you_pro"
+        android:textSize="22sp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/StardewTextViewStyle"
+        app:layout_constraintTop_toBottomOf="@id/pro_offer_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/purchase_text_view"
         app:layout_constraintVertical_bias="1.0"
         app:margin="8dp"
-        app:padding="5dp"
-        app:text="@string/thank_you_pro"
-        app:textSize="22sp" />
+        android:layout_marginVertical="42dp"
+        app:padding="5dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
