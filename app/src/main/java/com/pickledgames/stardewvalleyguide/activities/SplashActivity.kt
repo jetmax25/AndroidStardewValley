@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.ads.AdsService
 import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
+import com.pickledgames.stardewvalleyguide.utils.runWithDelay
 import dagger.android.AndroidInjection
 import io.reactivex.disposables.CompositeDisposable
 import java.util.concurrent.TimeUnit
@@ -30,15 +31,8 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun setup() {
-        if (!adsService.isAgeVerified()) {
-            goToAgeVerificationActivity()
-        } else {
-            val disposable = purchasesManager.initializedSubject
-                .delay(1, TimeUnit.SECONDS)
-                .doOnComplete { goToMainActivity() }
-                .subscribe()
-
-            compositeDisposable.add(disposable)
+        runWithDelay(1000) {
+            goToMainActivity()
         }
     }
 

@@ -20,9 +20,7 @@ class AdsService @Inject constructor(
         }
     }
 
-    fun areAdsEnabled() = sharedPreferences.let {
-        it.getBoolean(ADS_ENABLED_KEY, false) && it.getBoolean(ADS_AGE_VERIFIED_KEY, false)
-    }
+    fun areAdsEnabled() = true
 
     companion object {
         const val PREFS_NAME = "ads_settings"
