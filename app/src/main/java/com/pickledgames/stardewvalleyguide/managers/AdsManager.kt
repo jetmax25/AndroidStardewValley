@@ -19,39 +19,39 @@ class AdsManager(
     private val ads: HashMap<String, StardewInterstitialAd> = hashMapOf(
             VILLAGER_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/6267368292",
-                    3
+                    6
             ),
             GIFT_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/8401850693",
-                    3
+                    6
             ),
             COMMUNITY_CENTER_ITEM_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/4573629781",
-                    3
+                    6
             ),
             FISH_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/1372751378",
-                    3
+                    6
             ),
             MUSEUM_ITEM_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/5975706715",
-                    3
+                    6
             ),
             CROP_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/7443050293",
-                    3
+                    6
             ),
             EVENT_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/3041056264",
-                    3
+                    6
             ),
             RECIPE_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/9548137754",
-                    3
+                    6
             ),
             SHOP_FRAGMENT to StardewInterstitialAd(stardewApp, random,
                     "ca-app-pub-5594325776314197/2561709969",
-                    3
+                    6
             )
     )
     private var isPro: Boolean = false
