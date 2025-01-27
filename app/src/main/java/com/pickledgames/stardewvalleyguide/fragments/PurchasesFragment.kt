@@ -52,7 +52,7 @@ class PurchasesFragment : BaseFragment() {
         if (BuildConfig.DEBUG) {
             binding.toggleProButton.visibility = View.VISIBLE
             binding.toggleProButton.setOnClickListener {
-                purchasesManager.isPro = !purchasesManager.isPro
+                purchasesManager.toggleProState()
             }
         }
     }

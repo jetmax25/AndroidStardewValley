@@ -1,6 +1,7 @@
 package com.pickledgames.stardewvalleyguide.managers
 
 import android.app.Activity
+import android.content.SharedPreferences
 import android.util.Log
 import android.widget.Toast
 import com.android.billingclient.api.*
@@ -19,7 +20,8 @@ import kotlin.math.pow
 
 class PurchasesManager(
         private val stardewApp: StardewApp,
-        private val analyticsManager: Lazy<AnalyticsManager>
+        private val analyticsManager: Lazy<AnalyticsManager>,
+        private val  sharedPreferences: SharedPreferences
 ) : BillingClientStateListener, PurchasesUpdatedListener, ConsumeResponseListener {
 
     private var billingClient: BillingClient = BillingClient.newBuilder(stardewApp)
@@ -27,10 +29,11 @@ class PurchasesManager(
         .setListener(this)
         .build()
     private var billingConnectionAttempts: Int = 0
-    var isPro: Boolean = false
-        set(value) {
+    var isPro: Boolean = getProState()
+        private set(value) {
             field = value
             isProSubject.onNext(value)
+            saveProState(value)
         }
     // Used to tell SplashActivity when to transition
     var initializedSubject: PublishSubject<Any> = PublishSubject.create()
@@ -101,6 +104,10 @@ class PurchasesManager(
             billingClient.startConnection(this)
             Toast.makeText(stardewApp, R.string.billing_not_enabled, Toast.LENGTH_LONG).show()
         }
+    }
+
+    fun toggleProState() {
+        isPro = !isPro
     }
 
     override fun onPurchasesUpdated(result: BillingResult, purchases: MutableList<Purchase>?) {
@@ -261,8 +268,17 @@ class PurchasesManager(
         Log.i(TAG, "onConsumeResponse called with responseCode: ${billingResult.responseCode} for purchaseToken: $purchaseToken.")
     }
 
+    private fun getProState() =
+        sharedPreferences.getBoolean(PREF_KEY_PRO, false)
+
+
+    private fun saveProState(isProEnabled: Boolean) {
+        sharedPreferences.edit().putBoolean(PREF_KEY_PRO, isProEnabled).apply()
+    }
+
     companion object {
         const val TAG = "PurchasesManager"
+        private const val PREF_KEY_PRO = "is_pro"
         val PRO_SKU = if (BuildConfig.DEBUG) "android.test.purchased" else "pro"
         val NEW_PRO_SKU = if (BuildConfig.DEBUG) "android.test.purchased" else "pro_update"
         private const val MAX_RETRY_ATTEMPT = 3
