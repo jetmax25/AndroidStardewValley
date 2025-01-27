@@ -23,7 +23,7 @@ class PurchasesManager(
 ) : BillingClientStateListener, PurchasesUpdatedListener, ConsumeResponseListener {
 
     private var billingClient: BillingClient = BillingClient.newBuilder(stardewApp)
-        .enablePendingPurchases()
+        .enablePendingPurchases(PendingPurchasesParams.newBuilder().enableOneTimeProducts().build())
         .setListener(this)
         .build()
     private var billingConnectionAttempts: Int = 0
