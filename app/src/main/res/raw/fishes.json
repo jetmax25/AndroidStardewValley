@@ -1,2089 +1,2446 @@
 {
-  "Pufferfish": {
-    "Description": "Inflates when threatened.",
-    "Stats": {
-      "Common": {
-        "Health": 0,
-        "Energy": -100,
-        "Price": 200
-      },
-      "Silver": {
-        "Health": 0,
-        "Energy": -140,
-        "Price": 250
-      },
-      "Gold": {
-        "Health": 0,
-        "Energy": -180,
-        "Price": 300
-      }
-    },
-    "Availability": {
-      "Weather": "Sunny",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": false,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 12,
-        "End": 16
-      }
-    },
-    "Behavior": "Floater",
-    "XP": 29,
-    "Difficulty": 80,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Anchovy": {
-    "Description": "A small silver fish found in the ocean.",
-    "Stats": {
-      "Common": {
-        "Health": 5,
-        "Energy": 13,
-        "Price": 30
-      },
-      "Silver": {
-        "Health": 8,
-        "Energy": 18,
-        "Price": 37
-      },
-      "Gold": {
-        "Health": 10,
-        "Energy": 23,
-        "Price": 45
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 13,
-    "Difficulty": 30,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Tuna": {
-    "Description": "A large fish that lives in the ocean.",
-    "Stats": {
-      "Common": {
-        "Health": 17,
-        "Energy": 38,
-        "Price": 100
-      },
-      "Silver": {
-        "Health": 23,
-        "Energy": 53,
-        "Price": 125
-      },
-      "Gold": {
-        "Health": 30,
-        "Energy": 68,
-        "Price": 150
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Smooth",
-    "XP": 26,
-    "Difficulty": 70,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Sardine": {
-    "Description": "A common ocean fish.",
-    "Stats": {
-      "Common": {
-        "Health": 5,
-        "Energy": 13,
-        "Price": 40
-      },
-      "Silver": {
-        "Health": 8,
-        "Energy": 18,
-        "Price": 50
-      },
-      "Gold": {
-        "Health": 10,
-        "Energy": 23,
-        "Price": 60
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": false,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 13,
-    "Difficulty": 30,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Bream": {
-    "Description": "A fairly common river fish that becomes active at night.",
-    "Stats": {
-      "Common": {
-        "Health": 5,
-        "Energy": 13,
-        "Price": 45
-      },
-      "Silver": {
-        "Health": 8,
-        "Energy": 18,
-        "Price": 56
-      },
-      "Gold": {
-        "Health": 10,
-        "Energy": 23,
-        "Price": 67
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Town River",
-        "Forest River"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 18,
-        "End": 26
-      }
-    },
-    "Behavior": "Smooth",
-    "XP": 14,
-    "Difficulty": 35,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Largemouth Bass": {
-    "Description": "A popular fish that lives in lakes.",
-    "Stats": {
-      "Common": {
-        "Health": 17,
-        "Energy": 38,
-        "Price": 100
-      },
-      "Silver": {
-        "Health": 23,
-        "Energy": 53,
-        "Price": 125
-      },
-      "Gold": {
-        "Health": 30,
-        "Energy": 68,
-        "Price": 150
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Mountain Lake",
-        "Wilderness Farm"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 19,
-    "Difficulty": 50,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Smallmouth Bass": {
-    "Description": "A freshwater fish that is very sensitive to pollution",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 50
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 62
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 75
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Town River",
-        "Mountain Lake",
-        "Forest Pond",
-        "Riverland Farm Pond"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": false,
-        "Fall": true,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 12,
-    "Difficulty": 28,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Rainbow Trout": {
-    "Description": "A freshwater trout with colorful markings.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 65
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 81
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 97
-      }
-    },
-    "Availability": {
-      "Weather": "Sunny",
-      "Locations": [
-        "Town River",
-        "Forest River",
-        "Mountain Lake"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": false,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 18,
-    "Difficulty": 45,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Salmon": {
-    "Description": "A swim upstreams to lay its eggs.",
-    "Stats": {
-      "Common": {
-        "Health": 17,
-        "Energy": 38,
-        "Price": 75
-      },
-      "Silver": {
-        "Health": 23,
-        "Energy": 53,
-        "Price": 93
-      },
-      "Gold": {
-        "Health": 30,
-        "Energy": 68,
-        "Price": 112
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Town River",
-        "Forest River"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": true,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 19,
-    "Difficulty": 50,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Walleye": {
-    "Description": "A freshwater fish caught at night.",
-    "Stats": {
-      "Common": {
-        "Health": 13,
-        "Energy": 30,
-        "Price": 105
-      },
-      "Silver": {
-        "Health": 18,
-        "Energy": 42,
-        "Price": 131
-      },
-      "Gold": {
-        "Health": 24,
-        "Energy": 54,
-        "Price": 157
-      }
-    },
-    "Availability": {
-      "Weather": "Rainy",
-      "Locations": [
-        "Town River",
-        "Forest River",
-        "Forest Pond",
-        "Mountain Lake"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 12,
-        "End": 26
-      }
-    },
-    "Behavior": "Smooth",
-    "XP": 18,
-    "Difficulty": 45,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Perch": {
-    "Description": "A freshwater fish of the winter.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 55
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 68
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 82
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Forest River",
-        "Town River",
-        "Forest Pond",
-        "Mountain Lake"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 14,
-    "Difficulty": 35,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Carp": {
-    "Description": "A common pond fish.",
-    "Stats": {
-      "Common": {
-        "Health": 5,
-        "Energy": 13,
-        "Price": 30
-      },
-      "Silver": {
-        "Health": 8,
-        "Energy": 18,
-        "Price": 37
-      },
-      "Gold": {
-        "Health": 10,
-        "Energy": 23,
-        "Price": 45
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Mountain Lake (west side)",
-        "Sewers",
-        "Secret Woods Pond",
-        "Mutant Bug Lair"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 8,
-    "Difficulty": 15,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Catfish": {
-    "Description": "An uncommon fish found in streams.",
-    "Stats": {
-      "Common": {
-        "Health": 22,
-        "Energy": 50,
-        "Price": 200
-      },
-      "Silver": {
-        "Health": 31,
-        "Energy": 70,
-        "Price": 250
-      },
-      "Gold": {
-        "Health": 40,
-        "Energy": 90,
-        "Price": 300
-      }
-    },
-    "Availability": {
-      "Weather": "Rainy",
-      "Locations": [
-        "Town River",
-        "Forest River",
-        "Secret Woods Pond (Summer only)",
-        "Witch's Swamp (Summer Only)",
-        "Hilltop Farm Pond",
-        "Riverlands Farm Pond"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 28,
-    "Difficulty": 75,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Pike": {
-    "Description": "A freshwater fish that's difficult to catch.",
-    "Stats": {
-      "Common": {
-        "Health": 17,
-        "Energy": 38,
-        "Price": 100
-      },
-      "Silver": {
-        "Health": 23,
-        "Energy": 53,
-        "Price": 125
-      },
-      "Gold": {
-        "Health": 30,
-        "Energy": 68,
-        "Price": 150
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Town River",
-        "Forest River",
-        "Forest Pond",
-        "Riverland Farm Pond",
-        "Farm Pond"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 23,
-    "Difficulty": 60,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Sunfish": {
-    "Description": "A common river fish.",
-    "Stats": {
-      "Common": {
-        "Health": 5,
-        "Energy": 13,
-        "Price": 30
-      },
-      "Silver": {
-        "Health": 8,
-        "Energy": 18,
-        "Price": 37
-      },
-      "Gold": {
-        "Health": 10,
-        "Energy": 23,
-        "Price": 45
-      }
-    },
-    "Availability": {
-      "Weather": "Sunny",
-      "Locations": [
-        "Town River",
-        "Forest River",
-        "Riverland Farm Pond",
-        "Wilderness Farm Pond"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": false,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 13,
-    "Difficulty": 30,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Red Mullet": {
-    "Description": "Long ago these were kept as pets.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 75
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 93
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 112
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Smooth",
-    "XP": 21,
-    "Difficulty": 55,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Herring": {
-    "Description": "A common ocean fish.",
-    "Stats": {
-      "Common": {
-        "Health": 5,
-        "Energy": 13,
-        "Price": 30
-      },
-      "Silver": {
-        "Health": 8,
-        "Energy": 18,
-        "Price": 37
-      },
-      "Gold": {
-        "Health": 10,
-        "Energy": 23,
-        "Price": 45
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": false,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 11,
-    "Difficulty": 25,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Eel": {
-    "Description": "A long, slippery little fish.",
-    "Stats": {
-      "Common": {
-        "Health": 13,
-        "Energy": 30,
-        "Price": 85
-      },
-      "Silver": {
-        "Health": 18,
-        "Energy": 42,
-        "Price": 106
-      },
-      "Gold": {
-        "Health": 24,
-        "Energy": 54,
-        "Price": 127
-      }
-    },
-    "Availability": {
-      "Weather": "Rainy",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": false,
-        "Fall": true,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 16,
-        "End": 26
-      }
-    },
-    "Behavior": "Smooth",
-    "XP": 26,
-    "Difficulty": 70,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Octopus": {
-    "Description": "A mysterious and intelligent creature.",
-    "Stats": {
-      "Common": {
-        "Health": 0,
-        "Energy": 0,
-        "Price": 150
-      },
-      "Silver": {
-        "Health": 0,
-        "Energy": 0,
-        "Price": 187
-      },
-      "Gold": {
-        "Health": 0,
-        "Energy": 0,
-        "Price": 225
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": false,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 13
-      }
-    },
-    "Behavior": "Sinker",
-    "XP": 34,
-    "Difficulty": 95,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Red Snapper": {
-    "Description": "A popular Fish with a nice red color.",
-    "Stats": {
-      "Common": {
-        "Health": 0,
-        "Energy": 25,
-        "Price": 50
-      },
-      "Silver": {
-        "Health": 0,
-        "Energy": 35,
-        "Price": 62
-      },
-      "Gold": {
-        "Health": 0,
-        "Energy": 45,
-        "Price": 75
-      }
-    },
-    "Availability": {
-      "Weather": "Rainy",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 16,
-    "Difficulty": 40,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Squid": {
-    "Description": "A deep sea creature that can grow to an enermous size.",
-    "Stats": {
-      "Common": {
-        "Health": 0,
-        "Energy": 25,
-        "Price": 80
-      },
-      "Silver": {
-        "Health": 0,
-        "Energy": 35,
-        "Price": 100
-      },
-      "Gold": {
-        "Health": 0,
-        "Energy": 45,
-        "Price": 120
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 14
-      }
-    },
-    "Behavior": "Sinker",
-    "XP": 28,
-    "Difficulty": 75,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Sea Cucumber": {
-    "Description": "A slippery, slimy creature found on the ocean floor.",
-    "Stats": {
-      "Common": {
-        "Health": 0,
-        "Energy": -25,
-        "Price": 75
-      },
-      "Silver": {
-        "Health": 0,
-        "Energy": -35,
-        "Price": 93
-      },
-      "Gold": {
-        "Health": 0,
-        "Energy": -45,
-        "Price": 112
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Sinker",
-    "XP": 16,
-    "Difficulty": 40,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Super Cucumber": {
-    "Description": "A rare, purple variety of sea cucumber",
-    "Stats": {
-      "Common": {
-        "Health": 56,
-        "Energy": 125,
-        "Price": 250
-      },
-      "Silver": {
-        "Health": 78,
-        "Energy": 175,
-        "Price": 312
-      },
-      "Gold": {
-        "Health": 101,
-        "Energy": 225,
-        "Price": 375
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean (Eastern Pier)"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": true,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 14
-      }
-    },
-    "Behavior": "Sinker",
-    "XP": 31,
-    "Difficulty": 85,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Ghostfish": {
-    "Description": "A pale, blind fish found in underground lakes",
-    "Stats": {
-      "Common": {
-        "Health": 17,
-        "Energy": 38,
-        "Price": 45
-      },
-      "Silver": {
-        "Health": 23,
-        "Energy": 53,
-        "Price": 56
-      },
-      "Gold": {
-        "Health": 30,
-        "Energy": 68,
-        "Price": 67
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Mines (Lvl 20)",
-        "Mines (Lvl 60)",
-        "Ghost drops"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 19,
-    "Difficulty": 50,
-    "Legendary": false,
-    "Fishing Level": 3
-  },
-  "Stonefish": {
-    "Description": "A bizarre fish that's shaped like a brick.",
-    "Stats": {
-      "Common": {
-        "Health": 0,
-        "Energy": 0,
-        "Price": 300
-      },
-      "Silver": {
-        "Health": 0,
-        "Energy": 0,
-        "Price": 375
-      },
-      "Gold": {
-        "Health": 0,
-        "Energy": 0,
-        "Price": 450
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Mines (Lvl 20)",
-        "Mines (Lvl 60)"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 31,
-    "Difficulty": 85,
-    "Legendary": false,
-    "Fishing Level": 5
-  },
-  "Ice Pip": {
-    "Description": "A rare fish that thrives in extremely cold condition.",
-    "Stats": {
-      "Common": {
-        "Health": 17,
-        "Energy": 38,
-        "Price": 500
-      },
-      "Silver": {
-        "Health": 23,
-        "Energy": 53,
-        "Price": 625
-      },
-      "Gold": {
-        "Health": 30,
-        "Energy": 68,
-        "Price": 750
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Mines (Lvl 60)"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 31,
-    "Difficulty": 85,
-    "Legendary": false,
-    "Fishing Level": 5
-  },
-  "Lava Eel": {
-    "Description": "It can somehow survive in pools of red-hot lava.",
-    "Stats": {
-      "Common": {
-        "Health": 22,
-        "Energy": 50,
-        "Price": 700
-      },
-      "Silver": {
-        "Health": 31,
-        "Energy": 70,
-        "Price": 875
-      },
-      "Gold": {
-        "Health": 40,
-        "Energy": 90,
-        "Price": 1050
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Mines (Lvl 100)"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 33,
-    "Difficulty": 90,
-    "Legendary": false,
-    "Fishing Level": 7
-  },
-  "Sandfish": {
-    "Description": "It tries to hide using camouflouge.",
-    "Stats": {
-      "Common": {
-        "Health": 5,
-        "Energy": 13,
-        "Price": 150
-      },
-      "Silver": {
-        "Health": 8,
-        "Energy": 18,
-        "Price": 187
-      },
-      "Gold": {
-        "Health": 10,
-        "Energy": 23,
-        "Price": 225
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "The Desert"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 24,
-    "Difficulty": 90,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Scorpion Carp": {
-    "Description": "It's like a regular carp, but with a sharp stinger.",
-    "Stats": {
-      "Common": {
-        "Health": 0,
-        "Energy": -125,
-        "Price": 150
-      },
-      "Silver": {
-        "Health": 0,
-        "Energy": -175,
-        "Price": 187
-      },
-      "Gold": {
-        "Health": 0,
-        "Energy": -225,
-        "Price": 225
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "The Desert"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 33,
-    "Difficulty": 90,
-    "Legendary": false,
-    "Fishing Level": 4
-  },
-  "Sturgeon": {
-    "Description": "An ancient bottom-feeder with a dwindling population. Females can live up to 150 years.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 200
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 250
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 300
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Mountain Lake (usually in the corner in front of Adventurer's Guild)"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 29,
-    "Difficulty": 78,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Tiger Trout": {
-    "Description": "A rare hybrid trout that cannot bear offspring of its own.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 150
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 187
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 225
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Town River",
-        "Forest River"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 23,
-    "Difficulty": 60,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Bullhead": {
-    "Description": "A relative of the catfish that eats a variety of foods off the bottom of the lake.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 75
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 93
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 112
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Mountain Lake"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Smooth",
-    "XP": 19,
-    "Difficulty": 46,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Tilapia": {
-    "Description": "A primarily vegetarian fish that prefers warm water.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 75
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 93
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 112
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": true,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 14
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 19,
-    "Difficulty": 50,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Chub": {
-    "Description": "A common freshwater fish known for its voracious appetite.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 50
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 62
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 75
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Forest River",
-        "Mountain Lake"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 14,
-    "Difficulty": 35,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Dorado": {
-    "Description": "A fierce carnivore with brilliant orange scales.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 100
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 125
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 150
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Forest River"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": false,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 19
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 29,
-    "Difficulty": 78,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Albacore": {
-    "Description": "Prefers temperature \"edges\" here cool and water meet.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 75
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 93
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 112
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 11
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 23,
-    "Difficulty": 60,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Shad": {
-    "Description": "Lives in a school at sea, but returns to the rivers to spawn.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 60
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 75
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 90
-      }
-    },
-    "Availability": {
-      "Weather": "Rainy",
-      "Locations": [
-        "Town River",
-        "Forest River"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 9,
-        "End": 14
-      }
-    },
-    "Behavior": "Smooth",
-    "XP": 18,
-    "Difficulty": 45,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Lingcod": {
-    "Description": "A fearsome predator that will eat almost anything it can cram into its mouth.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 120
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 150
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 180
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Town River",
-        "Forest River",
-        "Mountain Lake"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 31,
-    "Difficulty": 85,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Halibut": {
-    "Description": "A flat fish that lives on the ocean floor.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 80
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 100
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 120
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Ocean"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Sinker",
-    "XP": 19,
-    "Difficulty": 50,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Woodskip": {
-    "Description": "A very sensitive fish that can only live in pools deep in the forest.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 75
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 93
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 112
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Secret Woods Pond"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 19,
-    "Difficulty": 50,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Void Salmon": {
-    "Description": "A salmon, twisted by void energy. The fresh meat is jet black, but rapidly turns pink when exposed to air.",
-    "Stats": {
-      "Common": {
-        "Health": 28,
-        "Energy": 63,
-        "Price": 150
-      },
-      "Silver": {
-        "Health": 39,
-        "Energy": 88,
-        "Price": 187
-      },
-      "Gold": {
-        "Health": 50,
-        "Energy": 113,
-        "Price": 225
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Witch's Swamp"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 29,
-    "Difficulty": 80,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Slimejack": {
-    "Description": "He's coated in a very thick layer of slime. He keeps slipping out of your hands!",
-    "Stats": {
-      "Common": {
-        "Health": 17,
-        "Energy": 38,
-        "Price": 100
-      },
-      "Silver": {
-        "Health": 23,
-        "Energy": 53,
-        "Price": 125
-      },
-      "Gold": {
-        "Health": 30,
-        "Energy": 68,
-        "Price": 150
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Mutant Bug Lair"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 21,
-    "Difficulty": 55,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Crimsonfish": {
-    "Description": "Lives deep in the ocean buy likes to lay its eggs in the warm summer water.",
-    "Stats": {
-      "Common": {
-        "Health": 17,
-        "Energy": 38,
-        "Price": 1500
-      },
-      "Silver": {
-        "Health": 23,
-        "Energy": 53,
-        "Price": 1875
-      },
-      "Gold": {
-        "Health": 30,
-        "Energy": 68,
-        "Price": 2250
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "The Beach (East Pier, past bridge, deep water)"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": true,
-        "Fall": false,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 170,
-    "Difficulty": 95,
-    "Legendary": true,
-    "Fishing Level": 5
-  },
-  "Angler": {
-    "Description": "Uses a bioluminescent dangler to attract prey.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 900
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 1125
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 1350
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "North of JojaMart, stand on wooden blank bridge. Cast in the center."
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": true,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Smooth",
-    "XP": 155,
-    "Difficulty": 85,
-    "Legendary": true,
-    "Fishing Level": 3
-  },
-  "Legend": {
-    "Description": "The king of all fish! They said he'd never be caught.",
-    "Stats": {
-      "Common": {
-        "Health": 225,
-        "Energy": 500,
-        "Price": 5000
-      },
-      "Silver": {
-        "Health": 315,
-        "Energy": 700,
-        "Price": 6250
-      },
-      "Gold": {
-        "Health": 405,
-        "Energy": 900,
-        "Price": 7500
-      }
-    },
-    "Availability": {
-      "Weather": "Rainy",
-      "Locations": [
-        "Mountain Lake (deep water, near the log)"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": false,
-        "Fall": false,
-        "Winter": false
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 198,
-    "Difficulty": 110,
-    "Legendary": true,
-    "Fishing Level": 10
-  },
-  "Glacierfish": {
-    "Description": "Builds a nest on the underside of glaciers.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 1000
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 1250
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 1500
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "South in Cindersap Forest there is a a small island on the river. It is connected to land by wooden planks. Stand on the soutmost tip of the island, cast into deep water."
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Mixed",
-    "XP": 181,
-    "Difficulty": 100,
-    "Legendary": true,
-    "Fishing Level": 6
-  },
-  "Mutant Carp": {
-    "Description": "The strange waters of the sewer turned this carp into a monstrosity.",
-    "Stats": {
-      "Common": {
-        "Health": 11,
-        "Energy": 25,
-        "Price": 1000
-      },
-      "Silver": {
-        "Health": 15,
-        "Energy": 35,
-        "Price": 1250
-      },
-      "Gold": {
-        "Health": 20,
-        "Energy": 45,
-        "Price": 1500
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "The Sewers"
-      ],
-      "Seasons": {
-        "Spring": true,
-        "Summer": true,
-        "Fall": true,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 6,
-        "End": 26
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 148,
-    "Difficulty": 80,
-    "Legendary": true,
-    "Fishing Level": 0
-  },
-  "Midnight Squid": {
-    "Description": "A strange and mysterious denizen of the ocean's twilight depths.",
-    "Stats": {
-      "Common": {
-        "Health": 17,
-        "Energy": 38,
-        "Price": 100
-      },
-      "Silver": {
-        "Health": 23,
-        "Energy": 53,
-        "Price": 125
-      },
-      "Gold": {
-        "Health": 30,
-        "Energy": 68,
-        "Price": 150
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Submarine at Night Market"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 17,
-        "End": 26
-      }
-    },
-    "Behavior": "Sinker",
-    "XP": 21,
-    "Difficulty": 55,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Spook Fish": {
-    "Description": "The huge eyes can detect the faint silhouettes of prety.",
-    "Stats": {
-      "Common": {
-        "Health": 17,
-        "Energy": 38,
-        "Price": 220
-      },
-      "Silver": {
-        "Health": 23,
-        "Energy": 53,
-        "Price": 275
-      },
-      "Gold": {
-        "Health": 30,
-        "Energy": 68,
-        "Price": 330
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Submarine at Night Market"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 17,
-        "End": 26
-      }
-    },
-    "Behavior": "Dart",
-    "XP": 23,
-    "Difficulty": 60,
-    "Legendary": false,
-    "Fishing Level": 0
-  },
-  "Blobfish": {
-    "Description": "This odd creature floats above the ocean floor, consuming any edible material in its path.",
-    "Stats": {
-      "Common": {
-        "Health": 17,
-        "Energy": 38,
-        "Price": 500
-      },
-      "Silver": {
-        "Health": 23,
-        "Energy": 53,
-        "Price": 625
-      },
-      "Gold": {
-        "Health": 30,
-        "Energy": 68,
-        "Price": 750
-      }
-    },
-    "Availability": {
-      "Weather": "Any",
-      "Locations": [
-        "Submarine at Night Market"
-      ],
-      "Seasons": {
-        "Spring": false,
-        "Summer": false,
-        "Fall": false,
-        "Winter": true
-      },
-      "Time": {
-        "Start": 17,
-        "End": 26
-      }
-    },
-    "Behavior": "Floater",
-    "XP": 28,
-    "Difficulty": 75,
-    "Legendary": false,
-    "Fishing Level": 0
-  }
+    "Flounder":
+    {
+        "Description": "It lives on the bottom, so both eyes are on top of its head.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 100
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 125
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 150
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": false,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 20
+            }
+        },
+        "Behavior": "Sinker",
+        "XP": 19,
+        "Difficulty": 50,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Midnight Carp":
+    {
+        "Description": "This shy fish only feels comfortable at night.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 22,
+                "Energy": 50,
+                "Price": 150
+            },
+            "Silver":
+            {
+                "Health": 31,
+                "Energy": 70,
+                "Price": 187
+            },
+            "Gold":
+            {
+                "Health": 40,
+                "Energy": 90,
+                "Price": 225
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Mountain Lake", "Cindersap Forest Pond"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 22,
+                "End": 2
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 21,
+        "Difficulty": 55,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Pufferfish":
+    {
+        "Description": "Inflates when threatened.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 0,
+                "Energy": -100,
+                "Price": 200
+            },
+            "Silver":
+            {
+                "Health": 0,
+                "Energy": -140,
+                "Price": 250
+            },
+            "Gold":
+            {
+                "Health": 0,
+                "Energy": -180,
+                "Price": 300
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Sunny",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": false,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 12,
+                "End": 16
+            }
+        },
+        "Behavior": "Floater",
+        "XP": 29,
+        "Difficulty": 80,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Anchovy":
+    {
+        "Description": "A small silver fish found in the ocean.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 5,
+                "Energy": 13,
+                "Price": 30
+            },
+            "Silver":
+            {
+                "Health": 8,
+                "Energy": 18,
+                "Price": 37
+            },
+            "Gold":
+            {
+                "Health": 10,
+                "Energy": 23,
+                "Price": 45
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 13,
+        "Difficulty": 30,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Tuna":
+    {
+        "Description": "A large fish that lives in the ocean.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 100
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 125
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 150
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Smooth",
+        "XP": 26,
+        "Difficulty": 70,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Sardine":
+    {
+        "Description": "A common ocean fish.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 5,
+                "Energy": 13,
+                "Price": 40
+            },
+            "Silver":
+            {
+                "Health": 8,
+                "Energy": 18,
+                "Price": 50
+            },
+            "Gold":
+            {
+                "Health": 10,
+                "Energy": 23,
+                "Price": 60
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": false,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 13,
+        "Difficulty": 30,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Bream":
+    {
+        "Description": "A fairly common river fish that becomes active at night.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 5,
+                "Energy": 13,
+                "Price": 45
+            },
+            "Silver":
+            {
+                "Health": 8,
+                "Energy": 18,
+                "Price": 56
+            },
+            "Gold":
+            {
+                "Health": 10,
+                "Energy": 23,
+                "Price": 67
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Town River", "Forest River"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 14
+            }
+        },
+        "Behavior": "Smooth",
+        "XP": 14,
+        "Difficulty": 35,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Largemouth Bass":
+    {
+        "Description": "A popular fish that lives in lakes.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 100
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 125
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 150
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Mountain Lake", "Wilderness Farm"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 19,
+        "Difficulty": 50,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Smallmouth Bass":
+    {
+        "Description": "A freshwater fish that is very sensitive to pollution",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 50
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 62
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 75
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Town River", "Mountain Lake", "Forest Pond", "Riverland Farm Pond"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": false,
+                "Fall": true,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 12,
+        "Difficulty": 28,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Rainbow Trout":
+    {
+        "Description": "A freshwater trout with colorful markings.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 65
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 81
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 97
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Sunny",
+            "Locations": ["Town River", "Forest River", "Mountain Lake"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": false,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 18,
+        "Difficulty": 45,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Salmon":
+    {
+        "Description": "A swim upstreams to lay its eggs.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 75
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 93
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 112
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Town River", "Forest River"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": true,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 19,
+        "Difficulty": 50,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Walleye":
+    {
+        "Description": "A freshwater fish caught at night.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 13,
+                "Energy": 30,
+                "Price": 105
+            },
+            "Silver":
+            {
+                "Health": 18,
+                "Energy": 42,
+                "Price": 131
+            },
+            "Gold":
+            {
+                "Health": 24,
+                "Energy": 54,
+                "Price": 157
+            }
+        },
+        "Availability":
+        {
+            "Weather": "rainy",
+            "Locations": ["Town River", "Forest River", "Forest Pond", "Mountain Lake"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 12,
+                "End": 26
+            }
+        },
+        "Behavior": "Smooth",
+        "XP": 18,
+        "Difficulty": 45,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Perch":
+    {
+        "Description": "A freshwater fish of the winter.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 55
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 68
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 82
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Forest River", "Town River", "Forest Pond", "Mountain Lake"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 14,
+        "Difficulty": 35,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Carp":
+    {
+        "Description": "A common pond fish.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 5,
+                "Energy": 13,
+                "Price": 30
+            },
+            "Silver":
+            {
+                "Health": 8,
+                "Energy": 18,
+                "Price": 37
+            },
+            "Gold":
+            {
+                "Health": 10,
+                "Energy": 23,
+                "Price": 45
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Mountain Lake (west side)", "Sewers", "Secret Woods Pond", "Mutant Bug Lair"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 8,
+        "Difficulty": 15,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Catfish":
+    {
+        "Description": "An uncommon fish found in streams.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 22,
+                "Energy": 50,
+                "Price": 200
+            },
+            "Silver":
+            {
+                "Health": 31,
+                "Energy": 70,
+                "Price": 250
+            },
+            "Gold":
+            {
+                "Health": 40,
+                "Energy": 90,
+                "Price": 300
+            }
+        },
+        "Availability":
+        {
+            "Weather": "rainy",
+            "Locations": ["Town River", "Forest River", "Secret Woods Pond (Summer only)", "Witch's Swamp (Summer Only)", "Hilltop Farm Pond", "Riverlands Farm Pond"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 28,
+        "Difficulty": 75,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Pike":
+    {
+        "Description": "A freshwater fish that's difficult to catch.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 100
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 125
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 150
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Town River", "Forest River", "Forest Pond", "Riverland Farm Pond", "Farm Pond"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 23,
+        "Difficulty": 60,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Sunfish":
+    {
+        "Description": "A common river fish.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 5,
+                "Energy": 13,
+                "Price": 30
+            },
+            "Silver":
+            {
+                "Health": 8,
+                "Energy": 18,
+                "Price": 37
+            },
+            "Gold":
+            {
+                "Health": 10,
+                "Energy": 23,
+                "Price": 45
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Sunny",
+            "Locations": ["Town River", "Forest River", "Riverland Farm Pond", "Wilderness Farm Pond"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": false,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 13,
+        "Difficulty": 30,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Red Mullet":
+    {
+        "Description": "Long ago these were kept as pets.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 75
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 93
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 112
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Smooth",
+        "XP": 21,
+        "Difficulty": 55,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Herring":
+    {
+        "Description": "A common ocean fish.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 5,
+                "Energy": 13,
+                "Price": 30
+            },
+            "Silver":
+            {
+                "Health": 8,
+                "Energy": 18,
+                "Price": 37
+            },
+            "Gold":
+            {
+                "Health": 10,
+                "Energy": 23,
+                "Price": 45
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": false,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 11,
+        "Difficulty": 25,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Eel":
+    {
+        "Description": "A long, slippery little fish.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 13,
+                "Energy": 30,
+                "Price": 85
+            },
+            "Silver":
+            {
+                "Health": 18,
+                "Energy": 42,
+                "Price": 106
+            },
+            "Gold":
+            {
+                "Health": 24,
+                "Energy": 54,
+                "Price": 127
+            }
+        },
+        "Availability":
+        {
+            "Weather": "rainy",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": false,
+                "Fall": true,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 16,
+                "End": 26
+            }
+        },
+        "Behavior": "Smooth",
+        "XP": 26,
+        "Difficulty": 70,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Octopus":
+    {
+        "Description": "A mysterious and intelligent creature.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 0,
+                "Energy": 0,
+                "Price": 150
+            },
+            "Silver":
+            {
+                "Health": 0,
+                "Energy": 0,
+                "Price": 187
+            },
+            "Gold":
+            {
+                "Health": 0,
+                "Energy": 0,
+                "Price": 225
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": false,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 13
+            }
+        },
+        "Behavior": "Sinker",
+        "XP": 34,
+        "Difficulty": 95,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Red Snapper":
+    {
+        "Description": "A popular Fish with a nice red color.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 0,
+                "Energy": 25,
+                "Price": 50
+            },
+            "Silver":
+            {
+                "Health": 0,
+                "Energy": 35,
+                "Price": 62
+            },
+            "Gold":
+            {
+                "Health": 0,
+                "Energy": 45,
+                "Price": 75
+            }
+        },
+        "Availability":
+        {
+            "Weather": "rainy",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 16,
+        "Difficulty": 40,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Squid":
+    {
+        "Description": "A deep sea creature that can grow to an enermous size.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 0,
+                "Energy": 25,
+                "Price": 80
+            },
+            "Silver":
+            {
+                "Health": 0,
+                "Energy": 35,
+                "Price": 100
+            },
+            "Gold":
+            {
+                "Health": 0,
+                "Energy": 45,
+                "Price": 120
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 14
+            }
+        },
+        "Behavior": "Sinker",
+        "XP": 28,
+        "Difficulty": 75,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Sea Cucumber":
+    {
+        "Description": "A slippery, slimy creature found on the ocean floor.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 0,
+                "Energy": -25,
+                "Price": 75
+            },
+            "Silver":
+            {
+                "Health": 0,
+                "Energy": -35,
+                "Price": 93
+            },
+            "Gold":
+            {
+                "Health": 0,
+                "Energy": -45,
+                "Price": 112
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Sinker",
+        "XP": 16,
+        "Difficulty": 40,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Super Cucumber":
+    {
+        "Description": "A rare, purple variety of sea cucumber",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 56,
+                "Energy": 125,
+                "Price": 250
+            },
+            "Silver":
+            {
+                "Health": 78,
+                "Energy": 175,
+                "Price": 312
+            },
+            "Gold":
+            {
+                "Health": 101,
+                "Energy": 225,
+                "Price": 375
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean (Eastern Pier)"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": true,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 18,
+                "End": 26
+            }
+        },
+        "Behavior": "Sinker",
+        "XP": 31,
+        "Difficulty": 85,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Ghostfish":
+    {
+        "Description": "A pale, blind fish found in underground lakes",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 45
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 56
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 67
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Mines (Lvl 20)", "Mines (Lvl 60)", "Ghost drops"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 19,
+        "Difficulty": 50,
+        "Legendary": false,
+        "Fishing Level": 3
+    },
+    "Stonefish":
+    {
+        "Description": "A bizarre fish that's shaped like a brick.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 0,
+                "Energy": 0,
+                "Price": 300
+            },
+            "Silver":
+            {
+                "Health": 0,
+                "Energy": 0,
+                "Price": 375
+            },
+            "Gold":
+            {
+                "Health": 0,
+                "Energy": 0,
+                "Price": 450
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Mines (Lvl 20)", "Mines (Lvl 60)"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 31,
+        "Difficulty": 85,
+        "Legendary": false,
+        "Fishing Level": 5
+    },
+    "Ice Pip":
+    {
+        "Description": "A rare fish that thrives in extremely cold condition.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 500
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 625
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 750
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Mines (Lvl 60)"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 31,
+        "Difficulty": 85,
+        "Legendary": false,
+        "Fishing Level": 5
+    },
+    "Lava Eel":
+    {
+        "Description": "It can somehow survive in pools of red-hot lava.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 22,
+                "Energy": 50,
+                "Price": 700
+            },
+            "Silver":
+            {
+                "Health": 31,
+                "Energy": 70,
+                "Price": 875
+            },
+            "Gold":
+            {
+                "Health": 40,
+                "Energy": 90,
+                "Price": 1050
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Mines (Lvl 100)"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 33,
+        "Difficulty": 90,
+        "Legendary": false,
+        "Fishing Level": 7
+    },
+    "Sandfish":
+    {
+        "Description": "It tries to hide using camouflouge.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 5,
+                "Energy": 13,
+                "Price": 150
+            },
+            "Silver":
+            {
+                "Health": 8,
+                "Energy": 18,
+                "Price": 187
+            },
+            "Gold":
+            {
+                "Health": 10,
+                "Energy": 23,
+                "Price": 225
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["The Desert"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 24,
+        "Difficulty": 90,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Scorpion Carp":
+    {
+        "Description": "It's like a regular carp, but with a sharp stinger.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 0,
+                "Energy": -125,
+                "Price": 150
+            },
+            "Silver":
+            {
+                "Health": 0,
+                "Energy": -175,
+                "Price": 187
+            },
+            "Gold":
+            {
+                "Health": 0,
+                "Energy": -225,
+                "Price": 225
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["The Desert"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 33,
+        "Difficulty": 90,
+        "Legendary": false,
+        "Fishing Level": 4
+    },
+    "Sturgeon":
+    {
+        "Description": "An ancient bottom-feeder with a dwindling population. Females can live up to 150 years.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 200
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 250
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 300
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Mountain Lake (usually in the corner in front of Adventurer's Guild)"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 29,
+        "Difficulty": 78,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Tiger Trout":
+    {
+        "Description": "A rare hybrid trout that cannot bear offspring of its own.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 150
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 187
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 225
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Town River", "Forest River"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 23,
+        "Difficulty": 60,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Bullhead":
+    {
+        "Description": "A relative of the catfish that eats a variety of foods off the bottom of the lake.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 75
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 93
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 112
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Mountain Lake"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Smooth",
+        "XP": 19,
+        "Difficulty": 46,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Tilapia":
+    {
+        "Description": "A primarily vegetarian fish that prefers warm water.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 75
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 93
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 112
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": true,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 14
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 19,
+        "Difficulty": 50,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Chub":
+    {
+        "Description": "A common freshwater fish known for its voracious appetite.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 50
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 62
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 75
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Forest River", "Mountain Lake"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 14,
+        "Difficulty": 35,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Dorado":
+    {
+        "Description": "A fierce carnivore with brilliant orange scales.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 100
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 125
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 150
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Forest River"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": false,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 19
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 29,
+        "Difficulty": 78,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Albacore":
+    {
+        "Description": "Prefers temperature \"edges\" here cool and water meet.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 75
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 93
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 112
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 11
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 23,
+        "Difficulty": 60,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Shad":
+    {
+        "Description": "Lives in a school at sea, but returns to the rivers to spawn.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 60
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 75
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 90
+            }
+        },
+        "Availability":
+        {
+            "Weather": "rainy",
+            "Locations": ["Town River", "Forest River"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 9,
+                "End": 14
+            }
+        },
+        "Behavior": "Smooth",
+        "XP": 18,
+        "Difficulty": 45,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Lingcod":
+    {
+        "Description": "A fearsome predator that will eat almost anything it can cram into its mouth.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 120
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 150
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 180
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Town River", "Forest River", "Mountain Lake"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 31,
+        "Difficulty": 85,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Halibut":
+    {
+        "Description": "A flat fish that lives on the ocean floor.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 80
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 100
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 120
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Ocean"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Sinker",
+        "XP": 19,
+        "Difficulty": 50,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Woodskip":
+    {
+        "Description": "A very sensitive fish that can only live in pools deep in the forest.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 75
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 93
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 112
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Secret Woods Pond"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 19,
+        "Difficulty": 50,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Void Salmon":
+    {
+        "Description": "A salmon, twisted by void energy. The fresh meat is jet black, but rapidly turns pink when exposed to air.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 28,
+                "Energy": 63,
+                "Price": 150
+            },
+            "Silver":
+            {
+                "Health": 39,
+                "Energy": 88,
+                "Price": 187
+            },
+            "Gold":
+            {
+                "Health": 50,
+                "Energy": 113,
+                "Price": 225
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Witch's Swamp"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 29,
+        "Difficulty": 80,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Slimejack":
+    {
+        "Description": "He's coated in a very thick layer of slime. He keeps slipping out of your hands!",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 100
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 125
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 150
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Mutant Bug Lair"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 21,
+        "Difficulty": 55,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Crimsonfish":
+    {
+        "Description": "Lives deep in the ocean buy likes to lay its eggs in the warm summer water.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 1500
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 1875
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 2250
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["The Beach (East Pier, past bridge, deep water)"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": true,
+                "Fall": false,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 170,
+        "Difficulty": 95,
+        "Legendary": true,
+        "Fishing Level": 5
+    },
+    "Angler":
+    {
+        "Description": "Uses a bioluminescent dangler to attract prey.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 900
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 1125
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 1350
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["North of JojaMart, stand on wooden blank bridge. Cast in the center."],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": true,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Smooth",
+        "XP": 155,
+        "Difficulty": 85,
+        "Legendary": true,
+        "Fishing Level": 3
+    },
+    "Legend":
+    {
+        "Description": "The king of all fish! They said he'd never be caught.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 225,
+                "Energy": 500,
+                "Price": 5000
+            },
+            "Silver":
+            {
+                "Health": 315,
+                "Energy": 700,
+                "Price": 6250
+            },
+            "Gold":
+            {
+                "Health": 405,
+                "Energy": 900,
+                "Price": 7500
+            }
+        },
+        "Availability":
+        {
+            "Weather": "rainy",
+            "Locations": ["Mountain Lake (deep water, near the log)"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": false,
+                "Fall": false,
+                "Winter": false
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 198,
+        "Difficulty": 110,
+        "Legendary": true,
+        "Fishing Level": 10
+    },
+    "Glacierfish":
+    {
+        "Description": "Builds a nest on the underside of glaciers.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 1000
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 1250
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 1500
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["South in Cindersap Forest there is a a small island on the river. It is connected to land by wooden planks. Stand on the soutmost tip of the island, cast into deep water."],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Mixed",
+        "XP": 181,
+        "Difficulty": 100,
+        "Legendary": true,
+        "Fishing Level": 6
+    },
+    "Mutant Carp":
+    {
+        "Description": "The strange waters of the sewer turned this carp into a monstrosity.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 11,
+                "Energy": 25,
+                "Price": 1000
+            },
+            "Silver":
+            {
+                "Health": 15,
+                "Energy": 35,
+                "Price": 1250
+            },
+            "Gold":
+            {
+                "Health": 20,
+                "Energy": 45,
+                "Price": 1500
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["The Sewers"],
+            "Seasons":
+            {
+                "Spring": true,
+                "Summer": true,
+                "Fall": true,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 6,
+                "End": 26
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 148,
+        "Difficulty": 80,
+        "Legendary": true,
+        "Fishing Level": 0
+    },
+    "Midnight Squid":
+    {
+        "Description": "A strange and mysterious denizen of the ocean's twilight depths.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 100
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 125
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 150
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Submarine at Night Market"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 17,
+                "End": 26
+            }
+        },
+        "Behavior": "Sinker",
+        "XP": 21,
+        "Difficulty": 55,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Spook Fish":
+    {
+        "Description": "The huge eyes can detect the faint silhouettes of prety.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 220
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 275
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 330
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Submarine at Night Market"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 17,
+                "End": 26
+            }
+        },
+        "Behavior": "Dart",
+        "XP": 23,
+        "Difficulty": 60,
+        "Legendary": false,
+        "Fishing Level": 0
+    },
+    "Blobfish":
+    {
+        "Description": "This odd creature floats above the ocean floor, consuming any edible material in its path.",
+        "Stats":
+        {
+            "Common":
+            {
+                "Health": 17,
+                "Energy": 38,
+                "Price": 500
+            },
+            "Silver":
+            {
+                "Health": 23,
+                "Energy": 53,
+                "Price": 625
+            },
+            "Gold":
+            {
+                "Health": 30,
+                "Energy": 68,
+                "Price": 750
+            }
+        },
+        "Availability":
+        {
+            "Weather": "Any",
+            "Locations": ["Submarine at Night Market"],
+            "Seasons":
+            {
+                "Spring": false,
+                "Summer": false,
+                "Fall": false,
+                "Winter": true
+            },
+            "Time":
+            {
+                "Start": 17,
+                "End": 26
+            }
+        },
+        "Behavior": "Floater",
+        "XP": 28,
+        "Difficulty": 75,
+        "Legendary": false,
+        "Fishing Level": 0
+    }
 }
