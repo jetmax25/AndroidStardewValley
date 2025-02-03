@@ -16,8 +16,8 @@ class VillagerRepository(
 ) {
 
     private val villagers: MutableList<Villager> = mutableListOf()
-    private val type: ParameterizedType = Types.newParameterizedType(List::class.java, Villager::class.java)
-    private val adapter: JsonAdapter<List<Villager>> = moshi.adapter<List<Villager>>(type)
+    private val type: ParameterizedType = Types.newParameterizedType(Map::class.java, String::class.java, Villager::class.java)
+    private val adapter: JsonAdapter<Map<String, Villager>> = moshi.adapter(type)
 
     fun getVillagers(): Single<List<Villager>> {
         if (villagers.isNotEmpty()) return Single.just(villagers)
@@ -30,7 +30,11 @@ class VillagerRepository(
     private fun getVillagersFromAssets(): Single<List<Villager>> {
         val inputStream = context.resources.openRawResource(R.raw.villagers)
         val json = RepositoryUtil.inputStreamToString(inputStream)
-        val list = adapter.fromJson(json)
+        val rawMap = adapter.fromJson(json) ?: emptyMap()
+
+        val list = rawMap.map { (name, villager) ->
+            villager.copy(name = name)
+        }
         return Single.just(list)
     }
 }
