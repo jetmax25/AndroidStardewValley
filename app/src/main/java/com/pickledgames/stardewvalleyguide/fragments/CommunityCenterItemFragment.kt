@@ -61,9 +61,7 @@ class CommunityCenterItemFragment : InnerBaseFragment() {
         if (communityCenterItem.seasons.contains(Season.Summer)) binding.rowSeasonsLayout.summerAvailabilityTextView.alpha = 1.0f
         if (communityCenterItem.isTravelingMerchant) binding.travelingMerchantImageView.alpha = 1.0f
 
-        binding.guidesRecyclerView.adapter = GuidesAdapter(communityCenterItem.guides)
-        binding.guidesRecyclerView.layoutManager = LinearLayoutManager(activity)
-        binding.guidesRecyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+        binding.guideTextView.text = communityCenterItem.guide
 
         analyticsManager.logEvent("Community Center Detail", mapOf("Item Name" to communityCenterItem.name))
     }

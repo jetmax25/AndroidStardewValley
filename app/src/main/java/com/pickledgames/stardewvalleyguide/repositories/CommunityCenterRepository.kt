@@ -63,12 +63,7 @@ class CommunityCenterRepository(
                         val itemQuantity = itemJSONObject.getInt("Quantity")
                         val isTravelingMerchant = itemJSONObject.getBoolean("Traveling Merchant")
 
-                        val guidesJSONArray = itemJSONObject.getJSONArray("Guide")
-                        val guides = mutableListOf<String>()
-                        for (i in 0 until guidesJSONArray.length()) {
-                            val guide = guidesJSONArray.getString(i)
-                            if (guide.isNotEmpty()) guides.add(guide)
-                        }
+                        val guide = itemJSONObject.getString("Guide")
 
                         val seasonsJSONObject = itemJSONObject.getJSONObject("Seasons")
                         val seasons = mutableSetOf<Season>()
@@ -77,7 +72,7 @@ class CommunityCenterRepository(
                             if (isAvailable) seasons.add(Season.fromString(season))
                         }
 
-                        val communityCenterItem = CommunityCenterItem(item, itemQuantity, isTravelingMerchant, guides, seasons, bundle)
+                        val communityCenterItem = CommunityCenterItem(item, itemQuantity, isTravelingMerchant, guide, seasons, bundle)
                         communityCenterItems.add(communityCenterItem)
                     }
 
