@@ -79,14 +79,12 @@ class GiftReactionRepository(
                 val reactionsObject = jsonObject.getJSONObject("reactions")
 
                 reactionsObject.keys().forEach { villagerName ->
-                    val villagerReaction = reactionsObject.getString(villagerName).toLowerCase(Locale.US).capitalize()
-                    // Weird bug occurs where Dıslıke can't be matched (note the missing dots on i)
-                    // Might be a translation issue, but don't know how to replicate so handle it here
+                    val reactionStr = reactionsObject.getString(villagerName).lowercase(Locale.ROOT)
+                        .replaceFirstChar { firstChar -> firstChar.uppercaseChar() }
                     val reaction = try {
-                        Reaction.valueOf(villagerReaction)
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                        findClosestReaction(villagerReaction)
+                        Reaction.valueOf(reactionStr)
+                    } catch (_: IllegalArgumentException) {
+                        findClosestReaction(reactionStr) // Not needed now, but kept in case of future data corruption; exception handling is required anyway
                     }
 
                     list.add(GiftReaction(reaction, villagerName, itemName, category))
