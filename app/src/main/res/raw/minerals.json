@@ -1,480 +1,340 @@
 {
-  "Quartz": {
-    "Price": 25,
-    "Description": "A clear crystal commonly found in caves and mines.",
-    "Mines": {
-      "Min": 1,
-      "Max": 120
+    "Lemon Stone":
+    {
+        "Price": 200,
+        "Description": "Some claim the powdered crystal is a dwarvish delicacy.",
+        "Locations": ["Magma Geode", "Omni Geode"]
     },
-    "Locations": [
-      "Garbage Can"
-    ]
-  },
-  "Earth Crystal": {
-    "Price": 50,
-    "Description": "A resinous substance found near the surface.",
-    "Mines": {
-      "Min": 1,
-      "Max": 39
+    "Quartz":
+    {
+        "Price": 25,
+        "Description": "A clear crystal commonly found in caves and mines.",
+        "Mines":
+        {
+            "Min": 1,
+            "Max": 120
+        },
+        "Locations": ["Garbage Can"]
     },
-    "Locations": [
-      "Panning",
-      "Geode",
-      "Garbage Can"
-    ]
-  },
-  "Frozen Tear": {
-    "Price": 75,
-    "Description": "A crystal fabled to be the frozen tears of a yeti",
-    "Mines": {
-      "Min": 40,
-      "Max": 79
+    "Earth Crystal":
+    {
+        "Price": 50,
+        "Description": "A resinous substance found near the surface.",
+        "Mines":
+        {
+            "Min": 1,
+            "Max": 39
+        },
+        "Locations": ["Panning", "Geode", "Garbage Can"]
     },
-    "Locations": [
-      "Fishing Treasure Chest",
-      "Panning",
-      "Frozen Geode",
-      "Garbage Can"
-    ]
-  },
-  "Fire Quartz": {
-    "Price": 100,
-    "Description": "A glowing red crystal commonly found near hot lava.",
-    "Mines": {
-      "Min": 80,
-      "Max": 120
+    "Frozen Tear":
+    {
+        "Price": 75,
+        "Description": "A crystal fabled to be the frozen tears of a yeti",
+        "Mines":
+        {
+            "Min": 40,
+            "Max": 79
+        },
+        "Locations": ["Fishing Treasure Chest", "Panning", "Frozen Geode", "Garbage Can"]
     },
-    "Locations": [
-      "Panning",
-      "Magma Geode",
-      "Omni Geode",
-      "Garbage Can"
-    ]
-  },
-  "Emerald": {
-    "Price": 250,
-    "Description": "A precious stone with a brilliant green color.",
-    "Locations": [
-      "Emerald Node",
-      "Gem Node",
-      "Panning",
-      "Garbage Can",
-      "Fishing Treasure Chest",
-      "Feast of the Winter Star"
-    ]
-  },
-  "Aquamarine": {
-    "Price": 180,
-    "Description": "A shimmery blue-green gem.",
-    "Locations": [
-      "Aquamarine Node",
-      "Gem Node",
-      "Panning",
-      "Garbage Can",
-      "Fishing Treasure Chest"
-    ]
-  },
-  "Ruby": {
-    "Price": 250,
-    "Description": "A precious stone that is sought after for its rich color and beautiful luster.",
-    "Locations": [
-      "Ruby Node",
-      "Gem Node",
-      "Panning",
-      "Garbage Can",
-      "Fishing Treasure Chest",
-      "Feast of the Winter Star"
-    ]
-  },
-  "Amethyst": {
-    "Price": 100,
-    "Description": "A purple variant of quartz.",
-    "Locations": [
-      "Amethyst Node (lvl 40-120), or any lvl once you reach the bottom of the mines",
-      "Gem Node",
-      "Slimes",
-      "Panning",
-      "Garbage Can",
-      "Fishing Treasure Chest"
-    ]
-  },
-  "Topaz": {
-    "Price": 80,
-    "Description": "Fairly common but still prized for its beauty.",
-    "Locations": [
-      "Topaz Node",
-      "Gem Node",
-      "Panning",
-      "Garbage Can",
-      "Fishing Treasure Chest"
-    ]
-  },
-  "Jade": {
-    "Price": 200,
-    "Description": "A pale green ornamental stone.",
-    "Locations": [
-      "Jade Node",
-      "Gem Node",
-      "Panning",
-      "Garbage Can",
-      "Fishing Treasure Chest",
-      "Feast of the Winter Star"
-    ]
-  },
-  "Diamond": {
-    "Price": 750,
-    "Description": "A rare and valuable gem",
-    "Locations": [
-      "Diamond Node",
-      "Gem Node",
-      "Panning",
-      "Garbage Can",
-      "Fishing Treasure Chest"
-    ]
-  },
-  "Prismatic Shard": {
-    "Price": 2000,
-    "Description": "A very rare and powerful substance with unknown origins.",
-    "Locations": [
-      "Iridium Node (4%)",
-      "Mystic Stone (25%)",
-      "Gem Node",
-      "Omni Geode (.004%)",
-      "Shadow Brute (.0005%)",
-      "Shadow Shaman (.0005%)",
-      "Mummy (.001%)",
-      "Fishing Trasure Chest"
-    ]
-  },
-  "Tigerseye": {
-    "Price": 275,
-    "Description": "A stripe of shimmering gold gives this gem a warm luster.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode"
-    ]
-  },
-  "Opal": {
-    "Price": 150,
-    "Description": "Its internal structure causes it to reflect a rainbow of light.",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Fire Opal": {
-    "Price": 350,
-    "Description": "A rare variety of opal, named for its red spots.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode"
-    ]
-  },
-  "Alamite": {
-    "Price": 150,
-    "Description": "Its distinctive fluorescence makes it a favorite among rock collectors.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Bixite": {
-    "Price": 300,
-    "Description": "A dark metallic Mineral sought after for its cubic structure.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode",
-      "Black Slime"
-    ]
-  },
-  "Baryte": {
-    "Price": 50,
-    "Description": "The best specimens resemble a desert rose.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode"
-    ]
-  },
-  "Aerinite": {
-    "Price": 125,
-    "Description": "These crystals are curiously light.",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Calcite": {
-    "Price": 75,
-    "Description": "This yellow crystal is speckled with shimmering nodules.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Dolomite": {
-    "Price": 300,
-    "Description": "It can occur in coral reefs, often near an underwater volcano.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode"
-    ]
-  },
-  "Esperite": {
-    "Price": 100,
-    "Description": "The crystals glow bright green when stimulated.        ",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Fluorapatite": {
-    "Price": 200,
-    "Description": "Small amounts are found in human teeth",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Geminite": {
-    "Price": 150,
-    "Description": "Occurs in brilliant clusters.",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Helvite": {
-    "Price": 450,
-    "Description": "It grows in a triangular column.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode"
-    ]
-  },
-  "Jamborite": {
-    "Price": 150,
-    "Description": "The crystals are so tightly packed it almost looks fuzzy.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Jagoite": {
-    "Price": 115,
-    "Description": "A high volume of tiny crystals makes it very glittery.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Kyanite": {
-    "Price": 250,
-    "Description": "The geometric faces are as smooth as glass.",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Lunarite": {
-    "Price": 200,
-    "Description": "The cratered white orbs form a tight cluster.",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Malachite": {
-    "Price": 100,
-    "Description": "A popular ornamental stone, used in sculpture and to make green paint.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Neptunite": {
-    "Price": 400,
-    "Description": "A jet-black crystal that is unusually reflective.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode",
-      "Black Slime"
-    ]
-  },
-  "Lemon Stone": {
-    "Price": 200,
-    "Description": "Some claim the powdered crystal is a dwarvish delicacy.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode"
-    ]
-  },
-  "Nekoite": {
-    "Price": 80,
-    "Description": "The delicate shards form a tiny pink meadow.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Orpiment": {
-    "Price": 80,
-    "Description": "Despite its high toxicity, this Mineral is widely used in manufacturing and folk medicine.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Petrified Slime": {
-    "Price": 120,
-    "Description": "This little guy may be 100,000 years old.",
-    "Locations": [
-      "Geode",
-      "Omni Geode",
-      "Slime Ball"
-    ]
-  },
-  "Thunder Egg": {
-    "Price": 100,
-    "Description": "According to legend, angry thunder spirits would throw these stones at one another.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Pyrite": {
-    "Price": 120,
-    "Description": "Commonly known as \"Fool's Gold\"",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Ocean Stone": {
-    "Price": 220,
-    "Description": "An old legend claims these stones are the mosaics of ancient mermaids.",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Ghost Crystal": {
-    "Price": 200,
-    "Description": "There is an aura of coldness around this crystal.",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Jasper": {
-    "Price": 150,
-    "Description": "When polished, this stone becomes attractively luminous. Prized by ancient peoples for thousands of years.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode"
-    ]
-  },
-  "Celestine": {
-    "Price": 125,
-    "Description": "Some early life forms had bones made from this.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Marble": {
-    "Price": 110,
-    "Description": "A very popular material for sculptures and construction.",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Sandstone": {
-    "Price": 60,
-    "Description": "A common type of stone with red and brown striations.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Granite": {
-    "Price": 75,
-    "Description": "A speckled Mineral that is commonly used in construction.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Basalt": {
-    "Price": 175,
-    "Description": "Forms near searing hot magma.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode"
-    ]
-  },
-  "Limestone": {
-    "Price": 15,
-    "Description": "A very common type of stone. It's not worth very much.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Soapstone": {
-    "Price": 120,
-    "Description": "Because of its relatively soft consistency, this stone is very popular for carving.",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Hematite": {
-    "Price": 150,
-    "Description": "An iron-based Mineral with interesting magnetic properties.",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Mudstone": {
-    "Price": 25,
-    "Description": "A fine-grained rock made from ancient clay or mud.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Obsidian": {
-    "Price": 200,
-    "Description": "A volcanic glass that forms when lava cools rapidly.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode"
-    ]
-  },
-  "Slate": {
-    "Price": 85,
-    "Description": "It's extremely resistant to water, making it a good roofing material.",
-    "Locations": [
-      "Geode",
-      "Omni Geode"
-    ]
-  },
-  "Fairy Stone": {
-    "Price": 250,
-    "Description": " An old miner's song suggests these are made from the bones of ancient fairies.",
-    "Locations": [
-      "Frozen Geode",
-      "Omni Geode"
-    ]
-  },
-  "Star Shards": {
-    "Price": 500,
-    "Description": "No one knows how these form. Some scientists claim that the microscopic structure displays unnatural regularity.",
-    "Locations": [
-      "Magma Geode",
-      "Omni Geode"
-    ]
-  }
+    "Fire Quartz":
+    {
+        "Price": 100,
+        "Description": "A glowing red crystal commonly found near hot lava.",
+        "Mines":
+        {
+            "Min": 80,
+            "Max": 120
+        },
+        "Locations": ["Panning", "Magma Geode", "Omni Geode", "Garbage Can"]
+    },
+    "Emerald":
+    {
+        "Price": 250,
+        "Description": "A precious stone with a brilliant green color.",
+        "Locations": ["Emerald Node", "Gem Node", "Panning", "Garbage Can", "Fishing Treasure Chest", "Feast of the Winter Star"]
+    },
+    "Aquamarine":
+    {
+        "Price": 180,
+        "Description": "A shimmery blue-green gem.",
+        "Locations": ["Aquamarine Node", "Gem Node", "Panning", "Garbage Can", "Fishing Treasure Chest"]
+    },
+    "Ruby":
+    {
+        "Price": 250,
+        "Description": "A precious stone that is sought after for its rich color and beautiful luster.",
+        "Locations": ["Ruby Node", "Gem Node", "Panning", "Garbage Can", "Fishing Treasure Chest", "Feast of the Winter Star"]
+    },
+    "Amethyst":
+    {
+        "Price": 100,
+        "Description": "A purple variant of quartz.",
+        "Locations": ["Amethyst Node (lvl 40-120), or any lvl once you reach the bottom of the mines", "Gem Node", "Slimes", "Panning", "Garbage Can", "Fishing Treasure Chest"]
+    },
+    "Topaz":
+    {
+        "Price": 80,
+        "Description": "Fairly common but still prized for its beauty.",
+        "Locations": ["Topaz Node", "Gem Node", "Panning", "Garbage Can", "Fishing Treasure Chest"]
+    },
+    "Jade":
+    {
+        "Price": 200,
+        "Description": "A pale green ornamental stone.",
+        "Locations": ["Jade Node", "Gem Node", "Panning", "Garbage Can", "Fishing Treasure Chest", "Feast of the Winter Star"]
+    },
+    "Diamond":
+    {
+        "Price": 750,
+        "Description": "A rare and valuable gem",
+        "Locations": ["Diamond Node", "Gem Node", "Panning", "Garbage Can", "Fishing Treasure Chest"]
+    },
+    "Prismatic Shard":
+    {
+        "Price": 2000,
+        "Description": "A very rare and powerful substance with unknown origins.",
+        "Locations": ["Iridium Node (4%)", "Mystic Stone (25%)", "Gem Node", "Omni Geode (.004%)", "Shadow Brute (.0005%)", "Shadow Shaman (.0005%)", "Mummy (.001%)", "Fishing Trasure Chest"]
+    },
+    "Tigerseye":
+    {
+        "Price": 275,
+        "Description": "A stripe of shimmering gold gives this gem a warm luster.",
+        "Locations": ["Magma Geode", "Omni Geode"]
+    },
+    "Opal":
+    {
+        "Price": 150,
+        "Description": "Its internal structure causes it to reflect a rainbow of light.",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Fire Opal":
+    {
+        "Price": 350,
+        "Description": "A rare variety of opal, named for its red spots.",
+        "Locations": ["Magma Geode", "Omni Geode"]
+    },
+    "Alamite":
+    {
+        "Price": 150,
+        "Description": "Its distinctive fluorescence makes it a favorite among rock collectors.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Bixite":
+    {
+        "Price": 300,
+        "Description": "A dark metallic Mineral sought after for its cubic structure.",
+        "Locations": ["Magma Geode", "Omni Geode", "Black Slime"]
+    },
+    "Baryte":
+    {
+        "Price": 50,
+        "Description": "The best specimens resemble a desert rose.",
+        "Locations": ["Magma Geode", "Omni Geode"]
+    },
+    "Aerinite":
+    {
+        "Price": 125,
+        "Description": "These crystals are curiously light.",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Calcite":
+    {
+        "Price": 75,
+        "Description": "This yellow crystal is speckled with shimmering nodules.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Dolomite":
+    {
+        "Price": 300,
+        "Description": "It can occur in coral reefs, often near an underwater volcano.",
+        "Locations": ["Magma Geode", "Omni Geode"]
+    },
+    "Esperite":
+    {
+        "Price": 100,
+        "Description": "The crystals glow bright green when stimulated.        ",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Fluorapatite":
+    {
+        "Price": 200,
+        "Description": "Small amounts are found in human teeth",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Geminite":
+    {
+        "Price": 150,
+        "Description": "Occurs in brilliant clusters.",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Helvite":
+    {
+        "Price": 450,
+        "Description": "It grows in a triangular column.",
+        "Locations": ["Magma Geode", "Omni Geode"]
+    },
+    "Jamborite":
+    {
+        "Price": 150,
+        "Description": "The crystals are so tightly packed it almost looks fuzzy.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Jagoite":
+    {
+        "Price": 115,
+        "Description": "A high volume of tiny crystals makes it very glittery.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Kyanite":
+    {
+        "Price": 250,
+        "Description": "The geometric faces are as smooth as glass.",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Lunarite":
+    {
+        "Price": 200,
+        "Description": "The cratered white orbs form a tight cluster.",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Malachite":
+    {
+        "Price": 100,
+        "Description": "A popular ornamental stone, used in sculpture and to make green paint.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Neptunite":
+    {
+        "Price": 400,
+        "Description": "A jet-black crystal that is unusually reflective.",
+        "Locations": ["Magma Geode", "Omni Geode", "Black Slime"]
+    },
+    "Nekoite":
+    {
+        "Price": 80,
+        "Description": "The delicate shards form a tiny pink meadow.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Orpiment":
+    {
+        "Price": 80,
+        "Description": "Despite its high toxicity, this Mineral is widely used in manufacturing and folk medicine.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Petrified Slime":
+    {
+        "Price": 120,
+        "Description": "This little guy may be 100,000 years old.",
+        "Locations": ["Geode", "Omni Geode", "Slime Ball"]
+    },
+    "Thunder Egg":
+    {
+        "Price": 100,
+        "Description": "According to legend, angry thunder spirits would throw these stones at one another.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Pyrite":
+    {
+        "Price": 120,
+        "Description": "Commonly known as \"Fool's Gold\"",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Ocean Stone":
+    {
+        "Price": 220,
+        "Description": "An old legend claims these stones are the mosaics of ancient mermaids.",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Ghost Crystal":
+    {
+        "Price": 200,
+        "Description": "There is an aura of coldness around this crystal.",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Jasper":
+    {
+        "Price": 150,
+        "Description": "When polished, this stone becomes attractively luminous. Prized by ancient peoples for thousands of years.",
+        "Locations": ["Magma Geode", "Omni Geode"]
+    },
+    "Celestine":
+    {
+        "Price": 125,
+        "Description": "Some early life forms had bones made from this.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Marble":
+    {
+        "Price": 110,
+        "Description": "A very popular material for sculptures and construction.",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Sandstone":
+    {
+        "Price": 60,
+        "Description": "A common type of stone with red and brown striations.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Granite":
+    {
+        "Price": 75,
+        "Description": "A speckled Mineral that is commonly used in construction.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Basalt":
+    {
+        "Price": 175,
+        "Description": "Forms near searing hot magma.",
+        "Locations": ["Magma Geode", "Omni Geode"]
+    },
+    "Limestone":
+    {
+        "Price": 15,
+        "Description": "A very common type of stone. It's not worth very much.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Soapstone":
+    {
+        "Price": 120,
+        "Description": "Because of its relatively soft consistency, this stone is very popular for carving.",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Hematite":
+    {
+        "Price": 150,
+        "Description": "An iron-based Mineral with interesting magnetic properties.",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Mudstone":
+    {
+        "Price": 25,
+        "Description": "A fine-grained rock made from ancient clay or mud.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Obsidian":
+    {
+        "Price": 200,
+        "Description": "A volcanic glass that forms when lava cools rapidly.",
+        "Locations": ["Magma Geode", "Omni Geode"]
+    },
+    "Slate":
+    {
+        "Price": 85,
+        "Description": "It's extremely resistant to water, making it a good roofing material.",
+        "Locations": ["Geode", "Omni Geode"]
+    },
+    "Fairy Stone":
+    {
+        "Price": 250,
+        "Description": " An old miner's song suggests these are made from the bones of ancient fairies.",
+        "Locations": ["Frozen Geode", "Omni Geode"]
+    },
+    "Star Shards":
+    {
+        "Price": 500,
+        "Description": "No one knows how these form. Some scientists claim that the microscopic structure displays unnatural regularity.",
+        "Locations": ["Magma Geode", "Omni Geode"]
+    }
 }

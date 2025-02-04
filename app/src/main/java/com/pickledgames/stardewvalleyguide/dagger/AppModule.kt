@@ -9,6 +9,7 @@ import com.pickledgames.stardewvalleyguide.managers.AnalyticsManager
 import com.pickledgames.stardewvalleyguide.managers.LoginManager
 import com.pickledgames.stardewvalleyguide.managers.PurchasesManager
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Lazy
 import dagger.Module
 import dagger.Provides
@@ -27,7 +28,9 @@ class AppModule(private val stardewApp: StardewApp) {
     @Provides
     @Singleton
     fun providesMoshi(): Moshi {
-        return Moshi.Builder().build()
+        return Moshi.Builder()
+            .addLast(KotlinJsonAdapterFactory())
+            .build()
     }
 
     @Provides

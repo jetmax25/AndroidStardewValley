@@ -1,6 +1,5 @@
 package com.pickledgames.stardewvalleyguide.repositories
 
-import android.annotation.SuppressLint
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.R
 import com.pickledgames.stardewvalleyguide.enums.Reaction
@@ -8,7 +7,7 @@ import com.pickledgames.stardewvalleyguide.models.Gift
 import com.pickledgames.stardewvalleyguide.models.GiftReaction
 import com.pickledgames.stardewvalleyguide.utils.RepositoryUtil
 import io.reactivex.Single
-import org.json.JSONObject
+import org.json.JSONArray
 import java.util.*
 import kotlin.math.min
 
@@ -64,31 +63,31 @@ class GiftReactionRepository(
                 }
     }
 
-    @SuppressLint("DefaultLocale")
     private fun getGiftReactionsFromAssets(): Single<List<GiftReaction>> {
         val inputStream = context.resources.openRawResource(R.raw.gift_reactions)
         val json = RepositoryUtil.inputStreamToString(inputStream)
         val list: MutableList<GiftReaction> = mutableListOf()
 
         return Single.create {
-            val categories = JSONObject(json)
-            for (category in categories.keys()) {
-                val items = categories.getJSONObject(category)
-                for (item in items.keys()) {
-                    val villagers = items.getJSONObject(item)
-                    for (villager in villagers.keys()) {
-                        val villagerReaction = villagers.getString(villager).toLowerCase(Locale.US).capitalize()
-                        // Weird bug occurs where Dıslıke can't be matched (note the missing dots on i)
-                        // Might be a translation issue, but don't know how to replicate so handle it here
-                        val reaction = try {
-                            Reaction.valueOf(villagerReaction)
-                        } catch (e: Exception) {
-                            e.printStackTrace()
-                            findClosestReaction(villagerReaction)
-                        }
+            val jsonArray = JSONArray(json)
 
-                        list.add(GiftReaction(reaction, villager, item, category))
+            for (i in 0 until jsonArray.length()) {
+                val jsonObject = jsonArray.getJSONObject(i)
+
+                val category = jsonObject.getString("category")
+                val itemName = jsonObject.getString("giftName")
+                val reactionsObject = jsonObject.getJSONObject("reactions")
+
+                reactionsObject.keys().forEach { villagerName ->
+                    val reactionStr = reactionsObject.getString(villagerName).lowercase(Locale.ROOT)
+                        .replaceFirstChar { firstChar -> firstChar.uppercaseChar() }
+                    val reaction = try {
+                        Reaction.valueOf(reactionStr)
+                    } catch (_: IllegalArgumentException) {
+                        findClosestReaction(reactionStr) // Not needed now, but kept in case of future data corruption; exception handling is required anyway
                     }
+
+                    list.add(GiftReaction(reaction, villagerName, itemName, category))
                 }
             }
 

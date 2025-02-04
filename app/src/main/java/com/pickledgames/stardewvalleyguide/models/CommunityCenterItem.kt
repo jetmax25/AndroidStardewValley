@@ -13,7 +13,7 @@ data class CommunityCenterItem(
         val name: String,
         val quantity: Int,
         val isTravelingMerchant: Boolean,
-        val guides: List<String>,
+        val guide: String,
         val seasons: Set<Season>,
         val bundleName: String
 ) : StardewObject, Parcelable {

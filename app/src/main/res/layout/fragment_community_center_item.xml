@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/splash_bg">
 
     <include
@@ -58,18 +59,18 @@
         app:text="@string/guide"
         app:textSize="22sp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/guides_recycler_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/guide_text_view"
+        style="@style/StardewTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guide_header_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/guide_header_text_view"
+        tools:text="Found by foraging in the Spring. You also have a chance to grow it from Spring Seeds. Spring seeds can be either crafted, created when placing a Wild Horseradish in a Seed Maker, or purchased from the Traveling Cart." />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
