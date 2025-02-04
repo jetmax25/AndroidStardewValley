@@ -47,8 +47,8 @@ class AppModule(private val stardewApp: StardewApp) {
 
     @Provides
     @Singleton
-    fun providesPurchasesManager(stardewApp: StardewApp, analyticsManager: Lazy<AnalyticsManager>): PurchasesManager {
-        return PurchasesManager(stardewApp, analyticsManager)
+    fun providesPurchasesManager(stardewApp: StardewApp, analyticsManager: Lazy<AnalyticsManager>, sharedPreferences: SharedPreferences): PurchasesManager {
+        return PurchasesManager(stardewApp, analyticsManager, sharedPreferences)
     }
 
     @Provides

@@ -75,9 +75,6 @@ class MainActivity : AppCompatActivity(), OnFarmUpdatedListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setup(savedInstanceState)
-        if (adsService.areAdsEnabled()) {
-            binding.bannerAdView.visibility = View.VISIBLE
-        }
     }
 
     override fun onDestroy() {
