@@ -11,8 +11,8 @@ android {
         applicationId "com.pickledgames.stardewvalleyguide"
         minSdkVersion 29
         targetSdkVersion 34
-        versionCode 511
-        versionName "5.1.1"
+        versionCode 601
+        versionName "6.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
