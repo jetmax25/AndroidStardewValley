@@ -10,8 +10,8 @@ android {
         namespace "com.pickledgames.stardewvalleyguide"
         applicationId "com.pickledgames.stardewvalleyguide"
         minSdkVersion 29
-        targetSdkVersion 34
-        versionCode 612
+        targetSdkVersion 35
+        versionCode 614
         versionName "6.1.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -76,7 +76,7 @@ dependencies {
     implementation "androidx.multidex:multidex:2.0.1"
     implementation "com.github.Jay-Goo:RangeSeekBar:v2.0.4"
     implementation 'com.github.ncapdevi:fragnav:3.3.0'
-    implementation 'com.facebook.fresco:fresco:3.2.0'
+    implementation 'com.facebook.fresco:fresco:3.6.0'
     implementation 'com.wajahatkarim:EasyFlipView:3.0.3'
 
     api fileTree(include: ['*.aar'], dir: 'libs')
