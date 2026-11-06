@@ -3732,7 +3732,7 @@
 },
 {
     "category": "Mineral",
-    "giftName": "Oripment",
+    "giftName": "Orpiment",
     "reactions":
     {
         "Alex": "DISLIKE",
@@ -6110,7 +6110,7 @@
 },
 {
     "category": "Fish",
-    "giftName": "Rainbow trout ",
+    "giftName": "Rainbow Trout",
     "reactions":
     {
         "Alex": "DISLIKE",
@@ -8530,47 +8530,6 @@
 {
     "category": "Artifact",
     "giftName": "Prehistoric Handaxe",
-    "reactions":
-    {
-        "Alex": "HATE",
-        "Elliott": "HATE",
-        "Harvey": "HATE",
-        "Sebastian": "HATE",
-        "Shane": "HATE",
-        "Abigail": "HATE",
-        "Emily": "HATE",
-        "Haley": "HATE",
-        "Leah": "HATE",
-        "Maru": "HATE",
-        "Penny": "LIKE",
-        "Caroline": "HATE",
-        "Clint": "HATE",
-        "Demetrius": "HATE",
-        "Dwarf": "LIKE",
-        "Evelyn": "HATE",
-        "George": "HATE",
-        "Gus": "HATE",
-        "Jas": "HATE",
-        "Jodi": "HATE",
-        "Kent": "HATE",
-        "Krobus": "HATE",
-        "Lewis": "HATE",
-        "Linus": "HATE",
-        "Marnie": "HATE",
-        "Pam": "HATE",
-        "Pierre": "HATE",
-        "Robin": "HATE",
-        "Sandy": "HATE",
-        "Sam": "HATE",
-        "Vincent": "HATE",
-        "Willy": "HATE",
-        "Wizard": "HATE",
-        "Leo": "DISLIKE"
-    }
-},
-{
-    "category": "Artifact",
-    "giftName": "Dwavish Helm",
     "reactions":
     {
         "Alex": "HATE",
@@ -11317,7 +11276,7 @@
 },
 {
     "category": "Cooked Dish",
-    "giftName": "Triple Shot Expresso",
+    "giftName": "Triple Shot Espresso",
     "reactions":
     {
         "Alex": "LIKE",
