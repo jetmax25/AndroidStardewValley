@@ -220,7 +220,7 @@ class CommunityCenterFragment : BaseFragment(), View.OnClickListener, OnItemChec
                 bundles.forEach { bundle ->
                     val filteredBundleItems = bundle.items
                             .filter { item ->
-                                seasonFilterBy == "All" || (item.seasons.contains(Season.fromString(seasonFilterBy)) && item.seasons.size != Season.values().size)
+                                seasonFilterBy == "All" || item.seasons.contains(Season.fromString(seasonFilterBy))
                             }
                             .filter { item ->
                                 if (showCompleted) return@filter true

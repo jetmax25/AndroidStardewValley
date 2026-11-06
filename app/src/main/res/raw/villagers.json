@@ -1,2023 +1,2023 @@
 {
-    "Alex":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "On a sunny summer day, visit the beach when Alex is there.",
-            "Details": "You play gridball with Alex. He asks you what you think his chances are of becoming professional.",
-            "Choices": [
-            {
-                "Option": "I believe in you!",
-                "Reaction": 0
-            },
-            {
-                "Option": "Wow, you're really arrogant.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter town between 9am and 4pm",
-            "Details": "Alex is found talking to his dog, Dusty, telling him he feels misunderstood. He asks if you heard him.",
-            "Choices": [
-            {
-                "Option": "Yes, I heard everything.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Not, not really...why?",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 5,
-            "Trigger": "Enter Alex's house when he's there.",
-            "Details": "Alex admits he hasn't read any book in his bookcase. He tells you he's worried he won't get anywhere without being knowledgeable.",
-            "Choices": [
-            {
-                "Option": "That's crazy. You're a genius!",
-                "Reaction": 0
-            },
-            {
-                "Option": "We all have our strengths and weaknesses.",
-                "Reaction": 50
-            },
-            {
-                "Option": "Worthless? Yeah, that about sums it up.",
-                "Reaction": -50
-            }]
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter Alex's house when he's there.",
-            "Details": "He'll express doubt about being able to go pro as a gridball player and apologizes for being rude.",
-            "Choices": []
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "On a sunny summer day, visit the beach when Alex is there.",
-            "Details": "Alex is sitting on the beach crying. He says today is the day his mother died 12 years ago.",
-            "Choices": [
-            {
-                "Option": "Honor your mother's memory by always doing your best.",
-                "Reaction": 0
-            },
-            {
-                "Option": "You shouldn't dwell in the past.",
-                "Reaction": 0
-            },
-            {
-                "Option": "I'll always be there for you if you get lonely.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Get over it. Life is hard for everyone.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Alex will send you a letter to meet him at the Saloon after dark. After receiving the letter, enter the Saloon between 7pm and 10pm.",
-            "Details": "Alex confesses his feelings for you.",
-            "Choices": [
-            {
-                "Option": "I feel the same way.",
-                "Reaction": 0
-            },
-            {
-                "Option": "I'm sorry...I don't feel that way about you.",
-                "Reaction": 0
-            }]
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 13,
-            "Season": "Summer"
-        }
-    },
-    "Elliott":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "Enter Elliott's cabin when he's there",
-            "Details": "Elliott will tell you about how he came to Pelican City to be a writer. He asks you what kind of novels you like.",
-            "Choices": [
-            {
-                "Option": "Mystery,",
-                "Reaction": 30
-            },
-            {
-                "Option": "Romance",
-                "Reaction": 30
-            },
-            {
-                "Option": "Sci-fi",
-                "Reaction": 30
-            }]
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter the Stardrop Saloon between 3pm and 10pm when Gus is there.",
-            "Details": "You share a drink with elliott. You decide to propose a toast.",
-            "Choices": [
-            {
-                "Option": "To Pelican Town!",
-                "Reaction": 25
-            },
-            {
-                "Option": "To our friendship!",
-                "Reaction": 50
-            },
-            {
-                "Option": "To my good health!",
-                "Reaction": -10
-            },
-            {
-                "Option": "To your doom!",
-                "Reaction": -50
-            }]
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter Elliot's home when he's there.",
-            "Details": "Elliot is playing the piano. You speak up after he finishes.",
-            "Choices": [
-            {
-                "Option": "That was beautiful.",
-                "Reaction": 0
-            },
-            {
-                "Option": "How long have you been playing?",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Triggered immediately after the previous 6-heart event regardless of your answer.",
-            "Details": "Elliot thanks you but admits he rarely does anything but write anymore and that his book is driving him insane. He worries his bank account is running low.",
-            "Choices": [
-            {
-                "Option": "It's just as hard to be a farmer, you know.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Come live on the farm, I could use the extra help.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "After receiving a letter from Elliot, visit the museum between 1pm and 7pm.",
-            "Details": "Elliot performs a public reading of his book. He tells you he dedicated it to you.",
-            "Choices": []
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Go to the beach on a sunny day between 7am and 1pm. A letter will be sent to you but it is not needed to trigger the event.",
-            "Details": "Elliot fixed the row boat on the dock. He invites you to sail with him.",
-            "Choices": [
-            {
-                "Option": "Yes.",
-                "Reaction": 0
-            },
-            {
-                "Option": "No.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Triggered immediately after previous 10-heart event but only if you agree to ride the boat with Elliott.",
-            "Details": "elliott confesses his feelings to you then moves closer to kiss you.",
-            "Choices": [
-            {
-                "Option": "I'm happy!",
-                "Reaction": 250
-            },
-            {
-                "Option": "You're making me uncomfortable. Stop.",
-                "Reaction": -125
-            }]
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 5,
-            "Season": "Fall"
-        }
-    },
-    "Harvey":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "Enter George's house while he is there.",
-            "Details": "George asks you if he should follow Dr.Harvey's medical advice.",
-            "Choices": [
-            {
-                "Option": "George should follow Dr.Harvey's advice.",
-                "Reaction": 40
-            },
-            {
-                "Option": "George knows what's best for his own body.",
-                "Reaction": -40
-            }]
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter the clinic when Harvey is there.",
-            "Details": "You go to the clinic for your annual check up. Harvey notices your pulse seems high.",
-            "Choices": [
-            {
-                "Option": "I'm a little nervous...",
-                "Reaction": 20
-            },
-            {
-                "Option": "I'm out of breath from working on the farm.",
-                "Reaction": 20
-            },
-            {
-                "Option": "Are you really a doctor? My pulse is fine!",
-                "Reaction": -50
-            }]
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter the general store between 11am and 3pm",
-            "Details": "Harvey asks you not to tell the rest of the town he's doing dance aerobics.",
-            "Choices": [
-            {
-                "Option": "I won't tell.",
-                "Reaction": 20
-            },
-            {
-                "Option": "I can't promise that.",
-                "Reaction": -50
-            }]
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "Walk into the clinic.",
-            "Details": "Harvey is using some equiptment to contact a pilot. He gets very nervouce when you walk in.",
-            "Choices": [
-            {
-                "Option": "Ask Harvey why he's all flustered.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Pretend like everything's normal.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Harvey sends you a letter asking to meet at the railroad tracks. Go there between 9am and 5pm.",
-            "Details": "Harvey invites you to a hot air balloon ride.",
-            "Choices": [
-            {
-                "Option": "That looks fun! Let's take a ride!",
-                "Reaction": 0
-            },
-            {
-                "Option": "But aren't you afraid of heights?",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Triggered immediately after the previous 10-heart event regardless of your choice.",
-            "Details": "Harvey eventually calms down once he's up in the hot air balloon with you. He turns and tries to confess his feelings for you. He can't seem to find the words and kisses you instead.",
-            "Choices": []
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 14,
-            "Season": "Winter"
-        }
-    },
-    "Sam":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "Enter Sam's house when he's there.",
-            "Details": "Sam and Sebastian are having band practice. He asks you what style of music they should play.",
-            "Choices": [
-            {
-                "Option": "Cheerful pop music.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Experimental noise rock.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Hi-energy dance music.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Honky-tonk country music.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "During Year 1, in any season except Winter, enter the beach on a sunny day between 7am and 3pm.",
-            "Details": "Sam is with his brother when Vincent asks him if his dad will come home soon. Sam says of course but feels guilty about getting his hopes up.",
-            "Choices": [
-            {
-                "Option": "It's best to be hones twith kids.",
-                "Reaction": 0
-            },
-            {
-                "Option": "You did the right thing. Kids should have hope.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter Sam's house when he's there.",
-            "Details": "Sam accidentally makes a mess in the kitchen. His mom sees this and gets upset. Sam asks you to tell her what happened.",
-            "Choices": [
-            {
-                "Option": "Sam dropped the snack as he was handing it to me.",
-                "Reaction": -10
-            },
-            {
-                "Option": "Sam handed me the snack and then I dropped it.",
-                "Reaction": 50
-            },
-            {
-                "Option": "Sam dropped it on purpose. He thought it would be funny.",
-                "Reaction": -50
-            }]
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "On any day when it's not raining, enter the town between noon and 4pm.",
-            "Details": "Sam is skateboarding and grinding on Emily's flower box. Lewis scolds him. Sam asks for your opinion.",
-            "Choices": [
-            {
-                "Option": "You're right, sir. Sam should respect private property.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Don't blame Sam. There's nowhere else to ride!",
-                "Reaction": 0
-            },
-            {
-                "Option": "I'm staying out of this.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "Sam shows up at your doorstop between 6am and 8am. Only triggers if you've seen his 2-heart event.",
-            "Details": "Sam invites you to see his band play and asks to meet at the bus stop between 4pm and 7pm.",
-            "Choices": []
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "After receiving a letter from Sam, enter the town on a sunny day between 8pm and midnight.",
-            "Details": "Sam confesses his feelings for you when his mom suddenly knocks on the door. He has you hide in the bed. She eventually leaves.",
-            "Choices": [
-            {
-                "Option": "Get out of the bed.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Move closer.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Head for window.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Stay put.",
-                "Reaction": 0
-            }]
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 17,
-            "Season": "Summer"
-        }
-    },
-    "Abigail":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "Enter Pierre's General Store when Abigail is there, any day except Saturday.",
-            "Details": "Abigail is frustrated with a game she's playing. She asks you to play second player.",
-            "Choices": []
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Visit The Mountain between 12 and 7pm on a rainy day, any season except Winter.",
-            "Details": "You see Abigail playing her flute. She asks what you're doing out in the rain.",
-            "Choices": [
-            {
-                "Option": "Just doing some work.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Enjoying the weather.",
-                "Reaction": 50
-            },
-            {
-                "Option": "I could ask you the same thing.",
-                "Reaction": 10
-            }]
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Between 9 pm and midnight on a sunny or snowy day, exit The Stardrop Saloon, or enter Pelican Town coming from the bus stop, the beach, or the forest (not the mountain).",
-            "Details": "Abigail is in the graveyard. She's been practicing with her sword and asks if you've ever use a sword.",
-            "Choices": [
-            {
-                "Option": "Yes, and it's exciting!",
-                "Reaction": 10
-            },
-            {
-                "Option": "Yes, but only in self-defense.",
-                "Reaction": 10
-            },
-            {
-                "Option": "Yes, but it's dangerous. You should stay safe.",
-                "Reaction": -100
-            },
-            {
-                "Option": "No.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "After receiving a letter from Abigail, enter Pierre's General Store between 8pm and 10pm when she's there.",
-            "Details": "Abigail sends you a letter inviting you to visit her room. She shows you her spirit board.",
-            "Choices": []
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "After you give Abigail a Bouquet, enter the mines between 5pm and midnight. The event won't trigger if you've already married her.",
-            "Details": "Abigail is preparing to go down the ladder into the mine when she's startled by a bat. Soon, hundreds of bats follow. ",
-            "Choices": [
-            {
-                "Option": "What happened?",
-                "Reaction": 20
-            },
-            {
-                "Option": "Are you okay?",
-                "Reaction": 40
-            }]
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "After you comfort Abigail when thee bats overwhelm her in the previous 10-heart event.",
-            "Details": "Abigail tells you that maybe she isn't as tought as she thought.",
-            "Choices": [
-            {
-                "Option": "You're safe with me.",
-                "Reaction": 20
-            },
-            {
-                "Option": "I get scared too.",
-                "Reaction": 40
-            },
-            {
-                "Option": "You're crying like a little baby. Stop.",
-                "Reaction": -50
-            }]
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 13,
-            "Season": "Fall"
-        }
-    },
-    "Emily":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "Enter Emily's house.",
-            "Details": "Emily is asleep in her room and having an abstract dream. You appear out of a cloud. She believes your destinies are somehow intertwined.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "After reaching 3 hearts with Emily she will send you a recipe in the mail.",
-            "Details": "Emily sends you the recipe for Salad in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter town on a sunny day. Cannot be triggered in Winter.",
-            "Details": "Emily leaves her house and sees three parrots flying by. She finds an injured parrot and helps nurse it to health.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Visit Emily's house when she's there.",
-            "Details": "You enter Emily's room and she tells you she's excited to show her a secret hobby. She then begins to dance in front of you.",
-            "Choices": [
-            {
-                "Option": "That was amazing!",
-                "Reaction": 25
-            },
-            {
-                "Option": "That was embarrassing...",
-                "Reaction": -50
-            },
-            {
-                "Option": "(Say nothing and do a slow clap)",
-                "Reaction": 25
-            }]
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reach 7 hearts with Emily.",
-            "Details": "You receive the recipe for Red Plate in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "A letter in the mail will invite the player to the Mayor's Manor that same day during open hours.",
-            "Details": "Emily shows you her idea for Clothing Therapy",
-            "Choices": []
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "A letter will invite the player to meet Emily in the Secret Woods after 10pm that night. (Note: If it is raining or a festival day, the event will trigger on the following night.)",
-            "Details": "You go camping with Emily. A bear intrudes and ultimately, you're forced to share a sleeping bag together. She tells you she's glad it happened that way.",
-            "Choices": []
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 27,
-            "Season": "Spring"
-        }
-    },
-    "Haley":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "Enter Haley and Emily's home when they're both there.",
-            "Details": "Emily is upset that Haley refuses to clean the cushions. Haley says she cleaned them last week and you're tasked with helping resolve the conflict.",
-            "Choices": [
-            {
-                "Option": "Stop whining and just clean it!",
-                "Reaction": -50
-            },
-            {
-                "Option": "Haley, why not have this be your one weekly job?",
-                "Reaction": 30
-            },
-            {
-                "Option": "Emily, take the high road and do it this time.",
-                "Reaction": -30
-            }]
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter Haley's home when she's there.",
-            "Details": "Haley is struggling to open a jar, and asks for your help.",
-            "Choices": [
-            {
-                "Option": "Yes.",
-                "Reaction": 30
-            },
-            {
-                "Option": "No.",
-                "Reaction": -30
-            }]
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Go to the beach between 10 AM and 4 PM during any season except Winter.",
-            "Details": "You find Haley grieving after losing her great-grandmother's bracelet.",
-            "Choices": [
-            {
-                "Option": "Relax, I'll jut buy you a new one!",
-                "Reaction": -30
-            },
-            {
-                "Option": "I'm really sorry...",
-                "Reaction": 50
-            }]
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "On a sunny day during any season except Winter, enter the Cindersap Forest between 10 AM and 4 PM.",
-            "Details": "You meet Haley at Marnie's Ranch as she's taking photos. She asks you to take some pics with her.",
-            "Choices": []
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Enter Haley's house when she's there.",
-            "Details": "Haley shows you her dark room for developing photos.",
-            "Choices": [
-            {
-                "Option": "It looks great!",
-                "Reaction": 10
-            },
-            {
-                "Option": "What does it do?",
-                "Reaction": 0
-            },
-            {
-                "Option": "I've seen better.",
-                "Reaction": -50
-            }]
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Event follows immediately after triggering previous 10-heart event.",
-            "Details": "Haley asks you what you want to do after developing the photos. She wants to kiss you.",
-            "Choices": [
-            {
-                "Option": "Offer to help decorate room.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Make an excuse and leave.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Try to kiss her.",
-                "Reaction": 0
-            }]
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 14,
-            "Season": "Spring"
-        }
-    },
-    "Leah":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "Enter Leah's cottage when she's there.",
-            "Details": "You see her working on a sculpture. She discusses scultping with you, saying, Once you get past the outer layers, the true nature starts to show...",
-            "Choices": [
-            {
-                "Option": "It's the same with people.",
-                "Reaction": 0
-            },
-            {
-                "Option": "I actually prefer the look of raw, unadultured wood.",
-                "Reaction": 0
-            },
-            {
-                "Option": "(creepy) May I have a kiss?",
-                "Reaction": -100
-            }]
-        },
-        {
-            "Hearts": 2,
-            "Trigger": "Immediately occurs after your 2-heart event with Leah",
-            "Details": "She continues talking about scultping and admits it's not easy to pay the bills when you're an artist.",
-            "Choices": [
-            {
-                "Option": "Why don't you have an art show in town?",
-                "Reaction": 0
-            },
-            {
-                "Option": "Why don't you sell your art on the internet?",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter Leah's cottage when she's there.",
-            "Details": "Leah is arguing with her ex-partner on the phone, who is asking her to come back home. Afterwards, Leah asks you if it was selfish to move out of the city to be an artist.",
-            "Choices": [
-            {
-                "Option": "No, it had to be done.",
-                "Reaction": 0
-            },
-            {
-                "Option": "No, and your ex sounds like an idiot.",
-                "Reaction": 0
-            },
-            {
-                "Option": "No, but you would've been better off staying in the city.",
-                "Reaction": -20
-            },
-            {
-                "Option": "Yeah, a little.",
-                "Reaction": -20
-            },
-            {
-                "Option": "Yeah, but it's natural to care about yourself first.",
-                "Reaction": -20
-            }]
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Leah is at your farmhouse door on any day but a rainy one between 6 am and 11:30 am.",
-            "Details": "Leah says she has a gift for you. She presents you with the sculpture she's been working on.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter Cindersap Forest when Leah is there, in any season except winter.",
-            "Details": "Leah is trying to reach a fruit from the large tree above the forest lake. She can't reach it, so you lift her onto your shoulders. ",
-            "Choices": []
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "Leah visits your farm between 6 AM and 8 AM (except in Winter). After, enter Pelican Town between 3 PM and 5 PM.",
-            "Details": "Everyone is present at Leah's art show. People bid on her art pieces. ",
-            "Choices": []
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "If you suggested an art website during her 2-heart event, enter Leah's Cottage when she's there.",
-            "Details": "Leah has her own art website. It is successful enough that she can work on her art full-time now.",
-            "Choices": []
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Enter Cindersap Forest between 11 AM and 4 PM, in any season except Winter.",
-            "Details": "Leah surprises you with a picnic and thanks you for your support. Leah's ex-partner shows up.",
-            "Choices": [
-            {
-                "Option": "Punch Kel",
-                "Reaction": 0
-            },
-            {
-                "Option": "Reason with Kel",
-                "Reaction": 0
-            }]
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 23,
-            "Season": "Winter"
-        }
-    },
-    "Maru":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "Enter the Carpenter's Shop when Maru is there.",
-            "Details": "Maru and Demetrius are testing soil samples in their lab. Maru leaves and Demetrius tells you Maru is a good kid and he doesn't want anything getting in the way of her future.",
-            "Choices": []
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter the clinic when Maru is there.",
-            "Details": "Maru is startled by your entry and drops a glass beaker she's holding. She's worried about Harvey's response and asks you what she should do.",
-            "Choices": [
-            {
-                "Option": "Just scoop it off the floor. He won't know the difference.",
-                "Reaction": -50
-            },
-            {
-                "Option": "Tell Harvey is was my fault.",
-                "Reaction": -20
-            },
-            {
-                "Option": "Tell Harvey it was an accident.",
-                "Reaction": 50
-            }]
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter the mountain on a sunny day, between 9pm and 11:40pm.",
-            "Details": "You see Maru looking through her telescope. She wants to show you something and asks what you see.",
-            "Choices": [
-            {
-                "Option": "A beautiful planet.",
-                "Reaction": 30
-            },
-            {
-                "Option": "A cold, dark abyss.",
-                "Reaction": -30
-            }]
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "Enter the Carpenter's Shop when Maru is there.",
-            "Details": "Maru shows you the project she's been working on. At some point, you accidentally get electrocuted. She asks if you're alright.",
-            "Choices": [
-            {
-                "Option": "It's okay, it doesn't even hurt.",
-                "Reaction": 30
-            },
-            {
-                "Option": "You'd better be. This hurts like crazy!",
-                "Reaction": -50
-            }]
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Enter the Carpenter's Shop between 9am and 4pm.",
-            "Details": "Maru shows you a robot she's built. It becomes self aware and wants freedom. The robot blasts into space.",
-            "Choices": [
-            {
-                "Option": "I'm so impressed with your inventions.",
-                "Reaction": 50
-            },
-            {
-                "Option": "I'm disappointed...You should have made that robot your slave.",
-                "Reaction": -50
-            },
-            {
-                "Option": "So is your Dad okay with 'us' now?",
-                "Reaction": 0
-            },
-            {
-                "Option": "(Just stare at Maru and say nothing)",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "During the previous 10-heart event, if you chose to make that robot a slave you trigger another chain of conversation.",
-            "Details": "Maru asks you why you would want to make the robot a slave if it wants it's freedom.",
-            "Choices": [
-            {
-                "Option": "MarILDA's just a piece of machinery designed to act human.",
-                "Reaction": 50
-            },
-            {
-                "Option": "I was just kidding. MarILDA deserves her freedom.",
-                "Reaction": 50
-            },
-            {
-                "Option": "I would've put her to work on the farm.",
-                "Reaction": -50
-            }]
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 10,
-            "Season": "Summer"
-        }
-    },
-    "Penny":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "Enter Pelican Town on a sunny day between 9am and 2pm.",
-            "Details": "George is unsure how he'll reach the letter in the back of his mailbox. Penny tries to help but George becomes upset. Penny asks if you were watching them.",
-            "Choices": [
-            {
-                "Option": "I was. You did a kind thing there, Penny.",
-                "Reaction": 50
-            },
-            {
-                "Option": "You should've left him alone. Now he's grumpy.",
-                "Reaction": -50
-            },
-            {
-                "Option": "I'm just taking a walk, minding my own business.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 2,
-            "Trigger": "Triggered during the previous 2-heart event with Penny",
-            "Details": "George sighs and apologizes to Penny. They resolve their conflict and George leaves. After, Penny says it must be difficult growing old.",
-            "Choices": [
-            {
-                "Option": "I'd rather not think about it.",
-                "Reaction": 0
-            },
-            {
-                "Option": "It's just a different part of life.",
-                "Reaction": 0
-            },
-            {
-                "Option": "That's why we should respect our elders.",
-                "Reaction": 0
-            },
-            {
-                "Option": "I'd rather die young...",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter the trailer when she's home.",
-            "Details": "Penny complains about how messy the place is and you help her clean up. Pam comes home and yells at Penny for letting someone else clean her home.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter the trailer when she's home.",
-            "Details": "Penny asks you to try a recipe she invented.",
-            "Choices": [
-            {
-                "Option": "(Lie) Mmm! That was a delicious!",
-                "Reaction": 50
-            },
-            {
-                "Option": "Uh...Can I get the rest to go.",
-                "Reaction": -50
-            },
-            {
-                "Option": "Well, it's definitely unique...how did you get it so rubbery?",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "Enter Cindersap Forest between 9am and 4pm.",
-            "Details": "Penny takes the kids on a field trip. She asks you if you'd like to be a guest speaker and share your experience about the countryside.",
-            "Choices": [
-            {
-                "Option": "I'd love to!",
-                "Reaction": 10
-            },
-            {
-                "Option": "Sure.",
-                "Reaction": 0
-            },
-            {
-                "Option": "No...I can't stand kids.",
-                "Reaction": -1500
-            }]
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "Triggered during 8-heart event if you agree to speak with kids.",
-            "Details": "Penny asks you if you'd like to be a parent.",
-            "Choices": [
-            {
-                "Option": "I haven't really thought about it.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Absolutely. I want a big family.",
-                "Reaction": 20
-            },
-            {
-                "Option": "I guess. It's a natural urge.",
-                "Reaction": 20
-            },
-            {
-                "Option": "No, I don't think I'd be good at it.",
-                "Reaction": 10
-            },
-            {
-                "Option": "No, the world's crowded enough already.",
-                "Reaction": -10
-            },
-            {
-                "Option": "No, I don't want to be tied down with a family.",
-                "Reaction": -10
-            }]
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "You receive a letter from Penny. After receiving the letter, enter the pool area of the spa between 7pm and midnight.",
-            "Details": "Penny joins you in the pool. She asks if you know why she invited you here.",
-            "Choices": [
-            {
-                "Option": "You have something to tell me.",
-                "Reaction": 0
-            },
-            {
-                "Option": "I'm not exactly sure.",
-                "Reaction": 0
-            },
-            {
-                "Option": "You wanted to see me in my bathing suit.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Trigger during 10-heart event regardless of your choice.",
-            "Details": "Penny confesses her feelings for you.",
-            "Choices": [
-            {
-                "Option": "I feel the same way about you.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Sorry, but I don't like you in that way...",
-                "Reaction": -1500
-            }]
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 2,
-            "Season": "Fall"
-        }
-    },
-    "Caroline":
-    {
-        "Events": [
-        {
-            "Hearts": 3,
-            "Trigger": "Caroline sends you a recipe in the mail.",
-            "Details": "You receive the recipe for Parsnip Soup in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter Pierre's General Store when Caroline and Abigail are there.",
-            "Details": "You hear Caroline and Abigail arguing in the kitchen. Caroline apologizes for trying to control how Abigail dresses. You run away when they suspect someone is in the house.",
-            "Choices": []
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Caroline sends you a recipe in the mail.",
-            "Details": "You receive the recipe for Vegetable Stew in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 7,
-            "Season": "Winter"
-        }
-    },
-    "Clint":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You receive 1 copper bar, 1 iron bar, or 1 gold bar in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Visit the saloon between 7pm and 11pm on a Monday.",
-            "Details": "Clint says he has terrible luck with women, and asks for your advice.",
-            "Choices": [
-            {
-                "Option": "Impress women with your strength and charm.",
-                "Reaction": 25
-            },
-            {
-                "Option": "Act crazy, to keep people guessing.",
-                "Reaction": 25
-            },
-            {
-                "Option": "Just act natural...be yourself.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Treat women the same as men.",
-                "Reaction": 50
-            }]
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Clint sends you a recipe in the mail.",
-            "Details": "You receive the recipe for Algae Soup in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter town from Cindersap Forest between 9am and 6:30pm by foot.",
-            "Details": "You find Clint watching Emily from the bushes. He says he was going to ask Emily out on a date. You encourage him to do it.",
-            "Choices": []
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Clint sends you a recipe in the mail.",
-            "Details": "You receive a recipe for Bean Hotpot in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 26,
-            "Season": "Winter"
-        }
-    },
-    "Demetrius":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You receive a Nautilus Shell, Rainbow Shell, Amethyst, or Bream in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Demetrius sends you a recipe in the mail.",
-            "Details": "You receive the recipe for Fried Mushroom in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter Demetrius' house while he and Robin are inside.",
-            "Details": "ou see Demetrius and Robin arguing. She asked him to get fruit, so he got tomatoes. He asks you to choose whether tomatoes are fruits or vegetables.",
-            "Choices": [
-            {
-                "Option": "Vegetable.",
-                "Reaction": -30
-            },
-            {
-                "Option": "Fruit.",
-                "Reaction": 50
-            }]
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Demetrius sends you a recipe in the mail.",
-            "Details": "You receive the recipe for Autumn's Bounty in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 19,
-            "Season": "Summer"
-        }
-    },
-    "Dwarf":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "After earning 50 Friendship points with the Dwarf, enter The Sewers. You need to have bought a Stardrop from Krobus.",
-            "Details": "Krobus and the Dwarf are found having a dispute, but Krobus offers an apology. The Wizard appears and stops the fight asking them to make peace.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 22,
-            "Season": "Summer"
-        }
-    },
-    "Evelyn":
-    {
-        "Events": [
-        {
-            "Hearts": 4,
-            "Trigger": "Enter Evelyn's home while she is inside.",
-            "Details": "When visiting Evelyn at her house you'll find her in the middle of baking cookies. She will offer you some and give you the recipe.",
-            "Choices": [
-            {
-                "Option": "Compliment them.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Say it's like chewing a hockey puck.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reach 7 hearts with Evelyn.",
-            "Details": "You receive a recipe for Rice Pudding in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 20,
-            "Season": "Winter"
-        }
-    },
-    "George":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will receive Stone (35 qty) in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Reach 3 hearts with George.",
-            "Details": "You receive a recipe for Fried Eel in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter George's house while he is there.",
-            "Details": "George struggles to reach something on the bookshelf. You help him and he opens up to you about why he's in a wheel chair.",
-            "Choices": []
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reach 7 hearts with George.",
-            "Details": "You receive a recipe for Spicy Eel in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 24,
-            "Season": "Fall"
-        }
-    },
-    "Gus":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will receive either Baked Fish, Bean Hotpot, Fish Taco, Omelet, Pancakes, Spaghetti, or Vegetable Medley in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Reach 3 hearts with Gus.",
-            "Details": "You receive a recipe for Salmon Dinner in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter the Saloon during open hours. Must have 2 hearts with Pam to trigger.",
-            "Details": "Gus is dejected because Pam isn't paying off her tab. Pam soon enters bar and you have a chance to say something.",
-            "Choices": [
-            {
-                "Option": "The saloon isn't doing well, financially.",
-                "Reaction": 15
-            },
-            {
-                "Option": "You need to pay your tab right now!",
-                "Reaction": -50
-            }]
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reach 7 hearts with Gus.",
-            "Details": "You will receive a recipe for Cranberry Sauce in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 8,
-            "Season": "Summer"
-        }
-    },
-    "Jas":
-    {
-        "Events": [
-        {
-            "Key": 1001,
-            "Hearts": 8,
-            "Trigger": "Reach 8 hearts with Jas and Vincent, then enter Cindersap Forest during Spring on a sunny day betwen 6am and 5pm.",
-            "Details": "Vincent explains how to clean Spring Onions. You gain Spring Onion Mastery afterwards, which increases sales prices of Spring Onions by 5x.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 4,
-            "Season": "Summer"
-        }
-    },
-    "Jodi":
-    {
-        "Events": [
-        {
-            "Hearts": 8,
-            "Trigger": "Reach 8 hearts with Jas and Vincent, then enter Cindersap Forest during Spring on a sunny day betwen 6am and 5pm.",
-            "Details": "Vincent explains how to clean Spring Onions. You gain Spring Onion Mastery afterwards, which increases sells prices of Spring Onions by 5x.",
-            "Choices": []
-        },
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will receive Basic Fertilizer (qty 5), Quality Fertilizer (qty 5), or Basic Retaining Soil (qty 5).",
-            "Choices": []
-        },
-        {
-            "Hearts": 2,
-            "Trigger": "Reach 2 hearts with Jodi.",
-            "Details": "You can enter Jodi's room and find a letter from her husband Kent in the drawer next to her bed.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Reach 3 hearts with Jodi.",
-            "Details": "You will receive a recipe for Fried Calamari in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Leave your farmhouse between 6:00am - 9:30am to find Jodi waiting outside.",
-            "Details": "Jodi invites you to dinner. She asks you to bring a Largemouth Bass for her casserole at 7:00 any day.",
-            "Choices": []
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reach 7 hearts with Jodi.",
-            "Details": "You will receive a recipe for Ice Cream in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 11,
-            "Season": "Fall"
-        }
-    },
-    "Kent":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will reach either a Cherry Bomb, Bomb, Mega Bomb, or Battery Pack int he mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Enter Kent's home while he and Jodi are both there.",
-            "Details": "Jodi makes popcorn, but the sound reminds Kent of war. He snaps at Jodi. Jodi asks you if you can speak with Kent.",
-            "Choices": [
-            {
-                "Option": "I know you're hurting...but don't blame your wife.",
-                "Reaction": 50
-            },
-            {
-                "Option": "Jodi's to blame...she should've known better.",
-                "Reaction": -25
-            },
-            {
-                "Option": "(Lie) Blame me...I asked for popcorn.",
-                "Reaction": -50
-            }]
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Reach 3 hearts with Kent.",
-            "Details": "You will receive a recipe for Crispy Bass in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reach 7 hearts with Kent.",
-            "Details": "You will receive a recipe for Super Meal in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 4,
-            "Season": "Spring"
-        }
-    },
-    "Krobus":
-    {
-        "Events": [],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 1,
-            "Season": "Winter"
-        }
-    },
-    "Lewis":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will receive 500g in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Reach 3 hearts with Lewis.",
-            "Details": "You will receive a recipe for Spaghetti in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter Pelican Town between 7 pm - 11pm on a sunny day. You must have 6 hearts with Marnie as well.",
-            "Details": "Lewis and Marnie are talking by the river about making their romance public. You pop and scare them. Lewis asks you to keep it a secret.",
-            "Choices": [
-            {
-                "Option": "Keep it a secret.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Won't keep it a secret.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reach 7 hearts with Lewis.",
-            "Details": "You will receive a recipe for Eggplant Parmesan in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 7,
-            "Season": "Spring"
-        }
-    },
-    "Linus":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will receive either a Catfish, Largemouth Bass, Maki Roll, Fried Calamari, or Sashimi in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 1,
-            "Trigger": "Enter the town between 8pm - 12am on a sunny day. (This event cannot trigger before Spring 7, Year 1)",
-            "Details": "You find Linus going through George's trash can. He asks you what you think about his actions.",
-            "Choices": [
-            {
-                "Option": "Yes, it's disgusting.",
-                "Reaction": 0
-            },
-            {
-                "Option": "No, it's a shame for food to go to waste.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Yes, it's illegal. That's George's property.",
-                "Reaction": 0
-            },
-            {
-                "Option": "No, but you should get a job and stop leaching off others.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Reach 3 hearts with Linus.",
-            "Details": "You will receive a recipe for Sashimi in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter the mountain area near his tent between 8pm - 12am on a sunny or snowy day.",
-            "Details": "Linus invites you into his tent and apologizes you for not trusting you when you first met. He teaches you to craft Wild Bait.",
-            "Choices": []
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "After reaching seven hearts with Linus, he will send you a recipe in the mail.",
-            "Details": "You will receive a recipe for Fish Taco in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "Exit Robin's house on a sunny day between 9am and 5pm.",
-            "Details": "Robin offers to make Linus lunch, but he refuses because he had great luck foraging that day. Robin asks you if you have something to say.",
-            "Choices": [
-            {
-                "Option": "I'm just pleased that Linus is doing well...",
-                "Reaction": 0
-            },
-            {
-                "Option": "I'd like to invite Linus to live on the farm with me...",
-                "Reaction": 0
-            }]
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 3,
-            "Season": "Winter"
-        }
-    },
-    "Marnie":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will receive Hay (qty 30) in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Leave your farmhouse between 6:30am - 9:30am.",
-            "Details": "Marnie asks you to bring Cave Carrots for her goats. You can bring it to her ranch between 9am and 5pm.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Reach 3 hearts with Marnie.",
-            "Details": "You will receive the recipe for Pale Broth in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "On a sunny day, enter the town between 7pm and 11pm. You need 6 hearts with Lewis too.",
-            "Details": "Lewis and Marnie are talking by the river about making their romance public. You pop and scare them. Lewis asks you to keep it a secret.",
-            "Choices": [
-            {
-                "Option": "Keep it a secret.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Won't keep it a secret.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reach 7 hearts with Marnie.",
-            "Details": "You will receive the recipe for Rhubarb Pie in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 18,
-            "Season": "Fall"
-        }
-    },
-    "Pam":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will receive either a Battery Pack, Beer, or Energy Tonic in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Reach 3 hearts with Pam.",
-            "Details": "You will receive the recipe for Cheese Cauliflower in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reach 7 hearts with Pam.",
-            "Details": "You will receive the recipe for Stuffing in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 0,
-            "Trigger": "Purchase Community Upgrade from Carpenter's Shop.",
-            "Details": "Robin asks you if you want to remain annonymous or tell Pam you paid for the house yourself.",
-            "Choices": [
-            {
-                "Option": "Remain annoynymous",
-                "Reaction": 0
-            },
-            {
-                "Option": "Tell Pam you paid for it",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 9,
-            "Trigger": "Triggered during 9-heart event if you tell Pam you paid for the house.",
-            "Details": "Pam thanks you but seems to think the town looks down on her. She asks you if there's anything she can do to repay you. Regardless of choice, she and Penny with hug and resolve to start acting like a real family.",
-            "Choices": [
-            {
-                "Option": "It's a gift...No repayment needed.",
-                "Reaction": 0
-            },
-            {
-                "Option": "You can start by treating Penny better.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 9,
-            "Trigger": "Triggered during 9-heart event if you decide to remain annoymous.",
-            "Details": "Pam is grateful. She believes whoever funded the home did so in order for her to avoid feeling obligated to them. She resolves to be a better person for Penny.",
-            "Choices": []
-        },
-        {
-            "Hearts": 9,
-            "Trigger": "Reach 9 hearts with Pam, purchase Community Upgrade from Carpenter's Shop, and enter Pam's house 4 days after upgrade is completed.",
-            "Details": "Pam confesses she loves the new house but hasn't been able to cut down on her drinking. She tells you she ordered a statue of the Sign of the Vessel.",
-            "Choices": [
-            {
-                "Option": "I'm glad you're feeling hopeful.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Sorry Pam, but Yoba isn't real.",
-                "Reaction": -1000
-            }]
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 18,
-            "Season": "Spring"
-        }
-    },
-    "Pierre":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will receive 250g in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Reach 3 hearts with Pierre.",
-            "Details": "You will receive the recipe for Blueberry Tart in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter Pierre's Shop.",
-            "Details": "You enter Pierre's bedroom and finding his 'secret tash' behind the book shelf. He asks you to tell no one.",
-            "Choices": [
-            {
-                "Option": "You agree.",
-                "Reaction": 0
-            },
-            {
-                "Option": "You refuse.",
-                "Reaction": -500
-            }]
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 26,
-            "Season": "Spring"
-        }
-    },
-    "Robin":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will receive Wood (qty 50).",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter Robin's house while she is home.",
-            "Details": "You see Robin cleaning the dust off her saw. She asks you if you've ever made anything out of wood, and afterwards gives you two blueprints",
-            "Choices": [
-            {
-                "Option": "Yes.",
-                "Reaction": 0
-            },
-            {
-                "Option": "No.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reach 7 hearts with Robin.",
-            "Details": "You will receive the recipe for Pumpkin Soup in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 21,
-            "Season": "Fall"
-        }
-    },
-    "Sandy":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will receive either Cactus Fruit, Coconut, or Tom Kha Soup in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reaching 7 hearts with Sandy.",
-            "Details": "You will receive a recipe for Tom Kha Soup in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 15,
-            "Season": "Fall"
-        }
-    },
-    "Sebastian":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "Enter Sebastian's room when he's there.",
-            "Details": "You find Sebastian is working as a programmer. Sebastian confides in you how he feels nobody takes his job seriously.",
-            "Choices": []
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Go to The Mountain between 11am and 5pm.",
-            "Details": "Sebastian is working on a motorcycle in the garage at his house. He talks about the journeys he'll take.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter Sebastian's room when he's there.",
-            "Details": "Sebastian invites you to play a tabletop RPG with him. You choose your class. The following in-game choices don't affect your relationship with Sebastian.",
-            "Choices": [
-            {
-                "Option": "Warrior. I like a direct approach.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Healer. I prefer to help others.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Wizard. A sharp mind is the most powerful blade of all.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "Go to the beach on a rainy day between noon and 11pm.",
-            "Details": "Sebastian is standing on the boardwalk. He opens up about his anxiety to you.",
-            "Choices": []
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Go to The Mountain between 8pm and midnight.",
-            "Details": "Sebastian takes on a ride on his motorcycle. Upon reaching a cliff, you both stand overlooking the city. He smokes and asks you what you think.",
-            "Choices": [
-            {
-                "Option": "It's beautiful.",
-                "Reaction": 0
-            },
-            {
-                "Option": "It gives me a strange, sad feeling.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Kind of ugly.",
-                "Reaction": 0
-            },
-            {
-                "Option": "You should quit smoking.",
-                "Reaction": 0
-            }]
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 10,
-            "Season": "Winter"
-        }
-    },
-    "Shane":
-    {
-        "Events": [
-        {
-            "Hearts": 2,
-            "Trigger": "Enter Cindersap Forest between 8pm and midnight.",
-            "Details": "Shane shares a beer with you and opens up a bit. The event ends with you having the 'tipsy' condition.",
-            "Choices": []
-        },
-        {
-            "Hearts": 3,
-            "Trigger": "Reach 3 hearts with Shane.",
-            "Details": "You receive the recipe for Strange Bun and Pepper Poppers in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Enter Marnie's Ranch at any time.",
-            "Details": "Shane is found passed out from drinking. He expresses fear about future and lack of a plan.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter Cindersap Forest between 9am and 8pm while storming or raining.",
-            "Details": "Shane is on the edge of the cliff, drunk, and asks you why he shouldn't just roll of the cliff right there.",
-            "Choices": [
-            {
-                "Option": "Because there's so much to live for!",
-                "Reaction": 0
-            },
-            {
-                "Option": "Jas needs you. You're like a father to her.",
-                "Reaction": 0
-            },
-            {
-                "Option": "It would be a sin.",
-                "Reaction": 0
-            },
-            {
-                "Option": "The decision is your own. Just know that I'm here for you.",
-                "Reaction": 0
-            }]
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Occurs the next morning after the previous 6-heart event.",
-            "Details": "You help take Shane to a hospital. The next day he comes to your farm to apologize to you and tells you he's going to seek counselling. ",
-            "Choices": [
-            {
-                "Option": "I'm glad I was there to help.",
-                "Reaction": 10
-            },
-            {
-                "Option": "You needed a serious wake-up call.",
-                "Reaction": -10
-            },
-            {
-                "Option": "I'm just happy you're still here.",
-                "Reaction": 10
-            }]
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Enter Marnie's Ranch while Shane is home after triggering the 6-heart event.",
-            "Details": "Shane is happier since he's stopped drinking. With the money he saved he can afford to give Jas a present.",
-            "Choices": []
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Enter the town between 10am and 4pm on a Sunny day. You also need 2 hearts with both Emily and Clint.",
-            "Details": "Shane is filming a scene for Joja Cola feature Emily and Clint. You can help him by being an extra.",
-            "Choices": []
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "Enter Marnie's Ranch while Shane is home.",
-            "Details": "There is a scene with Shane in a chicken coop.",
-            "Choices": []
-        },
-        {
-            "Hearts": 10,
-            "Trigger": "Exist your house before 6:30 am to initiate the event, then walk to the Bus Stop between 4pm and 6pm.",
-            "Details": "Shane invites you to see a gridball team in Zuzu City. He asks you about what you think of the game.",
-            "Choices": [
-            {
-                "Option": "Noisy...It makes me appreciate how peaceful it is back home.",
-                "Reaction": 0
-            },
-            {
-                "Option": "Fun...Pelican Town seems really boring in comparison.",
-                "Reaction": 0
-            }]
-        }],
-        "CanMarry": true,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 20,
-            "Season": "Spring"
-        }
-    },
-    "Vincent":
-    {
-        "Events": [
-        {
-            "Hearts": 8,
-            "Trigger": "Reach 8 hearts with Vincent and then speak with him.",
-            "Details": "Vincent will ask you to keep a secret; he wants to marry Penny when he grows older.",
-            "Choices": []
-        },
-        {
-            "Hearts": 8,
-            "Trigger": "Reach 8 hearts with both Vincent and Jas, then enter Cindersap Forest during Spring on a sunny day between 6am and 5pm.",
-            "Details": "Vincent explains how to clean Spring Onions. You gain Spring Onion Mastery afterwards, which increases sells prices of Spring Onions by 5x.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 10,
-            "Season": "Spring"
-        }
-    },
-    "Willy":
-    {
-        "Events": [
-        {
-            "Hearts": 3,
-            "Trigger": "Reach 3 hearts with Willy.",
-            "Details": "You will receive a recipe for Chowder in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 5,
-            "Trigger": "Reach 5 hearts with Willy.",
-            "Details": "You will receive the recipe for Escargot in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 6,
-            "Trigger": "Enter The Beach between 6am and 5:10pm.",
-            "Details": "Willy asks for your help inside the Fish Shop. You see crabs running amok, but soon Gus comes in and offers to buy them all. For the next 3 days, Gus will sell unlimited Crab Cakes at the Saloon for 550g each.",
-            "Choices": []
-        },
-        {
-            "Hearts": 7,
-            "Trigger": "Reach 7 hearts with Willy.",
-            "Details": "You will receive the recipe for Fish Stew in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 9,
-            "Trigger": "Reach 9 hearts with Willy.",
-            "Details": "You will receive the recipe for Lobster Bisque in the mail.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 24,
-            "Season": "Summer"
-        }
-    },
-    "Wizard":
-    {
-        "Events": [
-        {
-            "Hearts": 1,
-            "Trigger": "At any friendship level greater than 0, you have a chance to receive a gift in the mail.",
-            "Details": "You will receive either Fire Quartz, Frozen Tear, Jade, or Purple Mushroom in the mail.",
-            "Choices": []
-        },
-        {
-            "Hearts": 4,
-            "Trigger": "Reachi 4 hearts with the Wizard.",
-            "Details": "You gain access to the basement of the Wizard's Tower, where you can change your appearance at the Shrine of Illusions for 500g.",
-            "Choices": []
-        }],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 17,
-            "Season": "Winter"
-        }
-    },
-    "Leo":
-    {
-        "Events": [],
-        "CanMarry": false,
-        "CanGift": true,
-        "Birthday":
-        {
-            "Day": 26,
-            "Season": "Summer"
-        }
+  "Alex": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "On a sunny Summer day, visit the Beach when Alex is there.",
+        "Details": "You see Alex with his gridball. He greets you and tries to toss you the gridball. You fail to catch it. He laughs and says it was a nice try. He goes on to tell you he's sure that he's going to become the first professional gridball player from Stardew Valley. He asks you what you think his chances are. * Alex thanks you for your support and says that he'll remember it. * Alex says you're just a little jealous and leaves.",
+        "Choices": [
+          {
+            "Option": "I believe in you!",
+            "Reaction": 0
+          },
+          {
+            "Option": "Wow, you're really arrogant.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Enter town between 9am and 4pm.",
+        "Details": "Alex is next to the dog pen near his home. He's talking to the dog, whose name is revealed as Dusty. He comments that both he and the dog have been through a lot and that he feels misunderstood. You come out from behind the Saloon, and Alex asks if you heard any of that. * * Either way, he says the reason that he lives with his grandparents is because of his dad. His dad was an alcoholic and would verbally abuse Alex, calling him \"worthless\". One day, his dad left, and shortly after that, his mother got sick and passed away. Alex goes on to say that he shouldn't dwell on it and doesn't need sympathy. Trying to lighten the mood, Alex offers you the opportunity to see what Dusty will do...",
+        "Choices": [
+          {
+            "Option": "Yes, I heard everything.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Not really... why?",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 5,
+        "Trigger": "Enter Alex's house when he's there.",
+        "Details": "You approach him while he stares at his bookcase and laments the fact that he hasn't read a single book in it. He tells you that he's worried he won't get anywhere in life without being knowledgeable and that he feels worthless. * * * He decides that if he works hard, he can accomplish anything. He suggests that you and he can have dinner and discuss philosophy.",
+        "Choices": [
+          {
+            "Option": "That's crazy. You're a genius!",
+            "Reaction": 0
+          },
+          {
+            "Option": "We all have our strengths and weaknesses.",
+            "Reaction": 50
+          },
+          {
+            "Option": "Worthless? Yeah, that about sums it up.",
+            "Reaction": -50
+          }
+        ]
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter Alex's house when he's there.",
+        "Details": "Alex expresses doubt about being able to go pro as a gridball player. He apologizes to you for acting rude and arrogant and appreciates how you stuck with him despite all that. You provide some encouragement (no choices necessary), and Alex will return to his strength workout with renewed vigor.",
+        "Choices": []
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "On a sunny day, visit the Beach when Alex is there. He is only scheduled to go to the beach in Summer, but may pass by on the way to the Ginger Island resort in any season after it is completed.",
+        "Details": "Alex is sitting on the beach crying. You approach him and sit down next to him. He says today is the day that his mother died 12 years ago. He regrets not being able to thank her for taking care of him when he was a kid. The only keepsake he has left is his mother's music box. Alex opens it and plays it for the both of you. As the music plays, you see a vision of Alex's mother happily cradling baby Alex in her arms. As the music fades, he asks what you're thinking. * Alex agrees and says that's why he's working so hard to be a professional gridball player. * * Alex thanks you and bashfully says you're his best friend in the whole town. If male, he says \"You... you're different than other...",
+        "Choices": [
+          {
+            "Option": "Honor your mother's memory by always doing your best.",
+            "Reaction": 0
+          },
+          {
+            "Option": "You shouldn't dwell in the past.",
+            "Reaction": 0
+          },
+          {
+            "Option": "I'll always be here for you if you get lonely.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Get over it. Life is hard for everyone.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Alex will send you a letter to meet him at the Saloon after dark. After receiving the letter, enter the Saloon between 7pm and 10pm.",
+        "Details": "Alex reserves a private room for your dinner date. Gus plays the violin for you two, and Emily will bring in your food. If the player is female, Alex confesses that he has had a crush on you since the two of you first met, and although his crushes in the past faded away quickly, his feelings for you kept growing. If the player is male, Alex confesses that he has been drawn to you since the two of you first met; although he denied these feelings at first, he's now decided to follow his heart. * Alex is elated that the both of you were finally able to admit your feelings to each other. He happily digs into his steak. Dusty suddenly bursts through the window, salivating at the smell of...",
+        "Choices": [
+          {
+            "Option": "I feel the same way.",
+            "Reaction": 0
+          },
+          {
+            "Option": "I'm sorry... I don't feel that way about you.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "Exit the Farmhouse in year 2+ between 6am and 8:20am on any day other than Sunday. You must have 5000 available.",
+        "Details": "Alex will stop you and ask for 5000 for a 'secret project'. If you accept, he will remark that it will be ready to be seen on Sunday. Part 2 can be triggered by entering the Saloon the following Sunday. Alex, Kent, Shane, George, and Gus can be seen watching a gridball game in the backroom, half of which has been decorated with gridball memorabilia and a TV. The other half still has barrels, and storage. The player walks in, and Alex tells the player that although his dream of going pro may not have been realised (though he assures the farmer that he's happy with his life now), this is a small way of realising it. Kent adds that it takes his mind off things, and Shane agrees. Gus tells...",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelor, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 13,
+      "Season": "Summer"
     }
+  },
+  "Elliott": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter Elliott's cabin when he's there.",
+        "Details": "Elliott will greet you, and explain that he came to Pelican Town to become a writer but no one from his hometown believed he could make it. He asks what kind of novels you like: * * * He says he'll remember your choice, then asks you to look at his rose because he thinks it may be wilting.",
+        "Choices": [
+          {
+            "Option": "Mystery",
+            "Reaction": 30
+          },
+          {
+            "Option": "Romance",
+            "Reaction": 30
+          },
+          {
+            "Option": "Sci-Fi",
+            "Reaction": 30
+          }
+        ]
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Enter the Stardrop Saloon between 3pm and 10pm when Gus is there.",
+        "Details": "Gus says he'll take your order in a moment. Before he gets to you, Elliott walks into the building and says it's a pleasant surprise to find you here. He says that he's stopping in to relax after eight hours of writing. If your character is male, Elliott orders two ales, one for you and one for him. He instead orders wine for you if your character is female. You stop him before he can drink and propose a toast. You can choose from four different toasts: * \"Ah, to a harmonious future for the community... what a virtuous idea. Here's to Pelican Town!\" * \"That's a great idea! Here's to us!\" * \"Well... okay.\" * \"Hmph. Forget it.\" You both drink and he starts dancing where he is. Then the...",
+        "Choices": [
+          {
+            "Option": "To Pelican Town!",
+            "Reaction": 25
+          },
+          {
+            "Option": "To our friendship!",
+            "Reaction": 50
+          },
+          {
+            "Option": "To my good health!",
+            "Reaction": -10
+          },
+          {
+            "Option": "To your doom!",
+            "Reaction": -50
+          }
+        ]
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter Elliott's home when he's there.",
+        "Details": "Elliott is playing the piano. After he finishes, the player has a dialogue option: * * Elliott talks about how difficult it's been to finish his novel and says \"Sometimes I wish I could just throw it all away and become a farmer like you.\" The player can respond with: * Elliott apologizes for being insensitive and clarifies that what he really wants is to experience \"real life\". * Elliott is surprised but declines the offer, saying he needs to finish his novel.",
+        "Choices": [
+          {
+            "Option": "That was wonderful",
+            "Reaction": 0
+          },
+          {
+            "Option": "How long have you been playing?",
+            "Reaction": 0
+          },
+          {
+            "Option": "It's just as hard to be a farmer, you know",
+            "Reaction": 0
+          },
+          {
+            "Option": "Come live on the farm, I could use the extra help",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "After receiving a letter from Elliott, visit the museum between 1pm and 7pm. (It doesn't need to be the same day.)",
+        "Details": "Elliott sends you a letter inviting you to a reading of his finished novel at the library that afternoon. When you enter the museum, you find many villagers have gathered to listen to Elliott's first book reading. Elliott expresses his delight at your coming to listen. He reads from his novel. Depending on your choice in his Two-heart event, you'll get one of these stories: * The mystery novel Blue Tower. \"It's a mystery novel set in a surreal, dystopian future. Chapter One. From the shadows emerged a man, radiating with enigmatic omniscience. 'Good Evening, Mr. Lu,' he said, the corners of his mouth quivering. Lu seemed astonished. 'How did you know my name?'\" (Fade.) \"Lu checked Jenu's...",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Go to the beach on a day when it is not raining between 7am and 1pm. A letter will be sent to you but it is not needed to trigger the event.",
+        "Details": "Elliott writes you a letter saying he has an idea. You join him on the docks. Elliott had fixed the row boat that's been on the docks, and he wonders if you want to go with him on a \"maiden voyage.\" * If you accept, Elliott talks about his novel and how he couldn't have done it without you. Then he's at a loss for words to explain how he feels about you. Suddenly, he kisses you! You begin trembling. ** :If your character is a man, he will comment on how he didn't know if you would have feelings for another man. You both head back to shore, and Elliott comments on how the valley finally looks like home. :* :Elliott apologizes and the scene ends. * If you refuse, Elliott says \"I see\" and...",
+        "Choices": [
+          {
+            "Option": "I'm happy",
+            "Reaction": 50
+          },
+          {
+            "Option": "You're making me very uncomfortable. Stop.",
+            "Reaction": -50
+          }
+        ]
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "Exit the farmhouse or enter the farm while Elliott is in it (not in the farmhouse) between 6am and 3pm on a day when there are no Festivals occurring for the next 8 days.",
+        "Details": "Elliott will be on the front porch when the player leaves the farmhouse. Elliott will send the player letters in the mail daily for a full week while he is touring for his book signing. On the second day of the week of his absence, one Crab Cakes will appear in the player's fridge or Mini-Fridge if there is available space. On the 8th day, he will arrive back at the farmhouse, and the last part of the event will trigger as soon as the player wakes up.",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelor, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 5,
+      "Season": "Fall"
+    }
+  },
+  "Harvey": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter George's house while George is there.",
+        "Details": "Harvey is performing a private check-up on George. He tries to explain that George needs to make some lifestyle changes if he wants to keep healthy, but George seems irritated with his advice and states that he knows what's best for his own body. Harvey explains that he went to school for eight years so that he could help people in an attempt to get George to cooperate, but then his attention is drawn away as he notices your arrival. Harvey says you shouldn't be there because it is a private session, but George stops you from leaving by asking for a second opinion on the matter. * He again says that he's only trying to help and George finally gives in and agrees to follow doctor's...",
+        "Choices": [
+          {
+            "Option": "George should follow Dr. Harvey's advice.",
+            "Reaction": 40
+          },
+          {
+            "Option": "George knows what's best for his own body.",
+            "Reaction": -40
+          }
+        ]
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Enter the clinic when Harvey is there.",
+        "Details": "Harvey says he was just about to write you a letter about how you're due for your annual check-up. As he's looking you over, he notices your pulse seems high. * Harvey assumes that it's because of the Hospital and tells you to relax because he's here to help. * * At the end of it, Harvey declares you healthy and says you should take care not to overwork yourself on the farm.",
+        "Choices": [
+          {
+            "Option": "I'm a little nervous...",
+            "Reaction": 20
+          },
+          {
+            "Option": "I'm out of breath from working on the farm.",
+            "Reaction": 20
+          },
+          {
+            "Option": "Are you really a doctor? My pulse is fine!",
+            "Reaction": -50
+          }
+        ]
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter the general store between 11am and 3pm.",
+        "Details": "You witness a dance aerobics session with some of the ladies and, unexpectedly, Harvey. Harvey seems out of breath as the session comes to an end, heading towards the door to leave but running into you on the way. Harvey seems incredibly embarrassed when he finds out you were watching, wanting to keep it a secret. He explains that he's doing it to stay healthy, which becomes more difficult with age and the stress of running the clinic essentially alone. Harvey seems discouraged because of how difficult it is for him to keep up with the rest of the group, figuring he must not be in good shape. He asks you not to tell the rest of the town that he's doing dance aerobics. * Harvey thanks you...",
+        "Choices": [
+          {
+            "Option": "I won't tell",
+            "Reaction": 20
+          },
+          {
+            "Option": "I can't promise that.",
+            "Reaction": -50
+          }
+        ]
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "Enter the clinic.",
+        "Details": "You head into Harvey's room to find him using his equipment in an attempt to contact a pilot. He suddenly gets a response, surprising him and making his pulse race, but he manages to respond with his coordinates before quickly signing off. As you enter the room, you are presented with two choices: * * Either way, Harvey's response is the same. He notices you and tells you he made contact with a real pilot. He excitedly tells you to come over to the window to watch the pilot fly overhead with him. After the plane passes Harvey opens up about how he always wanted to be a pilot when he was younger, but couldn't because of his bad eyesight and crippling fear of heights. He tells you not to...",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Harvey sends you a letter asking to meet at the railroad tracks. Go there between 9am and 5pm.",
+        "Details": "When you meet him there, he says he's glad you came and that something should be happening very soon. A man in a hot air balloon, Marcello, lands nearby, says the balloon is yours for the next two hours, and heads into town for the Stardrop Saloon. Harvey tells you that he saw the hot air balloon rental advertised in the newspaper and thought it was a perfect thing to do together. Before hopping in, you can either immediately get to it or ask him why he did this since you know about his incredible fear of heights. If you opt to ask him, he bashfully explains that while his fear is still a major factor, he admires you and your courage and says that it should be more than enough for the...",
+        "Choices": []
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "Enter an upgraded farm house (needs to be upgraded at least twice) between 8pm and midnight.",
+        "Details": "In the cutscene, Harvey is seen cooking and then setting the table for dinner. As you enter, Harvey says you're just in time and tells you he's cooked angel hair pasta with clams. He asks you how the dish tastes and he asks what you did that day. At the end, Harvey offers to wash the dishes and says he is happy to do so.",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelor, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 14,
+      "Season": "Winter"
+    }
+  },
+  "Sam": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter Sam's house when he's there.",
+        "Details": "Sam and Sebastian are jamming out in Sam's room. Sam tells you he's trying to get a band together, but he's unsure what style of music to play. He asks what music you like. * * * * No matter which style you pick, Sam says that's the style he's been thinking about for the band. He asks Sebastian if he's on board too. Sebastian agrees and Sam thanks you. Note that if you skip this cutscene, Sam's 8-heart cutscene will play cheerful pop music.",
+        "Choices": [
+          {
+            "Option": "Cheerful pop music.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Experimental noise rock.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Hi-Energy dance music.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Honky-tonky country music.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 3,
+        "Trigger": "In any season except winter, enter the beach on a sunny day between 7am and 3pm. This event only happens in Year 1.",
+        "Details": "Sam is watching his brother Vincent play in the sand. Sam says his dad used to take them to the beach on sunny days. Vincent asks if their father will come home. Sam says \"Of course\". Vincent mentions overhearing people talk about mass military casualties. Sam tells him not to believe them, and Vincent returns to playing. Sam feels bad for getting his brother's hopes up and asks for your opinion. * Sam questions your thoughts, but then agrees that kids have to learn about the world one way or another. * Sam agrees and says kids should hang on to their childhood as long as they can. Sam tells you the band's coming together, and Sebastian really wanted Abigail to be the drummer.",
+        "Choices": [
+          {
+            "Option": "It's best to be honest with kids.",
+            "Reaction": 0
+          },
+          {
+            "Option": "You did the right thing. Kids should have hope.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Enter Sam's house when he's there.",
+        "Details": "Sam is in the kitchen. He says hello. As he's getting you a snack, he drops an egg on the kitchen floor. His mom hears the commotion, walks into the kitchen, and becomes upset about the mess. Sam asks you to tell her what happened. * * Sam agrees with you. * Jodi thanks you for being honest, and Sam insists he'll clean up the mess. Talking to Sam after this event causes him to say \"Sorry about what happened earlier.\"",
+        "Choices": [
+          {
+            "Option": "Sam dropped the snack as he was handing it to me.",
+            "Reaction": -10
+          },
+          {
+            "Option": "Sam handed me the snack and then I dropped it.",
+            "Reaction": 50
+          },
+          {
+            "Option": "Sam dropped it on purpose. He thought it would be funny.",
+            "Reaction": -50
+          }
+        ]
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "On any day when it's not raining, enter the town between noon and 4pm.",
+        "Details": "Sam is skateboarding and grinding on Emily and Haley's flower box. Lewis catches him and scolds him for it. Lewis asks for your opinion. * Sam is unhappy, but obliges and says he'll just not skateboard ever again. * Sam seems happy and agrees. Mayor Lewis becomes frustrated and states that he thought you were more mature than that but afterwards apologizes to Sam and asks him to be more careful in the future. * Mayor Lewis says he doesn't want to see Sam doing it again, Sam agrees and the Mayor leaves. Then Sam turns to you and, with a smile, asks if you saw his rad trick.",
+        "Choices": [
+          {
+            "Option": "You're right, sir. Sam should respect private property.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Don't blame Sam. There's nowhere else to ride!",
+            "Reaction": 0
+          },
+          {
+            "Option": "I'm staying out of this.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "Sam shows up at your doorstep between 6am and 8am. Only triggers if you've seen his two-heart event.",
+        "Details": "Sam invites you to see his band play in Zuzu City and asks to meet at the bus stop at 4pm. Enter the bus stop map between 4pm and 7pm to meet Sam and the others, and watch them play. He thanks you for inspiring his band with the type of music they should play. This heart event does not require the bus to be repaired. If you have skipped Sam's 2-heart cutscene, cheerful pop music will play during this heart event. Additionally, no time will have passed during the heart scene (unlike festivals, which always end the day), so if the bus stop map is entered at 4pm, you will return at 4pm as well. File:Sam's gig.gif",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "After receiving a letter from Sam, enter the town on a sunny day between 8pm and midnight.",
+        "Details": "You meet Sam outside his house. He says it's cold outside and sneaks you into his room to talk privately. As he admits he's falling for you, his mom knocks on the door. He has you hide in the bed. His mom comes in and asks why he's sweating and red in the face, and Sam says he's just been doing push ups. She wishes him good night and leaves. You are presented with the option to: * (If you take this option, the game presents the following 2 more choices) ** You return Sam's affections, and the two of you share a kiss. ** You reject Sam's advances. * Sam crawls into bed with you, kisses you, and says \"I knew there was something special between us.\"",
+        "Choices": [
+          {
+            "Option": "Get out of the bed.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Move Closer.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Head for the window.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Stay put.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "'Part 1:' Enter an upgraded farmhouse (needs to be upgraded at least twice) between 6:10am and 5:00pm, when Sam is inside.",
+        "Details": "'Part 1:' :Sam says he feels like he's gotten lazy since moving into the farmhouse and he wants to find some work -- something to do with music. 'Part 2:' :Sam receives a job offer in the mail, making music for a kids' TV show called \"The Happy Junimo Show\". He says it's not exactly what he had in mind. :* :Sam responds \"Hmm... Yeah, I guess that's one way to look at it.\" :* :Sam responds \"I mean... you're right, someone's gotta make children's music. But it's not exactly a 'dream job'...\" :* :Sam responds \"Ah well... that's okay. I'll make the best of it, like I always do.\" :Sam continues by saying \"I guess I'd better start 'thinking like a kid'...\" :* :Sam exclaims \"Hey!\" while the...",
+        "Choices": [
+          {
+            "Option": "Just think of this as a stepping stone in your career...",
+            "Reaction": 0
+          },
+          {
+            "Option": "Just think of how happy you'll make the children!",
+            "Reaction": 0
+          },
+          {
+            "Option": "I'm sorry...",
+            "Reaction": 0
+          },
+          {
+            "Option": "That should be easy for you...",
+            "Reaction": 0
+          },
+          {
+            "Option": "You could ask your little brother for help!",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelor, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 17,
+      "Season": "Summer"
+    }
+  },
+  "Abigail": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter Pierre's General Store when Abigail is there, any day except Saturday.",
+        "Details": "You enter Abigail's room and watch her get angry about a videogame. She asks for your help, and you play the console version of Journey of the Prairie King together. (This is just like the arcade version in the Stardrop Saloon, except that Abigail plays a second character and actively helps you). When you finish the level, she thanks you and the cutscene ends. If you fail, however, she will still thank you for trying. You can't gain or lose friendship points during this heart event.",
+        "Choices": []
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Visit the mountain between noon and 7pm on a rainy day, any season except Winter.",
+        "Details": "You see Abigail playing her flute. She asks what you're doing out in the rain. * * * Regardless of your response, she invites you to stand under the tree with her. You pull out a lyre (Abigail calls it \"a mini harp!\") and you play a duet as the camera pans out over the lake. Note that if the player has cut down the tree near the mountain lake it will not be present during the 4 heart event, but Abigail will still reference the tree during the dialogue.",
+        "Choices": [
+          {
+            "Option": "Just doing some work.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Enjoying the weather.",
+            "Reaction": 50
+          },
+          {
+            "Option": "I could ask you the same question.",
+            "Reaction": 10
+          }
+        ]
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Between 9pm and midnight on a day when it is not raining, enter Pelican Town from any direction. (This includes exiting homes or shops in Town.)",
+        "Details": "Abigail is in the graveyard. She tells you that she's been practicing with her sword because she wants to go on adventures. She asks if you've ever used a sword. * * * * Pierre arrives and interrupts to say that Caroline wants her to come help cook dinner. Abigail gets angry, saying they only expect her to help cook because she's a girl. She walks off, calling for you to follow. You both hide in some bushes and talk. After talking she will ask you to help her untangle her hair from a bush, and the cutscene ends.",
+        "Choices": [
+          {
+            "Option": "Yes, and it's exciting!",
+            "Reaction": 10
+          },
+          {
+            "Option": "Yes, but only in self-defense.",
+            "Reaction": 10
+          },
+          {
+            "Option": "Yes, but it's dangerous. You should stay safe.",
+            "Reaction": -100
+          },
+          {
+            "Option": "No.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "After receiving a letter from Abigail, enter Pierre's General Store between 8pm and 10pm when she's there. (Note that, unless you have the Key To The Town, you cannot enter the store from outside after 9pm, but you can wait in Caroline's greenhouse and trigger the event by exiting to the kitchen.)",
+        "Details": "Abigail sends you a letter (signed \"Abby\") inviting you to visit her in her room. When you arrive, Abigail shows you her spirit board. It reveals a message that indicates she's starting to develop feelings for you. She gets embarrassed and rushes you out of her room. Regardless of how you entered the store, you will end up outside. The next day she visits you in the morning and apologizes.",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the mines or the Quarry Mine (or ascend from a lower floor of the mines) between 5pm and midnight. The event won't trigger if you've already given her the Mermaid's Pendant.",
+        "Details": "Abigail is preparing to go down the ladder into the mine when she's startled by a bat flying up into her face. She laughs it off and looks back down the hole. Hundreds more bats fly up and she's terrified, running to cower in the corner of the cave. You rush in to comfort her. * * She tells you that maybe she isn't as tough as she thought. * * * She confesses that she likes you as more than a friend, and asks you to stay with her there. She hugs you. If your character is a girl, she will also state that she didn't know she liked other girls until she met you.",
+        "Choices": [
+          {
+            "Option": "What happened?",
+            "Reaction": 20
+          },
+          {
+            "Option": "Are you okay?",
+            "Reaction": 40
+          },
+          {
+            "Option": "You're safe with me.",
+            "Reaction": 20
+          },
+          {
+            "Option": "I get scared too.",
+            "Reaction": 40
+          },
+          {
+            "Option": "You're crying like a little baby. Stop.",
+            "Reaction": -50
+          }
+        ]
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "Enter the Backwoods between 6:10am and 5pm.",
+        "Details": "The player is foraging in bushes as a monster appears from a bush. It attacks the player and the player collapses. Abigail appears and kills the monster. She asks if the player is okay and says \"I've never taken a life before.\" thumb|right|Monster Grave * Abigail responds \"Yeah... I did what I had to do. I guess the world's a pretty tough place. It was either you or him, right?\" * Abigail responds \"...Aren't they just trying to survive, like us? They may be our enemies, but I still think they deserve sympathy. Still... I did what had to be done.\" * Abigail responds \"Huh? That's pretty funny coming from someone who just got rescued... But... yeah... Sometimes reality forces us to do...",
+        "Choices": [
+          {
+            "Option": "It's sad, but there was no other option.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Monsters don't deserve our sympathy!",
+            "Reaction": 0
+          },
+          {
+            "Option": "It's a harsh world, kid.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Did you have to kill him?",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelorette, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 13,
+      "Season": "Fall"
+    }
+  },
+  "Emily": {
+    "Events": [
+      {
+        "Hearts": 10,
+        "Trigger": "A letter will invite the player to meet Emily in the Secret Woods after 10pm that night.",
+        "Details": "You go camping with Emily in the Secret Woods. There is strange grunting coming from the forest. She says it's cold and snuggles up close to you by the fire. A bear comes out of the woods and approaches your campsite. It grunts loudly and you both jump and dive into the tent. The bear sniffs around and leaves. Emily says that one of the sleeping bags is still out there, and she's not willing to go out and get it... so you have to share a bag. You hear movement in the tent, the screen fades and the day ends. The next day, the player receives a letter from Emily, saying",
+        "Choices": []
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "Exit the farmhouse between 6am and 8:20am.",
+        "Details": "Emily will appear outside the farmhouse and provide a quest to bring her 200 pieces of fiber. The quest is called \"Errand for your Wife\". After completing the quest and waiting 3 days, enter the farmhouse between 8pm and midnight. Emily will give you a new outfit consisting of Emily's Magic Hat, Emily's Magic Boots, Emily's Magic Shirt, and a pair of matching blue Genie Pants.",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelorette, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 27,
+      "Season": "Spring"
+    }
+  },
+  "Haley": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter Haley and Emily's house when they're both there.",
+        "Details": "Haley and Emily are fighting about cleaning under the couch cushions when you arrive. Emily is upset that Haley refuses to clean the cushions. Haley says she cleaned them last week, and Emily thinks Haley is being childish. You're tasked with resolving the conflict. * Haley angrily storms off and Emily cleans the cushions. * Both agree, though Haley isn't ecstatic about it. * Haley is upset that you implied she's being childish. Emily cleans the cushions.",
+        "Choices": [
+          {
+            "Option": "Stop whining and just clean it!",
+            "Reaction": -50
+          },
+          {
+            "Option": "Haley, why not have this be your one weekly job?",
+            "Reaction": 30
+          },
+          {
+            "Option": "Emily, take the high road and do it this time.",
+            "Reaction": -30
+          }
+        ]
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Enter Haley's house when she's there.",
+        "Details": "Haley is struggling to open a jar, and asks if the player is strong. * Haley responds: \"Great, then you shouldn't have any problem opening this jar for me!\" * Haley responds: \"Oh... you aren't? Hmmm... Well could you try opening this jar for me anyways?\" After opening the jar, Haley says you're stronger than you look. The next day, she'll usually have dialogue about having found a tool to help her open jars.",
+        "Choices": [
+          {
+            "Option": "Yes.",
+            "Reaction": 30
+          },
+          {
+            "Option": "No.",
+            "Reaction": -30
+          }
+        ]
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Go to the beach between 10 AM and 4 PM during any season except Winter.",
+        "Details": "You find Haley grieving after losing her bracelet. * Haley responds: \"No, you won't! This bracelet was passed down to me by my great-grandmother!\" * Haley responds: \"*sigh* ...Maybe it'll wash up on another shore. I can't bear to think of it at the bottom of the ocean.\" After choosing an answer, Haley reveals that the bracelet belonged to her great grandmother. The bracelet is located to the right of Elliott's cabin behind a shrub. After returning the bracelet, Haley hugs you and says she won't forget what you've done.",
+        "Choices": [
+          {
+            "Option": "Relax, I'll just buy you a new one!",
+            "Reaction": -30
+          },
+          {
+            "Option": "I'm really sorry...",
+            "Reaction": 50
+          }
+        ]
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "On a sunny day during any season except Winter, enter Cindersap Forest between 10 AM and 4 PM.",
+        "Details": "You meet Haley at Marnie's ranch as she's taking photos. She asks you to take some pictures with her, and asks how to approach a cow. She climbs on one, falls off and gets covered in dirt. Haley giggles and leaves to take a shower. The next morning, Haley will write you a letter that says:",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter Haley's house when she's there.",
+        "Details": "Haley shows you her dark room for developing photos. * * * Haley asks what you want to do now. * Ends the scene and disappoints Haley. If you talk to her immediately after the cutscene, she says \"Well the dark room looks great now, thanks \" with her annoyed portrait. * The player leaves the room, leaving Haley alone. Haley states that she didn't think the player was that dense. Ending the scene. If you talk to Haley immediately after the cutscene, she says \"I thought you had more important things to do...\" with her annoyed portrait. * Haley responds, \"Oh, ... I've been waiting so long for you to do that. One moment...\" She flips a switch, the room goes mostly black except where you and...",
+        "Choices": [
+          {
+            "Option": "It looks great!",
+            "Reaction": 10
+          },
+          {
+            "Option": "What does it do?",
+            "Reaction": 0
+          },
+          {
+            "Option": "I've seen better.",
+            "Reaction": -50
+          },
+          {
+            "Option": "Offer to help decorate the dark room.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Make an excuse and leave.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Try to kiss her.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "'Part 1:' Enter town between 8am and 3pm on a day that's not raining. 'Part 2:' At least one day later, enter the Farm House between 6:20am and 5pm. 'Part 3:' At least one day later, enter Pelican Town with a Chocolate Cake in inventory between 6am and 3pm on a day that's not raining.",
+        "Details": "'Part 1:' On her way to her house, Haley overhears a conversation between Vincent, Jas, and Penny. Jas complains about her math book cover falling off, and Penny notices that all her books are falling apart. Penny says \"new books are expensive, so we'll just have to make do with what we have...\" Vincent asks \"Does this mean I don't have to do my homework?\" Talking to Haley after the scene will result in her saying: \"I've been thinking about cake a lot lately...\". 'Part 2:' Haley says she wants to get everyone together for a charity cake-walk in town on the next sunny day, and explains that it's kind of like musical chairs but everyone gets cake. She asks the player to bring a Chocolate...",
+        "Choices": [
+          {
+            "Option": "Yes",
+            "Reaction": 0
+          },
+          {
+            "Option": "Yes (begrudgingly)",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelorette, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 14,
+      "Season": "Spring"
+    }
+  },
+  "Leah": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter Leah's Cottage when she's there.",
+        "Details": "You see her working on a sculpture. She discusses sculpting with you, and says \"Once you get past the outer layers, the true nature starts to show...\" * she agrees and says \"Oh! yeah, that's absolutely right!\" * She says that there's nothing wrong with that and that she thinks there's lots of beauty to be found in raw untouched nature. She goes on to say as a human, she is interested in how we shape and interpret the world around us, she explains this as she is interested in 'art'. * ** If the farmer is male, she calls you a pig, hits you with a hammer and kicks you out. The scene ends. ** Otherwise, she acts surprised, saying \"Oh! you're...? (blushing) Me too. That's good to know\"....",
+        "Choices": [
+          {
+            "Option": "It's the same with people.",
+            "Reaction": 0
+          },
+          {
+            "Option": "I actually prefer the look of raw, unadulterated wood.",
+            "Reaction": 0
+          },
+          {
+            "Option": "(creepy) May I have a kiss?",
+            "Reaction": -100
+          },
+          {
+            "Option": "Why don't you have an art show in town?",
+            "Reaction": 0
+          },
+          {
+            "Option": "Why don't you sell your art on the internet?",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Enter Leah's Cottage when she's there.",
+        "Details": "You see her arguing with her ex-partner on the phone, who is asking her to come back to the city she left. After the call, she tells you her story and asks if it was selfish to move out of the city to be an artist. * Leah responds, \"You're right... I just wouldn't have been happy back there.\" * Leah responds, \"That's a bit harsh... But yeah, we had different priorities.\" * * * Depending on your response in this conversation and the two-heart event, she'll either thank you for listening or briefly get angry. She tells you that she's been thinking about the art show or is saving for a computer, depending on your choice in the previous event.",
+        "Choices": [
+          {
+            "Option": "No, it had to be done.",
+            "Reaction": 0
+          },
+          {
+            "Option": "No, and your ex sounds like an idiot.",
+            "Reaction": 0
+          },
+          {
+            "Option": "No, but you would've been better off staying in the city.",
+            "Reaction": -20
+          },
+          {
+            "Option": "Yeah, a little.",
+            "Reaction": -20
+          },
+          {
+            "Option": "Yeah, but it's natural to care about yourself first.",
+            "Reaction": -20
+          }
+        ]
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Leah is at your farmhouse door on any day but rainy between 6 AM and 11:30 AM.",
+        "Details": "Leah says she has a gift for you, and you receive the sculpture she's been working on. It's called How I Feel About .",
+        "Choices": []
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter Cindersap Forest when Leah is there, in any season except winter.",
+        "Details": "Leah is trying to reach a fruit from the large tree above the forest lake. She can't reach it, so you lift her onto your shoulders. She thanks you and says that if her art ever fails, you'll always be there to catch her. 500px",
+        "Choices": []
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "If you suggested an art show in her two-heart event, Leah is at your farmhouse door between 6 AM and 8 AM (except in winter) to invite you to her art show. Enter Pelican Town between 3 PM and 5 PM (not necessarily the same day).",
+        "Details": "You arrive to find many others already present. Leah is happy to see you and nervously starts the art show. She thanks everyone for coming. Leah says she came to Pelican Town to draw inspiration from the beautiful surroundings and confesses that it really feels like home now. She presents her sculptures. \"I haven't named this one, yet. She started out as an exercise in human anatomy, but I ended up seeing her through to completion. Her expression is intentionally unclear... is she embarrassed, amused, pained? I'll leave that for you to decide.\" (pause) \"This one's called 'Post-Dimensional Nullspace'. It represents the boundary of human imagination. The shape and color came to me vividly...",
+        "Choices": []
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "If you suggested an art website in her two-heart event, enter Leah's Cottage when she's there.",
+        "Details": "Leah proudly tells you she bought a laptop and set up an online art shop like you suggested. Her computer plays a coin sound, and she excitedly says that means someone just bought something. She pauses and says there's a \"Mr K\" who keeps buying all her sculptures. She figures it must be \"some rich guy\" who loves her art. She thanks you for the idea and says it's been really successful so far, and is confident she'll have enough money to work on her art full-time now. She goes back to work on her store, tweaking the CSS sheets.",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter Cindersap Forest between 11 AM and 4 PM on a sunny day, in any season except winter.",
+        "Details": "Leah says she knew you'd be passing through the forest, and surprises you with a picnic. She thanks you for helping her get one step closer to being a real artist, and you share a kiss. thumb|right|KelLeah's ex-partner Kel comes out of the bushes. (Kel will be male if your player character’s gender is male or female if your player character’s gender is female.) Leah is annoyed and asks \"What the heck are you doing here?\" * If you suggested the art website, Kel says \"I found your online art store... weren't you wondering about the 'Mr. K' who kept buying all your sculptures?\" Leah is disappointed, because she thought it was \"just a rich guy\" who truly loved her art. Kel says she was \"half...",
+        "Choices": []
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "Exit the farmhouse between 6am and 8:20am on a sunny day that isn't Sunday and isn't in winter.",
+        "Details": "Leah meets the player outside the farmhouse in the morning. Part 2: The next sunny day (or any sunny day after that), enter the Forest between 11:30 am and 2:00pm. Leah has asked you to paint a portrait of Marnie with her. Leah asks you what style of portrait she should paint. \"Hey, ... what style do you think I should do? I'm up for anything...\" * * * She then asks how yours is coming along. * * * Leah shows you her painting, which is different depending on which option you picked. (Left to right: \"Classic country portrait\", \"Colorful, retro pop-art\", \"Minimalist modern\") File:Leah's Paintings.png You display your painting as well, which is less than flattering. File:My First...",
+        "Choices": [
+          {
+            "Option": "Classic country portrait",
+            "Reaction": 0
+          },
+          {
+            "Option": "Colorful, retro pop-art",
+            "Reaction": 0
+          },
+          {
+            "Option": "Minimalist modern",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelorette, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 23,
+      "Season": "Winter"
+    }
+  },
+  "Maru": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter the Carpenter's Shop when Maru is there.",
+        "Details": "You find Maru and Demetrius testing soil samples in their lab. Maru asks you to watch a beaker while she fetches more samples. When she leaves, Demetrius tells you that Maru is a good kid and his 'special little girl', and he wouldn't want anything getting in the way of her bright future. When Maru returns, Demetrius says you've been talking about the soil samples. * Demetrius and Maru go back to work. * Maru asks Demetrius what you're talking about. Demetrius tells the truth and apologizes for his behavior. No matter what you choose, if you speak to Demetrius after the Heart Event he will admit to being 'a bit presumptuous' and apologize.",
+        "Choices": []
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Enter the clinic when Maru is there.",
+        "Details": "Maru is startled by your entry and drops a glass beaker she's holding. Worried about Harvey's response, she asks what she should do. * She says that of course Harvey will be able to tell the difference. When Harvey comes to investigate the noise, Maru tells him it was an accident and apologises. * When Harvey comes to investigate the noise, she tells Harvey that it was your fault. * When Harvey comes in to investigate the noise, she tells him it was an accident and apologises. If Maru blames you, Harvey is disappointed that she didn't take responsibility for her own actions and says the mistake will put them back in the red for a month. Maru is flustered and upset. If Maru says it was an...",
+        "Choices": [
+          {
+            "Option": "Just scoop it off the floor. He won't know the difference.",
+            "Reaction": -50
+          },
+          {
+            "Option": "Tell Harvey it was my fault.",
+            "Reaction": -20
+          },
+          {
+            "Option": "Tell Harvey it was an accident.",
+            "Reaction": 50
+          }
+        ]
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter the mountain on a sunny day, between 9pm and 11:40pm.",
+        "Details": "You see Maru looking through her telescope. She's surprised to see you out so late, and says she wants to show you something. You look through her telescope and she asks what you see. * Maru responds, \"It's amazing, isn't it?\" * Maru responds, \"I guess you could see it like that... But it's still grand, isn't it?\" Maru says that by the time any of these stars are visited, you'll both be long gone. \"I guess that's the trouble with being human, huh?\" She begins to tell you something, then changes her mind and shows you a binary star system instead. The cutscene ends as your character thinks, \"What a beautiful night! Maru showed me something new...\"",
+        "Choices": [
+          {
+            "Option": "A beautiful planet.",
+            "Reaction": 30
+          },
+          {
+            "Option": "A cold, dark abyss.",
+            "Reaction": -30
+          }
+        ]
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "Enter the Carpenter's Shop when Maru is there.",
+        "Details": "Maru says she's been working on a new project, something big. She shows you a machine and says it's just one component. She asks you to put your hand on it for a demonstration, flips a switch, and you get shocked. Maru is aghast and asks if you're alright. She applies burn cream and apologizes. * * With either choice, Maru says that kind of ruined the moment, and sighs.",
+        "Choices": [
+          {
+            "Option": "It's okay, it doesn't even hurt.",
+            "Reaction": 30
+          },
+          {
+            "Option": "You'd better be. This hurts like crazy!",
+            "Reaction": -50
+          }
+        ]
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Carpenter's Shop between 9am and 4pm.",
+        "Details": "Maru says her big project is finally done. She takes you into her private workshop to show you a robot she built to help her parents. She calls it MarILDA, short for Maru's Interactive Laboratory Device Alpha. She tells you she's been working on it for months, and has been waiting for you to come by before activating MarILDA. She activates the robot, who says \"Greetings, Maru. No need to respond... I have already predicted what you will say.\" Demetrius comes in to see what you two are up to. He sees the robot and becomes frightened. Maru tells him not to be scared and that MarILDA is her latest invention. The robot greets him, but Demetrius is upset. \"This is why you've locked yourself...",
+        "Choices": [
+          {
+            "Option": "I'm so impressed with your inventions.",
+            "Reaction": 50
+          },
+          {
+            "Option": "I'm disappointed... you should have made that robot your slave.",
+            "Reaction": -50
+          },
+          {
+            "Option": "MarILDA's just a piece of machinery designed to act human.",
+            "Reaction": 50
+          },
+          {
+            "Option": "I was just kidding. MarILDA deserves her freedom.",
+            "Reaction": 50
+          },
+          {
+            "Option": "I would've put her to work on the farm.",
+            "Reaction": -50
+          },
+          {
+            "Option": "So is your Dad okay with 'us' now?",
+            "Reaction": 0
+          },
+          {
+            "Option": "(Just stare at Maru and say nothing)",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "'Part 1:' Enter the Farmhouse between 6:10am and 5pm on a non-Sunday non-winter day. 'Part 2:' Enter the Mountains between 10:00pm and 1:00am on a sunny day.",
+        "Details": "Part 1: Maru greets you and informs you a rare astronomical event is happening tomorrow night. She invites you to observe it with her, and asks you to meet her in the mountains tomorrow night (or the next night if it is raining). Part 2: You and Maru stand near a telescope as Maru reminisces about the last time you stargazed together. The astronomical event begins; a scene of a comet being viewed through a telescope plays. Maru remarks that it's customary to make a wish after seeing a comet, and asks what the player will wish for. You may respond: * * * Note: When this cutscene ends, the day ends immediately with the player being taken to the end-of-day profits screen. The player will...",
+        "Choices": [
+          {
+            "Option": "A new baby",
+            "Reaction": 0
+          },
+          {
+            "Option": "For us to grow old together",
+            "Reaction": 0
+          },
+          {
+            "Option": "More money",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelorette, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 10,
+      "Season": "Summer"
+    }
+  },
+  "Penny": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter Pelican Town on a sunny day between 9am and 2pm.",
+        "Details": "George looks into his mailbox and wonders how he'll reach a letter in the back. Penny notices and gets the letter out for him. George is upset at being seen helpless and scolds her. Penny sees you and asks if you were watching them. * Penny thanks you, but is unhappy that George was upset. * Penny apologises to George. * Penny responds \"I see\". Regardless of your choice, George sighs and apologises to Penny for getting angry. He says it was very kind of her to help. Penny says she understands. After George leaves, Penny says it must be difficult growing old. * She responds, \"I guess you're right... why stress out about something you can't change?\" * She responds, \"You're right, we...",
+        "Choices": [
+          {
+            "Option": "I was. You did a kind thing there, Penny.",
+            "Reaction": 50
+          },
+          {
+            "Option": "I was. You should've asked instead of assuming George wanted help.",
+            "Reaction": -50
+          },
+          {
+            "Option": "I'm just taking a walk, minding my own business.",
+            "Reaction": 0
+          },
+          {
+            "Option": "I'd rather not think about it.",
+            "Reaction": 0
+          },
+          {
+            "Option": "It's just a different part of life.",
+            "Reaction": 0
+          },
+          {
+            "Option": "That's why we should respect our elders.",
+            "Reaction": 0
+          },
+          {
+            "Option": "I'd rather die young...",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Enter the trailer when she's home.",
+        "Details": "Penny complains about how messy the place is, and asks if you could help her clean up. As you do so, Pam returns home and yells at Penny for letting someone else clean her home. Pam eventually asks you to leave, and they continue their discussion privately. Pam admits that she's embarrassed to have strangers clean up the house. The next day, you get a letter of apology from Penny.",
+        "Choices": []
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter the trailer when she's home.",
+        "Details": "Penny asks you to try a recipe she invented. * She responds: \"You really mean it? Thank you! ... it's such a relief to hear that. I've been working so hard on this recipe, and I'm really proud of it. Hey, since you're the first person to try it, I'm going to name this one 'Chili de '.\" * Penny is crestfallen and says her recipe was a failure. * Penny is crestfallen and says her recipe was a failure. Regardless of your choice, she invites you to watch a movie together and your energy is increased by 165.",
+        "Choices": [
+          {
+            "Option": "(Lie) Mmm! That was delicious!",
+            "Reaction": 50
+          },
+          {
+            "Option": "Uh... can I get the rest to go?",
+            "Reaction": -50
+          },
+          {
+            "Option": "Well it's definitely unique... how did you get it so rubbery?",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "Enter Cindersap Forest on a sunny day between 9am and 4pm.",
+        "Details": "Penny is on a field trip with Jas and Vincent. Penny asks you if you'd like to be a guest speaker and share your experience about the countryside with the children. * She responds, \"Great! Let me just call the children over.\" * She responds, \"Great! Let me just call the children over.\" * She responds, \"Really?... Uh... Well, alright. I guess I'll see you later then.\" The cutscene ends. If you agree to speak to the kids, you're prompted for a number of dialogue options (which have no effect on friendship). Afterwards Penny tells the children to run along and asks you if you'd like to be a parent. * She responds, \"Oh no? Well, I guess that makes sense... you're busy with other things right...",
+        "Choices": [
+          {
+            "Option": "I'd love to!",
+            "Reaction": 10
+          },
+          {
+            "Option": "Sure.",
+            "Reaction": 0
+          },
+          {
+            "Option": "No... I can't stand kids.",
+            "Reaction": -1500
+          },
+          {
+            "Option": "I haven't really thought about it.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Absolutely. I want a big family.",
+            "Reaction": 20
+          },
+          {
+            "Option": "I guess so. It's a natural urge.",
+            "Reaction": 20
+          },
+          {
+            "Option": "No, I don't think I'd be good at it.",
+            "Reaction": 10
+          },
+          {
+            "Option": "No, The world's crowded enough already.",
+            "Reaction": -10
+          },
+          {
+            "Option": "No, I don't want to be tied down with a family.",
+            "Reaction": -10
+          }
+        ]
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "You receive a letter from Penny. After receiving the letter, enter the pool area of the spa between 7pm and midnight.",
+        "Details": "Penny joins you in the pool. She asks if you know why she invited you here. * She responds, \"That's right...\" * She responds, \"Really? I thought you'd have noticed by now...\" * She responds, \"No!\" Penny confesses her feelings for you. * ** If the player is male, she responds, \"...Oh, . I thought you did, but I wasn't sure. ...I'll always remember this night.\" You kiss and the cutscene ends. ** If the player is female, she responds, \"...Oh, . I thought you did, but I wasn't sure. You look so beautiful tonight... I... *gasp*\" You kiss and the cutscene ends. * She bursts into tears and the cutscene ends.",
+        "Choices": [
+          {
+            "Option": "You have something to tell me.",
+            "Reaction": 0
+          },
+          {
+            "Option": "I'm not exactly sure.",
+            "Reaction": 0
+          },
+          {
+            "Option": "You wanted to see me in my bathing suit.",
+            "Reaction": 0
+          },
+          {
+            "Option": "I feel the same way about you.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Sorry, but I don't like you in that way...",
+            "Reaction": -1500
+          }
+        ]
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "Enter the farm house between 3pm and 7pm when she's home.",
+        "Details": "Penny says \"Welcome home, honey... How was your day?\" * Penny responds \"Just business as usual, huh? Well, I've got a zesty new recipe in the oven, so maybe things will get a little more exciting! * Penny responds \"Oh, I'm sorry! Well, you're back now... I'll do my best to make you feel better.\" * Penny responds \"That's great! I'm glad you enjoy your work so much.\" Penny then says she would like to redecorate the bedroom with her hand-made decor. She asks what style you prefer. * * * Penny says she won't touch any of your chests, but asks you to move them out of the room. * Penny says she won't worry about it, then. 'Part 2': If you choose to let Penny redecorate, 3 days later when...",
+        "Choices": [
+          {
+            "Option": "It was fine",
+            "Reaction": 0
+          },
+          {
+            "Option": "Not good...",
+            "Reaction": 0
+          },
+          {
+            "Option": "It was fantastic!",
+            "Reaction": 0
+          },
+          {
+            "Option": "Forest And Moon: Peaceful Blue",
+            "Reaction": 0
+          },
+          {
+            "Option": "Strawberry Home",
+            "Reaction": 0
+          },
+          {
+            "Option": "Pirate Theme",
+            "Reaction": 0
+          },
+          {
+            "Option": "I don't want any changes!",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelorette, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 2,
+      "Season": "Fall"
+    }
+  },
+  "Caroline": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter the sunroom via the door in Caroline's kitchen between 9am and 5pm on a day when it's not raining.",
+        "Details": "thumb|160px|right|Sunroom interior Caroline is excited to show you her new \"private\" sunroom. She asks what you think of it. * * * * Caroline continues telling you how peaceful her sunroom sanctuary is, and offers you a cup of her home-grown Green Tea. You can choose \"yes\" or \"no\" without penalty. In either case, a surrealistic cutscene plays, after which Caroline says \"Feel free to come here and relax any time you want, okay?\" The sunroom is then unlocked and can be visited any time the house is open. Inside is a Tea Bush that can be harvested to obtain Tea Leaves once each day, during the last week of any season. The next day, Caroline sends a letter in the mail with the recipe to make...",
+        "Choices": [
+          {
+            "Option": "It's beautiful!",
+            "Reaction": 0
+          },
+          {
+            "Option": "It's very relaxing.",
+            "Reaction": 0
+          },
+          {
+            "Option": "It's too hot in here...",
+            "Reaction": 0
+          },
+          {
+            "Option": "Not as good as my farm!",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 3,
+        "Trigger": "Caroline sends you a recipe in the mail.",
+        "Details": "Image Recipe Description Parsnip Soup Nothing is more satisfying than cooking with fresh vegetables from your own garden! I've enclosed a recipe to help you out. Take care, -Caroline",
+        "Choices": []
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter Pierre's General Store when Caroline and Abigail are there.",
+        "Details": "As you enter the store, you hear Caroline and Abigail having an argument in the kitchen. * Abigail: \"Stop telling me how to live my life!\" * Caroline: \"Hey, cut it out! We're letting you live here free of charge until you finish school. It seems like you don't appreciate that at all!\" * Abigail: \"Stop trying to make me feel guilty. I appreciate that you and Dad are helping me out, but expecting me to dress the way you want is ridiculous. I'm not a little girl anymore, Mom.\" * Caroline: (pause) \"...You're right. I'm sorry.\" Abigail turns towards the door where you're hiding, and asks if someone is there. You run away, and Abigail swears the house is haunted. Abigail comes out, and says...",
+        "Choices": []
+      },
+      {
+        "Hearts": 7,
+        "Trigger": "Caroline sends you a recipe in the mail.",
+        "Details": "Note that the recipe is called 'Vegetable Stew' in the letter, but cooking the recipe creates 'Vegetable Medley'. Image Recipe Description Vegetable Stew Nothing is more satisfying than cooking with fresh vegetables from your own garden! I've enclosed a recipe to help you out. Take care, -Caroline",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 7,
+      "Season": "Winter"
+    }
+  },
+  "Clint": {
+    "Events": [
+      {
+        "Hearts": 3,
+        "Trigger": "Visit the saloon between 7pm and 11pm on a Monday.",
+        "Details": "Clint says he has terrible luck with women, and asks for your advice. * He responds, \"Okay... I'll keep that in mind.\" * He responds, \"Okay... I'll keep that in mind.\" * He responds, \"That's the problem... I do act natural... but I never have any success.\" * He responds, \"Okay... I'll keep that in mind.\" Emily walks over to take Clint's order. Clint panics: \"Yes! (pause) Er.. I mean, I'll have the Big n' Cheesy. With extra sauce, please. (pause)\" Emily greets you, and Clint continues: \"Er... *ahem* Th...Thanks, Emily. For... taking my order. Um, Emily? I was...*gulp*... I was wondering... (pause)\" Emily prompts him, but Clint gives up and says nevermind. Emily pauses as sad music plays,...",
+        "Choices": [
+          {
+            "Option": "Impress women with your strength and charm.",
+            "Reaction": 25
+          },
+          {
+            "Option": "Act crazy, to keep people guessing.",
+            "Reaction": 25
+          },
+          {
+            "Option": "Just act natural... be yourself.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Treat women the same as men.",
+            "Reaction": 50
+          }
+        ]
+      },
+      {
+        "Hearts": 3,
+        "Trigger": "Clint sends you a recipe in the mail.",
+        "Details": "Image Recipe Description Algae Soup Well, I know a couple of recipes. I thought I'd send you one... maybe it'll help you mine more ore or something. Take care. -Clint",
+        "Choices": []
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter town from Cindersap Forest between 9am and 6:30pm. Only happens if you saw his \"Three Hearts I\" event.",
+        "Details": "You find Clint watching Emily from the bushes. He says he was going to ask Emily out on a date, and got as far as her doorstep before he heard her coming and dove into the bushes. He says he's waiting for her to finish talking with Caroline so he can sneak back to his house. You threaten Clint with never upgrading your tools again if he doesn't ask her out, and he begrudgingly agrees. He approaches Emily and asks to speak to her privately. \"I was wondering if you'd go w... with... tomorrow, me... *gulp* (pause) I've got two tickets for the Grampleton Carnival tomorrow. W... Would you go with me?\" Emily says that sounds like fun and accepts; Clint responds that he'll pick her up tomorrow....",
+        "Choices": []
+      },
+      {
+        "Hearts": 7,
+        "Trigger": "Clint sends you a recipe in the mail.",
+        "Details": "Image Recipe Description Bean Hotpot Well, I know a couple of recipes. I thought I'd send you one... maybe it'll help you mine more ore or something. Take care. -Clint",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 26,
+      "Season": "Winter"
+    }
+  },
+  "Demetrius": {
+    "Events": [
+      {
+        "Hearts": 3,
+        "Trigger": "Demetrius sends you a recipe in the mail.",
+        "Details": "Image Recipe Description Fried Mushroom I wanted to say 'thanks' for taking an interest in my work. Here's a cooking recipe that I like. -Demetrius",
+        "Choices": []
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter Demetrius' house while he and Robin are inside.",
+        "Details": "You see Demetrius and Robin arguing. She asked him to get fruit, so he got tomatoes. She exclaims that tomatoes aren't what he should have thought of because they're not \"real\" fruit. He defends himself by saying that tomatoes are indeed a fruit and his mistake was reasonable. He asks you to choose whether tomatoes are fruits or vegetables. Your response will affect only his friendship with you, Robin's will be unaffected. : :Really? I figured a farmer would know the correct answer... : :See? [Player] agrees with me.",
+        "Choices": [
+          {
+            "Option": "Vegetable",
+            "Reaction": -30
+          },
+          {
+            "Option": "Fruit",
+            "Reaction": 50
+          }
+        ]
+      },
+      {
+        "Hearts": 7,
+        "Trigger": "Demetrius sends you a recipe in the mail.",
+        "Details": "Image Recipe Description Autumn's Bounty I wanted to say 'thanks' for taking an interest in my work. Here's a cooking recipe that I like. -Demetrius",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 19,
+      "Season": "Summer"
+    }
+  },
+  "Dwarf": {
+    "Events": [
+      {
+        "Hearts": 0,
+        "Trigger": "After earning 50 Friendship points with the Dwarf, enter the Sewers. A Stardrop must have been purchased from Krobus.",
+        "Details": "The Dwarf finds Krobus in the Sewers and blames the Shadow People for the death of their family. Krobus retorts by saying that he only resorted to violence after the dwarves drove them from their ancestral homeland. Krobus gives an apology for what happened to the Dwarf's family but the Dwarf doesn't accept it. They both start fighting. The player descends into the Sewers and gets between them. The Dwarf yells out, \"Let me at him! He's despicable.\" Krobus retorts, \"Come and get it, shrimpy.\" Suddenly, the Wizard appears and stops the fight. He reminds them that \"The Elemental Wars have long been finished.\" and tells them to make peace for the sake of the humans that live around them. The...",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 22,
+      "Season": "Summer"
+    }
+  },
+  "Evelyn": {
+    "Events": [
+      {
+        "Hearts": 4,
+        "Trigger": "Enter Evelyn's home while she is inside.",
+        "Details": "You find Evelyn baking cookies. She offers you some, and asks what you think: * * In either case, she gives you the Cookie recipe.",
+        "Choices": [
+          {
+            "Option": "It's delicious!",
+            "Reaction": 100
+          },
+          {
+            "Option": "It was like chewing on a hockey puck",
+            "Reaction": -100
+          }
+        ]
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 20,
+      "Season": "Winter"
+    }
+  },
+  "George": {
+    "Events": [
+      {
+        "Hearts": 6,
+        "Trigger": "Enter George's house when he is home.",
+        "Details": "George struggles to reach something on a bookshelf. The player walks to the shelf and retrieves the item for George. He thanks the player and a few moments of silence ensue. George then tells the player why he is in a wheelchair.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 24,
+      "Season": "Fall"
+    }
+  },
+  "Gus": {
+    "Events": [
+      {
+        "Hearts": 4,
+        "Trigger": "Enter the Saloon during open hours, when Gus is inside. Note: Only occurs if your friendship with Pam is at 2 hearts or more.",
+        "Details": "When you enter the bar, Gus will be sitting at one of the tables looking dejected. When you ask what's wrong, he'll tell you that the saloon is having hard times financially. He'll admit that at least one problem is that Pam isn't paying off her tab and he's afraid to confront her because they are friends. Pam will then enter and ask for a drink. Gus will be flustered and concede, but you will get the choice to either say: * * Pam will be somewhat upset but she will pay her tab off and Gus will give her the drink she asked for. Your relationship with Gus will not be affected either way.",
+        "Choices": []
+      },
+      {
+        "Hearts": 5,
+        "Trigger": "Exit the farmhouse on a non-rainy day between 6am and 11:30am.",
+        "Details": "Gus appears with a pot of sauce. He draws an analogy between cooking and the player's appearance in Stardew Valley, saying that adding a new ingredient may ruin the sauce or create something new and delicious. He explains that he's come to think of the player as a good friend, and says he found an old Mini-Jukebox while cleaning the Saloon. He gives the player the jukebox, and the recipe to make more.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 8,
+      "Season": "Summer"
+    }
+  },
+  "Jas": {
+    "Events": [
+      {
+        "Hearts": 8,
+        "Trigger": "After reaching 8 hearts with both Jas and Vincent, enter Cindersap Forest during Spring on a sunny day between 6am and 5pm.",
+        "Details": "Vincent will explain how to clean Spring Onions by removing insects. Jas insists that the insects not be killed after removing them from the onions. Afterward, the player gains Spring Onion Mastery, which permanently increases the sell price of Spring Onions by 5x.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 4,
+      "Season": "Summer"
+    }
+  },
+  "Jodi": {
+    "Events": [
+      {
+        "Hearts": 3,
+        "Trigger": "After reaching 3 hearts, Jodi will send you a recipe in the mail.",
+        "Details": "Image Recipe Description Fried Calamari (Player), This recipe of mine won 1st place in a cooking competition! I hope you like it. Thanks for being a friend! -Jodi",
+        "Choices": []
+      },
+      {
+        "Hearts": 7,
+        "Trigger": "After reaching 7 hearts, Jodi sends you a recipe in the mail.",
+        "Details": "Image Recipe Description Ice Cream (Player), This recipe of mine won 1st place in a cooking competition! I hope you like it. Thanks for being a friend! -Jodi",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 11,
+      "Season": "Fall"
+    }
+  },
+  "Kent": {
+    "Events": [
+      {
+        "Hearts": 3,
+        "Trigger": "Enter Kent's home while he and Jodi are both there.",
+        "Details": "When the player enters Jodi and Kent's house, a cutscene begins and player walks into the kitchen and Jodi says, \"Hi, (Player)! I'm just making some popcorn.\" Kent screams and runs into the kitchen exclaiming \"That sound... You should've known that sound would remind me of the war!\" Jodi stops the popcorn, and Kent goes on to lament the loss of his friends. Jodi says, \"But, dear... popcorn was always your favorite before you left.\" Kent responds with, \"...Things have changed.\" Jodi then quietly asks the player's character if they can say something to Kent. There are three choices: * Kent gets angry and says, \"You keep quiet! Stop trying to turn me against my wife.\" Then apologizes to...",
+        "Choices": [
+          {
+            "Option": "Jodi's to blame... she should've known better",
+            "Reaction": -25
+          },
+          {
+            "Option": "I know you're hurting... but don't blame your wife.",
+            "Reaction": 50
+          },
+          {
+            "Option": "(Lie) Blame me... I asked for popcorn.",
+            "Reaction": -50
+          }
+        ]
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 4,
+      "Season": "Spring"
+    }
+  },
+  "Krobus": {
+    "Events": [
+      {
+        "Hearts": 14,
+        "Trigger": "Enter the Beach between 8pm and 1am on a non-rainy day.",
+        "Details": "Krobus sits on the docks at the Beach watching Moonlight Jellies swim, when a sea monster appears. The sea monster raises its tentacles, and Krobus hops on for a ride. A heart dialogue bubble appears over Krobus' head, indicating he enjoyed the ride.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 1,
+      "Season": "Winter"
+    }
+  },
+  "Lewis": {
+    "Events": [
+      {
+        "Hearts": 6,
+        "Trigger": "On a sunny day, enter the town between 7pm and 11pm. Note: Only happens if Marnie is also at 6 hearts.",
+        "Details": "You will appear behind Lewis' house. Lewis and Marnie are talking by the river about making their romance public. Lewis says it would undermine his authority, while Marnie says he's too concerned for his job. In the end, Marnie says she'll keep their relationship a secret. Afterwards, you'll pop up and scare both Lewis and Marnie. Lewis asks you if you heard anything, and you are presented with a choice. * * If you choose to keep the secret, Lewis will thank you. If you say you'll tell everyone in town, Lewis will cry. Afterwards, Marnie will ask why you were behind the house, and your character will run away, leaving the two alone and confused.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 7,
+      "Season": "Spring"
+    }
+  },
+  "Linus": {
+    "Events": [
+      {
+        "Hearts": 0,
+        "Trigger": "After you have 50 Friendship points with Linus, enter the town between 8pm - 12am on a day that's not raining. (This event cannot trigger before Spring 7, Year 1)",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- |George will ask you to scare off some raccoons who are stealing from his trash cans. Instead, you discover Linus, who is extremely embarrassed, but explains that if he didn't eat the food, it would go to waste. You then get the option to tell him what you think about his actions. Note that none of the choices will affect friendship with Linus. After you leave, he proceeds to try to steal from the Saloon's trash can, where he is caught by Gus, who gives him a basket of zucchini fritters saying that he doesn't want any villager to go hungry. |}",
+        "Choices": []
+      },
+      {
+        "Hearts": 3,
+        "Trigger": "After reaching 3 hearts with Linus he will send you a recipe in the mail.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- | {|class=\"wikitable roundedborder\" !Image !Recipe !Description |- | |Sashimi |(Name), how are you doing? I've enclosed some instructions on how to make one of my favorite fish recipes. -Linus |} |}",
+        "Choices": []
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Enter the mountain area near his tent between 8pm - 12am on a day that's not raining.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- |Linus will invite you over to his camp site. He will apologize for not trusting you when you first met, and thanks you for being a good friend. He invites you into his tent, where he shows you how to craft Wild Bait for use in fishing. |}",
+        "Choices": []
+      },
+      {
+        "Hearts": 7,
+        "Trigger": "After reaching seven hearts with Linus, he will send you a recipe in the mail.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- | {|class=\"wikitable roundedborder\" !Image !Recipe !Description |- | |Fish Taco |(Name), how are you doing? I've enclosed some instructions on how to make one of my favorite fish recipes. -Linus |} |}",
+        "Choices": []
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "Exit Robin's house on a day that's not raining between 9am and 5pm.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- |Robin, Linus, and the player appear in front of Robin's house. Robin offers to make Linus lunch, but he refuses, saying \"I've had great luck foraging today.\" Robin turns toward the player and asks if they have something to say. * Linus thanks the player and adds that he was worried the player would ask him to move on to the Farm. He says that he appreciates the player's respect for his chosen way of life. * Robin becomes excited and offers to build \"a real cozy house\" for Linus. Linus refuses, saying that he appreciates the kindness, but he lives the way he does by choice. He prefers to live alone, in harmony...",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 3,
+      "Season": "Winter"
+    }
+  },
+  "Marnie": {
+    "Events": [
+      {
+        "Hearts": 3,
+        "Trigger": "Leave your farmhouse between 6am - 9:30am.",
+        "Details": "Marnie greets the player as they come out of the farmhouse. She will tell the player that she is trying to train her goats to say \"hello\" but they will not cooperate unless she has their favorite food, Cave Carrots. Marnie asks the player to bring one to her ranch between 9 AM and 5 PM. If the player enters Marnie's Ranch during that time (opening hours may contradict this) with a Cave Carrot in their inventory, a cutscene will occur with the player giving Marnie the carrot. This cutscene will trigger regardless of whether or not Marnie is home.",
+        "Choices": []
+      },
+      {
+        "Hearts": 3,
+        "Trigger": "After reaching 3 hearts, Marnie sends you a recipe in the mail.",
+        "Details": "Image Recipe Description Pale Broth Dear neighbor, when I'm not taking care of animals I like to experiment in the kitchen. Since we've become friends I want to share some recipes with you. I hope you like this! -Marnie",
+        "Choices": []
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "On a sunny day, enter the town between 7pm and 11pm. Note: Only happens if Lewis is also at 6 hearts.",
+        "Details": "You will appear behind Lewis' house. Lewis and Marnie are talking by the river about making their romance public. Lewis says it would undermine his authority, while Marnie says he's too concerned for his job. In the end, Marnie says she'll keep their relationship a secret. Afterwards, you'll pop up and scare both Lewis and Marnie. Lewis asks you if you heard anything, and you are presented with a choice. * * If you choose to keep the secret, Lewis will thank you. If you say you'll tell everyone in town, Lewis will cry. Afterwards, Marnie will ask why you were behind the house, and your character will run away, leaving the two alone and confused.",
+        "Choices": []
+      },
+      {
+        "Hearts": 7,
+        "Trigger": "After reaching 7 hearts, Marnie sends you a recipe in the mail.",
+        "Details": "Image Recipe Description Rhubarb Pie Dear neighbor, when I'm not taking care of animals I like to experiment in the kitchen. Since we've become friends I want to share some recipes with you. I hope you like this! -Marnie",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 18,
+      "Season": "Fall"
+    }
+  },
+  "Pam": {
+    "Events": [
+      {
+        "Hearts": 3,
+        "Trigger": "After reaching 3 hearts with Pam, she will send you a recipe in the mail.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- | {| class=\"wikitable roundedborder\" !Image !Recipe !Description |- | |Cheese Cauliflower | Hey Kid, Here's the recipe for a little treat my pappy used to make. Cook it slow. -Pam |} |}",
+        "Choices": []
+      },
+      {
+        "Hearts": 7,
+        "Trigger": "After reaching 7 hearts with Pam, she will send you a recipe in the mail.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- | {| class=\"wikitable roundedborder\" !Image !Recipe !Description |- | |Stuffing | Hey Kid, Here's the recipe for a little treat my pappy used to make. Cook it slow. -Pam |} |}",
+        "Choices": []
+      },
+      {
+        "Hearts": 9,
+        "Trigger": "Purchase the \"Community Upgrade\" from the Carpenter's Shop. After earning 9 hearts of friendship with Pam, enter Pam's house at least 4 days after the Community Upgrade is completed. Pam says she's \"getting sappy\" in her old age, and the cutscene ends. * Pam becomes angry and asks \"What in the void is wrong with you?\" before declaring her faith in Yoba and ordering you to leave.}} Trivia: The Yoba statue can be found later near Pam's bed on the second floor of the house, and can be removed and obtained by the player by striking it with a tool.",
+        "Details": "Nine Hearts=== Purchase the \"Community Upgrade\" from the Carpenter's Shop. After earning 9 hearts of friendship with Pam, enter Pam's house at least 4 days after the Community Upgrade is completed. Pam says she's \"getting sappy\" in her old age, and the cutscene ends. * Pam becomes angry and asks \"What in the void is wrong with you?\" before declaring her faith in Yoba and ordering you to leave.}} Trivia: The Yoba statue can be found later near Pam's bed on the second floor of the house, and can be removed and obtained by the player by striking it with a tool.",
+        "Choices": [
+          {
+            "Option": "Sorry Pam, but Yoba isn't real...",
+            "Reaction": -1000
+          }
+        ]
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 18,
+      "Season": "Spring"
+    }
+  },
+  "Pierre": {
+    "Events": [
+      {
+        "Hearts": 6,
+        "Trigger": "Enter Pierre's General Store to trigger the cutscene.",
+        "Details": "You enter Pierre's bedroom. After looking around, you find Pierre's 'secret stash' behind the bookshelf. Pierre catches you, asks that you tell no one. * He responds, \"Thanks, I appreciate that. Just forget you ever saw this, okay?...And I'll just forget that you were snooping around in my bedroom!\" * He responds, \"You would really do that to me? You're terrible. You shouldn't have been snooping around in my bedroom in the first place! Nosy neighbors are the worst.\" Pierre says he has to find a new hiding spot.",
+        "Choices": [
+          {
+            "Option": "Your secret is safe with me.",
+            "Reaction": 70
+          },
+          {
+            "Option": "Your wife deserves to know about this.",
+            "Reaction": -500
+          }
+        ]
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 26,
+      "Season": "Spring"
+    }
+  },
+  "Robin": {
+    "Events": [
+      {
+        "Hearts": 6,
+        "Trigger": "Enter Robin's house while she is home.",
+        "Details": "You find Robin cleaning the dust off her saw. She asks if you've ever made anything out of wood: * * She says \"I think we've become good enough friends that I can trust you with my carpentry secrets!\" and gives you two blueprints — the Drum Block and the Flute Block. She says it feels good to decorate your house with things you've made yourself.",
+        "Choices": [
+          {
+            "Option": "Yes",
+            "Reaction": 50
+          },
+          {
+            "Option": "No",
+            "Reaction": 50
+          }
+        ]
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 21,
+      "Season": "Fall"
+    }
+  },
+  "Sandy": {
+    "Events": [
+      {
+        "Hearts": 7,
+        "Trigger": "After reaching seven hearts with Sandy, she will send you a recipe in the mail.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- | {| class=\"wikitable roundedborder\" !Image !Recipe !Description |- | |Tom Kha Soup |Dear (Name), I was so bored out here in the desert that I wrote you a letter. There's a recipe for a delicious soup enclosed. Come visit me soon! -Sandy |} |}",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 15,
+      "Season": "Fall"
+    }
+  },
+  "Sebastian": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter Sebastian's room when he's there.",
+        "Details": "You find Sebastian working on his computer. He asks you to wait, he needs to finish something. You are given two options, \"He is busy, maybe I should leave\" or \"Stay put\". In both options, he quickly finishes his work and then apologizes for making you wait. * He says \"I do freelance work as a programmer.\" * He says \"Decorations?... Oh, yeah… thanks. I’ve been sticking posters on the walls for years, I guess it’s kinda cluttered.\" Sebastian receives a notification from Sam asking to hang out, but Sebastian says would rather not go out. Robin enters his room moments later, telling him that Abigail was looking for him and will stop by later. Sebastian asks whether Robin told her that he...",
+        "Choices": [
+          {
+            "Option": "Ask him what he was working on",
+            "Reaction": 0
+          },
+          {
+            "Option": "Compliment him on his room decor",
+            "Reaction": 0
+          },
+          {
+            "Option": "Ask him about his career goals",
+            "Reaction": 0
+          },
+          {
+            "Option": "Ask him why he doesn't want to see his friends",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Go to The Mountain between 11am and 5pm.",
+        "Details": "You see Sebastian working on a motorcycle in the garage at his house. He explains that it belongs to him and sometimes he goes for long rides alone far away from Stardew Valley. He suggests the possibility of you one day taking a ride with him, to which you agree or disagree. :Sebastian responds \"Great.\" :Sebastian responds \"Okay... Nevermind then.\" :Sebastian responds with one of two dialogues, depending on the Player's gender: :*\"Don't worry, I'll make sure to show you the ropes before I let you do anything dangerous.\" :*\"There's no need to worry... I'll make sure you're safe.\"",
+        "Choices": [
+          {
+            "Option": "That sounds fun.",
+            "Reaction": 0
+          },
+          {
+            "Option": "No thanks. That sounds stupid.",
+            "Reaction": 0
+          },
+          {
+            "Option": "I'm scared of motorcycles.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter Sebastian's room when he's there.",
+        "Details": "Sebastian greets you, and invites you to play Solarion Chronicles: The Game with him and Sam. You play through a scenario, for which you'll be given a score between A and D. You're given a choice of archetype: * * * The classes don't affect friendship, and you can achieve a perfect score with any class: # Go through the front door. # Choose to fight the skeleton, then raise your shield. # Go through the left hallway glowing with a green light. # Destroy the capsules. # During the final battle: #* 'Warrior:' defend your friends while the wizard is mumbling an incantation. You will be able to attack the boss, and the scenario ends. #* 'Healer:' heal Sebastian's wizard. Sebastian is...",
+        "Choices": [
+          {
+            "Option": "Warrior. I like a direct approach.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Healer. I prefer to help others.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Wizard. A sharp mind is the most powerful blade of all.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "Go to the beach on a rainy day between noon and 11pm.",
+        "Details": "Sebastian is standing on the boardwalk. He's surprised to see you outside in the rain. He says he's anxious around other people, but he doesn't feel that way when he's with you. He takes out an umbrella and motions you to stand under it with him. 400px",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Go to The Mountain between 8pm and midnight.",
+        "Details": "Sebastian is outside his house. He says he was about to go for a ride on his motorcycle. You join him for a ride, and he brings you to a place he often goes by himself to think about his life while enjoying a view of the city. If your character is female, he mentions that he doesn't normally bring girls to this place. Otherwise, he admits that he's never felt this way about other guys, but that you're different. He pulls on his cigarette a few times, and then asks what you think of the city. You have four options, one of which is telling him to quit smoking. Choosing this one causes Sebastian to be briefly annoyed; he says you sound like his mom, then admits that it's a bad habit and...",
+        "Choices": []
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "Go to The Mountain on a rainy day between 6am and 7pm.",
+        "Details": "Sebastian is near the lake when he notices you. He's relieved at your arrival and requests your help to save an injured frog hiding in the bushes. You walk to a bush on his left and shake it, causing the frog to run in Sebastian's direction. He catches it successfully, then examines the frog worriedly; his leg is too injured. You can respond with the following: * * * * Sebastian responds based on your choice (teasing you if you say the frog is their son), then he decides to take the frog home with him. Enter your farmhouse between 6:20am and 7pm the next day to trigger the next part of the event: Sebastian has replaced his Solarion Chronicles table with a terrarium in his spouse room. He...",
+        "Choices": [
+          {
+            "Option": "What should we do with him?",
+            "Reaction": 0
+          },
+          {
+            "Option": "It's our new son...",
+            "Reaction": 0
+          },
+          {
+            "Option": "I don't think he's going to make it",
+            "Reaction": 0
+          },
+          {
+            "Option": "Let's nurse him back to health!",
+            "Reaction": 0
+          },
+          {
+            "Option": "Why not start a 'frog sanctuary'?",
+            "Reaction": 0
+          },
+          {
+            "Option": "He’ll be fine.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Why do you like frogs so much, anyway?",
+            "Reaction": 0
+          },
+          {
+            "Option": "I don't really want this in the house",
+            "Reaction": 0
+          },
+          {
+            "Option": "I'm glad you've found a new hobby",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelor, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 10,
+      "Season": "Winter"
+    }
+  },
+  "Shane": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter Cindersap Forest between 8pm and midnight.",
+        "Details": "Shane shares a beer with the player, on the dock of the pond, and describes his depression. He expresses optimism for the player's future and warns against drinking heavily. Note: The beer consumed during the heart event will heal up to 50 Energy and 22 Health, and leave the player with the \"Tipsy\" buff.",
+        "Choices": []
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Enter Marnie's Ranch at any time.",
+        "Details": "Shane is found passed out in his room, surrounded by empty beer cans. Marnie asks you to do something, so you use your watering can on his head to wake him up. Marnie remarks that all he does is mope around and drink beer. When Marnie asks him what his plans for the future are, Shane says that he hopes he \"won't be around long enough to need a plan.\" Jas overhears and runs away crying; Marnie follows her while Shane falls to the ground and cries while apologizing. 250px",
+        "Choices": []
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter Cindersap Forest between 9am and 8pm while storming or raining.",
+        "Details": "Shane is laying face down at the edge of the cliffs, again surrounded by empty beer cans. He tells you that he's miserable and asks you why he shouldn't just roll off the cliff. You can respond in four different ways: * \"Maybe for you, but not for me! You're not going to understand... Just... go away. ...Ugh...\" * \"...You're right. Jas... Ugh, God... I'm a horrible, *hic*... selfish person. Now I feel even worse...\" * \"Yoba...? (Player), don't you know I'm an atheist? Ugh...\" * \"Thanks... I appreciate that... I really do.\" 400px 400px After that Shane suggests that you should take him to the hospital, in the next cutscene Harvey treats his physical ailments but is more concerned about...",
+        "Choices": [
+          {
+            "Option": "Because there's so much to live for!",
+            "Reaction": 0
+          },
+          {
+            "Option": "Jas needs you. You're like a father to her.",
+            "Reaction": 0
+          },
+          {
+            "Option": "It would be a sin.",
+            "Reaction": 0
+          },
+          {
+            "Option": "The decision is your own. Just know that I'm here for you.",
+            "Reaction": 0
+          },
+          {
+            "Option": "I'm glad I was there to help.",
+            "Reaction": 10
+          },
+          {
+            "Option": "You needed a serious wake-up call.",
+            "Reaction": -10
+          },
+          {
+            "Option": "I'm just happy you're still here.",
+            "Reaction": 10
+          }
+        ]
+      },
+      {
+        "Hearts": 7,
+        "Trigger": "Enter Marnie's Ranch while Shane is home after triggering Shane's six heart event.",
+        "Details": "Shane enters the ranch, where Marnie is standing behind the counter. He tells her that he's been feeling happier than usual. Jokingly, she asks if there was a sale on beer. Though slightly annoyed, he responds by saying he's started drinking sparkling water instead. He then says that he's realized that he has people that he can rely on and that doing so doesn't make him weak. He walks over to Jas, who is in the kitchen, and gives her a present. She opens it to find a pair of expensive shoes that she had wanted. When she asks Shane how he could afford it, he replies that it's because he cut back on his expensive habit of drinking beer.",
+        "Choices": []
+      },
+      {
+        "Hearts": 7,
+        "Trigger": "Enter the town between 10am and 4pm on a sunny day. (Also requires 2 hearts with both Emily and Clint.)",
+        "Details": "You will find Shane filming a scene starring Emily and Clint. Shane will explain to you that Joja is holding a contest to create an advertisement for the newest Joja Cola, and the winner gets 10000. He will ask you to walk behind Clint and Emily as they act so the scene feels more natural. When it's over, he will thank you for helping him. * This event was Shane's six heart event before .",
+        "Choices": []
+      },
+      {
+        "Hearts": 8,
+        "Trigger": "Enter Marnie's Ranch while Shane is home.",
+        "Details": "When you enter the ranch, Jas leads you through the door in the kitchen that is normally locked. Inside, Shane is painting a sign that says \"Fresh Eggs.\" He's surrounded by his flock of special blue chickens and his favorite white chicken, Charlie. Once he finishes painting the sign, he picks up Charlie and briefly talks to her about his ambitions and his struggles. When you and Jas enter the room, Shane talks to you a bit about how he is trying to pass on the chicken knowledge to Jas so she can continue the tradition if he ever moves out. 450px After seeing this event, each chicken that the player purchases from Marnie and each egg that hatches in the incubator now has a 25% chance of...",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Exit your house before 6:30am to initiate the event, then walk to the Bus Stop between 4pm and 6pm.",
+        "Details": "Shane invites you to go see the Zuzu City Tunnelers (a gridball team) play in their stadium in Zuzu City. You take a bus into the city together and the scene changes to a grimy stadium with you and Shane in the stands. While cheering on the Tunnelers, Shane thanks you for sticking with him through his struggle with depression and anxiety. He then asks you what you think of your first gridball game: * \"Oh yeah? I guess that makes sense. Me? I get bored with Pelican Town sometimes. But... I like that you're different. We balance each other out.\" * \"Oh really? I'm surprised... Didn't you move to Stardew Valley to escape the noise of the city? I mean... Don't get me wrong, I totally...",
+        "Choices": [
+          {
+            "Option": "Noisy... It makes me appreciate how peaceful it is back home.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Fun... Pelican Town seems really boring in comparison.",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 14,
+        "Trigger": "Enter town on a non-Friday between 8am and 5pm. For parts II and III enter town anytime each of the next two days.",
+        "Details": "On the first day, Marnie, Jas, and yourself are outside of the saloon. Shane comes out of the bar, saying that he hasn't had a session like that in a while. Marnie looks worried, and asks you to talk to him next time he comes out of the saloon. On the second day, Shane comes out and you confront him. Shane gets upset at the suggestion that he's been drinking, and runs home. On the third day, Marnie and you are waiting outside the saloon, and Shane goes in. You try to catch him in the act of drinking, but he is instead standing in front of an arcade machine. Marnie is confused and asks about the cans on the floor, and Shane explains that they're Joja Cola cans. He also explains that...",
+        "Choices": []
+      },
+      {
+        "Hearts": 10,
+        "Trigger": "Enter the Stardrop Saloon after giving a bouquet to every bachelor, reaching 10 hearts with each, and seeing each of their individual 10-heart events.",
+        "Details": "If you are carrying a Rabbit's Foot, the group plays a friendly game. If not, they are upset that you are dating all of them and give you the cold shoulder. This event is shared by the marriage candidates and is transcluded from the Bouquet page.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": true,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 20,
+      "Season": "Spring"
+    }
+  },
+  "Vincent": {
+    "Events": [
+      {
+        "Hearts": 8,
+        "Trigger": "After reaching 8 hearts with both Vincent and Jas, enter Cindersap Forest during Spring on a sunny day between 6am and 5pm.",
+        "Details": "Vincent will explain how to clean Spring Onions by removing insects. Afterward, the player gains Spring Onion Mastery, which permanently increases the sell price of Spring Onions by 5x.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 10,
+      "Season": "Spring"
+    }
+  },
+  "Willy": {
+    "Events": [
+      {
+        "Hearts": 3,
+        "Trigger": "After reaching three hearts with Willy he will send you a recipe in the mail.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- | {| class=\"wikitable roundedborder\" !Image !Recipe !Description |- | |Chowder |I'd like to share an ol' cooking recipe my pappy used to make. It's important the fish is FRESH. -Willy |} |}",
+        "Choices": []
+      },
+      {
+        "Hearts": 5,
+        "Trigger": "After reaching five hearts with Willy he will send you a recipe in the mail.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- | {| class=\"wikitable roundedborder\" !Image !Recipe !Description |- | |Escargot |I'd like to share an ol' cooking recipe my pappy used to make. It's important the fish is FRESH. -Willy |} |}",
+        "Choices": []
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter The Beach between 6am and 5:10pm.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- |Willy greets you outside the Fish Shop. He says he needs your help and asks you to come inside. Once inside, you see Crabs run amok, covering the Fish Shop floor. Before you can do anything to help, Gus enters the Fish Shop and offers to purchase all the crabs, minus a discount for the labor involved. Willy agrees, and Gus gathers the crabs. Afterward, Gus turns to you and says he's going to run a special on Crab Cakes for the next few days (but not to tell Willy). The cutscene ends with Willy saying goodbye to his \"sweet ladies\" as they are taken away to be killed and cooked. Gus will sell an unlimited...",
+        "Choices": []
+      },
+      {
+        "Hearts": 7,
+        "Trigger": "After reaching seven hearts with Willy he will send you a recipe in the mail.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- | {| class=\"wikitable roundedborder\" !Image !Recipe !Description |- | |Fish Stew |I'd like to share an ol' cooking recipe my pappy used to make. It's important the fish is FRESH. -Willy |} |}",
+        "Choices": []
+      },
+      {
+        "Hearts": 9,
+        "Trigger": "After reaching nine hearts with Willy he will send you a recipe in the mail.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- | {| class=\"wikitable roundedborder\" !Image !Recipe !Description |- | |Lobster Bisque |I'd like to share an ol' cooking recipe my pappy used to make. It's important the fish is FRESH. -Willy |} |}",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 24,
+      "Season": "Summer"
+    }
+  },
+  "Wizard": {
+    "Events": [
+      {
+        "Hearts": 4,
+        "Trigger": "Players gain access to the basement of the Wizard's Tower, where they can change their character's appearance at The Shrine of Illusions for 500.",
+        "Details": "Four Hearts=== Players gain access to the basement of the Wizard's Tower, where they can change their character's appearance at The Shrine of Illusions for 500.",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 17,
+      "Season": "Winter"
+    }
+  },
+  "Leo": {
+    "Events": [
+      {
+        "Hearts": 2,
+        "Trigger": "Enter Island West on a sunny day between 6am and 6pm.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- |The player is standing by the shore when Leo approaches from behind. He asks what the player is doing. * * * * Leo then asks what the player's home is like. * * * * Leo thinks about your words for a bit before asking if there are any kids in Pelican Town * * Regardless of the answer, Leo says he's aware he's not really a bird, and he tries to avoid thinking about it because it makes him feel lonely. He tries to fit in with the parrots, but knows he truly doesn't belong anywhere. He runs off before Willy enters the scene, wondering if there's any way to help him. |}",
+        "Choices": [
+          {
+            "Option": "Just enjoying the waves.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Looking for fish.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Thinking about someone special.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Pondering the big questions.",
+            "Reaction": 0
+          },
+          {
+            "Option": "There's a town full of people.",
+            "Reaction": 0
+          },
+          {
+            "Option": "There's forests, beaches, and mountains.",
+            "Reaction": 0
+          },
+          {
+            "Option": "It's like here, but colder.",
+            "Reaction": 0
+          },
+          {
+            "Option": "I live on a farm.",
+            "Reaction": 0
+          },
+          {
+            "Option": "Yes.",
+            "Reaction": 0
+          },
+          {
+            "Option": "What does that matter to a bird?",
+            "Reaction": 0
+          }
+        ]
+      },
+      {
+        "Hearts": 3,
+        "Trigger": "After reaching three hearts with Leo, he sends the player a recipe in the mail.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- | {|class=\"wikitable roundedborder\" !Image !Recipe !Description |- | |Poi |(Player name), Here's a food from my home, that me and my family enjoy. Hope you like it. -Leo P.S. Willy helped me write this. |} |}",
+        "Choices": []
+      },
+      {
+        "Hearts": 4,
+        "Trigger": "Enter Island North on a sunny day between 6am and 6pm. This event will only happen if Leo hasn't moved to the Valley yet.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- |The player approaches Leo from behind. Leo squawks like a parrot and startles the player, which startles Leo in turn. Leo then apologizes and explains that he has difficulty communicating using words, then asks the player if they find him weird. Leo wonders about the differences in his life if he hadn't been washed ashore and wonders about what \"normal kids\" would have to say about him. Leo then asks the player if they think he could ever be a normal kid again. After the player answers, he states that he's happy he met the parrots regardless, and that he will always consider them family no matter what. Leo...",
+        "Choices": []
+      },
+      {
+        "Hearts": 6,
+        "Trigger": "Enter Island South on a sunny day between 6am and 6pm.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- |Linus invites Leo to move to the mainland of Stardew Valley. Willy says that there are other children there, and Leo can visit Ginger Island anytime he wants to. Willy asks the player what they think. (Choices have no effect on friendship). Leo decides to move to Stardew Valley. That night, parrots build him a treehouse in the tree to the west of Linus' tent. |}",
+        "Choices": []
+      },
+      {
+        "Hearts": 7,
+        "Trigger": "After reaching seven hearts with Leo, he sends the player a recipe in the mail.",
+        "Details": "class=\"mw-collapsible mw-collapsed\" !style=\"text-align: left;\" | 'Details ' |- | {|class=\"wikitable roundedborder\" !Image !Recipe !Description |- | |Mango Sticky Rice |(Player name), Here's a food from my home, that me and my family enjoy. Hope you like it. -Leo P.S. Willy helped me write this. |} |}",
+        "Choices": []
+      }
+    ],
+    "CanMarry": false,
+    "CanGift": true,
+    "Birthday": {
+      "Day": 26,
+      "Season": "Summer"
+    }
+  }
 }

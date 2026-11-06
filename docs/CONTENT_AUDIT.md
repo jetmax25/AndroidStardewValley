@@ -116,18 +116,50 @@ Four Corners, Beach, and Meadowlands can be chosen with the other farm types. Th
 
 Favorites are not stored as a separate list. Progress is the per-farm sets of community center items, caught fish, and museum items. Fish names that already existed were not renamed. New fish start unchecked.
 
-## Not checked, or only partly checked
+The same season rule now applies on the Community Center list. Year-round bundle items used to disappear when one season was selected.
 
-- Heart-event text. Leo and Krobus still have no events stored. The other villagers' event paragraphs were not compared sentence by sentence.
-- Gift tastes that come only from a universal category such as "all cooking" or "all vegetables", except the All Artifacts and All Fish lines. Most gift cells were left as they were.
-- Crab-pot catches (lobster, crab, and the rest). They do not use the fishing minigame fields this screen is built around.
-- Remixed bundles, and the Joja Community Development form. The screen is the standard Community Center list.
-- Fiber, Tea Leaves, and Mixed Seeds. Fiber sells for 1g and the Crops page does not give it the same gold-per-day figure. Tea is harvested only in the last week of the season. Mixed seeds are not one crop.
-- Artifact dig spots and mineral mine ranges, beyond the price and description pass.
-- Strange-doll display names, for the sprite reason above.
-- Fishing level when the wiki page does not print "Requires level N". Existing levels were left in place.
-- Ginger Island's all-year seasons are a location note, not extra season icons.
-- No device or emulator was available here, so the screens were not opened and there are no screenshots. Image coverage was checked by name against `res/drawable`.
+## Second pass, 6 November 2026
+
+Same wiki pages as above, plus:
+
+| Page | URL |
+| --- | --- |
+| Wiki copyright | https://stardewvalleywiki.com/Stardew_Valley_Wiki:Copyrights |
+| Official FAQ (video permission only) | https://www.stardewvalley.net/faq/ |
+| Friendship universal dislikes and hates | https://stardewvalleywiki.com/Friendship |
+| Artisan Goods | https://stardewvalleywiki.com/Artisan_Goods |
+| Remixed Bundles | https://stardewvalleywiki.com/Remixed_Bundles |
+| JojaMart community projects | https://stardewvalleywiki.com/JojaMart |
+| Bouquet group 10-heart event | https://stardewvalleywiki.com/Bouquet |
+| Each giftable villager page | https://stardewvalleywiki.com/Villagers |
+
+### Images and licensing
+
+The 61 names from the first pass still have no file in this project. The wiki text and its images are CC BY-NC-SA 3.0. That license forbids commercial use. The official FAQ allows monetized videos of the game and does not grant a license to ship game sprites in an app. This app has ads and a paid upgrade, so copying wiki or game sprites into it is not an allowed source. No public-domain or freely licensed replacement for those 61 sprites was found. They were not replaced with generated art.
+
+Adding Fiber, Tea, Mixed Seeds, crab-pot fish, Joja projects, and remix-only bundles created more names that also have no licensed file. `python3 tools/check_reference_data.py` now checks 837 referenced names. **108 use the placeholder.** The list is `app/src/test/resources/known_placeholder_drawables.txt`. Remix bundles that match a standard bundle reuse that bundle's existing icon. `Large Egg` uses the existing white large-egg sprite, and `Large Brown Egg` uses the existing brown one. Joja gold amounts use the existing gold sprite.
+
+### What this pass filled in
+
+- Heart events: all 34 giftable villagers now have events, 135 in total, including Leo (2, 3, 4, 6, 7, 9) and Krobus (3 and 14). Triggers, choice labels, and friendship-point changes come from each villager page. Where the page uses the shared group 10-heart cutscene, the entry points at the Bouquet page: enter the saloon after bouquets, 10 hearts, and individual 10-heart events with every bachelor or bachelorette. A Rabbit's Foot makes it friendly. Without one, the group is upset.
+- Universal gifts: likes, neutrals, dislikes, and hates from Friendship and List of All Gifts are applied, then each villager's "All ..." line, then that villager's named items. Checked examples: Penny loves Emerald, Alex dislikes Alamite, Willy loves Catfish, Sebastian likes Flounder.
+- Crab pots: Clam, Cockle, Mussel, Oyster, Shrimp, Snail, Periwinkle, Crab, Lobster, and Crayfish. They use behavior "Crab Pot", 5 fishing XP, and are not eaten directly. Ocean versus freshwater (shown as river and lake) follows the Fish page. Deluxe Bait can make them silver.
+- Fiber, Tea Leaves, Mixed Seeds, and Mixed Flower Seeds are on the crop list. Tea is harvested every day of the last week of Spring, Summer, and Fall, and Winter if it is indoors. Mixed seeds are not one crop. Their detail note says so, and the list shows 0 days because the screen has no random-crop field. Fiber's gold per day is 0 for the same reason: the page says 4-7 Fiber and does not give one gold-per-day number.
+- Pineapple, Taro Root, and Unmilled Rice have a note on the crop screen. Pineapple and Taro are summer on the valley farm and all year on Ginger Island. Unirrigated rice is the 8-day timing; irrigated rice is 6 days.
+- Artifact rows now use the dig and drop lines from the Artifacts table. Foraged minerals keep their floor ranges (Quartz 1-120, Earth Crystal 1-39, Frozen Tear 40-79, Fire Quartz 80-120). Source lines for gems and geode minerals were filled from that table.
+- Remixed bundles are extra entries prefixed "Remix:". They do not change how many items the standard bundle needs. The spring remix pool includes Spring Onion and still needs 4. Joja Community Development is five projects: Minecarts 15,000g, Panning 20,000g, Bridge 25,000g, Greenhouse 35,000g, Bus 40,000g. The checklist stores them separately from the standard bundles.
+
+## Still not fully verified
+
+- Dialogue inside heart events is a short factual summary, not a line-by-line transcript. The group 10-heart scene is the shared Bouquet text, not each bachelor's version of the pool game.
+- A gift with no universal category and no personal bullet keeps its previous reaction. New items that were never in the gift file, such as Honey, were not given a full new row.
+- Crab-pot fish do not use the fishing minigame, so difficulty is 0 and the behavior label is "Crab Pot". That is a label, not a minigame pattern.
+- Remix entries are every option on the Remixed Bundles page. The game picks one per slot. The list shows the options. It does not know which one a save rolled.
+- Joja membership price and the movie-theater purchase are not in the five-row Community Development table, so they are not checklist items.
+- Strange Doll 1 and 2 still use those file names. The wiki titles are Strange Doll (green) and Strange Doll (yellow).
+- Fishing level is still only set when a page says "Requires level N".
+- Ginger Island all-year fishing stays a location line. The season icons are the valley seasons. Crop notes cover Pineapple, Taro Root, and rice. Other island-only timing is not a separate season flag.
+- No emulator or device was available, so these screens were not opened and this pass has no screenshots. Image coverage was checked by resource name.
 
 ## How to repeat the check
 
@@ -136,4 +168,4 @@ python3 tools/check_reference_data.py
 ./gradlew testDebugUnitTest
 ```
 
-The Python check fails if a referenced image is missing and not listed as a known placeholder, if Corn/Sunflower/Wheat omit fall, if Blue Jazz's silver energy drifts from the wiki formula, if Bream or Anchovy regress, if a gift name is duplicated, if a bundle guide is not text, or if the River Fish reward is not Deluxe Bait.
+The Python check fails if a referenced image is missing and not listed as a known placeholder, if Corn, Sunflower, or Wheat omit fall, if Blue Jazz's silver energy drifts from the wiki formula, if Bream or Anchovy regress, if a gift name is duplicated, if a bundle guide is not text, if the River Fish reward is not Deluxe Bait, if Fiber, Tea, or Mixed Seeds are missing, if Lobster is not a 5 XP crab-pot fish, if Leo or Krobus have no heart events, if Penny does not love Emerald, if Alex does not dislike Alamite, if the Joja bus or the Spring Onion remix option is missing, or if Earth Crystal's mine range is not floors 1-39.

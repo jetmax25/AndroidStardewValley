@@ -71,9 +71,10 @@ class CropRepository(
                     }
                 }
 
+                val note = if (cropJSONObject.has("Note")) cropJSONObject.getString("Note") else ""
                 val crop = Crop(
                         name, seeds, harvestTime, goldPerDay, seedPrice, regrowthDays,
-                        stages, seasons, commonStats, silverStats, goldStats
+                        stages, seasons, commonStats, silverStats, goldStats, note
                 )
 
                 crops.add(crop)

@@ -2544,5 +2544,418 @@
     "Difficulty": 80,
     "Legendary": true,
     "Fishing Level": 0
+  },
+  "Clam": {
+    "Description": "There's a chewy little guy in there... Caught in a crab pot for 5 fishing XP. Not eaten directly. Deluxe Bait can make it silver. Freshwater means a river or lake pot.",
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 50
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 62
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 75
+      }
+    },
+    "Availability": {
+      "Weather": "Any",
+      "Locations": [
+        "Ocean"
+      ],
+      "Seasons": {
+        "Spring": true,
+        "Summer": true,
+        "Fall": true,
+        "Winter": true
+      },
+      "Time": {
+        "Start": 6,
+        "End": 26
+      }
+    },
+    "Behavior": "Crab Pot",
+    "XP": 5,
+    "Difficulty": 0,
+    "Legendary": false,
+    "Fishing Level": 0
+  },
+  "Lobster": {
+    "Description": "A large ocean-dwelling crustacean with a strong tail. Caught in a crab pot for 5 fishing XP. Not eaten directly. Deluxe Bait can make it silver. Freshwater means a river or lake pot.",
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 120
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 150
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 180
+      }
+    },
+    "Availability": {
+      "Weather": "Any",
+      "Locations": [
+        "Ocean"
+      ],
+      "Seasons": {
+        "Spring": true,
+        "Summer": true,
+        "Fall": true,
+        "Winter": true
+      },
+      "Time": {
+        "Start": 6,
+        "End": 26
+      }
+    },
+    "Behavior": "Crab Pot",
+    "XP": 5,
+    "Difficulty": 0,
+    "Legendary": false,
+    "Fishing Level": 0
+  },
+  "Crayfish": {
+    "Description": "A small freshwater relative of the lobster. Caught in a crab pot for 5 fishing XP. Not eaten directly. Deluxe Bait can make it silver. Freshwater means a river or lake pot.",
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 75
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 93
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 112
+      }
+    },
+    "Availability": {
+      "Weather": "Any",
+      "Locations": [
+        "Freshwater rivers",
+        "Freshwater lakes"
+      ],
+      "Seasons": {
+        "Spring": true,
+        "Summer": true,
+        "Fall": true,
+        "Winter": true
+      },
+      "Time": {
+        "Start": 6,
+        "End": 26
+      }
+    },
+    "Behavior": "Crab Pot",
+    "XP": 5,
+    "Difficulty": 0,
+    "Legendary": false,
+    "Fishing Level": 0
+  },
+  "Crab": {
+    "Description": "A marine crustacean with two powerful pincers. Caught in a crab pot for 5 fishing XP. Not eaten directly. Deluxe Bait can make it silver. Freshwater means a river or lake pot.",
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 100
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 125
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 150
+      }
+    },
+    "Availability": {
+      "Weather": "Any",
+      "Locations": [
+        "Ocean"
+      ],
+      "Seasons": {
+        "Spring": true,
+        "Summer": true,
+        "Fall": true,
+        "Winter": true
+      },
+      "Time": {
+        "Start": 6,
+        "End": 26
+      }
+    },
+    "Behavior": "Crab Pot",
+    "XP": 5,
+    "Difficulty": 0,
+    "Legendary": false,
+    "Fishing Level": 0
+  },
+  "Cockle": {
+    "Description": "A common saltwater clam. Caught in a crab pot for 5 fishing XP. Not eaten directly. Deluxe Bait can make it silver. Freshwater means a river or lake pot.",
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 50
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 62
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 75
+      }
+    },
+    "Availability": {
+      "Weather": "Any",
+      "Locations": [
+        "Ocean"
+      ],
+      "Seasons": {
+        "Spring": true,
+        "Summer": true,
+        "Fall": true,
+        "Winter": true
+      },
+      "Time": {
+        "Start": 6,
+        "End": 26
+      }
+    },
+    "Behavior": "Crab Pot",
+    "XP": 5,
+    "Difficulty": 0,
+    "Legendary": false,
+    "Fishing Level": 0
+  },
+  "Mussel": {
+    "Description": "A common bivalve that often lives in clusters. Caught in a crab pot for 5 fishing XP. Not eaten directly. Deluxe Bait can make it silver. Freshwater means a river or lake pot.",
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 30
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 37
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 45
+      }
+    },
+    "Availability": {
+      "Weather": "Any",
+      "Locations": [
+        "Ocean"
+      ],
+      "Seasons": {
+        "Spring": true,
+        "Summer": true,
+        "Fall": true,
+        "Winter": true
+      },
+      "Time": {
+        "Start": 6,
+        "End": 26
+      }
+    },
+    "Behavior": "Crab Pot",
+    "XP": 5,
+    "Difficulty": 0,
+    "Legendary": false,
+    "Fishing Level": 0
+  },
+  "Shrimp": {
+    "Description": "A scavenger that feeds off the ocean floor. Widely prized for its meat. Caught in a crab pot for 5 fishing XP. Not eaten directly. Deluxe Bait can make it silver. Freshwater means a river or lake pot.",
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 60
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 75
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 90
+      }
+    },
+    "Availability": {
+      "Weather": "Any",
+      "Locations": [
+        "Ocean"
+      ],
+      "Seasons": {
+        "Spring": true,
+        "Summer": true,
+        "Fall": true,
+        "Winter": true
+      },
+      "Time": {
+        "Start": 6,
+        "End": 26
+      }
+    },
+    "Behavior": "Crab Pot",
+    "XP": 5,
+    "Difficulty": 0,
+    "Legendary": false,
+    "Fishing Level": 0
+  },
+  "Snail": {
+    "Description": "A wide-ranging mollusc that lives in a spiral shell. Caught in a crab pot for 5 fishing XP. Not eaten directly. Deluxe Bait can make it silver. Freshwater means a river or lake pot.",
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 65
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 81
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 97
+      }
+    },
+    "Availability": {
+      "Weather": "Any",
+      "Locations": [
+        "Freshwater rivers",
+        "Freshwater lakes"
+      ],
+      "Seasons": {
+        "Spring": true,
+        "Summer": true,
+        "Fall": true,
+        "Winter": true
+      },
+      "Time": {
+        "Start": 6,
+        "End": 26
+      }
+    },
+    "Behavior": "Crab Pot",
+    "XP": 5,
+    "Difficulty": 0,
+    "Legendary": false,
+    "Fishing Level": 0
+  },
+  "Periwinkle": {
+    "Description": "A tiny freshwater snail that lives in a blue shell. Caught in a crab pot for 5 fishing XP. Not eaten directly. Deluxe Bait can make it silver. Freshwater means a river or lake pot.",
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 20
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 25
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 30
+      }
+    },
+    "Availability": {
+      "Weather": "Any",
+      "Locations": [
+        "Freshwater rivers",
+        "Freshwater lakes"
+      ],
+      "Seasons": {
+        "Spring": true,
+        "Summer": true,
+        "Fall": true,
+        "Winter": true
+      },
+      "Time": {
+        "Start": 6,
+        "End": 26
+      }
+    },
+    "Behavior": "Crab Pot",
+    "XP": 5,
+    "Difficulty": 0,
+    "Legendary": false,
+    "Fishing Level": 0
+  },
+  "Oyster": {
+    "Description": "Constantly filters water to find food. In the process, it removes dangerous toxins from the environment. Caught in a crab pot for 5 fishing XP. Not eaten directly. Deluxe Bait can make it silver. Freshwater means a river or lake pot.",
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 40
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 50
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 60
+      }
+    },
+    "Availability": {
+      "Weather": "Any",
+      "Locations": [
+        "Ocean"
+      ],
+      "Seasons": {
+        "Spring": true,
+        "Summer": true,
+        "Fall": true,
+        "Winter": true
+      },
+      "Time": {
+        "Start": 6,
+        "End": 26
+      }
+    },
+    "Behavior": "Crab Pot",
+    "XP": 5,
+    "Difficulty": 0,
+    "Legendary": false,
+    "Fishing Level": 0
   }
 }

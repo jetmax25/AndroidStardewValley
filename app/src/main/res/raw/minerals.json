@@ -4,7 +4,8 @@
     "Description": "Some claim the powdered crystal is a dwarvish delicacy.",
     "Locations": [
       "Magma Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Quartz": {
@@ -15,7 +16,9 @@
       "Max": 120
     },
     "Locations": [
-      "Garbage Can"
+      "The Mines",
+      "Garbage Can",
+      "Stone Golem"
     ]
   },
   "Earth Crystal": {
@@ -26,8 +29,13 @@
       "Max": 39
     },
     "Locations": [
-      "Panning",
+      "The Mines",
+      "Duggy",
+      "Haunted Skull",
+      "Fishing Treasure Chest",
+      "Copper Pan",
       "Geode",
+      "Omni Geode",
       "Garbage Can"
     ]
   },
@@ -39,10 +47,14 @@
       "Max": 79
     },
     "Locations": [
+      "The Mines",
       "Fishing Treasure Chest",
-      "Panning",
+      "Copper Pan",
       "Frozen Geode",
-      "Garbage Can"
+      "Omni Geode",
+      "Dust Sprite",
+      "Garbage Can",
+      "Geode"
     ]
   },
   "Fire Quartz": {
@@ -53,10 +65,13 @@
       "Max": 120
     },
     "Locations": [
-      "Panning",
+      "The Mines",
+      "Fishing Treasure Chest",
+      "Copper Pan",
       "Magma Geode",
       "Omni Geode",
-      "Garbage Can"
+      "Garbage Can",
+      "Geode"
     ]
   },
   "Emerald": {
@@ -65,10 +80,11 @@
     "Locations": [
       "Emerald Node",
       "Gem Node",
-      "Panning",
+      "Dwarvish Sentry",
+      "Copper Pan",
       "Garbage Can",
       "Fishing Treasure Chest",
-      "Feast of the Winter Star"
+      "Tree of the Winter Star"
     ]
   },
   "Aquamarine": {
@@ -77,7 +93,8 @@
     "Locations": [
       "Aquamarine Node",
       "Gem Node",
-      "Panning",
+      "Dwarvish Sentry",
+      "Copper Pan",
       "Garbage Can",
       "Fishing Treasure Chest"
     ]
@@ -88,20 +105,22 @@
     "Locations": [
       "Ruby Node",
       "Gem Node",
-      "Panning",
+      "Dwarvish Sentry",
+      "Copper Pan",
       "Garbage Can",
       "Fishing Treasure Chest",
-      "Feast of the Winter Star"
+      "Tree of the Winter Star"
     ]
   },
   "Amethyst": {
     "Price": 100,
     "Description": "A purple variant of quartz.",
     "Locations": [
-      "Amethyst Node (lvl 40-120), or any lvl once you reach the bottom of the mines",
+      "Amethyst Node",
       "Gem Node",
-      "Slimes",
-      "Panning",
+      "Green Slime",
+      "Dwarvish Sentry",
+      "Copper Pan",
       "Garbage Can",
       "Fishing Treasure Chest"
     ]
@@ -112,7 +131,8 @@
     "Locations": [
       "Topaz Node",
       "Gem Node",
-      "Panning",
+      "Dwarvish Sentry",
+      "Copper Pan",
       "Garbage Can",
       "Fishing Treasure Chest"
     ]
@@ -123,19 +143,22 @@
     "Locations": [
       "Jade Node",
       "Gem Node",
-      "Panning",
+      "Frost Jelly",
+      "Dwarvish Sentry",
       "Garbage Can",
       "Fishing Treasure Chest",
-      "Feast of the Winter Star"
+      "Tree of the Winter Star"
     ]
   },
   "Diamond": {
     "Price": 750,
     "Description": "A rare and valuable gem.",
     "Locations": [
+      "The Mines",
       "Diamond Node",
       "Gem Node",
-      "Panning",
+      "Dwarvish Sentry",
+      "Copper Pan",
       "Garbage Can",
       "Fishing Treasure Chest"
     ]
@@ -144,14 +167,14 @@
     "Price": 2000,
     "Description": "A very rare and powerful substance with unknown origins.",
     "Locations": [
-      "Iridium Node (4%)",
-      "Mystic Stone (25%)",
-      "Gem Node",
-      "Omni Geode (.004%)",
-      "Shadow Brute (.0005%)",
-      "Shadow Shaman (.0005%)",
-      "Mummy (.001%)",
-      "Fishing Trasure Chest"
+      "The Mines",
+      "Iridium Node",
+      "Mystic Stone",
+      "Omni Geode",
+      "Shadow Brute",
+      "Shadow Shaman",
+      "Mummy",
+      "Serpent"
     ]
   },
   "Tigerseye": {
@@ -159,7 +182,8 @@
     "Description": "A stripe of shimmering gold gives this gem a warm luster.",
     "Locations": [
       "Magma Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Opal": {
@@ -167,7 +191,8 @@
     "Description": "Its internal structure causes it to reflect a rainbow of light.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Fire Opal": {
@@ -175,7 +200,8 @@
     "Description": "A rare variety of opal, named for its red spots.",
     "Locations": [
       "Magma Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Alamite": {
@@ -192,7 +218,8 @@
     "Locations": [
       "Magma Geode",
       "Omni Geode",
-      "Black Slime"
+      "Black Slime",
+      "Geode"
     ]
   },
   "Baryte": {
@@ -200,7 +227,8 @@
     "Description": "The best specimens resemble a desert rose.",
     "Locations": [
       "Magma Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Aerinite": {
@@ -208,7 +236,8 @@
     "Description": "These crystals are curiously light.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Calcite": {
@@ -224,7 +253,8 @@
     "Description": "It can occur in coral reefs, often near an underwater volcano.",
     "Locations": [
       "Magma Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Esperite": {
@@ -232,7 +262,8 @@
     "Description": "The crystals glow bright green when stimulated.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Fluorapatite": {
@@ -240,7 +271,8 @@
     "Description": "Small amounts are found in human teeth.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Geminite": {
@@ -248,7 +280,8 @@
     "Description": "Occurs in brilliant clusters.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Helvite": {
@@ -256,7 +289,8 @@
     "Description": "It grows in a triangular column.",
     "Locations": [
       "Magma Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Jamborite": {
@@ -280,7 +314,8 @@
     "Description": "The geometric faces are as smooth as glass.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Lunarite": {
@@ -288,7 +323,8 @@
     "Description": "The cratered white orbs form a tight cluster.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Malachite": {
@@ -305,7 +341,8 @@
     "Locations": [
       "Magma Geode",
       "Omni Geode",
-      "Black Slime"
+      "Black Slime",
+      "Geode"
     ]
   },
   "Nekoite": {
@@ -346,7 +383,8 @@
     "Description": "Commonly known as \"Fool's Gold\".",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Ocean Stone": {
@@ -354,7 +392,8 @@
     "Description": "An old legend claims these stones are the mosaics of ancient mermaids.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Ghost Crystal": {
@@ -362,7 +401,8 @@
     "Description": "There is an aura of coldness around this crystal.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Jasper": {
@@ -370,7 +410,8 @@
     "Description": "When polished, this stone becomes attractively luminous. Prized by ancient peoples for thousands of years.",
     "Locations": [
       "Magma Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Celestine": {
@@ -386,7 +427,8 @@
     "Description": "A very popular material for sculptures and construction.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Sandstone": {
@@ -410,7 +452,8 @@
     "Description": "Forms near searing hot magma.",
     "Locations": [
       "Magma Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Limestone": {
@@ -426,7 +469,8 @@
     "Description": "Because of its relatively soft consistency, this stone is very popular for carving.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Hematite": {
@@ -434,7 +478,8 @@
     "Description": "An iron-based Mineral with interesting magnetic properties.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Mudstone": {
@@ -450,7 +495,8 @@
     "Description": "A volcanic glass that forms when lava cools rapidly.",
     "Locations": [
       "Magma Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Slate": {
@@ -466,7 +512,8 @@
     "Description": "An old miner's song suggests these are made from the bones of ancient fairies.",
     "Locations": [
       "Frozen Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   },
   "Star Shards": {
@@ -474,7 +521,8 @@
     "Description": "No one knows how these form. Some scientists claim that the microscopic structure displays unnatural regularity.",
     "Locations": [
       "Magma Geode",
-      "Omni Geode"
+      "Omni Geode",
+      "Geode"
     ]
   }
 }

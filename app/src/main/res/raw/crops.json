@@ -1419,7 +1419,8 @@
         "Energy": 5,
         "Price": 45
       }
-    }
+    },
+    "Note": "Grows faster when irrigated (6 days instead of 8). Gold per day here is the unirrigated figure from the Crops page."
   },
   "Summer Squash": {
     "Harvest Time": "6",
@@ -1562,7 +1563,8 @@
         "Energy": 248,
         "Price": 450
       }
-    }
+    },
+    "Note": "Summer on the farm. All year on the Ginger Island farm."
   },
   "Taro Root": {
     "Seeds": "Taro Tuber",
@@ -1598,6 +1600,144 @@
         "Energy": 68,
         "Price": 150
       }
-    }
+    },
+    "Note": "Summer on the farm, faster if the tile is watered by nearby water. All year on Ginger Island. Unirrigated growth is the stage timing shown."
+  },
+  "Fiber": {
+    "Harvest Time": "7",
+    "Gold Per Day": 0,
+    "Seed Price": 0,
+    "Regrowth Days": 0,
+    "Stages": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": true,
+      "Fall": true,
+      "Winter": true
+    },
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 1
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 1
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 1
+      }
+    },
+    "Note": "Grows in every season and does not need water. Each harvest is 4-7 Fiber. The Crops page does not give a single gold-per-day figure. Seeds are crafted."
+  },
+  "Tea Leaves": {
+    "Seeds": "Tea Sapling",
+    "Harvest Time": "20",
+    "Gold Per Day": 0,
+    "Seed Price": 0,
+    "Regrowth Days": 1,
+    "Stages": [
+      10,
+      10
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": true,
+      "Fall": true,
+      "Winter": true
+    },
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 50
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 62
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 75
+      }
+    },
+    "Note": "Harvest each day of the last week of Spring, Summer, and Fall. Indoors, that includes Winter. The bush itself grows in every season. Tea Sapling is crafted."
+  },
+  "Mixed Seeds": {
+    "Harvest Time": "0",
+    "Gold Per Day": 0,
+    "Seed Price": 0,
+    "Regrowth Days": 0,
+    "Stages": [
+      1
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": true,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 0
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 0
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 0
+      }
+    },
+    "Note": "Not one crop. Plant in any season except Winter and it grows a random crop of that season. Found from weeds, tilled dirt, or a Seed Maker. The list's 0-day harvest is because there is no single grow time."
+  },
+  "Mixed Flower Seeds": {
+    "Harvest Time": "0",
+    "Gold Per Day": 0,
+    "Seed Price": 0,
+    "Regrowth Days": 0,
+    "Stages": [
+      1
+    ],
+    "Seasons": {
+      "Spring": true,
+      "Summer": true,
+      "Fall": true,
+      "Winter": false
+    },
+    "Stats": {
+      "Common": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 0
+      },
+      "Silver": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 0
+      },
+      "Gold": {
+        "Health": 0,
+        "Energy": 0,
+        "Price": 0
+      }
+    },
+    "Note": "Not one crop. Plant in any season except Winter and it grows a random flower of that season. Found from summer weeds, Mystery Boxes, or the Prize Machine."
   }
 }

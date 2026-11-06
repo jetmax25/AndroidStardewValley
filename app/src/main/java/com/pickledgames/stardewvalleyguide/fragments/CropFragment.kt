@@ -85,6 +85,8 @@ class CropFragment : InnerBaseFragment() {
             }
 
             informationCropLayout.informationCropGoldPerDayTextView.text = String.format(getString(R.string.gold_per_day_template), crop.goldPerDay)
+            informationCropLayout.informationCropNoteTextView.text = crop.note
+            informationCropLayout.informationCropNoteTextView.visibility = if (crop.note.isBlank()) View.GONE else View.VISIBLE
             with (cropStagesRecyclerView) {
                 adapter = CropStagesAdapter(crop)
                 layoutManager = GridLayoutManager(activity, SPAN_COUNT)

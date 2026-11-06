@@ -20,7 +20,8 @@ data class Crop(
         val seasons: Set<Season>,
         val commonStats: Stats,
         val silverStats: Stats,
-        val goldStats: Stats
+        val goldStats: Stats,
+        val note: String = ""
 ) : StardewObject, Parcelable {
 
     override fun getImageId(context: Context): Int {

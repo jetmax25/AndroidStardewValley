@@ -30,7 +30,9 @@ object AssetNames {
     }
 
     fun bundleDrawable(name: String): String {
-        val cleaned = name.lowercase(Locale.US).replace("bundle", "").trim()
+        var cleaned = name.replace(Regex("^(Remix|Joja):\\s*"), "")
+        cleaned = cleaned.lowercase(Locale.US).replace("bundle", "").trim()
+        cleaned = BUNDLE_POSSESSIVES[cleaned] ?: cleaned
         return "community_center_bundle_${slug(cleaned)}"
     }
 
@@ -60,11 +62,25 @@ object AssetNames {
             "more wood" to "wood",
             "cranberries seeds" to "cranberry seeds",
             "rabbits foot" to "rabbit's foot",
-            "farmers lunch" to "farmer's lunch"
+            "farmers lunch" to "farmer's lunch",
+            "large egg" to "large egg white",
+            "large brown egg" to "large egg brown"
     )
 
     private val QUALITY_PARENS = Regex("(?i)\\s*\\([^)]*quality[^)]*\\)")
     private val QUALITY_PREFIX = Regex("(?i)^(silver or better quality|gold or iridium quality|gold quality|silver quality)\\s+")
     private val QUALITY_SUFFIX = Regex("(?i)\\s+(silver|gold|iridium) quality$")
     private val MONEY = Regex("\\d+_\\d+g|\\d+g")
+
+    private val BUNDLE_POSSESSIVES = mapOf(
+            "blacksmiths" to "blacksmith's",
+            "geologists" to "geologist's",
+            "adventurers" to "adventurer's",
+            "chefs" to "chef's",
+            "enchanters" to "enchanter's",
+            "g2500" to "2,500",
+            "g5000" to "5,000",
+            "g10000" to "10,000",
+            "g25000" to "25,000"
+    )
 }

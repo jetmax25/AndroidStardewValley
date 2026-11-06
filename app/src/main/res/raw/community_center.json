@@ -1798,5 +1798,2760 @@
         }
       }
     }
+  },
+  "Remixed Options": {
+    "Reward": "Optional. These replace the matching standard bundle only when remixing is turned on for a new save.",
+    "Bundles": {
+      "Remix: Spring Foraging Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 30,
+          "Item": "Spring Seeds"
+        },
+        "Items": {
+          "Wild Horseradish": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Foraging",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Daffodil": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Foraging, buy from Pierre at Flower Dance",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Leek": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Foraging",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Dandelion": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Foraging, buy from Pierre at Flower Dance",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Spring Onion": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Foraging",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Summer Foraging Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 30,
+          "Item": "Summer Seeds"
+        },
+        "Items": {
+          "Grape": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Foraging, Fall Farming",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Spice Berry": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Foraging, The Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Sweet Pea": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Foraging",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Fall Foraging Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 30,
+          "Item": "Fall Seeds"
+        },
+        "Items": {
+          "Common Mushroom": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall Foraging, Spring & Fall Foraging in the Secret Woods, The Farm Cave (mushroom option), Tapping a Mushroom Tree, Mushroom Log",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Wild Plum": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall Foraging, The Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Hazelnut": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall Foraging",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Blackberry": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall Foraging, The Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Winter Foraging Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 30,
+          "Item": "Winter Seeds"
+        },
+        "Items": {
+          "Winter Root": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Tilling soil or Artifact Spots in Winter, dropped by Blue Slimes on floors 41-79 of The Mines",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Crystal Fruit": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Winter Foraging, dropped by Dust Sprites on floors 41-79 of The Mines",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Snow Yam": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Tilling soil or Artifact Spots in Winter",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Crocus": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Winter Foraging",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Holly": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Winter Foraging",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Construction Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Charcoal Kiln"
+        },
+        "Items": {
+          "Wood": {
+            "Quantity": 99,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Chopping Trees or branches with an Axe",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Stone": {
+            "Quantity": 99,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Smashing stones with a Pickaxe",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Hardwood": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Chopping Large Stumps or Large Logs with an upgraded Axe, smashing crates in The Mines, cutting down Mahogany trees",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Sticky Bundle": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Charcoal Kiln"
+        },
+        "Items": {
+          "Sap": {
+            "Quantity": 500,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Chopping Trees, drop from Slimes",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Forest Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Charcoal Kiln"
+        },
+        "Items": {
+          "Moss": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Chopping Trees",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Fiber": {
+            "Quantity": 200,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Destroying Weeds or harvesting Fiber Seeds",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Acorn": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Shaking/Chopping Oak Trees",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Maple Seed": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Shaking/Chopping Maple Trees",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Exotic Foraging Bundle": {
+        "Needed": 5,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Autumn's Bounty"
+        },
+        "Items": {
+          "Coconut": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Desert Foraging",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Cactus Fruit": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Desert Foraging",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Cave Carrot": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. The Mines, either smashing boxes or tilling soil",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Red Mushroom": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Foraging in The Mines, Summer or Fall Foraging in the Secret Woods, The Farm Cave (mushroom option), Tapping a Mushroom Tree, Forest Farm Map in Fall, Mushroom Log",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Purple Mushroom": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. The Mines, The Farm Cave (mushroom option), Forest Farm Map, Foraging in Fall, Mushroom Log",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Maple Syrup": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Tapped Maple Tree",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Oak Resin": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Tapped Oak Tree",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Pine Tar": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Tapped Pine Tree",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Morel": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Foraging in the Secret Woods or Forest Farm Map in Spring, The Farm Cave (mushroom option), Mushroom Log",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Wild Medicine Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 2,
+          "Item": "Cookout Kit"
+        },
+        "Items": {
+          "Purple Mushroom": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. The Mines, The Farm Cave (mushroom option), Forest Farm Map Foraging in Fall, Mushroom Log",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Fiddlehead Fern": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer forage in the Secret Woods, Prehistoric levels in Skull Cavern, Green Rain Trees",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "White Algae": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fishing, Monster drops",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Hops": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Spring Crops Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 20,
+          "Item": "Speed-Gro"
+        },
+        "Items": {
+          "Parsnip": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Crops",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Green Bean": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Crops",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Cauliflower": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Crops",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Potato": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Crops",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Kale": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Crops",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Carrot": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Crops",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Summer Crops Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Quality Sprinkler"
+        },
+        "Items": {
+          "Tomato": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Hot Pepper": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Blueberry": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Melon": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Summer Squash": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Fall Crops Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Bee House"
+        },
+        "Items": {
+          "Corn": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer / Fall Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Eggplant": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Pumpkin": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Yam": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall Crops, dropped by Duggies on floors 6-29 of The Mines (3%)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Broccoli": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Quality Crops Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Preserves Jar"
+        },
+        "Items": {
+          "Gold quality Parsnip": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Parsnip.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Green Bean": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Green Bean.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Potato": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Potato.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Cauliflower": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Cauliflower.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Melon": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Melon.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Blueberry": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Blueberry.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Hot Pepper": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Hot Pepper.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Pumpkin": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Pumpkin.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Yam": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Yam.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Eggplant": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Eggplant.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Corn": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Corn.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Rare Crops Bundle": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Preserves Jar"
+        },
+        "Items": {
+          "Ancient Fruit": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring / Summer / Fall Crops; seed obtained from Ancient Seed artifact",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Sweet Gem Berry": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall Crops; Rare Seed purchased from Traveling Cart",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Animal Bundle": {
+        "Needed": 5,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Cheese Press"
+        },
+        "Items": {
+          "Large Milk": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Cows",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Large Brown Egg": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Chickens",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Large Egg": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Chickens",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Large Goat Milk": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Goats",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Wool": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Sheep, Rabbits",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Duck Egg": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Ducks",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Fish Farmer's Bundle": {
+        "Needed": 2,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Worm Bin"
+        },
+        "Items": {
+          "Roe": {
+            "Quantity": 15,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fish Pond product from many Fish, Fishing Treasure Chests",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Aged Roe": {
+            "Quantity": 15,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Preserves Jar product from Roe",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Squid Ink": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Squid Kid drop; Fish Pond product from Squid and Midnight Squid",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Garden Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Quality Sprinkler"
+        },
+        "Items": {
+          "Tulip": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Crops",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Blue Jazz": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring Crops",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Summer Spangle": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Sunflower": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer/Fall Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Fairy Rose": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Artisan Bundle": {
+        "Needed": 6,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Keg"
+        },
+        "Items": {
+          "Truffle Oil": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Oil Maker product from Truffle",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Cloth": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Loom, Recycling a Soggy Newspaper, Desert Trader",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Goat Cheese": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Cheese Press",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Cheese": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Cheese Press, Desert Trader",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Honey": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Bee House, Oasis",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Jelly": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Preserves Jar",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Apple": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Apple Trees during Fall, The Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Apricot": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Apricot Trees during Spring, The Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Orange": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Orange Trees during Summer, The Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Peach": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Peach Trees during Summer, The Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Pomegranate": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Pomegranate Trees during Fall, The Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Cherry": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Cherry Trees during Spring, The Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Brewer's Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Keg"
+        },
+        "Items": {
+          "Mead": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Keg product from Honey",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Pale Ale": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Keg product from Hops",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Wine": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Keg product from Fruits",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Juice": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Keg product from Vegetables",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Green Tea": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Keg product from Tea Leaves",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: River Fish Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "See the bundle"
+        },
+        "Items": {
+          "Sunfish": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in Rivers, 6am – 7pm, Spring, and Summer during sunny weather. Found in the Riverlands Farm or in the Wilderness Farm pond during rainy weather.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Catfish": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in Rivers and Secret Woods Pond 6am – midnight, Spring and Fall. Only when raining.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Shad": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in Rivers, 9am – 2am, Spring, Summer, and Fall. Only when raining.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Tiger Trout": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in Rivers, 6am – 7pm, Fall and Winter.",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Lake Fish Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Dressed Spinner"
+        },
+        "Items": {
+          "Largemouth Bass": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the Mountain lake, 6am – 7pm, All Seasons.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Carp": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the Mountain lake or Cindersap Forest pond, Anytime, during Spring, Summer, or Fall. Found in Secret Woods or Sewer, Anytime, All Seasons.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Bullhead": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the Mountain Lake, Anytime, All Seasons.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Sturgeon": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the Mountain Lake, 6am – 7pm, Summer and Winter.",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Ocean Fish Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Warp Totem Beach"
+        },
+        "Items": {
+          "Sardine": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the Ocean, 6am – 7pm, Spring, Fall, and Winter.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Tuna": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the Ocean, 6am – 7pm, Summer and Winter.",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Red Snapper": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the Ocean, 6am – 7pm, Summer and Fall. Only when raining.",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Tilapia": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the Ocean, 6am – 2pm, Summer and Fall.",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Night Fishing Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Glow Ring"
+        },
+        "Items": {
+          "Walleye": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in Rivers, Lakes and Forest Pond, 12pm – 2am, Fall (Winter with Rain Totem). Only when raining.",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Bream": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in Rivers, 6pm – 2am, All Seasons.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Eel": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the Ocean, 4pm – 2am, Spring or Fall. Only when raining.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Crab Pot Bundle": {
+        "Needed": 5,
+        "Reward": {
+          "Quantity": 3,
+          "Item": "Crab Pot"
+        },
+        "Items": {
+          "Lobster": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Caught in Crab Pots (ocean)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Crayfish": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Caught in Crab Pots (freshwater)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Crab": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Caught in Crab Pots (ocean), drops from Rock Crabs or Lava Crabs in The Mines",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Cockle": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Caught in Crab Pots (ocean), Beach Foraging",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Mussel": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Caught in Crab Pots (ocean), Beach Foraging",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Shrimp": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Caught in Crab Pots (ocean)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Snail": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Caught in Crab Pots (freshwater)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Periwinkle": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Caught in Crab Pots (freshwater)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Oyster": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Caught in Crab Pots (ocean), Beach Foraging",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Clam": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Caught in Crab Pots (ocean), Beach Foraging",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Specialty Fish Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Dish O' The Sea"
+        },
+        "Items": {
+          "Pufferfish": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the Ocean, 12pm – 4pm, Summer during sunny weather.",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Ghostfish": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in ponds in The Mines floors 20 and 60, Anytime, All Seasons. May also be dropped by Ghosts.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Sandfish": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the pond in The Desert, 6am – 8pm, All Seasons.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Woodskip": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found in the Secret Woods and the Forest Farm, Anytime, All Seasons.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Quality Fish Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Dish O' The Sea"
+        },
+        "Items": {
+          "Gold quality Largemouth Bass": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Largemouth Bass.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Shad": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Shad.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Tuna": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Tuna.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold quality Walleye": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Gold quality Walleye.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Master Fishers Bundle": {
+        "Needed": 2,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Dish O' The Sea"
+        },
+        "Items": {
+          "Lava Eel": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. The Mines on the 100th floor during all seasons",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Scorpion Carp": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. The Desert during all seasons",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Octopus": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer in the ocean and (more rarely) in Garbage Cans, & submarine ride at the Night Market (&#8776;2% chance).",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Blobfish": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Submarine ride at the Night Market (Winter 15-17).",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Blacksmiths Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Furnace"
+        },
+        "Items": {
+          "Copper Bar": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Smelting Copper Ore in the Furnace",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Iron Bar": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Smelting Iron Ore in the Furnace, Crafting the \"Transmute (Fe)\" recipe",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Gold Bar": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Smelting Gold Ore in the Furnace, Crafting the \"Transmute (Au)\" recipe",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Geologists Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Omni Geode"
+        },
+        "Items": {
+          "Quartz": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Foraging on all floors of The Mines",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Earth Crystal": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Foraging on floors 1-39 of The Mines, Geodes, Omni Geodes, drop from Duggies in the Mines (floors 1-29)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Frozen Tear": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Foraging on floors 40-79 of The Mines, Frozen Geodes, Omni Geodes, drop from Dust Sprites in the Mines (floors 40-79)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Fire Quartz": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Foraging on floors 80-120 of The Mines, Magma Geodes, Omni Geodes",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Adventurers Bundle": {
+        "Needed": 2,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Small Magnet Ring"
+        },
+        "Items": {
+          "Slime": {
+            "Quantity": 99,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Dropped by Slimes",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Bat Wing": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Dropped by Bats in The Mines and the Skull Cavern",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Solar Essence": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Dropped by Ghosts, Squid Kids, or Metal Heads in The Mines, or by Mummies in the Skull Cavern; Fish Pond product from Sunfish; buy from Krobus",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Void Essence": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Dropped by Shadow Brutes in The Mines or Serpents in the Skull Cavern; Fish Pond product from Void Salmon; buy from Krobus",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Bone Fragment": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Dropped by Skeletons in The Mines or crates and barrels in Skull Cavern, Artifact Spots",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Treasure Hunter's Bundle": {
+        "Needed": 5,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Lucky Lunch"
+        },
+        "Items": {
+          "Amethyst": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. rowspan=\"6\" | Gem Node or individual nodes for each gem type in The Mines; Panning; Fishing Treasure Chests",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Aquamarine": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Aquamarine",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Diamond": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Diamond",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Emerald": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Emerald",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Ruby": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Ruby",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Topaz": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Topaz",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Engineer's Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 2,
+          "Item": "Furnace"
+        },
+        "Items": {
+          "Iridium Ore": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Mines, Skull Cavern, Magma Geode, Omni Geode",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Battery Pack": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Lightning Rod, purchase from Traveling Cart",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Refined Quartz": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Furnace product from Quartz or Fire Quartz, Recycling Machine product from Broken Glasses or Broken CD",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Chefs Bundle": {
+        "Needed": 6,
+        "Reward": {
+          "Quantity": 3,
+          "Item": "Pink Cake"
+        },
+        "Items": {
+          "Maple Syrup": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Tapped Maple Tree",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Fiddlehead Fern": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Foraging in the Secret Woods",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Truffle": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Pigs",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Poppy": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Maki Roll": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Cooking (recipe sources: The Queen of Sauce, The Saloon)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Fried Egg": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Cooking",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Dye Bundle": {
+        "Needed": 6,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Seed Maker"
+        },
+        "Items": {
+          "Red Mushroom": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Foraging in The Mines, Summer or Fall Foraging in the Secret Woods, The Farm Cave (mushroom option), Tapping a Mushroom Tree, Mushroom Log Fall Crops, seeds purchased at Oasis",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Sea Urchin": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Beach Foraging, after using 300 wood to fix the bridge to the right side of the beach Fall Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Sunflower": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer / Fall Crops Summer Crops, seeds purchased at Oasis",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Duck Feather": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Ducks Foraged in Desert; Indoor-only Crops, seeds purchased at Oasis",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Aquamarine": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Aquamarine Nodes, boxes in The Mines, Fishing Treasure Chests Summer Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Red Cabbage": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer Crops (Red Cabbage Seeds are available at Pierre's General Store in year 2+) Can be smelted in a furnace; Rarely obtained as a monster drop.",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Field Research Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Recycling Machine"
+        },
+        "Items": {
+          "Purple Mushroom": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. The Mines, The Farm Cave (mushroom option), Forest Farm Map Foraging in Fall, Mushroom Log",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Nautilus Shell": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Winter Beach Foraging (Note: NOT the Nautilus Fossil artifact)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Chub": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Can be found in the mountain lake and river during all seasons, any time.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Frozen Geode": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. The Mines floors 40-79",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Fodder Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Heater"
+        },
+        "Items": {
+          "Wheat": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer / Fall Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Hay": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Purchase at Marnie's Ranch or Desert Trader, or harvest from Grass or Wheat.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Apple": {
+            "Quantity": 3,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Apple Trees during Fall, The Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Enchanters Bundle": {
+        "Needed": 4,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Gold Bar"
+        },
+        "Items": {
+          "Oak Resin": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Tapped Oak Tree",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Wine": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Keg",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Rabbit's Foot": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Rabbits, Serpent drop in Skull Cavern (0.8%)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Pomegranate": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Pomegranate Trees during Fall, The Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Children's Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 3,
+          "Item": "Battery Pack"
+        },
+        "Items": {
+          "Salmonberry": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring forage, days 15-18 only, Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Cookie": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Cooking recipe; random gift in mail from the player's mother or Evelyn",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Ancient Doll": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Artifact dug up from Mountain, Bus Stop, Forest, or Town; Fishing Treasure Chests",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Ice Cream": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Cooking recipe; purchase from Ice Cream Stand during Summer, or from the Oasis on Sundays",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": false,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Forager's Bundle": {
+        "Needed": 2,
+        "Reward": {
+          "Quantity": 3,
+          "Item": "Tapper"
+        },
+        "Items": {
+          "Salmonberry": {
+            "Quantity": 50,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Spring forage, days 15-18 only, Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": false,
+              "Fall": false,
+              "Winter": false
+            }
+          },
+          "Blackberry": {
+            "Quantity": 50,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall forage, especially days 8-11; Fall Seeds",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Wild Plum": {
+            "Quantity": 15,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Fall forage, Fall Seeds, Farm Cave (fruit bat option)",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": true,
+              "Winter": false
+            }
+          }
+        }
+      },
+      "Remix: Home Cook's Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Complete Breakfast"
+        },
+        "Items": {
+          "Egg": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Chicken",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Milk": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Cow, Goat",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Wheat Flour": {
+            "Quantity": 100,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Mill product from Wheat, purchase from Pierre's General Store",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Helper's Bundle": {
+        "Needed": 2,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Stardrop Tea"
+        },
+        "Items": {
+          "Prize Ticket": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Reward for Help Wanted Quests",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Mystery Box": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Found through various means (Fishing, Mining, chopping Trees)",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Spirit's Eve Bundle": {
+        "Needed": 3,
+        "Reward": {
+          "Quantity": 5,
+          "Item": "Complete Breakfast"
+        },
+        "Items": {
+          "Jack-O-Lantern": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Purchasable on Spirit's Eve",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Corn": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Summer / Fall Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": true,
+              "Fall": true,
+              "Winter": false
+            }
+          },
+          "Bat Wing": {
+            "Quantity": 10,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Dropped by Bats in The Mines or Skull Cavern",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: Winter Star": {
+        "Needed": 2,
+        "Reward": {
+          "Quantity": 3,
+          "Item": "Mystery Box"
+        },
+        "Items": {
+          "Holly": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Winter Foraging",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          },
+          "Plum Pudding": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Cooking recipe from Queen of Sauce",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Stuffing": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Cooking recipe from Pam's 7 Heart Event",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          },
+          "Powdermelon": {
+            "Quantity": 5,
+            "Traveling Merchant": false,
+            "Guide": "Remixed bundle option. Winter Crops",
+            "Seasons": {
+              "Spring": false,
+              "Summer": false,
+              "Fall": false,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: g2500 Bundle": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 3,
+          "Item": "Chocolate Cake"
+        },
+        "Items": {
+          "2,500g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed vault bundle. Pay this amount.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: g5000 Bundle": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 30,
+          "Item": "Quality Fertilizer"
+        },
+        "Items": {
+          "5,000g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed vault bundle. Pay this amount.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: g10000 Bundle": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Lightning Rod"
+        },
+        "Items": {
+          "10,000g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed vault bundle. Pay this amount.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Remix: g25000 Bundle": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Crystalarium"
+        },
+        "Items": {
+          "25,000g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Remixed vault bundle. Pay this amount.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "Joja Community Development": {
+    "Reward": "Alternative to the Community Center. Buying the Joja membership opens these projects.",
+    "Bundles": {
+      "Joja: Minecarts": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Minecarts"
+        },
+        "Items": {
+          "15,000g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Joja Community Development. Repairs the minecart system that runs between the bus stop, the mountains, and Pelican Town. This replaces the Community Center route for that unlock.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Joja: Panning": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Panning"
+        },
+        "Items": {
+          "20,000g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Joja Community Development. Removes the glimmering boulder near the mine entrance. This replaces the Community Center route for that unlock.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Joja: Bridge": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Bridge"
+        },
+        "Items": {
+          "25,000g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Joja Community Development. Repairs the broken bridge in the mountains. The broken bridge east of the Mines will be repaired, enabling access to the Quarry. This replaces the Community Center route for that unlock.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Joja: Greenhouse": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Greenhouse"
+        },
+        "Items": {
+          "35,000g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Joja Community Development. Repairs the old ruins on the farm, turning it into a greenhouse. This replaces the Community Center route for that unlock.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      },
+      "Joja: Bus": {
+        "Needed": 1,
+        "Reward": {
+          "Quantity": 1,
+          "Item": "Bus"
+        },
+        "Items": {
+          "40,000g": {
+            "Quantity": 1,
+            "Traveling Merchant": false,
+            "Guide": "Joja Community Development. Repairs the bus that runs to the Calico Desert. This replaces the Community Center route for that unlock.",
+            "Seasons": {
+              "Spring": true,
+              "Summer": true,
+              "Fall": true,
+              "Winter": true
+            }
+          }
+        }
+      }
+    }
   }
 }

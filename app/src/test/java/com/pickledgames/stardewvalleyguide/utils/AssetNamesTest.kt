@@ -22,6 +22,9 @@ class AssetNamesTest {
     @Test
     fun bundleNamesKeepPossessiveSprites() {
         assertEquals("community_center_bundle_blacksmith_s", AssetNames.bundleDrawable("Blacksmith's Bundle"))
+        assertEquals("community_center_bundle_blacksmith_s", AssetNames.bundleDrawable("Remix: Blacksmiths Bundle"))
+        assertEquals("community_center_bundle_spring_foraging", AssetNames.bundleDrawable("Remix: Spring Foraging Bundle"))
+        assertEquals("item_large_egg_white", AssetNames.itemDrawable("Large Egg"))
         assertEquals("community_center_bundle_2_500", AssetNames.bundleDrawable("2,500 Bundle"))
     }
 

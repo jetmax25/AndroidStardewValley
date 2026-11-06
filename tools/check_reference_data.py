@@ -28,6 +28,20 @@ ALIASES = {
     "cranberries seeds": "cranberry seeds",
     "rabbits foot": "rabbit's foot",
     "farmers lunch": "farmer's lunch",
+    "large egg": "large egg white",
+    "large brown egg": "large egg brown",
+}
+
+BUNDLE_POSSESSIVES = {
+    "blacksmiths": "blacksmith's",
+    "geologists": "geologist's",
+    "adventurers": "adventurer's",
+    "chefs": "chef's",
+    "enchanters": "enchanter's",
+    "g2500": "2,500",
+    "g5000": "5,000",
+    "g10000": "10,000",
+    "g25000": "25,000",
 }
 
 
@@ -117,8 +131,10 @@ def main():
     river = None
     for room in bundles.values():
         for bundle_name, bundle in room["Bundles"].items():
-            cleaned = slug(bundle_name.lower().replace("bundle", "").strip())
-            expect(f"community_center_bundle_{cleaned}", f"bundle {bundle_name}")
+            cleaned = re.sub(r"^(Remix|Joja):\s*", "", bundle_name)
+            cleaned = cleaned.lower().replace("bundle", "").strip()
+            cleaned = BUNDLE_POSSESSIVES.get(cleaned, cleaned)
+            expect("community_center_bundle_" + slug(cleaned), f"bundle {bundle_name}")
             if bundle_name == "River Fish Bundle":
                 river = bundle
             for item_name, item in bundle["Items"].items():
@@ -127,6 +143,35 @@ def main():
                 expect(item_drawable(item_name), f"bundle item {item_name}")
     if river is None or river["Reward"]["Item"] != "Deluxe Bait":
         errors.append("River Fish Bundle reward must be Deluxe Bait")
+    for required in ("Fiber", "Tea Leaves", "Mixed Seeds", "Mixed Flower Seeds"):
+        if required not in crops:
+            errors.append(f"Missing crop {required}")
+    if "Ginger Island" not in crops["Pineapple"].get("Note", ""):
+        errors.append("Pineapple needs the Ginger Island season note")
+    if "Lobster" not in fishes or fishes["Lobster"]["XP"] != 5:
+        errors.append("Lobster must be a crab-pot fish worth 5 XP")
+    villagers = json.loads((RAW / "villagers.json").read_text())
+    if not villagers["Leo"]["Events"] or not villagers["Krobus"]["Events"]:
+        errors.append("Leo and Krobus need heart events")
+    if any(not person.get("Events") for person in villagers.values()):
+        errors.append("Every giftable villager should have at least one heart event")
+    gifts_by_name = {gift["giftName"]: gift for gift in gifts}
+    if gifts_by_name["Emerald"]["reactions"]["Penny"] != "LOVE":
+        errors.append("Penny loves Emerald")
+    if gifts_by_name["Alamite"]["reactions"]["Alex"] != "DISLIKE":
+        errors.append("Alex dislikes Alamite, a geode mineral")
+    if gifts_by_name["Catfish"]["reactions"]["Willy"] != "LOVE":
+        errors.append("Willy loves Catfish")
+    if "Joja: Bus" not in bundles["Joja Community Development"]["Bundles"]:
+        errors.append("Joja bus repair is missing")
+    remix = bundles["Remixed Options"]["Bundles"]["Remix: Spring Foraging Bundle"]
+    if "Spring Onion" not in remix["Items"] or remix["Needed"] != 4:
+        errors.append("Remixed spring foraging should offer Spring Onion and still need 4")
+    minerals = json.loads((RAW / "minerals.json").read_text())
+    if minerals["Earth Crystal"]["Mines"] != {"Min": 1, "Max": 39}:
+        errors.append("Earth Crystal mine range must be floors 1-39")
+    if not any("Mines" in place or "Skull" in place for place in json.loads((RAW / "artifacts.json").read_text())["Dwarf Scroll I"]["Locations"]):
+        errors.append("Dwarf Scroll I needs its dig locations")
     horseradish = bundles["Craft Room"]["Bundles"]["Spring Foraging Bundle"]["Items"]["Wild Horseradish"]["Guide"]
     if "Winter" in horseradish:
         errors.append("Wild Horseradish guide still describes winter")
