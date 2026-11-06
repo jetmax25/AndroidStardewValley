@@ -7,7 +7,7 @@ import androidx.room.TypeConverters
 import com.pickledgames.stardewvalleyguide.StardewApp
 import com.pickledgames.stardewvalleyguide.models.Farm
 
-@Database(entities = [Farm::class], version = 3, exportSchema = false)
+@Database(entities = [Farm::class], version = 4, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class StardewDatabase : RoomDatabase() {
 

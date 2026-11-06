@@ -4,9 +4,9 @@ import android.content.Context
 import android.os.Parcelable
 import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
+import com.pickledgames.stardewvalleyguide.utils.AssetNames
 import com.pickledgames.stardewvalleyguide.utils.ImageUtil
 import kotlinx.android.parcel.Parcelize
-import java.util.*
 
 @Parcelize
 data class CommunityCenterItem(
@@ -24,12 +24,6 @@ data class CommunityCenterItem(
         }
 
     override fun getImageId(context: Context): Int {
-        val item = name.toLowerCase(Locale.US).replace("\\W".toRegex(), "_")
-        val hasDigit = item.matches(".*\\d+.*".toRegex())
-        return if (!hasDigit) {
-            ImageUtil.getImageId(context, "item_$item")
-        } else {
-            ImageUtil.getImageId(context, "item_gold")
-        }
+        return ImageUtil.getImageId(context, AssetNames.itemDrawable(name))
     }
 }

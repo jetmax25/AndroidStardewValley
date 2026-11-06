@@ -3,8 +3,8 @@ package com.pickledgames.stardewvalleyguide.models
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.enums.Reaction
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
+import com.pickledgames.stardewvalleyguide.utils.AssetNames
 import com.pickledgames.stardewvalleyguide.utils.ImageUtil
-import java.util.*
 
 data class GiftReaction(
         val reaction: Reaction,
@@ -14,7 +14,6 @@ data class GiftReaction(
 ) : StardewObject {
 
     override fun getImageId(context: Context): Int {
-        val item = itemName.toLowerCase(Locale.US).replace("\\W".toRegex(), "_")
-        return ImageUtil.getImageId(context, "item_$item")
+        return ImageUtil.getImageId(context, AssetNames.itemDrawable(itemName))
     }
 }

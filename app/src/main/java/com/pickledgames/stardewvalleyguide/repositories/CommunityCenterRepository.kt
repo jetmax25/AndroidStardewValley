@@ -9,6 +9,7 @@ import com.pickledgames.stardewvalleyguide.models.CommunityCenterReward
 import com.pickledgames.stardewvalleyguide.models.CommunityCenterRoom
 import com.pickledgames.stardewvalleyguide.utils.RepositoryUtil
 import io.reactivex.Single
+import org.json.JSONArray
 import org.json.JSONObject
 
 class CommunityCenterRepository(
@@ -63,7 +64,7 @@ class CommunityCenterRepository(
                         val itemQuantity = itemJSONObject.getInt("Quantity")
                         val isTravelingMerchant = itemJSONObject.getBoolean("Traveling Merchant")
 
-                        val guide = itemJSONObject.getString("Guide")
+                        val guide = readGuide(itemJSONObject.get("Guide"))
 
                         val seasonsJSONObject = itemJSONObject.getJSONObject("Seasons")
                         val seasons = mutableSetOf<Season>()
@@ -87,6 +88,21 @@ class CommunityCenterRepository(
             }
 
             it.onSuccess(communityCenterRooms)
+        }
+    }
+
+    private fun readGuide(guideValue: Any): String {
+        return when (guideValue) {
+            is String -> guideValue
+            is JSONArray -> {
+                val parts = mutableListOf<String>()
+                for (i in 0 until guideValue.length()) {
+                    val part = guideValue.optString(i).trim()
+                    if (part.isNotEmpty() && part !in parts) parts.add(part)
+                }
+                parts.joinToString("\n")
+            }
+            else -> guideValue.toString()
         }
     }
 }

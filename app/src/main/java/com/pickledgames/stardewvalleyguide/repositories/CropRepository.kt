@@ -31,7 +31,7 @@ class CropRepository(
             for (name in cropsJSONObject.keys()) {
                 val cropJSONObject = cropsJSONObject.getJSONObject(name)
                 val seeds = if (cropJSONObject.has("Seeds")) cropJSONObject.getString("Seeds") else null
-                val harvestTime = cropJSONObject.getString("Harvest Time").toInt()
+                val harvestTime = cropJSONObject.get("Harvest Time").toString().toInt()
                 val goldPerDay = cropJSONObject.getDouble("Gold Per Day")
                 val seedPrice = cropJSONObject.getInt("Seed Price")
                 val regrowthDays = cropJSONObject.getInt("Regrowth Days")

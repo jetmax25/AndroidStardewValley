@@ -16,6 +16,9 @@ data class Availability(
 
     val timeRange: IntRange
         get() {
-            return startTime until endTime
+            // Overnight windows are stored with an end earlier than the start (for example 22 to 2).
+            // Shift the end into the next day so filters can intersect the range.
+            val exclusiveEnd = if (endTime > startTime) endTime else endTime + 24
+            return startTime until exclusiveEnd
         }
 }

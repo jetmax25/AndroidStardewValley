@@ -173,7 +173,7 @@ class CropsFragment : BaseFragment(), SearchView.OnQueryTextListener, Filterable
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val filteredList = crops
                         .filter { crop ->
-                            seasonFilterBy == "All" || (crop.seasons.contains(Season.fromString(seasonFilterBy)) && crop.seasons.size != Season.values().size)
+                            seasonFilterBy == "All" || crop.seasons.contains(Season.fromString(seasonFilterBy))
                         }
                         .filter { crop -> crop.name.contains(searchTerm, true) }
                         .toMutableList()

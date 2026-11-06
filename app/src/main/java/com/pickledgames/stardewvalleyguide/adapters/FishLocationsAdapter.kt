@@ -34,12 +34,16 @@ class FishLocationsAdapter(
         }
     }
 
+    private fun showsLegendaryMap(): Boolean {
+        return fish.isLegendary && LegendaryFishingLocation.fromStringOrNull(fish.name) != null
+    }
+
     override fun getItemCount(): Int {
-        return if (fish.isLegendary) 2 else fish.availability.locations.keys.size
+        return if (showsLegendaryMap()) 2 else fish.availability.locations.keys.size
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (fish.isLegendary) LEGENDARY else REGULAR
+        return if (showsLegendaryMap()) LEGENDARY else REGULAR
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

@@ -6,5 +6,8 @@
         <item>Forest</item>
         <item>Hilltop</item>
         <item>Wilderness</item>
+        <item>Four Corners</item>
+        <item>Beach</item>
+        <item>Meadowlands</item>
     </string-array>
 </resources>

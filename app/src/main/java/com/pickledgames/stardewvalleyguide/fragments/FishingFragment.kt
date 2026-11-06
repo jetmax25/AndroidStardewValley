@@ -276,7 +276,7 @@ class FishingFragment : BaseFragment(), View.OnClickListener, OnItemCheckedListe
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val filteredList = fishes
                         .filter { fish ->
-                            seasonFilterBy == "All" || (fish.availability.seasons.contains(Season.fromString(seasonFilterBy)) && fish.availability.seasons.size != Season.values().size)
+                            seasonFilterBy == "All" || fish.availability.seasons.contains(Season.fromString(seasonFilterBy))
                         }
                         .filter { fish ->
                             locationFilterBy == "All" || fish.availability.locations.containsValue(FishingLocationType.fromString(locationFilterBy))

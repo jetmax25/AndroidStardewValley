@@ -18,6 +18,9 @@ class Converters {
             "Forest" -> FarmType.Forest
             "Hilltop" -> FarmType.Hilltop
             "Wilderness" -> FarmType.Wilderness
+            "Four Corners" -> FarmType.FourCorners
+            "Beach" -> FarmType.Beach
+            "Meadowlands" -> FarmType.Meadowlands
             else -> FarmType.Standard
         }
     }

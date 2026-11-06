@@ -1,6 +1,7 @@
 package com.pickledgames.stardewvalleyguide.enums
 
 import android.content.Context
+import com.pickledgames.stardewvalleyguide.utils.ImageUtil
 import java.util.*
 
 enum class LegendaryFishingLocation(
@@ -15,24 +16,29 @@ enum class LegendaryFishingLocation(
 
     fun getMapImageId(context: Context): Int {
         val misc = type.toLowerCase(Locale.US).replace("\\W".toRegex(), "_")
-        return context.resources.getIdentifier("misc_map_$misc", "drawable", context.packageName)
+        return ImageUtil.getImageId(context, "misc_map_$misc")
     }
 
     fun getLocationImageId(context: Context): Int {
         val misc = type.toLowerCase(Locale.US).replace("\\W".toRegex(), "_")
-        return context.resources.getIdentifier("misc_location_$misc", "drawable", context.packageName)
+        return ImageUtil.getImageId(context, "misc_location_$misc")
     }
 
     companion object {
-        fun fromString(string: String): LegendaryFishingLocation {
+        fun fromStringOrNull(string: String): LegendaryFishingLocation? {
             return when (string) {
                 "Angler" -> Angler
                 "Crimsonfish" -> CrimsonFish
                 "Glacierfish" -> Glacierfish
                 "Legend" -> Legend
                 "Mutant Carp" -> MutantCarp
-                else -> throw Exception("$string is not a valid LegendaryFishingLocation")
+                else -> null
             }
+        }
+
+        fun fromString(string: String): LegendaryFishingLocation {
+            return fromStringOrNull(string)
+                    ?: throw Exception("$string is not a valid LegendaryFishingLocation")
         }
     }
 }
