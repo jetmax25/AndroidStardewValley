@@ -24,12 +24,30 @@ data class CommunityCenterItem(
         }
 
     override fun getImageId(context: Context): Int {
-        val item = name.lowercase(Locale.US).replace("\\W".toRegex(), "_")
-        val hasDigit = item.matches(".*\\d+.*".toRegex())
-        return if (!hasDigit) {
-            ImageUtil.getImageId(context, "item_$item")
-        } else {
-            ImageUtil.getImageId(context, "item_gold")
-        }
+        return ImageUtil.getImageId(context, communityCenterItemResource(name))
     }
+}
+
+/**
+ * Drawable for a community center bundle item.
+ *
+ * Quality notes are part of the requirement, not a separate sprite:
+ * "Wine Silver Quality" uses item_wine, and "Ancient Fruit (Gold Quality)"
+ * uses item_ancient_fruit. Names that still contain a digit after that
+ * ("2,500g") keep the gold icon. "Parsnip High Quality" is unchanged
+ * because those drawables already exist.
+ *
+ * Keep in sync with community_center_item_resource in scripts/check_item_images.py.
+ */
+internal fun communityCenterItemResource(displayName: String): String {
+    val withoutParenthetical = displayName.replace("\\s*\\([^)]*\\)".toRegex(), " ")
+    val withoutQuality = withoutParenthetical.replace(
+            "(?i)\\s+(?:silver|gold|iridium)\\s+quality\\s*$".toRegex(),
+            ""
+    )
+    val item = withoutQuality.trim()
+            .replace("\\s+".toRegex(), " ")
+            .lowercase(Locale.US)
+            .replace("\\W".toRegex(), "_")
+    return if (item.matches(".*\\d+.*".toRegex())) "item_gold" else "item_$item"
 }

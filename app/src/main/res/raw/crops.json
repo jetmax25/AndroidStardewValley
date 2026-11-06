@@ -1015,6 +1015,7 @@
     },
     "Cranberries":
     {
+        "Seeds": "Cranberry Seeds",
         "Harvest Time": "7",
         "Gold Per Day": 18.89,
         "Seed Price": 240,
