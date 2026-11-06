@@ -1,9 +1,9 @@
 {
   "Dwarf Scroll I": {
-    "Description": "A yellowed scroll of parchment filled with dwarven script. This one's tied with a red bow",
+    "Description": "A yellowed scroll of parchment filled with dwarven script. This one's tied with a red bow.",
     "Price": 1,
     "Locations": [
-      "Mines\/Skull Cavern (any level)",
+      "Mines/Skull Cavern (any level)",
       "Several monsters (0.5% each)"
     ]
   },
@@ -11,7 +11,7 @@
     "Description": "A yellowed scroll of parchment filled with dwarven script. This one's tied with a green ribbon.",
     "Price": 1,
     "Locations": [
-      "Mines\/Skull Cavern (any level)",
+      "Mines/Skull Cavern (any level)",
       "Ghost (Mine lvls 50-90)",
       "Frost Bat (Mines lvl 40-65)",
       "Dust Sprites (Mines level 40-79)",
@@ -26,7 +26,7 @@
     ]
   },
   "Dwarf Scroll IV": {
-    "Description": "A yellowed scroll of parchment filled with dwarven script. This one's tied with a gold chain.",
+    "Description": "A yellowed scroll of parchment filled with dwarven script. This one's tied with a golden chain.",
     "Price": 1,
     "Locations": [
       "Any monster (other than Serpent, Skeleton, Wilderness Golem)",
@@ -82,7 +82,7 @@
     ]
   },
   "Ornamental Fan": {
-    "Description": "This exquisute fan most likely belonged to a noblewoman. Historians believe that the valley was a popular sixth-era vacation spot for the wealthy.",
+    "Description": "This exquisite fan most likely belonged to a noblewoman. Historians believe that the valley was a popular sixth-era vacation spot for the wealthy.",
     "Price": 300,
     "Locations": [
       "Beach (2%)",
@@ -125,7 +125,7 @@
       "The Farm",
       "Town (5%)",
       "Fishing Chest",
-      "Mines\/Skull Cavern (any level)"
+      "Mines/Skull Cavern (any level)"
     ]
   },
   "Rusty Spur": {
@@ -141,7 +141,7 @@
     "Price": 25,
     "Locations": [
       "Mountain (5%)",
-      "Mines\/Skull Cavern (any level)",
+      "Mines/Skull Cavern (any level)",
       "Fishing Chest"
     ]
   },
@@ -253,7 +253,7 @@
     ]
   },
   "Golden Relic": {
-    "Description": "It's a golden slab with heiroglyphs and pictures emblazoned onto the front.",
+    "Description": "It's a golden slab with hieroglyphs and pictures emblazoned onto the front.",
     "Price": 250,
     "Locations": [
       "Desert (8%)"
@@ -264,7 +264,7 @@
     "Price": 1000,
     "Locations": [
       "Everywhere (except desert) (0.1%)",
-      "Mines\/Skull Cavern (any level)",
+      "Mines/Skull Cavern (any level)",
       "Fishing Chest"
     ]
   },
@@ -273,7 +273,7 @@
     "Price": 1000,
     "Locations": [
       "Everywhere (except desert) (0.1%)",
-      "Mines\/Skull Cavern (any level)",
+      "Mines/Skull Cavern (any level)",
       "Fishing Chest"
     ]
   },
@@ -327,7 +327,7 @@
     "Description": "It's pretty short for a tail.",
     "Price": 100,
     "Locations": [
-      "Mines\/Skull Cavern (any level)",
+      "Mines/Skull Cavern (any level)",
       "Fishing Chest"
     ]
   },
@@ -350,7 +350,7 @@
   },
   "Palm Fossil": {
     "Description": "Palm Fossils are relatively common, but this happens to be a particularly well-preserved specimen.",
-    "Price": 50,
+    "Price": 100,
     "Locations": [
       "Forest (1%)",
       "Beach (1%)",
