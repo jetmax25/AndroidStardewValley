@@ -14,12 +14,12 @@ enum class LegendaryFishingLocation(
     MutantCarp("Mutant Carp");
 
     fun getMapImageId(context: Context): Int {
-        val misc = type.toLowerCase(Locale.US).replace("\\W".toRegex(), "_")
+        val misc = type.lowercase(Locale.US).replace("\\W".toRegex(), "_")
         return context.resources.getIdentifier("misc_map_$misc", "drawable", context.packageName)
     }
 
     fun getLocationImageId(context: Context): Int {
-        val misc = type.toLowerCase(Locale.US).replace("\\W".toRegex(), "_")
+        val misc = type.lowercase(Locale.US).replace("\\W".toRegex(), "_")
         return context.resources.getIdentifier("misc_location_$misc", "drawable", context.packageName)
     }
 

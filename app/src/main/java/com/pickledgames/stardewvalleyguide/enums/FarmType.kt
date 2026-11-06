@@ -16,6 +16,6 @@ enum class FarmType(
     Wilderness("Wilderness");
 
     override fun getImageId(context: Context): Int {
-        return ImageUtil.getImageId(context, "farm_type_${type.toLowerCase(Locale.US)}")
+        return ImageUtil.getImageId(context, "farm_type_${type.lowercase(Locale.US)}")
     }
 }

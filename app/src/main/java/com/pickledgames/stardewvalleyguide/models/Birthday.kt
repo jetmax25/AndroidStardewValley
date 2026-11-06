@@ -3,7 +3,7 @@ package com.pickledgames.stardewvalleyguide.models
 import android.os.Parcelable
 import com.pickledgames.stardewvalleyguide.enums.Season
 import com.squareup.moshi.Json
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Birthday(

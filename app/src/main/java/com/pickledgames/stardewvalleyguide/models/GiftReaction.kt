@@ -14,7 +14,7 @@ data class GiftReaction(
 ) : StardewObject {
 
     override fun getImageId(context: Context): Int {
-        val item = itemName.toLowerCase(Locale.US).replace("\\W".toRegex(), "_")
+        val item = itemName.lowercase(Locale.US).replace("\\W".toRegex(), "_")
         return ImageUtil.getImageId(context, "item_$item")
     }
 }

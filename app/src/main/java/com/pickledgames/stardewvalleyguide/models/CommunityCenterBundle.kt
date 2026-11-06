@@ -13,7 +13,7 @@ data class CommunityCenterBundle(
 ) : StardewObject {
 
     override fun getImageId(context: Context): Int {
-        val cleanedName = name.toLowerCase(Locale.US).replace("bundle", "").trim().replace("\\W".toRegex(), "_")
+        val cleanedName = name.lowercase(Locale.US).replace("bundle", "").trim().replace("\\W".toRegex(), "_")
         return ImageUtil.getImageId(context, "community_center_bundle_$cleanedName")
     }
 

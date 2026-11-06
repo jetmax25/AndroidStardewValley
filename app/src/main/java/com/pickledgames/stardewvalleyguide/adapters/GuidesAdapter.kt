@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pickledgames.stardewvalleyguide.databinding.ListItemGuideBinding
-import kotlinx.android.extensions.LayoutContainer
 
 class GuidesAdapter(
         private val guides: List<String>

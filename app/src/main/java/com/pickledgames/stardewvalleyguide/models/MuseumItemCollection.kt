@@ -16,7 +16,7 @@ data class MuseumItemCollection(
             "Minerals" -> R.drawable.item_diamond
             "Artifacts" -> R.drawable.misc_artifact
             "Lost Books" -> R.drawable.misc_lost_book
-            else -> ImageUtil.getImageId(context, "item_${name.toLowerCase(Locale.US)}")
+            else -> ImageUtil.getImageId(context, "item_${name.lowercase(Locale.US)}")
         }
     }
 }
