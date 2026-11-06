@@ -4,6 +4,7 @@
 Run from the repository root:
     python3 tools/check_reference_data.py
 """
+import hashlib
 import json
 import re
 import sys
@@ -13,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "app/src/main/res/raw"
 DRAWABLE = ROOT / "app/src/main/res/drawable"
 ALLOWLIST = ROOT / "app/src/test/resources/known_placeholder_drawables.txt"
+IOS_REUSE = ROOT / "docs/ios-asset-reuse.json"
 
 QUALITY_PARENS = re.compile(r"(?i)\s*\([^)]*quality[^)]*\)")
 QUALITY_PREFIX = re.compile(r"(?i)^(silver or better quality|gold or iridium quality|gold quality|silver quality)\s+")
@@ -190,6 +192,19 @@ def main():
         errors.append("Referenced images with no drawable and no placeholder entry:\n  " + "\n  ".join(unexpected))
     if stale:
         errors.append("Placeholder allowlist includes files that now exist:\n  " + "\n  ".join(stale))
+
+    reuse = json.loads(IOS_REUSE.read_text())
+    reused = []
+    for item in reuse["mappings"]:
+        path = ROOT / item["android_path"]
+        digest = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else ""
+        if digest != item["sha256"]:
+            errors.append(f"iOS reuse file changed or missing: {item['android_path']}")
+        if item["android_drawable"] in allowlist:
+            errors.append(f"{item['android_drawable']} is reused from iOS and must leave the placeholder list")
+        reused.append(item["android_drawable"])
+    if len(reused) != len(set(reused)):
+        errors.append("iOS reuse map has duplicate drawables")
 
     if errors:
         print("\n".join(errors))

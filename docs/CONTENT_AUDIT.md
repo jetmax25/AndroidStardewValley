@@ -137,7 +137,7 @@ Same wiki pages as above, plus:
 
 The 61 names from the first pass still have no file in this project. The wiki text and its images are CC BY-NC-SA 3.0. That license forbids commercial use. The official FAQ allows monetized videos of the game and does not grant a license to ship game sprites in an app. This app has ads and a paid upgrade, so copying wiki or game sprites into it is not an allowed source. No public-domain or freely licensed replacement for those 61 sprites was found. They were not replaced with generated art.
 
-Adding Fiber, Tea, Mixed Seeds, crab-pot fish, Joja projects, and remix-only bundles created more names that also have no licensed file. `python3 tools/check_reference_data.py` now checks 837 referenced names. **108 use the placeholder.** The list is `app/src/test/resources/known_placeholder_drawables.txt`. Remix bundles that match a standard bundle reuse that bundle's existing icon. `Large Egg` uses the existing white large-egg sprite, and `Large Brown Egg` uses the existing brown one. Joja gold amounts use the existing gold sprite.
+Adding Fiber, Tea, Mixed Seeds, crab-pot fish, Joja projects, and remix-only bundles created more names that had no file yet. At the end of that pass, 837 referenced names were checked and 108 used the placeholder. Remix bundles that match a standard bundle reuse that bundle's existing icon. `Large Egg` uses the existing white large-egg sprite, and `Large Brown Egg` uses the existing brown one. Joja gold amounts use the existing gold sprite. The later iOS copy, recorded below, removed six of those 108.
 
 ### What this pass filled in
 
@@ -148,6 +148,34 @@ Adding Fiber, Tea, Mixed Seeds, crab-pot fish, Joja projects, and remix-only bun
 - Pineapple, Taro Root, and Unmilled Rice have a note on the crop screen. Pineapple and Taro are summer on the valley farm and all year on Ginger Island. Unirrigated rice is the 8-day timing; irrigated rice is 6 days.
 - Artifact rows now use the dig and drop lines from the Artifacts table. Foraged minerals keep their floor ranges (Quartz 1-120, Earth Crystal 1-39, Frozen Tear 40-79, Fire Quartz 80-120). Source lines for gems and geode minerals were filled from that table.
 - Remixed bundles are extra entries prefixed "Remix:". They do not change how many items the standard bundle needs. The spring remix pool includes Spring Onion and still needs 4. Joja Community Development is five projects: Minecarts 15,000g, Panning 20,000g, Bridge 25,000g, Greenhouse 35,000g, Bus 40,000g. The checklist stores them separately from the standard bundles.
+
+## iOS asset reuse, 6 November 2026
+
+The private GitHub repo could not be read by this run. Michael then supplied a read-only copy of the Mac checkout catalogs. The archive used here is `catalogs-01.zip` (2,542 files). Its manifest records:
+
+- Source: `/Users/michaelisasi/Documents/GitHub/StardewValleyGuide/StardewValleyGuide/StardewValleyGuide/Assets`
+- Packed: 2026-11-06 12:45:48 EST
+- Machine id: `63acca4f-0ea6-4630-b99d-da2b4fb64d70`
+- Catalogs in that archive include Fish, Crop Phases, Seeds, CommunityCenter, Giftable Items, and the other non-Schedule catalogs listed in the manifest. Schedule.xcassets was packed separately and was not in this zip.
+
+No license file or other provenance note was inside the catalog archive. That absence is not treated as a ban on reuse. The images below were copied because they are the user's existing iOS assets and match Android item names. The iOS tree was not modified.
+
+Most imagesets declare 1x, 2x, and 3x slots but store one PNG. These six fish imagesets have a single 48×48 indexed PNG with a transparency chunk, the same pixel size as the other item drawables. Only that file was copied. No second or third density was added.
+
+| Android drawable | iOS path |
+| --- | --- |
+| `item_goby.png` | `Assets/Fish.xcassets/Goby.imageset/Goby.png` |
+| `item_legend_ii.png` | `Assets/Fish.xcassets/Legend_II.imageset/Legend_II.png` |
+| `item_son_of_crimsonfish.png` | `Assets/Fish.xcassets/Son_of_Crimsonfish.imageset/Son_of_Crimsonfish.png` |
+| `item_ms_angler.png` | `Assets/Fish.xcassets/Ms._Angler.imageset/Ms._Angler.png` |
+| `item_glacierfish_jr.png` | `Assets/Fish.xcassets/Glacierfish_Jr..imageset/Glacierfish_Jr..png` |
+| `item_radioactive_carp.png` | `Assets/Fish.xcassets/Radioactive_Carp.imageset/Radioactive_Carp.png` |
+
+Hashes are in `docs/ios-asset-reuse.json`. The checker fails if one of those files is missing or its bytes change.
+
+Schedule.xcassets is not needed for the remaining gaps. The missing names are item sprites, crop stages, seeds, bundle icons, and farm-type pictures. Those catalogs that could contain them (Fish, Crop Phases, Seeds, CommunityCenter, Giftable Items, Foraged Items, Fruit, Vegetables) were in `catalogs-01.zip` and do not include Carrot, Broccoli, Summer Squash, Powdermelon, Pineapple stages, Taro stages, Unmilled Rice stages, Piña Colada, Mixed Seeds, fiber or tea growth stages, the Missing Bundle icon, Four Corners, Beach, Meadowlands, or the remix-only bundle icons. The iOS farm pictures that do exist are 30px UI icons (`All_Farm_Icon`, `SV_BuildFarm_icon`), not the four map types. Community Center room photos are 80–100KB room renders, not the small bundle icons, so they were not substituted for Joja projects.
+
+Before this copy, 108 referenced names used the placeholder. After it, the six fish above are real files. The checker reports the new placeholder count.
 
 ## Still not fully verified
 

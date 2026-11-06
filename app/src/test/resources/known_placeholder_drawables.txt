@@ -1,5 +1,6 @@
-# Referenced content with no bundled sprite. The app shows default_image for these.
-# Game art was not copied in. Remove a line when a drawable with that name is added.
+# Referenced names with no drawable. The app shows default_image for these.
+# Six fish sprites that exist in the iOS Fish catalog were copied and removed from this list.
+# Remove a line when a matching file is added.
 item_carrot
 item_carrot_seeds
 item_carrot_phase_1
@@ -50,12 +51,6 @@ item_taro_root_phase_2
 item_taro_root_phase_3
 item_taro_root_phase_4
 item_taro_root_phase_5
-item_goby
-item_son_of_crimsonfish
-item_ms_angler
-item_legend_ii
-item_glacierfish_jr
-item_radioactive_carp
 item_pina_colada
 community_center_bundle_the_missing
 farm_type_four_corners

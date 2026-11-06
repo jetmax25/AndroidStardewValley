@@ -1,0 +1,87 @@
+{
+  "source_root": "/Users/michaelisasi/Documents/GitHub/StardewValleyGuide/StardewValleyGuide/StardewValleyGuide/Assets",
+  "archive": "catalogs-01.zip",
+  "packed_at": "2026-11-06 12:45:48 EST",
+  "machine_id": "63acca4f-0ea6-4630-b99d-da2b4fb64d70",
+  "export": "Byte copy of the single 1x PNG in each imageset. No 2x or 3x file was added. These six imagesets do not contain separate @2x/@3x files. Pixel size already matches the other item drawables (48x48).",
+  "mappings": [
+    {
+      "android_drawable": "item_goby",
+      "android_path": "app/src/main/res/drawable/item_goby.png",
+      "ios_catalog": "Fish.xcassets",
+      "ios_imageset": "Goby.imageset",
+      "ios_file": "Goby.png",
+      "ios_path": "Assets/Fish.xcassets/Goby.imageset/Goby.png",
+      "scale_copied": "1x",
+      "pixel_size": "48x48",
+      "color_type": "indexed PNG with tRNS",
+      "bytes": 350,
+      "sha256": "926cdbd85b9507aac3a1b2d2f96dcdb1eab7446596693413ba55bde8fc424e42"
+    },
+    {
+      "android_drawable": "item_legend_ii",
+      "android_path": "app/src/main/res/drawable/item_legend_ii.png",
+      "ios_catalog": "Fish.xcassets",
+      "ios_imageset": "Legend_II.imageset",
+      "ios_file": "Legend_II.png",
+      "ios_path": "Assets/Fish.xcassets/Legend_II.imageset/Legend_II.png",
+      "scale_copied": "1x",
+      "pixel_size": "48x48",
+      "color_type": "indexed PNG with tRNS",
+      "bytes": 330,
+      "sha256": "0f122eb4e52b2d945cce6b4777fefb126d1c5b97f0c84767dda9e45704aca22d"
+    },
+    {
+      "android_drawable": "item_son_of_crimsonfish",
+      "android_path": "app/src/main/res/drawable/item_son_of_crimsonfish.png",
+      "ios_catalog": "Fish.xcassets",
+      "ios_imageset": "Son_of_Crimsonfish.imageset",
+      "ios_file": "Son_of_Crimsonfish.png",
+      "ios_path": "Assets/Fish.xcassets/Son_of_Crimsonfish.imageset/Son_of_Crimsonfish.png",
+      "scale_copied": "1x",
+      "pixel_size": "48x48",
+      "color_type": "indexed PNG with tRNS",
+      "bytes": 312,
+      "sha256": "cc006bd16ae7f707b3fff7ffb1fdddf951d7d8c6cfde2f1bf2165176cc0a9998"
+    },
+    {
+      "android_drawable": "item_ms_angler",
+      "android_path": "app/src/main/res/drawable/item_ms_angler.png",
+      "ios_catalog": "Fish.xcassets",
+      "ios_imageset": "Ms._Angler.imageset",
+      "ios_file": "Ms._Angler.png",
+      "ios_path": "Assets/Fish.xcassets/Ms._Angler.imageset/Ms._Angler.png",
+      "scale_copied": "1x",
+      "pixel_size": "48x48",
+      "color_type": "indexed PNG with tRNS",
+      "bytes": 307,
+      "sha256": "96974294dbd2480f5be30c40d1e8fa0e29697c8e015759687550b67097008668"
+    },
+    {
+      "android_drawable": "item_glacierfish_jr",
+      "android_path": "app/src/main/res/drawable/item_glacierfish_jr.png",
+      "ios_catalog": "Fish.xcassets",
+      "ios_imageset": "Glacierfish_Jr..imageset",
+      "ios_file": "Glacierfish_Jr..png",
+      "ios_path": "Assets/Fish.xcassets/Glacierfish_Jr..imageset/Glacierfish_Jr..png",
+      "scale_copied": "1x",
+      "pixel_size": "48x48",
+      "color_type": "indexed PNG with tRNS",
+      "bytes": 326,
+      "sha256": "ac75b484adc7c7d5d10b57b387c602d7355af071da8cd316e3481431b0d69be5"
+    },
+    {
+      "android_drawable": "item_radioactive_carp",
+      "android_path": "app/src/main/res/drawable/item_radioactive_carp.png",
+      "ios_catalog": "Fish.xcassets",
+      "ios_imageset": "Radioactive_Carp.imageset",
+      "ios_file": "Radioactive_Carp.png",
+      "ios_path": "Assets/Fish.xcassets/Radioactive_Carp.imageset/Radioactive_Carp.png",
+      "scale_copied": "1x",
+      "pixel_size": "48x48",
+      "color_type": "indexed PNG with tRNS",
+      "bytes": 335,
+      "sha256": "4d9f546591fa0140477a545eb0cb84c179687d50fda0b275f7cd79370ccf38d5"
+    }
+  ]
+}
