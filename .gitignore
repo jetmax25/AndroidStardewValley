@@ -11,3 +11,6 @@
 .externalNativeBuild
 /app/release
 
+
+__pycache__/
+*.pyc

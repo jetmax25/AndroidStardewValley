@@ -32,7 +32,9 @@ object AssetNames {
     fun bundleDrawable(name: String): String {
         var cleaned = name.replace(Regex("^(Remix|Joja):\\s*"), "")
         cleaned = cleaned.lowercase(Locale.US).replace("bundle", "").trim()
-        cleaned = BUNDLE_POSSESSIVES[cleaned] ?: cleaned
+        // Drawable files drop the apostrophe ("Blacksmith's" -> blacksmiths).
+        cleaned = cleaned.replace("'", "")
+        cleaned = BUNDLE_ALIASES[cleaned] ?: cleaned
         return "community_center_bundle_${slug(cleaned)}"
     }
 
@@ -72,12 +74,7 @@ object AssetNames {
     private val QUALITY_SUFFIX = Regex("(?i)\\s+(silver|gold|iridium) quality$")
     private val MONEY = Regex("\\d+_\\d+g|\\d+g")
 
-    private val BUNDLE_POSSESSIVES = mapOf(
-            "blacksmiths" to "blacksmith's",
-            "geologists" to "geologist's",
-            "adventurers" to "adventurer's",
-            "chefs" to "chef's",
-            "enchanters" to "enchanter's",
+    private val BUNDLE_ALIASES = mapOf(
             "g2500" to "2,500",
             "g5000" to "5,000",
             "g10000" to "10,000",

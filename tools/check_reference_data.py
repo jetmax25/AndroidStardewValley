@@ -34,12 +34,7 @@ ALIASES = {
     "large brown egg": "large egg brown",
 }
 
-BUNDLE_POSSESSIVES = {
-    "blacksmiths": "blacksmith's",
-    "geologists": "geologist's",
-    "adventurers": "adventurer's",
-    "chefs": "chef's",
-    "enchanters": "enchanter's",
+BUNDLE_ALIASES = {
     "g2500": "2,500",
     "g5000": "5,000",
     "g10000": "10,000",
@@ -134,8 +129,8 @@ def main():
     for room in bundles.values():
         for bundle_name, bundle in room["Bundles"].items():
             cleaned = re.sub(r"^(Remix|Joja):\s*", "", bundle_name)
-            cleaned = cleaned.lower().replace("bundle", "").strip()
-            cleaned = BUNDLE_POSSESSIVES.get(cleaned, cleaned)
+            cleaned = cleaned.lower().replace("bundle", "").strip().replace("'", "")
+            cleaned = BUNDLE_ALIASES.get(cleaned, cleaned)
             expect("community_center_bundle_" + slug(cleaned), f"bundle {bundle_name}")
             if bundle_name == "River Fish Bundle":
                 river = bundle
