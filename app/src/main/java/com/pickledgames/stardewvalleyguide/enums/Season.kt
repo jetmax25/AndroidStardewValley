@@ -15,7 +15,7 @@ enum class Season(
     Summer("Summer");
 
     override fun getImageId(context: Context): Int {
-        return ImageUtil.getImageId(context, "season_${type.toLowerCase(Locale.US)}")
+        return ImageUtil.getImageId(context, "season_${type.lowercase(Locale.US)}")
     }
 
     companion object {

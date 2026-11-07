@@ -4,18 +4,18 @@
 Mirrors the resource names the app builds in:
 
 - ImageUtil.getImageId (missing name -> R.drawable.default_image)
-- Crop.getImageId / getSeedImageId / getStageImageId / getRegrowthImageId
-- Fish, Gift, GiftReaction, MuseumItem (item_<name>)
+- AssetNames for crops, fish, gifts, museum items, bundle items, and bundles
 - LostBook (misc_lost_book, shared by every book)
 - Villager (villager_<name>, also used for gift-reaction portraits)
-- CommunityCenterBundle / CommunityCenterItem via AssetNames
 - MuseumItemCollection, FarmType, Season
-- LegendaryFishingLocation map and location sprites (getIdentifier, 0 if missing)
+- LegendaryFishingLocation map and location sprites for the original five
+  legends. Later legends show location text and do not load a map sprite.
 
-A crop seed is also reported when getSeedImageId would fall back to the
-crop icon, because that is not the seed packet.
+Names listed in app/src/test/resources/known_placeholder_drawables.txt are
+the intentional default_image fallbacks. They are not missing. A name that
+is neither a file nor on that list is missing.
 
-Java's ASCII \\W is matched with [^A-Za-z0-9_]. Run from anywhere:
+Run from anywhere:
 
     python3 scripts/check_item_images.py
 
@@ -33,6 +33,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DRAWABLE = ROOT / "app" / "src" / "main" / "res" / "drawable"
 RAW = ROOT / "app" / "src" / "main" / "res" / "raw"
+ALLOWLIST = ROOT / "app" / "src" / "test" / "resources" / "known_placeholder_drawables.txt"
 
 RESOURCE_NAME = re.compile(r"^[a-z_][a-z0-9_]*$")
 
@@ -64,9 +65,13 @@ BUNDLE_ALIASES = {
 }
 
 
-def sanitize(name: str) -> str:
-    """Locale.US lower + ASCII \\W -> underscore, matching the Kotlin models."""
-    return re.sub(r"[^A-Za-z0-9_]", "_", name.lower())
+def load_allowlist() -> set[str]:
+    names: set[str] = set()
+    for line in ALLOWLIST.read_text().splitlines():
+        line = line.split("#", 1)[0].strip()
+        if line:
+            names.add(line)
+    return names
 
 
 def slug(value: str) -> str:
@@ -143,18 +148,17 @@ def main() -> int:
 
     crops = json.loads((RAW / "crops.json").read_text())
     for name, data in crops.items():
-        item = sanitize(name)
-        expect("crop", name, f"item_{item}", "ImageUtil falls back to default_image")
+        expect("crop", name, item_drawable(name), "ImageUtil falls back to default_image")
         seeds = data.get("Seeds")
         if seeds:
             expect(
                 "crop-seed",
                 f"{name} / {seeds}",
-                f"item_{sanitize(seeds)}",
-                "getSeedImageId returns 0",
+                item_drawable(seeds),
+                "getSeedImageId falls back to the crop icon",
             )
         else:
-            seed_resource = f"item_{item}_seeds"
+            seed_resource = f"item_{slug(name)}_seeds"
             if seed_resource not in assets:
                 expect(
                     "crop-seed",
@@ -168,23 +172,23 @@ def main() -> int:
             expect(
                 "crop-stage",
                 f"{name} phase {index + 1}",
-                f"item_{item}_phase_{index + 1}",
-                "getStageImageId returns 0",
+                f"item_{slug(name)}_phase_{index + 1}",
+                "ImageUtil falls back to default_image",
             )
         if int(data.get("Regrowth Days") or 0) > 0:
             expect(
                 "crop-regrowth",
                 name,
-                f"item_{item}_regrowth",
-                "getRegrowthImageId returns 0",
+                f"item_{slug(name)}_regrowth",
+                "ImageUtil falls back to default_image",
             )
 
     for name in json.loads((RAW / "fishes.json").read_text()):
-        expect("fish", name, f"item_{sanitize(name)}", "ImageUtil falls back to default_image")
+        expect("fish", name, item_drawable(name), "ImageUtil falls back to default_image")
 
     for filename, kind in (("minerals.json", "mineral"), ("artifacts.json", "artifact")):
         for name in json.loads((RAW / filename).read_text()):
-            expect(kind, name, f"item_{sanitize(name)}", "ImageUtil falls back to default_image")
+            expect(kind, name, item_drawable(name), "ImageUtil falls back to default_image")
 
     for name in json.loads((RAW / "lost_books.json").read_text()):
         expect("lost-book", name, "misc_lost_book", "ImageUtil falls back to default_image")
@@ -236,26 +240,34 @@ def main() -> int:
                     "ImageUtil falls back to default_image",
                 )
 
-    for farm in ("Standard", "Riverland", "Forest", "Hilltop", "Wilderness"):
-        expect("farm", farm, f"farm_type_{farm.lower()}", "ImageUtil falls back to default_image")
+    for farm in (
+        "Standard",
+        "Riverland",
+        "Forest",
+        "Hilltop",
+        "Wilderness",
+        "Four Corners",
+        "Beach",
+        "Meadowlands",
+    ):
+        expect("farm", farm, f"farm_type_{slug(farm)}", "ImageUtil falls back to default_image")
     for season in ("Fall", "Winter", "Spring", "Summer"):
         expect("season", season, f"season_{season.lower()}", "ImageUtil falls back to default_image")
 
-    for fish_name, data in json.loads((RAW / "fishes.json").read_text()).items():
-        if not data.get("Legendary"):
-            continue
-        slug = sanitize(fish_name)
+    # FishLocationsAdapter only loads map sprites for LegendaryFishingLocation.
+    for fish_name in ("Angler", "Crimsonfish", "Glacierfish", "Legend", "Mutant Carp"):
+        map_slug = slug(fish_name)
         expect(
             "legendary-map",
             fish_name,
-            f"misc_map_{slug}",
-            "getMapImageId returns 0",
+            f"misc_map_{map_slug}",
+            "getMapImageId falls back to default_image",
         )
         expect(
             "legendary-location",
             fish_name,
-            f"misc_location_{slug}",
-            "getLocationImageId returns 0",
+            f"misc_location_{map_slug}",
+            "getLocationImageId falls back to default_image",
         )
 
     for name, resource in (
@@ -265,10 +277,21 @@ def main() -> int:
     ):
         expect("museum-collection", name, resource, "hardcoded collection drawable")
 
+    allowlist = load_allowlist()
+    unexpected = [row for row in missing if row[2] not in allowlist]
+    placeholders = [row for row in missing if row[2] in allowlist]
+    stale = sorted(name for name in allowlist if name in assets)
+
     print(f"checked {sum(checked.values())} image references")
-    if missing:
-        print(f"missing {len(missing)}")
-        for kind, entry, resource, note in missing:
+    print(f"placeholders {len(placeholders)}")
+    if stale:
+        print("placeholder list includes files that now exist:")
+        for name in stale:
+            print(name)
+        return 1
+    if unexpected:
+        print(f"missing {len(unexpected)}")
+        for kind, entry, resource, note in unexpected:
             print(f"{kind}\t{entry}\t{resource}\t{note}")
         return 1
 

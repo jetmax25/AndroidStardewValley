@@ -6,7 +6,7 @@ import com.pickledgames.stardewvalleyguide.enums.Season
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
 import com.pickledgames.stardewvalleyguide.utils.AssetNames
 import com.pickledgames.stardewvalleyguide.utils.ImageUtil
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class CommunityCenterItem(

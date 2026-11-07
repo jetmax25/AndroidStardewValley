@@ -1,6 +1,6 @@
 package com.pickledgames.stardewvalleyguide.models
 
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 class Mineral(

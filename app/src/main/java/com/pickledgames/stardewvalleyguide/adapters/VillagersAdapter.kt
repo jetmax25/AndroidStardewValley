@@ -12,7 +12,6 @@ import com.pickledgames.stardewvalleyguide.databinding.ListItemVillagerBinding
 import com.pickledgames.stardewvalleyguide.fragments.VillagerFragment
 import com.pickledgames.stardewvalleyguide.interfaces.Sortable
 import com.pickledgames.stardewvalleyguide.models.Villager
-import kotlinx.android.extensions.LayoutContainer
 import java.util.*
 import kotlin.Comparator
 
@@ -41,7 +40,7 @@ class VillagersAdapter(
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val filterResults = FilterResults()
-                val filteredVillagers = villagers.filter { it.name.toLowerCase(Locale.US).contains(constraint.toString().toLowerCase(Locale.US)) }
+                val filteredVillagers = villagers.filter { it.name.lowercase(Locale.US).contains(constraint.toString().lowercase(Locale.US)) }
                 filterResults.values = filteredVillagers
                 filterResults.count = filteredVillagers.size
                 return filterResults

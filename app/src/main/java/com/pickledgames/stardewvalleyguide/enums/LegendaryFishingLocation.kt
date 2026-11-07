@@ -2,7 +2,7 @@ package com.pickledgames.stardewvalleyguide.enums
 
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.utils.ImageUtil
-import java.util.*
+import java.util.Locale
 
 enum class LegendaryFishingLocation(
         val type: String
@@ -15,12 +15,12 @@ enum class LegendaryFishingLocation(
     MutantCarp("Mutant Carp");
 
     fun getMapImageId(context: Context): Int {
-        val misc = type.toLowerCase(Locale.US).replace("\\W".toRegex(), "_")
+        val misc = type.lowercase(Locale.US).replace("\\W".toRegex(), "_")
         return ImageUtil.getImageId(context, "misc_map_$misc")
     }
 
     fun getLocationImageId(context: Context): Int {
-        val misc = type.toLowerCase(Locale.US).replace("\\W".toRegex(), "_")
+        val misc = type.lowercase(Locale.US).replace("\\W".toRegex(), "_")
         return ImageUtil.getImageId(context, "misc_location_$misc")
     }
 

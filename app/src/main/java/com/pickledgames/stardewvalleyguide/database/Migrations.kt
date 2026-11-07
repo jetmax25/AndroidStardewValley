@@ -32,7 +32,7 @@ object Migrations {
                     if (updatedCommunity != community || updatedMuseum != museum) {
                         database.execSQL(
                                 "UPDATE Farm SET communityCenterItems = ?, museumItems = ? WHERE id = ?",
-                                arrayOf(updatedCommunity, updatedMuseum, id)
+                                arrayOf<Any>(updatedCommunity, updatedMuseum, id)
                         )
                     }
                 }

@@ -20,6 +20,7 @@ import com.pickledgames.stardewvalleyguide.models.Fish
 import com.pickledgames.stardewvalleyguide.utils.FragmentUtil
 import io.github.douglasjunior.androidSimpleTooltip.OverlayView
 import io.github.douglasjunior.androidSimpleTooltip.SimpleTooltip
+import java.util.Locale
 import javax.inject.Inject
 
 class FishFragment : InnerBaseFragment() {
@@ -109,7 +110,7 @@ class FishFragment : InnerBaseFragment() {
 
             FragmentUtil.setTimeRangeText(fish.availability.startTime, fish.availability.endTime, informationFishLayout.timeRangeTextView, resources)
             informationFishLayout.fishingLevelTextView.text = String.format(getString(R.string.fishing_level_template, fish.fishingLevel))
-            informationFishLayout.behaviorTextView.text = String.format(getString(R.string.behavior_template, fish.behavior.capitalize()))
+            informationFishLayout.behaviorTextView.text = String.format(getString(R.string.behavior_template, fish.behavior.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.US) else it.toString() }))
             informationFishLayout.difficultyTextView.text = String.format(getString(R.string.difficulty_template, fish.difficulty))
             informationFishLayout.xpTextView.text = String.format(getString(R.string.xp_template, fish.xp))
 

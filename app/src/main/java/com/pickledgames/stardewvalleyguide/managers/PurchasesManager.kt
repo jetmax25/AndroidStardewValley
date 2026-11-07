@@ -73,11 +73,13 @@ class PurchasesManager(
 
     fun purchaseProVersion(activity: Activity) {
         if (isBillingEnabled) {
-            billingClient.queryProductDetailsAsync(queryProductDetailsParams) { _, products ->
-                val productDetailsParamsList = products.map { product ->
-                    BillingFlowParams.ProductDetailsParams.newBuilder()
+            billingClient.queryProductDetailsAsync(queryProductDetailsParams) { _, result ->
+                val productDetailsParamsList = result.productDetailsList.map { product ->
+                    val params = BillingFlowParams.ProductDetailsParams.newBuilder()
                         .setProductDetails(product)
-                        .build()
+                    // Billing 8+ requires the backwards-compatible one-time offer token.
+                    product.oneTimePurchaseOfferDetails?.offerToken?.let { params.setOfferToken(it) }
+                    params.build()
                 }
 
                 val billingFlowParams = BillingFlowParams.newBuilder()

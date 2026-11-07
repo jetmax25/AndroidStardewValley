@@ -14,6 +14,7 @@ import com.pickledgames.stardewvalleyguide.enums.LegendaryFishingLocation
 import com.pickledgames.stardewvalleyguide.models.Fish
 import com.pickledgames.stardewvalleyguide.views.ImageOverlayView
 import com.stfalcon.frescoimageviewer.ImageViewer
+import java.util.Locale
 
 class FishLocationsAdapter(
         private val fish: Fish
@@ -103,10 +104,11 @@ class FishLocationsAdapter(
                         .setStartPosition(position)
                         .setOverlayView(overlayView)
                         .setImageChangeListener { position ->
+                            val title = fish.name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.US) else it.toString() }
                             val text = if (position == 0) {
-                                "${fish.name.capitalize()} Map"
+                                "$title Map"
                             } else {
-                                "${fish.name.capitalize()} Location"
+                                "$title Location"
                             }
 
                             overlayView.setText(text)

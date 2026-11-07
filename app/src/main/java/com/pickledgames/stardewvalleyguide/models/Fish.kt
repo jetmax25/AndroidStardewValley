@@ -5,7 +5,7 @@ import android.os.Parcelable
 import com.pickledgames.stardewvalleyguide.interfaces.StardewObject
 import com.pickledgames.stardewvalleyguide.utils.AssetNames
 import com.pickledgames.stardewvalleyguide.utils.ImageUtil
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Fish(

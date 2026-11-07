@@ -9,7 +9,6 @@ import com.pickledgames.stardewvalleyguide.databinding.ListItemCategoryHeaderBin
 import com.pickledgames.stardewvalleyguide.databinding.ListItemGiftBinding
 import com.pickledgames.stardewvalleyguide.fragments.GiftFragment
 import com.pickledgames.stardewvalleyguide.models.Gift
-import kotlinx.android.extensions.LayoutContainer
 
 class GiftsAdapter(
         private var list: List<Any>,

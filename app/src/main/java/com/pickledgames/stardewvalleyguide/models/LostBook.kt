@@ -2,7 +2,7 @@ package com.pickledgames.stardewvalleyguide.models
 
 import android.content.Context
 import com.pickledgames.stardewvalleyguide.utils.ImageUtil
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 class LostBook(
