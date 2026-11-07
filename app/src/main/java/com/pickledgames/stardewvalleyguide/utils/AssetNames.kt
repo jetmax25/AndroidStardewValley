@@ -43,6 +43,9 @@ object AssetNames {
     }
 
     fun cropRegrowthDrawable(cropName: String): String {
+        // After harvest the game steps back one phase. Broccoli's wiki row has
+        // no extra frame, so the pre-harvest plant is the regrowth sprite.
+        if (cropName == "Broccoli") return "item_broccoli_phase_4"
         return "item_${slug(cropName)}_regrowth"
     }
 

@@ -168,7 +168,12 @@ def main() -> int:
                 )
             else:
                 checked["crop-seed"] += 1
-        for index in range(len(data.get("Stages") or [])):
+        stages = data.get("Stages") or []
+        nonzero = sum(1 for stage in stages if stage)
+        # CropRepository shows a planting frame plus one frame per growth stage.
+        # Mixed seeds have an empty stage list and no growth art.
+        phase_count = (1 + nonzero) if nonzero else 0
+        for index in range(phase_count):
             expect(
                 "crop-stage",
                 f"{name} phase {index + 1}",
@@ -176,10 +181,15 @@ def main() -> int:
                 "ImageUtil falls back to default_image",
             )
         if int(data.get("Regrowth Days") or 0) > 0:
+            regrowth = (
+                "item_broccoli_phase_4"
+                if name == "Broccoli"
+                else f"item_{slug(name)}_regrowth"
+            )
             expect(
                 "crop-regrowth",
                 name,
-                f"item_{slug(name)}_regrowth",
+                regrowth,
                 "ImageUtil falls back to default_image",
             )
 

@@ -1387,6 +1387,7 @@
     }
   },
   "Unmilled Rice": {
+    "Seeds": "Rice Shoot",
     "Harvest Time": "8",
     "Gold Per Day": -1.25,
     "Seed Price": 40,
@@ -1675,13 +1676,12 @@
     "Note": "Harvest each day of the last week of Spring, Summer, and Fall. Indoors, that includes Winter. The bush itself grows in every season. Tea Sapling is crafted."
   },
   "Mixed Seeds": {
+    "Seeds": "Mixed Seeds",
     "Harvest Time": "0",
     "Gold Per Day": 0,
     "Seed Price": 0,
     "Regrowth Days": 0,
-    "Stages": [
-      1
-    ],
+    "Stages": [],
     "Seasons": {
       "Spring": true,
       "Summer": true,
@@ -1708,13 +1708,12 @@
     "Note": "Not one crop. Plant in any season except Winter and it grows a random crop of that season. Found from weeds, tilled dirt, or a Seed Maker. The list's 0-day harvest is because there is no single grow time."
   },
   "Mixed Flower Seeds": {
+    "Seeds": "Mixed Flower Seeds",
     "Harvest Time": "0",
     "Gold Per Day": 0,
     "Seed Price": 0,
     "Regrowth Days": 0,
-    "Stages": [
-      1
-    ],
+    "Stages": [],
     "Seasons": {
       "Spring": true,
       "Summer": true,

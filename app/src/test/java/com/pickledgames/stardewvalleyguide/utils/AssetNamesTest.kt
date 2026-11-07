@@ -30,6 +30,12 @@ class AssetNamesTest {
     }
 
     @Test
+    fun broccoliRegrowthReusesThePreHarvestPhase() {
+        assertEquals("item_broccoli_phase_4", AssetNames.cropRegrowthDrawable("Broccoli"))
+        assertEquals("item_blueberry_regrowth", AssetNames.cropRegrowthDrawable("Blueberry"))
+    }
+
+    @Test
     fun farmTypesSlugSpaces() {
         assertEquals("farm_type_four_corners", AssetNames.farmTypeDrawable("Four Corners"))
         assertEquals("farm_type_standard", AssetNames.farmTypeDrawable("Standard"))

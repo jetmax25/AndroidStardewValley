@@ -36,13 +36,14 @@ class CropRepository(
                 val seedPrice = cropJSONObject.getInt("Seed Price")
                 val regrowthDays = cropJSONObject.getInt("Regrowth Days")
 
-                val stages = mutableListOf(0)
+                val stages = mutableListOf<Int>()
                 val stagesJSONArray = cropJSONObject.getJSONArray("Stages")
 
                 var total = 0
                 for (i in 0 until stagesJSONArray.length()) {
                     val stage = stagesJSONArray.getInt(i)
                     if (stage != 0) {
+                        if (stages.isEmpty()) stages.add(0)
                         total += stage
                         stages.add(total)
                     }

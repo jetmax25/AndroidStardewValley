@@ -92,11 +92,15 @@ def main():
             expect(item_drawable(crop["Seeds"]), f"seed {name}")
         else:
             expect(f"item_{slug(name)}_seeds", f"seed {name}")
-        phases = 1 + sum(1 for stage in crop["Stages"] if stage)
+        nonzero = sum(1 for stage in crop["Stages"] if stage)
+        # Same count as CropRepository: planting frame plus each growth stage.
+        # An empty stage list (mixed seeds) has no phase art.
+        phases = (1 + nonzero) if nonzero else 0
         for phase in range(1, phases + 1):
             expect(f"item_{slug(name)}_phase_{phase}", f"phase {name} {phase}")
         if crop.get("Regrowth Days", 0) > 0:
-            expect(f"item_{slug(name)}_regrowth", f"regrowth {name}")
+            regrowth = "item_broccoli_phase_4" if name == "Broccoli" else f"item_{slug(name)}_regrowth"
+            expect(regrowth, f"regrowth {name}")
 
     fishes = json.loads((RAW / "fishes.json").read_text())
     if fishes["Bream"]["Availability"]["Time"]["Start"] != 18:
